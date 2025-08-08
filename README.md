@@ -1,7 +1,7 @@
 <div align="center">
   <img src="icon-256.png" alt="OneClip Logo" width="128" height="128">
   <h1>OneClip</h1>
-  <p><strong>专业的 macOS 原生剪贴板管理器</strong></p>
+  <p><strong>简洁专业的 macOS 原生剪贴板管理器</strong></p>
   <p>🚀 高效 • 🎨 美观 • ⚡ 快速 • 🔒 安全</p>
 </div>
 
