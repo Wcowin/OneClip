@@ -95,7 +95,7 @@ OneClip 是一款专为 macOS 设计的高性能剪贴板管理器，采用 100%
 
 如果遇到打不开或者提示已经损坏：请参考 [Mac电脑安装软件报错解决办法汇总](https://mp.weixin.qq.com/s/qjSx09tqNq1KfVug2WtQFg)  
   
-如果嫌麻烦，也可以下载[macos小助手进行快速操作。](https://pan.quark.cn/s/f2302b6789b0){target=“_blank”}
+如果嫌麻烦，也可以下载[macos小助手进行快速操作。](https://pan.quark.cn/s/f2302b6789b0)
 
 1. **本地构建应用**（暂未开源）
    ```bash
@@ -207,6 +207,9 @@ Maccopy/
 ├── dist/                      # 构建输出
 └── README.md                  # 项目说明
 ```
+
+![alt text](image.png)
+
 
 ## 📊 性能特性
 
