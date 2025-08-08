@@ -10,6 +10,8 @@
 ## ✨ 产品亮点
 
 OneClip 是一款专为 macOS 设计的高性能剪贴板管理器，采用 100% 原生 SwiftUI 技术栈构建，为用户提供无缝的剪贴板管理体验。
+![alt text](image-1.png)
+![alt text](image-2.png)
 
 ### 🎯 核心特性
 
