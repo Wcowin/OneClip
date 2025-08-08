@@ -91,13 +91,13 @@ OneClip 是一款专为 macOS 设计的高性能剪贴板管理器，采用 100%
 ### 快速安装
 
 1. **下载应用**
-请到 [Release 页面](https://github.com/yourusername/OneClip/releases) 下载最新版本的 OneClip。
+请到 [Release 页面](https://github.com/Wcowin/OneClip/releases) 下载最新版本的 OneClip。
 
 如果遇到打不开或者提示已经损坏：请参考 [Mac电脑安装软件报错解决办法汇总](https://mp.weixin.qq.com/s/qjSx09tqNq1KfVug2WtQFg)  
   
 如果嫌麻烦，也可以下载[macos小助手进行快速操作。](https://pan.quark.cn/s/f2302b6789b0){target=“_blank”}
 
-2. **本地构建应用**（暂未开源）
+1. **本地构建应用**（暂未开源）
    ```bash
    # 使用快速构建脚本
    ./build.sh
@@ -253,7 +253,7 @@ A: 可在设置中调整历史记录数量限制和检测间隔。
 
 ## 👨‍💻 作者信息
 
-- **开发者**: Wcowin
+- **开发者**: [Wcowin](https://wcowin.work/blog/Mac/sunhuai/)
 - **联系邮箱**: wcowin@qq.com
 - **版本**: 1.0.0
 - **最后更新**: 2025年8月8日
@@ -261,10 +261,10 @@ A: 可在设置中调整历史记录数量限制和检测间隔。
 ## 🤝 反馈与支持
 
 如果您在使用过程中遇到问题或有改进建议，欢迎通过以下方式联系：
-
+  
 - 📧 邮件: wcowin@qq.com
-- 🐛 问题反馈: [GitHub Issues]
-- 💡 功能建议: [GitHub Discussions]
+- 🐛 问题反馈: [GitHub Issues](https://github.com/Wcowin/OneClip/issues)
+- 💡 功能建议: [GitHub Discussions](https://github.com/Wcowin/OneClip/discussions)
 
 ---
 
