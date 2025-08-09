@@ -10,7 +10,7 @@
 ## ✨ 产品亮点
 
 OneClip 是一款专为 macOS 设计的高性能剪贴板管理器，采用 100% 原生 SwiftUI 技术栈构建，为用户提供无缝的剪贴板管理体验。
-![alt text](image-1.png)
+![alt text](image-3.png)
 ![alt text](image-2.png)
 
 ### 🎯 核心特性
@@ -84,21 +84,21 @@ OneClip 是一款专为 macOS 设计的高性能剪贴板管理器，采用 100%
 
 ### 系统要求
 
-- **操作系统**: macOS 14.0 (Sonoma) 或更高版本
+- **操作系统**: macOS 12.0或更高版本
 - **处理器**: Apple Silicon (M1/M2/M3) 或 Intel x64
 - **内存**: 最低 4GB RAM
-- **存储空间**: 约 5MB
 
 ### 快速安装
 
-1. **下载应用**
+
+#### 1. **下载应用**
 请到 [Release 页面](https://github.com/Wcowin/OneClip/releases) 下载最新版本的 OneClip。
 
 如果遇到打不开或者提示已经损坏：请参考 [Mac电脑安装软件报错解决办法汇总](https://mp.weixin.qq.com/s/qjSx09tqNq1KfVug2WtQFg)  
   
 如果嫌麻烦，也可以下载[macos小助手进行快速操作。](https://pan.quark.cn/s/f2302b6789b0)
 
-1. **本地构建应用**（暂未开源）
+#### 2. **本地构建应用**（暂未开源）
    ```bash
    # 使用快速构建脚本
    ./build.sh
@@ -154,7 +154,7 @@ OneClip 是一款专为 macOS 设计的高性能剪贴板管理器，采用 100%
 
 ### 界面设置
 
-- **Dock 图标**: 可选择显示/隐藏
+- **Dock 图标**: 自动显示/隐藏
 - **启动模式**: 开机自启动选项
 - **主题适配**: 自动跟随系统主题
 
@@ -275,6 +275,6 @@ A: 可在设置中调整历史记录数量限制和检测间隔。
 <div align="center">
   <p><strong>OneClip
 
-  一个简单的剪贴板管理工具</strong></p>
+  一个简单专业的剪贴板管理工具</strong></p>
   <p>© 2025 Wcowin. All rights reserved.</p>
 </div>
