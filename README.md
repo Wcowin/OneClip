@@ -92,11 +92,19 @@ OneClip 是一款专为 macOS 设计的高性能剪贴板管理器，采用 100%
 
 
 #### 1. **下载应用**
-请到 [Release 页面](https://github.com/Wcowin/OneClip/releases) 下载最新版本的 OneClip。
+【1】请到 [Release 页面](https://github.com/Wcowin/OneClip/releases) 下载最新版本的 OneClip。
 
+【2】打开终端执行下面这句：
+```sudo xattr -rd com.apple.quarantine /Applications/OneClip.app```
+![alt text](截屏.png)
+输完密码后回车↩︎，再次打开**OneClip** 即可。Enjoy it～
+
+---
 如果遇到打不开或者提示已经损坏：请参考 [Mac电脑安装软件报错解决办法汇总](https://mp.weixin.qq.com/s/qjSx09tqNq1KfVug2WtQFg)  
   
 如果嫌麻烦，也可以下载[macos小助手进行快速操作。](https://pan.quark.cn/s/f2302b6789b0)
+
+---
 
 #### 2. **本地构建应用**（暂未开源）
    ```bash
