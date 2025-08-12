@@ -223,21 +223,21 @@ Maccopy/
 ## 📊 性能特性
 
 - **内存占用**: 运行时约 20-30MB
-- **CPU 使用**: 空闲时 < 8%
-- **启动时间**: < 2 秒
+- **CPU 使用**: 空闲时 < 15%
+- **启动时间**: < 1 秒
 - **响应速度**: 快捷键响应 < 100ms
 - **存储效率**: 智能压缩，节省磁盘空间
 
 ## 🐛 常见问题
 
 ### Q: 快捷键不工作？
-A: 请确保已授予辅助功能权限，并重启应用。
+A: 请确保**已授予辅助功能权限**，并重启应用。
 
 ### Q: 无法复制文件？
 A: 请检查完全磁盘访问权限是否已启用。
 
 ### Q: 应用无法启动？
-A: 请确认系统版本为 macOS 14.0+，并检查应用完整性。
+A: 请确认系统版本为 macOS 12.0+，并检查应用完整性。
 
 ### Q: 状态栏图标消失？
 A: 重启应用或检查系统状态栏设置。
@@ -266,15 +266,14 @@ A: 可在设置中调整历史记录数量限制和检测间隔。
 ## 👨‍💻 作者信息
 
 - **开发者**: [Wcowin](https://wcowin.work/blog/Mac/sunhuai/)
-- **联系邮箱**: wcowin@qq.com
-- **版本**: 1.0.0
-- **最后更新**: 2025年8月8日
+- **联系邮箱**: [wcowin@qq.com](mailto:wcowin@qq.com)
+- **最后更新**: 2025年8月11日
 
 ## 🤝 反馈与支持
 
 如果您在使用过程中遇到问题或有改进建议，欢迎通过以下方式联系：
   
-- 📧 邮件: wcowin@qq.com
+- 📧 邮件: [wcowin@qq.com](mailto:wcowin@qq.com)
 - 🐛 问题反馈: [GitHub Issues](https://github.com/Wcowin/OneClip/issues)
 - 💡 功能建议: [GitHub Discussions](https://github.com/Wcowin/OneClip/discussions)
 
