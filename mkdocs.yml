@@ -3,3 +3,7 @@ site_url: https://example.com
 site_author: Wcowin
 theme:
   name: material
+
+
+nav:
+  - Home: index.md
