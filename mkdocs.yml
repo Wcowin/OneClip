@@ -7,3 +7,4 @@ theme:
 
 nav:
   - Home: index.md
+  - Updates: updates.md
