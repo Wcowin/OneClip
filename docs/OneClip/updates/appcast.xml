@@ -8,7 +8,7 @@
             <sparkle:version>1</sparkle:version>
             <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.6</sparkle:minimumSystemVersion>
-            <enclosure url="https://wcowin.work/OneClip/updates/OneClip-1.2.0.zip" length="3921550" type="application/octet-stream" sparkle:edSignature="DywkBNhmrwWf4DW5IC9zERJDPl5Eo5vXQMRMuI8PgnnKFb+gFtrCy9+Ib5zZeJI3pbibSXEdnMYZYCPy8aN3Bg=="/>
+            <enclosure url="https://wcowin.work/OneClip/OneClip-1.2.0.zip" length="3921550" type="application/octet-stream" sparkle:edSignature="OtXG8NflhHPdOWeFNwZI+Qjc1Bv/R/G7JfuP+VGHssEeIbc3fKU74ffT5oSMbjogRN1LIlmwNdfsUA27G1WWAw=="/>
         </item>
     </channel>
 </rss>
