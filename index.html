@@ -1,0 +1,1352 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Wcowin">
+      
+      
+        <link rel="canonical" href="https://example.com/">
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
+    
+    
+      
+        <title>OneClip</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="OneClip" class="md-header__button md-logo" aria-label="OneClip" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OneClip
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="OneClip" class="md-nav__button md-logo" aria-label="OneClip" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    OneClip
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✨ 产品亮点
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✨ 产品亮点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 核心特性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ 技术架构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ 技术架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心技术栈
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      架构设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心组件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 安装说明
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 安装说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      快速安装
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="快速安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 下载应用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 本地构建应用（暂未开源）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      权限配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 使用指南
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 使用指南">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级功能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 配置选项
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ 配置选项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      快捷键设置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      界面设置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储设置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 开发构建(暂未开源)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 开发构建(暂未开源)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      开发环境(暂未开源)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      构建流程(暂未开源)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      项目结构(暂未开源)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 性能特性
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐛 常见问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🐛 常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q: 快捷键不工作？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q: 无法复制文件？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q: 应用无法启动？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q: 状态栏图标消失？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q: 内存占用过高？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 版本历史
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 版本历史">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v100" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.0.0 (当前版本)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      即将推出
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      👨‍💻 作者信息
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 反馈与支持
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✨ 产品亮点
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✨ 产品亮点">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 核心特性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ 技术架构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ 技术架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心技术栈
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      架构设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心组件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 安装说明
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 安装说明">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统要求
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      快速安装
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="快速安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 下载应用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 本地构建应用（暂未开源）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      权限配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 使用指南
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 使用指南">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础操作
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      高级功能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ 配置选项
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ 配置选项">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      快捷键设置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      界面设置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      存储设置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 开发构建(暂未开源)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 开发构建(暂未开源)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      开发环境(暂未开源)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      构建流程(暂未开源)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      项目结构(暂未开源)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 性能特性
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      🐛 常见问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🐛 常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q: 快捷键不工作？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q: 无法复制文件？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q: 应用无法启动？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q: 状态栏图标消失？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q: 内存占用过高？
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 版本历史
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 版本历史">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v100" class="md-nav__link">
+    <span class="md-ellipsis">
+      v1.0.0 (当前版本)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      即将推出
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      👨‍💻 作者信息
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 反馈与支持
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!-- # Welcome to MkDocs -->
+
+<div align="center">
+  <img src="https://s2.loli.net/2025/08/19/Ax7ezjqhgMP6nKL.png" alt="OneClip Logo" width="128" height="128">
+  <h1>OneClip</h1>
+  <p><strong>简洁专业的 macOS 原生剪贴板管理器</strong></p>
+  <p>🚀 高效 • 🎨 美观 • ⚡ 快速 • 🔒 安全</p>
+</div>
+
+<hr />
+<h2 id="_1">✨ 产品亮点</h2>
+<p>OneClip 是一款专为 macOS 设计的高性能剪贴板管理器，采用 100% 原生 SwiftUI 技术栈构建，为用户提供无缝的剪贴板管理体验。</p>
+<h3 id="_2">🎯 核心特性</h3>
+<ul>
+<li><strong>📋 智能剪贴板管理</strong></li>
+<li>自动捕获并保存剪贴板历史记录</li>
+<li>支持文本、图片、文件等多种数据类型</li>
+<li>
+<p>智能分类和快速搜索功能</p>
+</li>
+<li>
+<p><strong>🗂️ 全格式文件支持</strong></p>
+</li>
+<li>真实文件复制粘贴，非路径文本</li>
+<li>支持图片、视频、音频、文档等格式</li>
+<li>
+<p>保持文件完整性和元数据</p>
+</li>
+<li>
+<p><strong>⌨️ 全局快捷键</strong></p>
+</li>
+<li><code>Cmd+Ctrl+V</code> 快速唤起主界面</li>
+<li>无需鼠标操作，提升工作效率</li>
+<li>
+<p>可自定义快捷键组合</p>
+</li>
+<li>
+<p><strong>🎯 状态栏深度集成</strong></p>
+</li>
+<li>左键点击：快速粘贴最新内容</li>
+<li>
+<p>实时显示剪贴板状态</p>
+</li>
+<li>
+<p><strong>🔧 灵活的界面控制</strong></p>
+</li>
+<li>可选择隐藏/显示 Dock 图标</li>
+<li>支持后台运行模式</li>
+<li>
+<p>自适应系统主题</p>
+</li>
+<li>
+<p><strong>🎨 现代化原生界面</strong></p>
+</li>
+<li>100% SwiftUI 构建</li>
+<li>遵循 macOS 设计规范</li>
+<li>流畅的动画和交互效果</li>
+</ul>
+<h2 id="_3">🏗️ 技术架构</h2>
+<h3 id="_4">核心技术栈</h3>
+<ul>
+<li><strong>前端框架</strong>: SwiftUI (iOS 14.0+)</li>
+<li><strong>开发语言</strong>: Swift 5.0+</li>
+<li><strong>数据存储</strong>: Core Data</li>
+<li><strong>系统集成</strong>: Carbon Framework (全局快捷键)</li>
+<li><strong>权限管理</strong>: Accessibility API</li>
+<li><strong>构建工具</strong>: Xcode 15+</li>
+</ul>
+<h3 id="_5">架构设计</h3>
+<pre><code>            ┌─────────────────────────────────────────┐
+            │                OneClip                  │
+            ├─────────────────────────────────────────┤
+            │     SwiftUI Views &amp; ViewModels          │
+            ├─────────────────────────────────────────┤
+            │  ClipboardManager | SettingsManager     │
+            │  HotkeyManager    |  WindowManager      │
+            ├─────────────────────────────────────────┤
+            │      Core Data | Carbon Framework       │
+            ├─────────────────────────────────────────┤
+            │           macOS System APIs             │
+            └─────────────────────────────────────────┘
+</code></pre>
+<h3 id="_6">核心组件</h3>
+<ul>
+<li><strong>ClipboardManager</strong>: 剪贴板监控和数据管理</li>
+<li><strong>HotkeyManager</strong>: 全局快捷键处理</li>
+<li><strong>WindowManager</strong>: 窗口状态和显示控制</li>
+<li><strong>SettingsManager</strong>: 用户偏好设置管理</li>
+<li><strong>FeedbackManager</strong>: 用户反馈和通知系统</li>
+</ul>
+<h2 id="_7">📦 安装说明</h2>
+<h3 id="_8">系统要求</h3>
+<ul>
+<li><strong>操作系统</strong>: macOS 12.0或更高版本</li>
+<li><strong>处理器</strong>: Apple Silicon (M1/M2/M3) 或 Intel x64</li>
+<li><strong>内存</strong>: 最低 4GB RAM</li>
+</ul>
+<h3 id="_9">快速安装</h3>
+<h4 id="1">1. <strong>下载应用</strong></h4>
+<p>【1】请到 <a href="https://github.com/Wcowin/OneClip/releases">Release 页面</a> 下载最新版本的 OneClip。</p>
+<p>【2】打开终端执行下面这句：
+<code>sudo xattr -rd com.apple.quarantine /Applications/OneClip.app</code></p>
+<p>输完密码后回车↩︎，再次打开<strong>OneClip</strong> 即可。Enjoy it～</p>
+<hr />
+<p>如果遇到打不开或者提示已经损坏：请参考 <a href="https://mp.weixin.qq.com/s/qjSx09tqNq1KfVug2WtQFg">Mac电脑安装软件报错解决办法汇总</a>  </p>
+<p>如果嫌麻烦，也可以下载<a href="https://pan.quark.cn/s/f2302b6789b0">macos小助手进行快速操作。</a></p>
+<hr />
+<h4 id="2">2. <strong>本地构建应用</strong>（暂未开源）</h4>
+<p>```bash
+   # 使用快速构建脚本
+   ./build.sh</p>
+<p># 或手动构建
+   xcodebuild -project Maccopy.xcodeproj -scheme OneClip -configuration Release build
+   ```</p>
+<h3 id="_10">权限配置</h3>
+<p>首次启动时，OneClip 需要以下系统权限：</p>
+<ol>
+<li><strong>辅助功能权限</strong>（必需）</li>
+<li>系统偏好设置 → 安全性与隐私 → 隐私 → 辅助功能</li>
+<li>
+<p>添加 OneClip 并启用</p>
+</li>
+<li>
+<p><strong>完全磁盘访问权限</strong>（可选，用于文件操作）</p>
+</li>
+<li>系统偏好设置 → 安全性与隐私 → 隐私 → 完全磁盘访问</li>
+<li>添加 OneClip 并启用</li>
+</ol>
+<h2 id="_11">🚀 使用指南</h2>
+<h3 id="_12">基础操作</h3>
+<ol>
+<li><strong>启动应用</strong></li>
+<li>双击 <code>OneClip.app</code> 启动</li>
+<li>
+<p>应用将在状态栏显示图标</p>
+</li>
+<li>
+<p><strong>快速访问</strong></p>
+</li>
+<li>按 <code>Cmd+Ctrl+V</code> 打开主界面</li>
+<li>
+<p>点击状态栏图标快速粘贴</p>
+</li>
+<li>
+<p><strong>内容管理</strong></p>
+</li>
+<li>复制任何内容，自动保存到历史</li>
+<li>在主界面搜索和浏览历史记录</li>
+<li>点击任意项目即可粘贴</li>
+</ol>
+<h3 id="_13">高级功能</h3>
+<ul>
+<li><strong>分类筛选</strong>: 按文本、图片、文件等类型筛选</li>
+<li><strong>搜索功能</strong>: 快速查找历史内容</li>
+<li><strong>批量操作</strong>: 清空历史、删除特定项目</li>
+<li><strong>设置自定义</strong>: 调整快捷键、界面偏好等</li>
+</ul>
+<h2 id="_14">⚙️ 配置选项</h2>
+<h3 id="_15">快捷键设置</h3>
+<ul>
+<li><strong>主窗口呼出</strong>: <code>Cmd+Ctrl+V</code></li>
+<li><strong>快速粘贴</strong>: 系统默认 <code>Cmd+V</code></li>
+<li><strong>菜单显示</strong>: 状态栏左键点击</li>
+</ul>
+<h3 id="_16">界面设置</h3>
+<ul>
+<li><strong>Dock 图标</strong>: 自动显示/隐藏</li>
+<li><strong>启动模式</strong>: 开机自启动选项</li>
+<li><strong>主题适配</strong>: 自动跟随系统主题</li>
+</ul>
+<h3 id="_17">存储设置</h3>
+<ul>
+<li><strong>历史数量</strong>: 可设置最大保存条目数</li>
+<li><strong>数据清理</strong>: 定期清理过期内容</li>
+<li><strong>文件处理</strong>: 大文件存储策略</li>
+</ul>
+<h2 id="_18">🔧 开发构建(暂未开源)</h2>
+<h3 id="_19">开发环境(暂未开源)</h3>
+<pre><code class="language-bash"># 环境要求
+Xcode 15.0+
+macOS 14.0+
+Swift 5.9+
+</code></pre>
+<h3 id="_20">构建流程(暂未开源)</h3>
+<pre><code class="language-bash"># 1. 克隆项目
+git clone [项目地址]
+cd Maccopy
+
+# 2. 打开项目
+open Maccopy.xcodeproj
+
+# 3. 选择 OneClip scheme
+# 4. 构建并运行 (Cmd+R)
+
+# 或使用命令行构建
+./build.sh
+</code></pre>
+<h3 id="_21">项目结构(暂未开源)</h3>
+<pre><code>Maccopy/
+├── Maccopy/                    # 主要源代码
+│   ├── OneClipApp.swift       # 应用入口
+│   ├── ContentView.swift      # 主界面
+│   ├── ClipboardManager.swift # 剪贴板管理
+│   ├── HotkeyManager.swift    # 快捷键管理
+│   ├── WindowManager.swift    # 窗口管理
+│   ├── SettingsManager.swift  # 设置管理
+│   └── Assets.xcassets/       # 资源文件
+├── build.sh                   # 构建脚本
+├── dist/                      # 构建输出
+└── README.md                  # 项目说明
+</code></pre>
+<h2 id="_22">📊 性能特性</h2>
+<ul>
+<li><strong>内存占用</strong>: 运行时约 20-30MB</li>
+<li><strong>CPU 使用</strong>: 空闲时 &lt; 15%</li>
+<li><strong>启动时间</strong>: &lt; 1 秒</li>
+<li><strong>响应速度</strong>: 快捷键响应 &lt; 100ms</li>
+<li><strong>存储效率</strong>: 智能压缩，节省磁盘空间</li>
+</ul>
+<h2 id="_23">🐛 常见问题</h2>
+<h3 id="q">Q: 快捷键不工作？</h3>
+<p>A: 请确保<strong>已授予辅助功能权限</strong>，并重启应用。</p>
+<h3 id="q_1">Q: 无法复制文件？</h3>
+<p>A: 请检查完全磁盘访问权限是否已启用。</p>
+<h3 id="q_2">Q: 应用无法启动？</h3>
+<p>A: 请确认系统版本为 macOS 12.0+，并检查应用完整性。</p>
+<h3 id="q_3">Q: 状态栏图标消失？</h3>
+<p>A: 重启应用或检查系统状态栏设置。</p>
+<h3 id="q_4">Q: 内存占用过高？</h3>
+<p>A: 可在设置中调整历史记录数量限制和检测间隔。</p>
+<h2 id="_24">📈 版本历史</h2>
+<h3 id="v100">v1.0.0 (当前版本)</h3>
+<ul>
+<li>✨ 初始版本发布</li>
+<li>📋 基础剪贴板管理功能</li>
+<li>⌨️ 全局快捷键支持</li>
+<li>🎯 状态栏集成</li>
+<li>🎨 SwiftUI 原生界面</li>
+</ul>
+<h3 id="_25">即将推出</h3>
+<ul>
+<li>[x] 🏷️ 标签功能</li>
+<li>[x] 多格式文件支持</li>
+<li>[ ] 收藏功能</li>
+<li>[ ]  🔄 iCloud 同步支持</li>
+<li>[ ] 📱 iOS 版本开发</li>
+<li>[ ] 🔌 插件系统</li>
+<li>[ ] 🌐 多语言支持</li>
+</ul>
+<h2 id="_26">👨‍💻 作者信息</h2>
+<ul>
+<li><strong>开发者</strong>: <a href="https://wcowin.work/blog/Mac/sunhuai/">Wcowin</a></li>
+<li><strong>联系邮箱</strong>: <a href="mailto:wcowin@qq.com">wcowin@qq.com</a></li>
+<li><strong>最后更新</strong>: 2025年8月11日</li>
+</ul>
+<h2 id="_27">🤝 反馈与支持</h2>
+<p>如果您在使用过程中遇到问题或有改进建议，欢迎通过以下方式联系：</p>
+<ul>
+<li>📧 邮件: <a href="mailto:wcowin@qq.com">wcowin@qq.com</a></li>
+<li>🐛 问题反馈: <a href="https://github.com/Wcowin/OneClip/issues">GitHub Issues</a></li>
+<li>💡 功能建议: <a href="https://github.com/Wcowin/OneClip/discussions">GitHub Discussions</a></li>
+</ul>
+<hr />
+<div align="center">
+  <p><strong>OneClip
+
+  一个简单专业的剪贴板管理工具</strong></p>
+  <p>© 2025 Wcowin. All rights reserved.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
