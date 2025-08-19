@@ -4,7 +4,3 @@ site_author: Wcowin
 theme:
   name: material
 
-
-nav:
-  - Home: index.md
-  - Updates: updates.md
