@@ -1,3 +1,5 @@
+最新版1.2.0将会完全测试后再发布。功能更完善，性能更稳定
+
 <div align="center">
   <img src="icon-256.png" alt="OneClip Logo" width="128" height="128">
   <h1>OneClip</h1>
