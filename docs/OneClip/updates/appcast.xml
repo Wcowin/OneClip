@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>OneClip</title>
+        <item>
+            <title>1.2.0</title>
+            <pubDate>Tue, 19 Aug 2025 21:54:36 +0800</pubDate>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.6</sparkle:minimumSystemVersion>
+            <enclosure url="https://wcowin.work/OneClip/updates/OneClip-1.2.0.zip" length="3921550" type="application/octet-stream" sparkle:edSignature="DywkBNhmrwWf4DW5IC9zERJDPl5Eo5vXQMRMuI8PgnnKFb+gFtrCy9+Ib5zZeJI3pbibSXEdnMYZYCPy8aN3Bg=="/>
+        </item>
+    </channel>
+</rss>
