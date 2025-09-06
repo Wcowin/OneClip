@@ -1,4 +1,4 @@
-最新版1.2.0将会完全测试后再发布。功能更完善，性能更稳定
+最新版1.2.4将会完全测试后再发布。功能更完善，性能更稳定  ——2025/9/6
 
 <div align="center">
   <img src="icon-256.png" alt="OneClip Logo" width="128" height="128">
