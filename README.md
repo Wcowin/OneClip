@@ -12,8 +12,9 @@
 ## ✨ 产品亮点
 
 OneClip 是一款专为 macOS 设计的高性能剪贴板管理器，采用 100% 原生 SwiftUI 技术栈构建，为用户提供无缝的剪贴板管理体验。
-![alt text](image-1.png)
-![alt text](image-4.png)
+<img width="602" height="726" alt="image" src="https://github.com/user-attachments/assets/ba145330-55df-4243-991c-dbb581538387" />
+<img width="323" height="509" alt="image" src="https://github.com/user-attachments/assets/22207bea-9d9d-4a11-9436-c5724c710e09" />
+
 
 ### 🎯 核心特性
 
@@ -23,7 +24,6 @@ OneClip 是一款专为 macOS 设计的高性能剪贴板管理器，采用 100%
   - 智能分类和快速搜索功能
 
 - **🗂️ 全格式文件支持**
-  - 真实文件复制粘贴，非路径文本
   - 支持图片、视频、音频、文档等格式
   - 保持文件完整性和元数据
 
@@ -87,7 +87,7 @@ OneClip 是一款专为 macOS 设计的高性能剪贴板管理器，采用 100%
 ### 系统要求
 
 - **操作系统**: macOS 12.0或更高版本
-- **处理器**: Apple Silicon (M1/M2/M3) 或 Intel x64
+- **处理器**: Apple Silicon (M1/M2/M3) 或 Intel x64（暂不支持）
 - **内存**: 最低 4GB RAM
 
 ### 快速安装
@@ -97,7 +97,8 @@ OneClip 是一款专为 macOS 设计的高性能剪贴板管理器，采用 100%
 【1】请到 [Release 页面](https://github.com/Wcowin/OneClip/releases) 下载最新版本的 OneClip。
 
 【2】打开终端执行下面这句：
-```sudo xattr -rd com.apple.quarantine /Applications/OneClip.app```
+```sudo xattr -rd com.apple.quarantine /Applications/OneClip.app```  
+
 ![alt text](截屏.png)
 输完密码后回车↩︎，再次打开**OneClip** 即可。Enjoy it～
 
@@ -126,7 +127,7 @@ OneClip 是一款专为 macOS 设计的高性能剪贴板管理器，采用 100%
    - 系统偏好设置 → 安全性与隐私 → 隐私 → 辅助功能
    - 添加 OneClip 并启用
 
-2. **完全磁盘访问权限**（可选，用于文件操作）
+2. **磁盘访问权限**（可选，用于文件操作）
    - 系统偏好设置 → 安全性与隐私 → 隐私 → 完全磁盘访问
    - 添加 OneClip 并启用
 
@@ -142,7 +143,7 @@ OneClip 是一款专为 macOS 设计的高性能剪贴板管理器，采用 100%
    - 按 `Cmd+Ctrl+V` 打开主界面
    - 点击状态栏图标快速粘贴
 
-3. **内容管理**
+4. **内容管理**
    - 复制任何内容，自动保存到历史
    - 在主界面搜索和浏览历史记录
    - 点击任意项目即可粘贴
@@ -159,7 +160,7 @@ OneClip 是一款专为 macOS 设计的高性能剪贴板管理器，采用 100%
 ### 快捷键设置
 
 - **主窗口呼出**: `Cmd+Ctrl+V`
-- **快速粘贴**: 系统默认 `Cmd+V`
+- **快速复制粘贴**: 系统默认 `Cmd+C/V`
 - **菜单显示**: 状态栏左键点击
 
 ### 界面设置
@@ -247,23 +248,6 @@ A: 重启应用或检查系统状态栏设置。
 ### Q: 内存占用过高？
 A: 可在设置中调整历史记录数量限制和检测间隔。
 
-## 📈 版本历史
-
-### v1.0.0 (当前版本)
-- ✨ 初始版本发布
-- 📋 基础剪贴板管理功能
-- ⌨️ 全局快捷键支持
-- 🎯 状态栏集成
-- 🎨 SwiftUI 原生界面
-
-### 即将推出
-- [x] 🏷️ 标签功能
-- [x] 多格式文件支持
-- [ ] 收藏功能
-- [ ]  🔄 iCloud 同步支持
-- [ ] 📱 iOS 版本开发
-- [ ] 🔌 插件系统
-- [ ] 🌐 多语言支持
 
 ## 👨‍💻 作者信息
 
