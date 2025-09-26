@@ -38,7 +38,7 @@ OneClip 是一款专为 macOS 打造的专业级剪贴板管理工具。采用 1
 - **🔧 灵活控制**：Dock 图标、后台模式、主题适配均可配置
 
 - **🎨 现代界面**：遵循 macOS 设计规范，毛玻璃与暗黑模式适配
-![alt text](https://s1.imagehub.cc/images/2025/09/13/7ecd704eb3ea1fe445aaff739c94bf83.png)
+![alt text](https://s1.imagehub.cc/images/2025/09/26/60252002e8ba561041062e3865e60f9a.jpg)
 
 ## ⬇下载与安装（推荐先看）
 
@@ -200,7 +200,7 @@ A: 可在设置中调整历史记录数量限制和检测间隔。
 ## 👨‍💻 作者信息
 
 - **开发者**: [Wcowin](https://wcowin.work/blog/Mac/sunhuai/)
-- **官方网站**: [https://oneclip.cloud/](https://oneclip.cloud/)
+- **官方网站**: [https://oneclip.cloud](https://oneclip.cloud/)
 - **联系邮箱**: [wcowin@qq.com](mailto:wcowin@qq.com)
 
 ## 🤝 反馈与支持
@@ -210,6 +210,7 @@ A: 可在设置中调整历史记录数量限制和检测间隔。
 - 📧 邮件: [wcowin@qq.com](mailto:wcowin@qq.com)
 - 🐛 问题反馈: [GitHub Issues](https://github.com/Wcowin/OneClip/issues)
 - 💡 功能建议: [GitHub Discussions](https://github.com/Wcowin/OneClip/discussions)
+- 👉🏻 QQ群：[1060157293](https://qm.qq.com/q/ckSQ6MXgLm)
 
 ---
 
