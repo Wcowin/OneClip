@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://s1.imagehub.cc/images/2025/09/01/e4c8b1d640cc30edd8fa53052190dda9.png" alt="OneClip Logo" width="120" height="120">
+  <img src="https://picx.zhimg.com/80/v2-34b000e56d1af7ef61092dcd031dfd9a_1440w.webp?source=2c26e567" alt="OneClip Logo" width="120" height="120">
   <h1>OneClip</h1>
   <p><strong>一个简单专业的macOS 剪贴板管理工具</strong></p>
   <p>🚀 高效 · 🎨 现代 · ⚡ 流畅 · 🔒 安全</p>
