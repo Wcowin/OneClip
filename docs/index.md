@@ -1,22 +1,29 @@
-<div align="center">
-  <img src="https://s1.imagehub.cc/images/2025/09/01/e4c8b1d640cc30edd8fa53052190dda9.png" alt="OneClip Logo" width="120" height="120">
-  <h1>OneClip</h1>
-  <p><strong>一个简单专业的macOS 剪贴板管理工具</strong></p>
-  <p>🚀 高效 · 🎨 现代 · ⚡ 流畅 · 🔒 安全</p>
-</div>
-
-<p align="center">
-  <a href="https://github.com/Wcowin/OneClip/releases">
-    <img src="https://img.shields.io/github/v/release/Wcowin/OneClip?style=for-the-badge&color=3b82f6" alt="Release" />
-  </a>
-  <!-- <a href="https://github.com/Wcowin/OneClip/releases">
-    <img src="https://img.shields.io/github/downloads/Wcowin/OneClip/total?style=for-the-badge&color=22c55e" alt="Downloads" />
-  </a> -->
-  <img src="https://img.shields.io/badge/macOS-12%2B-0f172a?style=for-the-badge&logo=apple&logoColor=white" alt="macOS 12+" />
-  <img src="https://img.shields.io/badge/Swift-5.9%2B-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="Swift 5.9+" />
-
-
 ---
+title: OneClip 一款简单专业的macOS 剪贴板管理工具
+description: OneClip 是一款专为 macOS 打造的专业级剪贴板管理工具。采用 100% SwiftUI 原生技术，实现更顺滑的动画、更自然的系统融合与更低的资源占用。
+status: new
+tags:
+  - 推广
+---
+
+
+
+# OneClip
+
+<div align="center" markdown="1">
+
+**一个简单专业的macOS 剪贴板管理工具**
+
+🚀 高效 · 🎨 现代 · ⚡ 流畅 · 🔒 安全
+
+![OneClip Logo](https://picx.zhimg.com/80/v2-34b000e56d1af7ef61092dcd031dfd9a_1440w.webp?source=2c26e567)
+
+[![Release](https://img.shields.io/github/v/release/Wcowin/OneClip?style=for-the-badge&color=3b82f6)](https://github.com/Wcowin/OneClip/releases)
+![Homebrew](https://img.shields.io/badge/Homebrew-Available-orange?style=for-the-badge&logo=homebrew&logoColor=white)
+![macOS 12+](https://img.shields.io/badge/macOS-12%2B-0f172a?style=for-the-badge&logo=apple&logoColor=white)
+![Swift 5.9+](https://img.shields.io/badge/Swift-5.9%2B-F05138?style=for-the-badge&logo=swift&logoColor=white)
+
+</div>
 
 ## 概览
 
@@ -26,55 +33,75 @@ OneClip 是一款专为 macOS 打造的专业级剪贴板管理工具。采用 1
 
 - **📋 智能记录**：自动保存剪贴板历史，支持文本、图片、文件等格式
 - **🔎 极速搜索**：随打随搜，多维筛选快速定位
-
 - **🗂️ 全格式支持**：图片/视频/音频/文档等，完整保留元数据
-
 - **⌨️ 全局快捷键**：`Cmd+Option+V` 呼出主界面，支持自定义组合
-
 - **🔄 快捷回复**: `Cmd+Option+R` 呼出快捷回复界面，支持自定义组合
-
 - **🎯 菜单栏集成**：一键粘贴最近内容，状态实时可见
-
 - **🔧 灵活控制**：Dock 图标、后台模式、主题适配均可配置
-
+- **🍺 便捷安装**：支持 Homebrew 一键安装和自动更新
 - **🎨 现代界面**：遵循 macOS 设计规范，毛玻璃与暗黑模式适配
-![alt text](https://s1.imagehub.cc/images/2025/09/13/7ecd704eb3ea1fe445aaff739c94bf83.png)
 
-## ⬇下载与安装（推荐先看）
+![OneClip界面预览](https://s1.imagehub.cc/images/2025/09/26/60252002e8ba561041062e3865e60f9a.jpg)
+
+## ⬇️ 下载与安装（推荐先看）
 
 ### 系统要求
 
 - macOS 12.0 及以上
 - Apple Silicon（M 系列）优先适配
 
-### 安装步骤
+### 🍺 Homebrew 安装（推荐）
+
+如果你使用 Homebrew，可以通过以下命令快速安装：
+
+```bash
+# 一键安装（推荐）
+brew install --cask wcowin/oneclip/oneclip
+
+# 或者先添加 tap 再安装
+brew tap wcowin/oneclip
+brew install --cask oneclip
+```
+
+**更新应用：**
+```bash
+brew update && brew upgrade --cask oneclip
+```
+
+**卸载应用：**
+```bash
+brew uninstall --cask oneclip
+```
+
+### 手动安装
 
 1) 前往 [Releases](https://github.com/Wcowin/OneClip/releases)或者[123网盘](https://www.123912.com/s/bXcDVv-HauG3) 下载最新版本。
 2) 将 `OneClip.app` 拖入 `Applications`（应用程序）文件夹。
-3) 首次打开若提示“来自未知开发者/已被隔离”，在终端执行：
+3) 首次打开若提示"来自未知开发者/已被隔离"，在终端执行：
 
 ```bash
 sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 ```
-
+![image](https://s1.imagehub.cc/images/2025/09/29/4548190e0b2466dca56c3590ed15f880.png)
 ![image](https://s1.imagehub.cc/images/2025/09/15/25681c4221ff1bf29ee7c511e28e2654.png)
 
-> 如果遇到“无法打开/已损坏”，参考：
+4) 或者打开`系统设置-隐私与安全性`选择仍然打开
+![image](https://s1.imagehub.cc/images/2025/09/29/3ac62762dc125b32cba708eca3ba2144.png)
+
+> 如果还是提示“无法打开/已损坏”，请参考：
 > https://mp.weixin.qq.com/s/qjSx09tqNq1KfVug2WtQFg
 >
-> 想更省事？可使用[macOS 小助手](https://pan.quark.cn/s/f2302b6789b0)一键处理。
-
-
+> 想更省事？可使用[macOS 小助手](https://pan.quark.cn/s/f2302b6789b0)一键处理或者联系作者vip@oneclip.cloud
 
 ## 🏗️ 技术与架构（简版）
 
 ### 核心技术栈
 
-- Swift 5.9+ 
-- SwiftUI 
-- Core Data 
-- Carbon（全局热键） 
-- Accessibility API 
+- Swift 5.9+
+- SwiftUI
+- Core Data
+- Carbon（全局热键）
+- Accessibility API
 - Xcode 15+
 
 ### 架构设计
@@ -200,7 +227,7 @@ A: 可在设置中调整历史记录数量限制和检测间隔。
 ## 👨‍💻 作者信息
 
 - **开发者**: [Wcowin](https://wcowin.work/blog/Mac/sunhuai/)
-- **官方网站**: [https://oneclip.cloud/](https://oneclip.cloud/)
+- **官方网站**: [https://oneclip.cloud](https://oneclip.cloud/)
 - **联系邮箱**: [wcowin@qq.com](mailto:wcowin@qq.com)
 
 ## 🤝 反馈与支持
@@ -210,12 +237,14 @@ A: 可在设置中调整历史记录数量限制和检测间隔。
 - 📧 邮件: [wcowin@qq.com](mailto:wcowin@qq.com)
 - 🐛 问题反馈: [GitHub Issues](https://github.com/Wcowin/OneClip/issues)
 - 💡 功能建议: [GitHub Discussions](https://github.com/Wcowin/OneClip/discussions)
+- 👉🏻 QQ群：[1060157293](https://qm.qq.com/q/ckSQ6MXgLm)
 
 ---
 
-<div align="center">
-  <p><strong>OneClip
+<div align="center" markdown="1">
 
-  一个简单专业的剪贴板管理工具</strong></p>
-  <p>© 2025 Wcowin. All rights reserved.</p>
+**OneClip —— 一个简单专业的macOS 剪贴板管理工具**
+
+© 2025 Wcowin. All rights reserved.
+
 </div>
