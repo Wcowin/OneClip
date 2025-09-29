@@ -1,0 +1,45 @@
+name: ci 
+on:
+  push:
+    branches:
+      - master 
+      - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          sparse-checkout: |
+            docs
+            includes
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - uses: actions/cache@v3
+        with:
+          key: mkdocs-material-${ env.cache_id }
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install mkdocs-git-revision-date-localized-plugin
+      - run: pip install mkdocs-git-authors-plugin
+      - run: pip install mkdocs-git-committers-plugin-2
+      - run: pip install markdown-callouts
+      # - run: pip install mkdocs-minify-plugin
+      - run: pip install mkdocs-rss-plugin
+      - run: pip install requests>=2.25.0
+      - run: pip install python-dateutil>=2.8.0
+      - run: pip install cachetools>=4.2.0
+      # - run: pip install mkdocs-open-in-new-tab
+      - run: pip install pymdown-extensions
+      # - run: pip install mkdocs-glightbox
+      # - run: pip install "mkdocs-material[imaging]"
+      # - run: pip install mkdocs-statistics-plugin        
+      - run: pip install mkdocs-material 
+      - run: pip install --upgrade --force-reinstall mkdocs-material
+      - run: mkdocs gh-deploy --force

@@ -1,0 +1,141 @@
+site_name: OneClip
+site_url: http://wcowin.work/OneClip
+site_author: OneClip
+site_description: OneClip 文档站点
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: 关闭自动模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default # 日间模式
+      primary: blue # 主色
+      accent: indigo # 强调色
+      toggle:
+        icon: material/toggle-switch
+        name: 切换至夜间模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate # 夜间模式
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: 切换至日间模式
+
+  features: 
+    - announce.dismiss # 可关闭公告栏
+    # - navigation.instant # 页面无刷新切换
+    - navigation.prune # 只渲染可见导航项
+    # - header.autohide  # 自动隐藏头部
+    # - navigation.instant.progress # 页面切换进度条
+    # - navigation.prune # 只渲染可见导航项
+    - navigation.tracking # 滚动时URL锚点自动更新
+    - navigation.tabs # 一级导航显示为顶部Tab
+    # - navigation.tabs.sticky  # Tab栏吸顶
+    - navigation.sections # 侧边栏分组
+    - navigation.top # 返回顶部按钮
+    - navigation.footer # 页脚显示在侧边栏
+    - search.suggest # 搜索建议
+    - search.highlight # 搜索高亮
+    - search.share # 搜索结果分享
+    - toc.follow # 目录跟随滚动
+    # - toc.integrate # 目录集成到侧边栏
+    - navigation.expand # 默认展开所有目录
+    - navigation.indexes # 支持节索引页
+    - content.tabs.link # 支持标签页链接
+    - content.tooltips # 支持鼠标悬浮提示
+    - content.code.copy # 代码块一键复制
+    - content.code.select # 代码块一键全选
+    # - content.action.edit # 编辑按钮
+    # - content.action.view # 查看源码按钮
+    - content.code.annotate # 代码注释
+
+edit_uri: edit/main/docs # 编辑按钮跳转的链接 
+repo_url: https://github.com/Wcowin/OneClip # 右上角点击跳转的链接
+repo_name: OneClip # 右上角的名字
+
+copyright: Copyright &copy; 2025 Wcowin # 左下角的版权声明
+
+markdown_extensions:
+  - abbr
+  - attr_list
+  - admonition
+  - def_list
+  - footnotes
+  # - callouts
+  - md_in_html
+  - markdown.extensions.abbr # 支持Markdown文件上方自定义标题标签等
+  - pymdownx.magiclink
+  - pymdownx.blocks.caption
+  - pymdownx.caret
+  - pymdownx.betterem
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.smartsymbols
+  - pymdownx.tilde
+
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex:  
+      generic: true
+  - toc:
+      permalink: true # 固定标题位置为当前位置
+      # baselevel: 2
+      # toc_depth: 3  # 控制标题层级深度
+  - pymdownx.highlight: # 代码块高亮
+      anchor_linenums: true
+      linenums: true # 显示行号
+      auto_title: true # 显示编程语言名称
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - 首页: index.md
+  - 快速开始:
+    - 下载安装: guide/installation.md
+    - 基础使用: guide/basic-usage.md
+  - 功能介绍:
+    - 核心功能: features/core-features.md
+    - 快捷键设置: features/hotkeys.md
+  - 技术文档:
+    - 架构设计: technical/architecture.md
+  - 常见问题:
+    - FAQ: help/faq.md
+  - 关于:
+    - 更新日志: about/changelog.md
+    - 联系我们: about/contact.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Wcowin/OneClip
+      name: GitHub
+    - icon: fontawesome/solid/envelope
+      link: mailto:vip@oneclip.cloud
+      name: 邮件联系
+    - icon: fontawesome/solid/globe
+      link: https://oneclip.cloud
+      name: 官方网站
+    - icon: fontawesome/brands/qq
+      link: https://qm.qq.com/q/ckSQ6MXgLm
+      name: QQ群
+
+plugins:
+  - search:
+      lang: zh
