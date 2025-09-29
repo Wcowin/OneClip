@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://example.com/</loc>
-         <lastmod>2025-08-19</lastmod>
+         <loc>http://wcowin.work/OneClip/</loc>
+         <lastmod>2025-09-29</lastmod>
+    </url>
+    <url>
+         <loc>http://wcowin.work/OneClip/about/changelog/</loc>
+         <lastmod>2025-09-29</lastmod>
+    </url>
+    <url>
+         <loc>http://wcowin.work/OneClip/about/contact/</loc>
+         <lastmod>2025-09-29</lastmod>
+    </url>
+    <url>
+         <loc>http://wcowin.work/OneClip/features/core-features/</loc>
+         <lastmod>2025-09-29</lastmod>
+    </url>
+    <url>
+         <loc>http://wcowin.work/OneClip/features/hotkeys/</loc>
+         <lastmod>2025-09-29</lastmod>
+    </url>
+    <url>
+         <loc>http://wcowin.work/OneClip/guide/basic-usage/</loc>
+         <lastmod>2025-09-29</lastmod>
+    </url>
+    <url>
+         <loc>http://wcowin.work/OneClip/guide/installation/</loc>
+         <lastmod>2025-09-29</lastmod>
+    </url>
+    <url>
+         <loc>http://wcowin.work/OneClip/help/faq/</loc>
+         <lastmod>2025-09-29</lastmod>
+    </url>
+    <url>
+         <loc>http://wcowin.work/OneClip/technical/architecture/</loc>
+         <lastmod>2025-09-29</lastmod>
     </url>
 </urlset>

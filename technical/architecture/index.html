@@ -6,32 +6,34 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="OneClip macOS 剪贴板管理工具技术文档">
+        <meta name="description" content="OneClip 文档站点">
       
       
         <meta name="author" content="OneClip">
       
       
-        <link rel="canonical" href="http://wcowin.work/OneClip/">
+        <link rel="canonical" href="http://wcowin.work/OneClip/technical/architecture/">
       
       
+        <link rel="prev" href="../../features/hotkeys/">
       
-        <link rel="next" href="guide/installation/">
+      
+        <link rel="next" href="../../help/faq/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>OneClip 技术文档 - OneClip</title>
+        <title>架构设计 - OneClip</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,7 +52,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#oneclip" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -90,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="." title="OneClip" class="md-header__button md-logo" aria-label="OneClip" data-md-component="logo">
+    <a href="../.." title="OneClip" class="md-header__button md-logo" aria-label="OneClip" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              OneClip 技术文档
+              架构设计
             
           </span>
         </div>
@@ -236,11 +238,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -261,7 +261,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="guide/installation/" class="md-tabs__link">
+        <a href="../../guide/installation/" class="md-tabs__link">
           
   
   
@@ -283,7 +283,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="features/core-features/" class="md-tabs__link">
+        <a href="../../features/core-features/" class="md-tabs__link">
           
   
   
@@ -301,11 +301,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="technical/architecture/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -327,7 +329,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="help/faq/" class="md-tabs__link">
+        <a href="../../help/faq/" class="md-tabs__link">
           
   
   
@@ -349,7 +351,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="about/changelog/" class="md-tabs__link">
+        <a href="../../about/changelog/" class="md-tabs__link">
           
   
   
@@ -385,7 +387,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="OneClip" class="md-nav__button md-logo" aria-label="OneClip" data-md-component="logo">
+    <a href="../.." title="OneClip" class="md-nav__button md-logo" aria-label="OneClip" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -412,32 +414,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    首页
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -448,212 +428,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      核心功能
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      系统要求
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      安装方式
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="安装方式">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#homebrew" class="md-nav__link">
-    <span class="md-ellipsis">
-      Homebrew 安装（推荐）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      手动安装
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      技术架构
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="技术架构">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      核心技术栈
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      主要组件
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      权限要求
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      基础使用
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="基础使用">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      快捷键
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      基本操作
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      主要设置
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      性能特点
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      常见问题
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="常见问题">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    <span class="md-ellipsis">
-      快捷键不工作？
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    <span class="md-ellipsis">
-      状态栏图标消失？
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    <span class="md-ellipsis">
-      内存占用过高？
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -691,7 +465,7 @@
   
   
   
-    <a href="guide/installation/" class="md-nav__link">
+    <a href="../../guide/installation/" class="md-nav__link">
       
   
   
@@ -745,7 +519,7 @@
   
   
   
-    <a href="features/core-features/" class="md-nav__link">
+    <a href="../../features/core-features/" class="md-nav__link">
       
   
   
@@ -770,6 +544,8 @@
       
   
   
+    
+  
   
   
     
@@ -781,24 +557,25 @@
     
     
       
+        
+        
+      
       
         
       
     
     
       
-        
-        
-      
     
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
-  
-  
-  
-    <a href="technical/architecture/" class="md-nav__link">
-      
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
   
   
   <span class="md-ellipsis">
@@ -807,12 +584,299 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            技术文档
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
       
-        <span class="md-nav__icon md-icon"></span>
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-    </a>
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    架构设计
+    
+  </span>
   
 
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    架构设计
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      整体架构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="整体架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心层次
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      设计原则
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心组件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="核心组件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clipboardmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      ClipboardManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hotkeymanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      HotkeyManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#settingsmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      SettingsManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windowmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      WindowManager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据架构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="数据架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Data 模型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据存储
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      搜索功能
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="搜索功能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      搜索实现
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      安全和隐私
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安全和隐私">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据安全
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      隐私保护
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能优化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="性能优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存管理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      异步处理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -849,7 +913,7 @@
   
   
   
-    <a href="help/faq/" class="md-nav__link">
+    <a href="../../help/faq/" class="md-nav__link">
       
   
   
@@ -903,7 +967,7 @@
   
   
   
-    <a href="about/changelog/" class="md-nav__link">
+    <a href="../../about/changelog/" class="md-nav__link">
       
   
   
@@ -951,37 +1015,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      核心功能
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      系统要求
+      整体架构
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      安装方式
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="安装方式">
+    <nav class="md-nav" aria-label="整体架构">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#homebrew" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Homebrew 安装（推荐）
+      核心层次
     </span>
   </a>
   
@@ -990,7 +1036,7 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      手动安装
+      设计原则
     </span>
   </a>
   
@@ -1004,35 +1050,44 @@
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      技术架构
+      核心组件
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="技术架构">
+    <nav class="md-nav" aria-label="核心组件">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#clipboardmanager" class="md-nav__link">
     <span class="md-ellipsis">
-      核心技术栈
+      ClipboardManager
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#hotkeymanager" class="md-nav__link">
     <span class="md-ellipsis">
-      主要组件
+      HotkeyManager
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#settingsmanager" class="md-nav__link">
     <span class="md-ellipsis">
-      权限要求
+      SettingsManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windowmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      WindowManager
     </span>
   </a>
   
@@ -1044,28 +1099,76 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
-      基础使用
+      数据架构
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="基础使用">
+    <nav class="md-nav" aria-label="数据架构">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#core-data" class="md-nav__link">
     <span class="md-ellipsis">
-      快捷键
+      Core Data 模型
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据存储
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      搜索功能
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="搜索功能">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      搜索实现
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      安全和隐私
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安全和隐私">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
-      基本操作
+      数据安全
     </span>
   </a>
   
@@ -1074,7 +1177,7 @@
           <li class="md-nav__item">
   <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
-      主要设置
+      隐私保护
     </span>
   </a>
   
@@ -1088,44 +1191,26 @@
         <li class="md-nav__item">
   <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
-      性能特点
+      性能优化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="性能优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存管理
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      常见问题
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="常见问题">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
-      快捷键不工作？
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    <span class="md-ellipsis">
-      状态栏图标消失？
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    <span class="md-ellipsis">
-      内存占用过高？
+      异步处理
     </span>
   </a>
   
@@ -1133,6 +1218,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
   
 </li>
       
@@ -1155,117 +1249,164 @@
   
 
 
-<h1 id="oneclip">OneClip<a class="headerlink" href="#oneclip" title="Permanent link">&para;</a></h1>
-<p>OneClip 是一款<strong>专为 macOS 打造</strong>的剪贴板管理工具，采用 <strong>SwiftUI 原生技术开发</strong>，提供高效的剪贴板历史管理功能。</p>
-<div align="center">
-<!-- **一个简单专业的macOS 剪贴板管理工具** -->
-<p><img alt="OneClip Logo" src="https://picx.zhimg.com/80/v2-34b000e56d1af7ef61092dcd031dfd9a_1440w.webp?source=2c26e567" /></p>
-<p>🚀 高效 · 🎨 现代 · ⚡ 流畅 · 🔒 安全</p>
-<p><a href="https://github.com/Wcowin/OneClip/releases"><img alt="Release" src="https://img.shields.io/github/v/release/Wcowin/OneClip?style=for-the-badge&amp;color=3b82f6" /></a>
-<img alt="Homebrew" src="https://img.shields.io/badge/Homebrew-Available-orange?style=for-the-badge&amp;logo=homebrew&amp;logoColor=white" />
-<img alt="macOS 12+" src="https://img.shields.io/badge/macOS-12%2B-0f172a?style=for-the-badge&amp;logo=apple&amp;logoColor=white" />
-<img alt="Swift 5.9+" src="https://img.shields.io/badge/Swift-5.9%2B-F05138?style=for-the-badge&amp;logo=swift&amp;logoColor=white" /></p>
-</div>
-<h2 id="_1">核心功能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>剪贴板历史记录</strong>：自动保存复制的内容，支持文本、图片、文件等多种格式</li>
-<li><strong>快速搜索</strong>：支持关键词搜索历史记录</li>
-<li><strong>全局快捷键</strong>：<code>Cmd+Option+V</code> 呼出主界面，<code>Cmd+Option+R</code> 呼出快捷回复</li>
-<li><strong>菜单栏集成</strong>：在菜单栏显示最近的剪贴板内容</li>
-<li><strong>快捷回复</strong>：预设常用文本，快速输入</li>
-<li><strong>多种界面模式</strong>：支持丰富模式和极简模式切换</li>
-</ul>
-<p><img alt="OneClip界面预览" src="https://s1.imagehub.cc/images/2025/09/26/60252002e8ba561041062e3865e60f9a.jpg" /></p>
-<h2 id="_2">系统要求<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ul>
-<li>macOS 12.0 及以上</li>
-<li>推荐使用 Apple Silicon（M 系列芯片）</li>
-</ul>
-<h2 id="_3">安装方式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="homebrew">Homebrew 安装（推荐）<a class="headerlink" href="#homebrew" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>brew<span class="w"> </span>install<span class="w"> </span>--cask<span class="w"> </span>wcowin/oneclip/oneclip
+<h1 id="_1">架构设计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>OneClip 采用简洁的 MVVM 架构设计，基于 SwiftUI 构建，确保高性能和良好的用户体验。</p>
+<h2 id="_2">整体架构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">核心层次<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>┌─────────────────────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>│      SwiftUI Views          │
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>├─────────────────────────────┤
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>│    Manager Classes          │
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>│ (ClipboardManager, etc.)    │
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>├─────────────────────────────┤
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>│  Data Layer (Core Data)     │
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>├─────────────────────────────┤
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>│   macOS System APIs        │
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>└─────────────────────────────┘
 </code></pre></div></td></tr></table></div>
-<h3 id="_4">手动安装<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ol>
-<li>从 <a href="https://github.com/Wcowin/OneClip/releases">GitHub Releases</a> 下载最新版本</li>
-<li>将 <code>OneClip.app</code> 拖入 <code>Applications</code> 文件夹</li>
-<li>如提示安全警告，在终端执行：
-   <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>xattr<span class="w"> </span>-rd<span class="w"> </span>com.apple.quarantine<span class="w"> </span>/Applications/OneClip.app
-</code></pre></div></td></tr></table></div></li>
-</ol>
-<h2 id="_5">技术架构<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h3 id="_6">核心技术栈<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_4">设计原则<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Swift + SwiftUI</li>
-<li>Core Data（数据持久化）</li>
-<li>Carbon Framework（全局热键）</li>
-<li>Accessibility API（系统权限）</li>
+<li><strong>MVVM 模式</strong>: View + ObservableObject 管理器</li>
+<li><strong>单一职责</strong>: 每个管理器负责特定功能</li>
+<li><strong>数据驱动</strong>: 使用 Core Data 进行数据持久化</li>
 </ul>
-<h3 id="_7">主要组件<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h2 id="_5">核心组件<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="clipboardmanager">ClipboardManager<a class="headerlink" href="#clipboardmanager" title="Permanent link">&para;</a></h3>
+<p>负责剪贴板监控和历史记录管理。</p>
+<p><strong>主要功能：</strong></p>
 <ul>
-<li><strong>ClipboardManager</strong>: 剪贴板监控和数据管理</li>
-<li><strong>HotkeyManager</strong>: 全局快捷键处理</li>
-<li><strong>WindowManager</strong>: 窗口状态控制</li>
-<li><strong>SettingsManager</strong>: 用户设置管理</li>
+<li>监控系统剪贴板变化</li>
+<li>保存和管理历史记录</li>
+<li>提供搜索和筛选功能</li>
+<li>处理不同类型的内容（文本、图片、文件等）</li>
 </ul>
-<h3 id="_8">权限要求<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>应用需要以下系统权限：</p>
-<ol>
-<li><strong>辅助功能权限</strong>（必需）</li>
-<li>用于全局快捷键功能</li>
-<li>
-<p>在系统设置 → 隐私与安全性 → 辅助功能中添加 OneClip</p>
-</li>
-<li>
-<p><strong>完全磁盘访问权限</strong>（可选）</p>
-</li>
-<li>用于文件类型内容的处理</li>
-</ol>
-<h2 id="_9">基础使用<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<h3 id="_10">快捷键<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p><strong>实现方式：</strong></p>
 <ul>
-<li><strong>主界面</strong>: <code>Cmd+Option+V</code></li>
-<li><strong>快捷回复</strong>: <code>Cmd+Option+R</code></li>
-<li><strong>菜单栏</strong>: 点击状态栏图标</li>
+<li>使用 NSPasteboard 监控剪贴板</li>
+<li>定时器轮询机制</li>
+<li>多线程处理避免阻塞UI</li>
 </ul>
-<h3 id="_11">基本操作<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
-<ol>
-<li>复制任何内容，自动保存到历史记录</li>
-<li>使用快捷键打开主界面浏览历史</li>
-<li>点击任意项目即可粘贴到当前位置</li>
-<li>支持搜索功能快速定位内容</li>
-</ol>
-<h3 id="_12">主要设置<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h3 id="hotkeymanager">HotkeyManager<a class="headerlink" href="#hotkeymanager" title="Permanent link">&para;</a></h3>
+<p>处理全局快捷键功能。</p>
+<p><strong>主要功能：</strong></p>
 <ul>
-<li><strong>历史记录数量</strong>: 可调整最大保存条目数</li>
-<li><strong>界面模式</strong>: 丰富模式/极简模式切换</li>
-<li><strong>Dock 图标</strong>: 可选择显示或隐藏</li>
-<li><strong>开机启动</strong>: 支持自动启动</li>
+<li>注册和管理全局快捷键</li>
+<li>处理快捷键事件回调</li>
+<li>支持自定义快捷键组合</li>
 </ul>
-<h2 id="_13">性能特点<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<p><strong>实现方式：</strong></p>
 <ul>
-<li>内存占用：约120MB</li>
-<li>CPU使用率：空闲时 &lt; 1%</li>
-<li>启动时间：&lt; 1秒</li>
-<li>快捷键响应：&lt; 100ms</li>
+<li>基于 Carbon 框架 API</li>
+<li>事件驱动机制</li>
 </ul>
-<h2 id="_14">常见问题<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h2>
-<h3 id="_15">快捷键不工作？<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<p>请确保已授予辅助功能权限，并重启应用。</p>
-<h3 id="_16">状态栏图标消失？<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
-<p>重启应用或检查系统状态栏设置。</p>
-<h3 id="_17">内存占用过高？<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
-<p>可在设置中调整历史记录数量限制。</p>
-<p>需要帮助？查看 <a href="help/faq/">常见问题</a> 或 <a href="about/contact/">联系我们</a>。</p>
+<h3 id="settingsmanager">SettingsManager<a class="headerlink" href="#settingsmanager" title="Permanent link">&para;</a></h3>
+<p>管理应用设置和配置。</p>
+<p><strong>主要功能：</strong></p>
+<ul>
+<li>保存和读取用户设置</li>
+<li>设置持久化存储</li>
+<li>设置变更通知</li>
+</ul>
+<p><strong>实现方式：</strong></p>
+<ul>
+<li>使用 UserDefaults 存储设置</li>
+<li>ObservableObject 实现响应式更新</li>
+</ul>
+<h3 id="windowmanager">WindowManager<a class="headerlink" href="#windowmanager" title="Permanent link">&para;</a></h3>
+<p>控制窗口显示和状态。</p>
+<p><strong>主要功能：</strong></p>
+<ul>
+<li>管理主窗口显示/隐藏</li>
+<li>控制窗口位置和大小</li>
+<li>处理多窗口协调</li>
+</ul>
+<p><strong>实现方式：</strong></p>
+<ul>
+<li>基于 NSWindow API</li>
+<li>SwiftUI 窗口管理</li>
+</ul>
+<h2 id="_6">数据架构<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="core-data">Core Data 模型<a class="headerlink" href="#core-data" title="Permanent link">&para;</a></h3>
+<p>OneClip 使用 Core Data 进行数据持久化，主要实体包括：</p>
+<p><strong>ClipboardItem（剪贴板项目）</strong></p>
+<ul>
+<li>id: 唯一标识符</li>
+<li>content: 内容数据</li>
+<li>type: 内容类型（文本、图片、文件等）</li>
+<li>createdAt: 创建时间</li>
+<li>isFavorite: 是否收藏</li>
+</ul>
+<p><strong>QuickReply（快捷回复）</strong></p>
+<ul>
+<li>id: 唯一标识符</li>
+<li>title: 标题</li>
+<li>content: 内容</li>
+<li>category: 分类</li>
+</ul>
+<h3 id="_7">数据存储<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Core Data</strong>: 主要数据存储</li>
+<li><strong>UserDefaults</strong>: 应用设置</li>
+<li><strong>文件系统</strong>: 大型文件和图片缓存</li>
+</ul>
+<h2 id="_8">搜索功能<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="_9">搜索实现<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>OneClip 提供简单高效的搜索功能：</p>
+<p><strong>搜索方式：</strong></p>
+<ul>
+<li>关键词匹配</li>
+<li>内容类型筛选</li>
+<li>时间范围筛选</li>
+</ul>
+<p><strong>实现特点：</strong></p>
+<ul>
+<li>实时搜索</li>
+<li>支持中英文</li>
+<li>模糊匹配</li>
+</ul>
+<h2 id="_10">安全和隐私<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="_11">数据安全<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>本地存储</strong>: 所有数据仅存储在本地设备</li>
+<li><strong>权限控制</strong>: 需要用户授权辅助功能权限</li>
+<li><strong>数据清理</strong>: 支持手动和自动清理历史记录</li>
+</ul>
+<h3 id="_12">隐私保护<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>敏感内容过滤</strong>: 可设置过滤规则避免记录敏感信息</li>
+<li><strong>应用排除</strong>: 可排除特定应用的内容记录</li>
+<li><strong>用户控制</strong>: 用户完全控制数据的收集和使用</li>
+</ul>
+<h2 id="_13">性能优化<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<h3 id="_14">内存管理<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>懒加载</strong>: 按需加载大型内容</li>
+<li><strong>自动清理</strong>: 定期清理无用对象和缓存</li>
+<li><strong>内存监控</strong>: 响应系统内存警告</li>
+</ul>
+<h3 id="_15">异步处理<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>后台处理</strong>: 耗时操作在后台线程执行</li>
+<li><strong>UI响应</strong>: 保持界面流畅不阻塞</li>
+<li><strong>任务队列</strong>: 合理安排任务优先级</li>
+</ul>
+<h2 id="_16">总结<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p>OneClip 采用简洁实用的架构设计，专注于核心功能的实现，确保应用的稳定性和性能。通过合理的组件分工和数据管理，为用户提供高效的剪贴板管理体验。</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
@@ -1296,15 +1437,31 @@
       
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
+          
+          <a href="../../features/hotkeys/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 快捷键设置">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                快捷键设置
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="guide/installation/" class="md-footer__link md-footer__link--next" aria-label="下一页: 下载安装">
+          <a href="../../help/faq/" class="md-footer__link md-footer__link--next" aria-label="下一页: FAQ">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                下载安装
+                FAQ
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1381,10 +1538,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["announce.dismiss", "navigation.prune", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "toc.follow", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "navigation.prune", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "toc.follow", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
