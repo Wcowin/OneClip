@@ -6,9 +6,7 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/Wcowin/OneClip/releases">
     <img src="https://img.shields.io/github/v/release/Wcowin/OneClip?style=for-the-badge&color=3b82f6" alt="Release" />
-  </a>
   <!-- <a href="https://github.com/Wcowin/OneClip/releases">
     <img src="https://img.shields.io/github/downloads/Wcowin/OneClip/total?style=for-the-badge&color=22c55e" alt="Downloads" />
   </a> -->
