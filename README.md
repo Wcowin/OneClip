@@ -12,6 +12,7 @@
   <!-- <a href="https://github.com/Wcowin/OneClip/releases">
     <img src="https://img.shields.io/github/downloads/Wcowin/OneClip/total?style=for-the-badge&color=22c55e" alt="Downloads" />
   </a> -->
+  <img src="https://img.shields.io/badge/Homebrew-Available-orange?style=for-the-badge&logo=homebrew&logoColor=white" alt="Homebrew" />
   <img src="https://img.shields.io/badge/macOS-12%2B-0f172a?style=for-the-badge&logo=apple&logoColor=white" alt="macOS 12+" />
   <img src="https://img.shields.io/badge/Swift-5.9%2B-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="Swift 5.9+" />
 
@@ -37,6 +38,8 @@ OneClip 是一款专为 macOS 打造的专业级剪贴板管理工具。采用 1
 
 - **🔧 灵活控制**：Dock 图标、后台模式、主题适配均可配置
 
+- **🍺 便捷安装**：支持 Homebrew 一键安装和自动更新
+
 - **🎨 现代界面**：遵循 macOS 设计规范，毛玻璃与暗黑模式适配
 ![alt text](https://s1.imagehub.cc/images/2025/09/26/60252002e8ba561041062e3865e60f9a.jpg)
 
@@ -47,22 +50,48 @@ OneClip 是一款专为 macOS 打造的专业级剪贴板管理工具。采用 1
 - macOS 12.0 及以上
 - Apple Silicon（M 系列）优先适配
 
-### 安装步骤
+### 🍺 Homebrew 安装（推荐）
+
+如果你使用 Homebrew，可以通过以下命令快速安装：
+
+```bash
+# 一键安装（推荐）
+brew install --cask wcowin/oneclip/oneclip
+
+# 或者先添加 tap 再安装
+brew tap wcowin/oneclip
+brew install --cask oneclip
+```
+
+**更新应用：**
+```bash
+brew update && brew upgrade --cask oneclip
+```
+
+**卸载应用：**
+```bash
+brew uninstall --cask oneclip
+```
+
+### 手动安装
 
 1) 前往 [Releases](https://github.com/Wcowin/OneClip/releases)或者[123网盘](https://www.123912.com/s/bXcDVv-HauG3) 下载最新版本。
 2) 将 `OneClip.app` 拖入 `Applications`（应用程序）文件夹。
-3) 首次打开若提示“来自未知开发者/已被隔离”，在终端执行：
+3) 首次打开若提示"来自未知开发者/已被隔离"，在终端执行：
 
 ```bash
 sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 ```
-
+![image](https://s1.imagehub.cc/images/2025/09/29/4548190e0b2466dca56c3590ed15f880.png)
 ![image](https://s1.imagehub.cc/images/2025/09/15/25681c4221ff1bf29ee7c511e28e2654.png)
 
-> 如果遇到“无法打开/已损坏”，参考：
+4) 或者打开`系统设置-隐私与安全性`选择仍然打开
+![image](https://s1.imagehub.cc/images/2025/09/29/3ac62762dc125b32cba708eca3ba2144.png)
+
+> 如果还是提示“无法打开/已损坏”，请参考：
 > https://mp.weixin.qq.com/s/qjSx09tqNq1KfVug2WtQFg
 >
-> 想更省事？可使用[macOS 小助手](https://pan.quark.cn/s/f2302b6789b0)一键处理。
+> 想更省事？可使用[macOS 小助手](https://pan.quark.cn/s/f2302b6789b0)一键处理或者联系作者vip@oneclip.cloud
 
 
 
@@ -217,6 +246,6 @@ A: 可在设置中调整历史记录数量限制和检测间隔。
 <div align="center">
   <p><strong>OneClip
 
-  一个简单专业的剪贴板管理工具</strong></p>
+  一个简单专业的macOS 剪贴板管理工具</strong></p>
   <p>© 2025 Wcowin. All rights reserved.</p>
 </div>
