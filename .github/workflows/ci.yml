@@ -60,6 +60,15 @@ jobs:
           
       - name: Build documentation
         run: mkdocs build --verbose --clean --strict
+        
+      - name: Copy CNAME to site
+        run: |
+          if [ -f "CNAME" ]; then
+            cp CNAME site/
+            echo "✅ CNAME文件已复制到site目录"
+          else
+            echo "⚠️ 未找到CNAME文件"
+          fi
           
       - name: Setup Pages
         uses: actions/configure-pages@v3
