@@ -3,15 +3,21 @@ title: OneClip 技术文档
 description: OneClip macOS 剪贴板管理工具技术文档
 ---
 
+<!-- OneClip 公告栏 -->
+<div class="oneclip-announcement">
+  <div class="oneclip-announcement-content">
+    🎉 <strong>2025/12/31之前限时免费！</strong>
+    <a href="https://oneclip.cloud/" target="_blank">OneClip</a>
+    - 剪贴板管理工具，让你的工作效率翻倍！
+    <a href="https://oneclip.cloud/" target="_blank" class="oneclip-cta">立即体验 →</a>
+  </div>
+</div>
+
 # OneClip
 
 OneClip 是一款**专为 macOS 打造**的剪贴板管理工具，采用 **SwiftUI 原生技术开发**，提供高效的剪贴板历史管理功能。
 
 <div align="center" markdown="1">
-
-<!-- **一个简单专业的macOS 剪贴板管理工具** -->
-
-
 
 ![OneClip Logo](https://picx.zhimg.com/80/v2-34b000e56d1af7ef61092dcd031dfd9a_1440w.webp?source=2c26e567)
 
@@ -23,9 +29,6 @@ OneClip 是一款**专为 macOS 打造**的剪贴板管理工具，采用 **Swif
 ![Swift 5.9+](https://img.shields.io/badge/Swift-5.9%2B-F05138?style=for-the-badge&logo=swift&logoColor=white)
 
 </div>
-
-
-
 
 ## 核心功能
 
@@ -109,12 +112,11 @@ brew install --cask wcowin/oneclip/oneclip
 - **Dock 图标**: 可选择显示或隐藏
 - **开机启动**: 支持自动启动
 
-
 ## 性能特点
 
-- 内存占用：约120MB
-- CPU使用率：空闲时 < 1%
-- 启动时间：< 1秒
+- 内存占用：约 120MB
+- CPU 使用率：空闲时 < 1%
+- 启动时间：< 1 秒
 - 快捷键响应：< 100ms
 
 ## 常见问题
@@ -127,5 +129,17 @@ brew install --cask wcowin/oneclip/oneclip
 
 ### 内存占用过高？
 可在设置中调整历史记录数量限制。
+
+## 获取 OneClip
+
+### 免费试用
+
+[🚀 免费下载试用](https://github.com/Wcowin/OneClip/releases/download/1.2.6/OneClip-1.2.6-apple-silicon.dmg){ .md-button }
+
+### 解锁完整功能 🔥
+
+[购买许可证 - 仅¥29.90起](purchase/index.md){ .md-button .md-button--primary }
+
+---
 
 需要帮助？查看 [常见问题](help/faq.md) 或 [联系我们](about/contact.md)。

@@ -113,6 +113,7 @@ nav:
   - 功能介绍:
     - 核心功能: features/core-features.md
     - 快捷键设置: features/hotkeys.md
+  - 购买许可证: purchase/index.md
   - 技术文档:
     - 架构设计: technical/architecture.md
   - 常见问题:
@@ -139,3 +140,12 @@ extra:
 plugins:
   - search:
       lang: zh
+
+
+extra_css:
+  # - stylesheets/highlight-search.css
+  # - stylesheets/extra.css
+  - stylesheets/extra2.css
+  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/extra.css
+  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/customize.css  #按钮圆角化
+  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css #字体
