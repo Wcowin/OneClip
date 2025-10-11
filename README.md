@@ -1,3 +1,5 @@
+终生版0元优惠码：**FREE2024**   购买地址：https://oneclip.cloud/purchase/lifetime
+
 <div align="center">
   <img src="https://picx.zhimg.com/80/v2-34b000e56d1af7ef61092dcd031dfd9a_1440w.webp?source=2c26e567" alt="OneClip Logo" width="120" height="120">
   <h1>OneClip</h1>
