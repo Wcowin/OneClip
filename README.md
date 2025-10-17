@@ -25,7 +25,8 @@ OneClip 是一款专为 macOS 打造的专业级剪贴板管理工具。采用 1
 
 ### 🎯 核心能力
 
-- **📋 智能记录**：自动保存剪贴板历史，支持文本、图片、文件等格式
+- **📋 智能记录**：自动保存剪贴板历史，支持文本、图片、文件等格式  
+
 - **🔎 极速搜索**：随打随搜，多维筛选快速定位
 
 - **🗂️ 全格式支持**：图片/视频/音频/文档等，完整保留元数据
@@ -34,11 +35,15 @@ OneClip 是一款专为 macOS 打造的专业级剪贴板管理工具。采用 1
 
 - **🔄 快捷回复**: `Cmd+Option+R` 呼出快捷回复界面，支持自定义组合
 
+- **📥 栈粘贴板**：`Control+Shift+C`呼出栈粘贴板，方便管理。`Control+Shift+V`依次粘贴栈粘贴板内容。
+
 - **🎯 菜单栏集成**：一键粘贴最近内容，状态实时可见
+
+- **📦 拖拽容器**：`Control+Shift+D`呼出拖拽容器，方便管理
 
 - **🔧 灵活控制**：Dock 图标、后台模式、主题适配均可配置
 
-- **🍺 便捷安装**：支持 Homebrew 一键安装和自动更新
+- **🍺 便捷安装**：支持 Homebrew 一键安装和Sparkle自动更新
 
 - **🎨 现代界面**：遵循 macOS 设计规范，毛玻璃与暗黑模式适配
 ![alt text](https://s1.imagehub.cc/images/2025/09/26/60252002e8ba561041062e3865e60f9a.jpg)
@@ -99,28 +104,30 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 
 ### 核心技术栈
 
-- Swift 5.9+ 
-- SwiftUI 
-- Core Data 
-- Carbon（全局热键） 
-- Accessibility API 
+- Swift 5.9+
+- SwiftUI (100% 原生)
+- Core Data (数据持久化)
+- Carbon Framework (全局热键)
+- Accessibility API (权限管理)
+- Sparkle (自动更新)
 - Xcode 15+
 
 ### 架构设计
 
 ```
-            ┌─────────────────────────────────────────┐
-            │                OneClip                  │
-            ├─────────────────────────────────────────┤
-            │     SwiftUI Views & ViewModels          │
-            ├─────────────────────────────────────────┤
-            │  ClipboardManager | SettingsManager     │
-            │  HotkeyManager    |  WindowManager      │
-            ├─────────────────────────────────────────┤
-            │      Core Data | Carbon Framework       │
-            ├─────────────────────────────────────────┤
-            │           macOS System APIs             │
-            └─────────────────────────────────────────┘
+      ┌─────────────────────────────────────────┐
+      │              OneClip App                │
+      ├─────────────────────────────────────────┤
+      │     SwiftUI Views & ViewModels          │
+      ├─────────────────────────────────────────┤
+      │  ClipboardManager | SettingsManager     │
+      │  HotkeyManager    | WindowManager       │
+      │  FavoriteManager  | BackupManager       │
+      ├─────────────────────────────────────────┤
+      │    Core Data | Carbon | Accessibility   │
+      ├─────────────────────────────────────────┤
+      │         macOS System APIs               │
+      └─────────────────────────────────────────┘
 ```
 
 ### 核心组件
