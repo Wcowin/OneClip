@@ -3,27 +3,50 @@
 <div align="center">
   <img src="https://picx.zhimg.com/80/v2-34b000e56d1af7ef61092dcd031dfd9a_1440w.webp?source=2c26e567" alt="OneClip Logo" width="120" height="120">
   <h1>OneClip</h1>
-  <p><strong>一个简单专业的macOS 剪贴板管理工具</strong></p>
+  <p><strong>一个简单专业的 macOS 剪贴板管理工具</strong></p>
   <p>🚀 高效 · 🎨 现代 · ⚡ 流畅 · 🔒 安全</p>
 </div>
 
 <p align="center">
+  <a href="https://github.com/Wcowin/OneClip/releases">
     <img src="https://img.shields.io/github/v/release/Wcowin/OneClip?style=for-the-badge&color=3b82f6" alt="Release" />
-  <!-- <a href="https://github.com/Wcowin/OneClip/releases">
+  </a>
+  <a href="https://github.com/Wcowin/OneClip/releases">
     <img src="https://img.shields.io/github/downloads/Wcowin/OneClip/total?style=for-the-badge&color=22c55e" alt="Downloads" />
-  </a> -->
+  </a>
   <img src="https://img.shields.io/badge/Homebrew-Available-orange?style=for-the-badge&logo=homebrew&logoColor=white" alt="Homebrew" />
   <img src="https://img.shields.io/badge/macOS-12%2B-0f172a?style=for-the-badge&logo=apple&logoColor=white" alt="macOS 12+" />
   <img src="https://img.shields.io/badge/Swift-5.9%2B-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="Swift 5.9+" />
+  <a href="https://github.com/Wcowin/OneClip/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Wcowin/OneClip?style=for-the-badge&color=10b981" alt="License" />
+  </a>
+</p>
 
+<p align="center">
+  <a href="#概览">概览</a> •
+  <a href="#下载与安装">下载安装</a> •
+  <a href="#核心功能">核心功能</a> •
+  <a href="#使用指南">使用指南</a> •
+  <a href="#技术架构">技术架构</a> •
+  <a href="#常见问题">常见问题</a> •
+  <a href="#反馈与支持">反馈支持</a>
+</p>
 
 ---
 
 ## 概览
 
-OneClip 是一款专为 macOS 打造的专业级剪贴板管理工具。采用 100% SwiftUI 原生技术，实现更顺滑的动画、更自然的系统融合与更低的资源占用。
+OneClip 是一款专为 macOS 打造的**专业级剪贴板管理工具**。采用 **100% SwiftUI** 原生技术，实现更顺滑的动画、更自然的系统融合与更低的资源占用。
 
-### 🎯 核心能力
+> 💡 **为什么选择 OneClip？**
+> 
+> - ✅ **纯原生开发**：100% SwiftUI，无第三方框架依赖，性能卓越
+> - ✅ **独特创新**：栈粘贴板、拖拽容器等创新功能，提升工作效率
+> - ✅ **隐私安全**：数据完全本地存储，无任何网络上传
+> - ✅ **持续更新**：积极维护，快速响应用户反馈
+> - ✅ **免费试用**：提供完整功能试用，支持多种优惠码
+
+### 🎯 核心功能
 
 - **📋 智能记录**：自动保存剪贴板历史，支持文本、图片、文件等格式  
 
@@ -46,9 +69,27 @@ OneClip 是一款专为 macOS 打造的专业级剪贴板管理工具。采用 1
 - **🍺 便捷安装**：支持 Homebrew 一键安装和Sparkle自动更新
 
 - **🎨 现代界面**：遵循 macOS 设计规范，毛玻璃与暗黑模式适配
-![alt text](https://s1.imagehub.cc/images/2025/09/26/60252002e8ba561041062e3865e60f9a.jpg)
 
-## ⬇下载与安装（推荐先看）
+- **🤖 AI 集成**：支持本地 AI 模型（Ollama）和在线 AI 服务
+
+- **☁️ 云同步**：支持 Syncthing 多设备同步，数据安全可控
+
+![OneClip 主界面](https://s1.imagehub.cc/images/2025/09/26/60252002e8ba561041062e3865e60f9a.jpg)
+
+### ✨ 独特优势
+
+| 特性 | OneClip | 其他剪贴板工具 |
+|------|---------|---------------|
+| **技术栈** | 100% SwiftUI 原生 | 多为 Electron/Web |
+| **内存占用** | ~120MB | 通常 >300MB |
+| **启动速度** | < 1 秒 | 2-5 秒 |
+| **栈粘贴板** | ✅  | ❌ |
+| **拖拽容器** | ✅  | ❌ |
+| **AI 集成** | ✅ 本地+云端 | 部分支持 |
+| **数据安全** | 完全本地存储 | 部分需云端 |
+| **自动更新** | Sparkle + Homebrew | 不统一 |
+
+## ⬇️ 下载与安装
 
 ### 系统要求
 
@@ -78,29 +119,95 @@ brew update && brew upgrade --cask oneclip
 brew uninstall --cask oneclip
 ```
 
-### 手动安装
+### 📦 手动安装
 
-1) 前往 [Releases](https://github.com/Wcowin/OneClip/releases)或者[123网盘](https://www.123912.com/s/bXcDVv-HauG3) 下载最新版本。
-2) 将 `OneClip.app` 拖入 `Applications`（应用程序）文件夹。
-3) 首次打开若提示"来自未知开发者/已被隔离"，在终端执行：
+**方式一：GitHub Releases（推荐）**
+
+1. 前往 [Releases 页面](https://github.com/Wcowin/OneClip/releases) 下载最新版本
+2. 将 `OneClip.app` 拖入 `Applications`（应用程序）文件夹
+3. 首次打开若提示"来自未知开发者"，请按以下步骤处理：
+
+**方式二：网盘下载**
+
+- [123网盘下载](https://www.123912.com/s/bXcDVv-HauG3)
+
+---
+
+#### 🔓 首次打开若提示"来自未知开发者/已被隔离"如何解决
+
+![权限授予示例](https://s1.imagehub.cc/images/2025/09/29/4548190e0b2466dca56c3590ed15f880.png)
+**方法一：终端命令（推荐）**
 
 ```bash
+# 移除隔离属性
 sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 ```
-![image](https://s1.imagehub.cc/images/2025/09/29/4548190e0b2466dca56c3590ed15f880.png)
-![image](https://s1.imagehub.cc/images/2025/09/15/25681c4221ff1bf29ee7c511e28e2654.png)
-
-4) 或者打开`系统设置-隐私与安全性`选择仍然打开
-![image](https://s1.imagehub.cc/images/2025/09/29/3ac62762dc125b32cba708eca3ba2144.png)
-
-> 如果还是提示“无法打开/已损坏”，请参考：
-> https://mp.weixin.qq.com/s/qjSx09tqNq1KfVug2WtQFg
->
-> 想更省事？可使用[macOS 小助手](https://pan.quark.cn/s/f2302b6789b0)一键处理或者联系作者vip@oneclip.cloud
+![终端执行示例](https://s1.imagehub.cc/images/2025/09/15/25681c4221ff1bf29ee7c511e28e2654.png)
 
 
+**方法二：系统设置**
 
-## 🏗️ 技术与架构（简版）
+1. 打开 `系统设置` → `隐私与安全性`
+2. 找到 OneClip 相关提示
+3. 点击"仍然打开"
+
+![系统设置示例](https://s1.imagehub.cc/images/2025/09/29/3ac62762dc125b32cba708eca3ba2144.png)
+
+
+**方法三：一键工具**
+
+- 使用 [macOS 小助手](https://pan.quark.cn/s/f2302b6789b0) 一键处理
+
+> 💡 **仍有问题？**
+> - 详细教程：https://mp.weixin.qq.com/s/qjSx09tqNq1KfVug2WtQFg
+> - 联系作者：vip@oneclip.cloud
+
+
+
+## 🎬 功能演示
+
+> 📹 **视频教程**（即将上线）
+> - B 站：OneClip 完整使用教程
+> - YouTube：OneClip Full Tutorial
+
+### 核心功能展示
+
+#### 1️⃣ 主窗口 - 快速访问历史
+
+- 按 `Cmd+Option+V` 呼出主窗口
+- 支持列表/卡片双模式切换
+- 实时搜索、分类筛选
+- 点击即可粘贴到当前应用
+
+#### 2️⃣ 栈粘贴板 - 批量复制粘贴
+
+- `Control+Shift+C` 呼出栈面板
+- 将多个项目加入栈中
+- `Control+Shift+V` 依次粘贴
+- 适合表单填写、批量编辑场景
+
+#### 3️⃣ 快捷回复 - 常用文本模板
+
+- `Cmd+Option+R` 呼出快捷回复
+- 支持文本、图片、文件模板
+- 可设置独立快捷键
+- 支持导入/导出配置
+
+#### 4️⃣ 拖拽容器 - 文件临时存储
+
+- `Control+Shift+D` 呼出拖拽容器
+- 暂存文件、图片等内容
+- 支持拖出到其他应用
+- 适合文件整理、批量上传
+
+#### 5️⃣ 菜单栏 - 极简快捷访问
+
+- 点击菜单栏图标查看最近项目
+- 悬停预览内容详情
+- 支持拖拽操作
+- 快速粘贴常用内容
+
+## 🏗️ 技术与架构
 
 ### 核心技术栈
 
@@ -132,11 +239,24 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 
 ### 核心组件
 
-- **ClipboardManager**: 剪贴板监控和数据管理
-- **HotkeyManager**: 全局快捷键处理
-- **WindowManager**: 窗口状态和显示控制
-- **SettingsManager**: 用户偏好设置管理
-- **FeedbackManager**: 用户反馈和通知系统
+| 组件 | 职责 | 
+|------|------|
+| **ClipboardManager** | 剪贴板监控和数据管理 | 
+| **SettingsManager** | 用户偏好设置管理 | 
+| **WindowManager** | 窗口状态和显示控制 | 
+| **HotkeyManager** | 全局快捷键处理 | 
+| **ClipboardStore** | Core Data 数据持久化 | 
+| **AIService** | AI 功能集成 | 
+| **SyncthingManager** | 云同步管理 |
+
+### 性能优化策略
+
+- **批量更新机制**：减少频繁的视图重绘
+- **搜索防抖**：延迟触发更新，避免每个字符都重新搜索
+- **索引预计算**：按类型分组，快速筛选
+- **智能监控**：根据活动状态自适应调整监控频率
+- **懒加载缓存**：按需加载图片和文件内容
+- **内存压力管理**：自动释放不必要的缓存
 
 ### 权限配置
 
@@ -171,21 +291,51 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
    - 在主界面搜索和浏览历史记录
    - 点击任意项目即可粘贴
 
-### 高级功能
+### 🎓 高级功能（逐步完善）
 
-- **分类筛选**: 按文本、图片、文件等类型筛选
-- **搜索功能**: 快速查找历史内容
-- **批量操作**: 清空历史、删除特定项目
-- **设置自定义**: 调整快捷键、界面偏好等
+#### 📁 智能分类系统
+
+- **系统分类**：文本、图片、文件、链接、代码等自动识别
+- **自定义分类**：支持创建自定义分类规则
+- **正则表达式**：基于正则匹配的智能分类
+- **颜色标记**：不同分类使用不同颜色区分
+
+#### 🔍 强大搜索功能
+
+- **实时搜索**：随打随搜，即时显示结果
+- **多字段匹配**：支持内容、来源应用、分类等多维度搜索
+- **搜索高亮**：匹配内容自动高亮显示
+- **历史记录**：保存搜索历史，快速复用
+
+#### ⚙️ 丰富配置选项
+
+- **外观设置**：列表/卡片视图、暗黑模式、字体大小
+- **存储策略**：历史数量限制、自动清理、大文件处理
+- **隐私保护**：排除特定应用、敏感内容过滤
+- **快捷键自定义**：支持所有功能的快捷键配置
+
+#### 🔄 数据备份与同步
+
+- **本地备份**：自动/手动备份到本地
+- **云同步**：基于 Syncthing 的多设备同步
+- **导入导出**：支持配置和数据的导入导出
 
 ## ⚙️ 配置选项
 
-### 快捷键设置
+### ⌨️ 快捷键速查表
 
-- **主窗口呼出**: `Cmd+Option+V`
-- **快捷回复呼出**: `Cmd+Option+R`
-- **快速复制粘贴**: 系统默认 `Cmd+C/V`
-- **菜单显示**: 状态栏左键点击
+| 功能 | 默认快捷键 | 可自定义 | 说明 |
+|------|-----------|----------|------|
+| **主窗口呼出** | `Cmd+Option+V` | ✅ | 打开/关闭主界面 |
+| **快捷回复** | `Cmd+Option+R` | ✅ | 呼出快捷回复窗口 |
+| **栈面板呼出** | `Control+Shift+C` | ✅ | 打开栈粘贴板面板 |
+| **依次粘贴** | `Control+Shift+V` | ✅ | 从栈中依次粘贴 |
+| **拖拽容器** | `Control+Shift+D` | ✅ | 打开拖拽容器 |
+| **复制** | `Cmd+C` | ❌ | 系统默认复制 |
+| **粘贴** | `Cmd+V` | ❌ | 系统默认粘贴 |
+| **菜单显示** | 点击状态栏图标 | - | 快速查看最近项目 |
+
+> 💡 所有快捷键均可在设置中自定义，支持检测冲突
 
 ### 界面设置
 
@@ -217,42 +367,215 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 
 ## 🐛 常见问题（FAQ）
 
-### Q: 快捷键不工作？
-A: 请确保**已授予辅助功能权限**，并重启应用。
+<details>
+<summary><b>❓ 快捷键不工作？</b></summary>
 
-### Q: 无法复制文件？
-A: 请检查完全磁盘访问权限是否已启用。
+**原因**：未授予辅助功能权限
 
-### Q: 应用无法启动？
-A: 请确认系统版本为 macOS 12.0+，并检查应用完整性。
+**解决方案**：
+1. 打开 `系统设置` → `隐私与安全性` → `辅助功能`
+2. 找到 OneClip 并勾选启用
+3. 重启 OneClip 应用
 
-### Q: 状态栏图标消失？
-A: 重启应用或检查系统状态栏设置。
+如果仍然无效，请尝试：
+- 移除 OneClip 后重新添加
+- 检查是否与其他应用快捷键冲突
+- 在设置中重新设置快捷键
 
-### Q: 内存占用过高？
-A: 可在设置中调整历史记录数量限制和检测间隔。
+</details>
+
+<details>
+<summary><b>📁 无法复制文件？</b></summary>
+
+**原因**：未授予完全磁盘访问权限
+
+**解决方案**：
+1. 打开 `系统设置` → `隐私与安全性` → `完全磁盘访问`
+2. 添加 OneClip 并启用
+3. 重启应用
+
+</details>
+
+<details>
+<summary><b>🚫 应用无法启动或提示已损坏？</b></summary>
+
+**解决方案**：
+1. 检查系统版本是否为 macOS 12.0+
+2. 执行解除隔离命令：
+   ```bash
+   sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
+   ```
+3. 如果仍有问题，查看 [详细教程](https://mp.weixin.qq.com/s/qjSx09tqNq1KfVug2WtQFg)
+4. 使用 [macOS 小助手](https://pan.quark.cn/s/f2302b6789b0) 一键处理
+
+</details>
+
+<details>
+<summary><b>🔍 状态栏图标消失？</b></summary>
+
+**可能原因**：
+- 系统状态栏图标过多被隐藏
+- 应用崩溃或未正常启动
+
+**解决方案**：
+1. 重启 OneClip 应用
+2. 检查活动监视器中是否有 OneClip 进程
+3. 调整系统状态栏图标数量（减少其他图标）
+4. 在设置中重新启用状态栏图标显示
+
+</details>
+
+<details>
+<summary><b>💾 内存占用过高？</b></summary>
+
+**优化建议**：
+1. 在设置中调整历史记录数量限制（推荐 500-1000 条）
+2. 启用自动清理功能，定期清理过期内容
+3. 减少监控频率（在设置中调整检测间隔）
+4. 排除不需要监控的应用程序
+5. 定期手动清理不必要的历史记录
+
+</details>
+
+<details>
+<summary><b>🔄 如何在多台设备间同步？</b></summary>
+
+**使用 Syncthing 同步**：
+1. 在所有设备上安装 Syncthing
+2. 在 OneClip 设置中启用云同步功能
+3. 配置 Syncthing 同步文件夹
+4. 等待首次同步完成
+
+**注意事项**：
+- 确保所有设备网络连接正常
+- 首次同步可能需要较长时间
+- 建议在稳定网络环境下进行同步
+
+</details>
+
+<details>
+<summary><b>🤖 如何使用 AI 功能？</b></summary>
+
+**本地 AI（Ollama）**：
+1. 安装 [Ollama](https://ollama.ai/)
+2. 下载所需模型（如 `ollama pull llama2`）
+3. 在 OneClip 设置中配置 Ollama 连接
+
+**在线 AI 服务**：
+1. 在设置中选择 AI 服务提供商
+2. 输入 API Key
+3. 配置模型参数
+
+</details>
+
+<details>
+<summary><b>💰 如何获取许可证？</b></summary>
+
+**购买方式**：
+- 官网购买：https://oneclip.cloud/purchase/lifetime
+- 使用优惠码：`nodeloc2025` / `linuxdo` / `v2expro`
+
+**激活方式**：
+1. 打开 OneClip 设置 → 激活
+2. 输入许可证密钥
+3. 点击激活
+
+**试用政策**：
+- 免费试用完整功能
+- 试用期结束后仍可使用基础功能
+
+</details>
 
 
-## 👨‍💻 作者信息
+## 🗺️ 开发路线图
 
-- **开发者**: [Wcowin](https://wcowin.work/blog/Mac/sunhuai/)
+### ✅ 已完成
+
+- [x] 基础剪贴板管理功能
+- [x] 全局快捷键支持
+- [x] 多格式内容支持（文本/图片/文件）
+- [x] 栈粘贴板功能
+- [x] 快捷回复系统
+- [x] 拖拽容器
+- [x] AI 功能集成
+- [x] Syncthing 云同步
+- [x] Sparkle 自动更新
+- [x] Homebrew 支持
+
+### 🚧 进行中
+
+- [ ] 更多 AI 服务商集成
+- [ ] 性能持续优化
+- [ ] UI/UX 改进
+- [ ] 多语言支持完善
+
+### 📋 计划中
+
+- [ ] iCloud 同步支持
+- [ ] 浏览器扩展
+- [ ] 插件系统
+- [ ] 团队协作功能
+- [ ] iOS/iPadOS 客户端
+- [ ] 更多第三方服务集成
+
+> 💡 有功能建议？欢迎在 [GitHub Discussions](https://github.com/Wcowin/OneClip/discussions) 提出！
+
+## 👨‍💻 关于作者
+
+<div align="center">
+  <img src="https://s1.imagehub.cc/images/2025/07/25/27c0e105ea7efbed5d046d3a8c303e9d.jpeg" alt="Wcowin" width="80" height="80" style="border-radius: 50%;">
+  <h3>Wcowin</h3>
+  <p>
+    <a href="https://wcowin.work/blog/Mac/sunhuai/">📝 博客</a> •
+    <a href="https://github.com/Wcowin">🐙 GitHub</a> •
+    <a href="mailto:vip@oneclip.cloud">📧 邮箱</a>
+  </p>
+</div>
+
+<!--- **开发者**: [Wcowin](https://wcowin.work/blog/Mac/sunhuai/)
 - **官方网站**: [https://oneclip.cloud](https://oneclip.cloud/)
-- **联系邮箱**: [vip@oneclip.cloud](mailto:vip@oneclip.cloud)
+- **联系邮箱**: [vip@oneclip.cloud](mailto:vip@oneclip.cloud)-->
 
 ## 🤝 反馈与支持
 
 如果您在使用过程中遇到问题或有改进建议，欢迎通过以下方式联系：
-  
-- 📧 邮件: [vip@oneclip.cloud](mailto:vip@oneclip.cloud)
-- 🐛 问题反馈: [GitHub Issues](https://github.com/Wcowin/OneClip/issues)
-- 💡 功能建议: [GitHub Discussions](https://github.com/Wcowin/OneClip/discussions)
-- 👉🏻 QQ群：[1060157293](https://qm.qq.com/q/ckSQ6MXgLm)
+
+### 📮 联系方式
+
+| 方式 | 链接 | 说明 |
+|------|------|------|
+| 📧 **邮件** | [vip@oneclip.cloud](mailto:vip@oneclip.cloud) | 任何问题都欢迎发邮件 |
+| 🐛 **问题反馈** | [GitHub Issues](https://github.com/Wcowin/OneClip/issues) | Bug 报告和问题追踪 |
+| 💡 **功能建议** | [GitHub Discussions](https://github.com/Wcowin/OneClip/discussions) | 功能建议和讨论 |
+| 👥 **QQ 群** | [1060157293](https://qm.qq.com/q/ckSQ6MXgLm) | 用户交流群 |
+
+### ⭐ 支持项目
+
+如果 OneClip 对你有帮助，请考虑：
+
+- 🌟 在 GitHub 上给个 Star
+- 🔄 分享给你的朋友
+- 📝 写使用体验或评测
+- 💰 购买许可证支持开发
+- 🐛 报告 Bug 或提出改进建议
+
+
+## 🙏 致谢
+
+感谢以下开源项目和服务：
+
+- [SwiftUI](https://developer.apple.com/xcode/swiftui/) - Apple 的现代化 UI 框架
+- [Sparkle](https://sparkle-project.org/) - macOS 自动更新框架
+- [Syncthing](https://syncthing.net/) - 开源文件同步工具
+- [Ollama](https://ollama.ai/) - 本地 AI 模型运行环境
+
+感谢所有用户的支持和反馈！🎉
 
 ---
 
 <div align="center">
-  <p><strong>OneClip
-
-  一个简单专业的macOS 剪贴板管理工具</strong></p>
+  <p><strong>OneClip —— 简单专业的 macOS 剪贴板管理工具</strong></p>
+  <p>让复杂的事情变简单，让简单的事情变优雅</p>
+  <p>Made with ❤️ by <a href="https://github.com/Wcowin">Wcowin</a></p>
   <p>© 2025 Wcowin. All rights reserved.</p>
 </div>
