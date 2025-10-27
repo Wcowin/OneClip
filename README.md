@@ -137,9 +137,9 @@ brew uninstall --cask oneclip
 **方法一：终端命令（推荐）**
 
 ```bash
-# 移除隔离属性
 sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
-```
+```  
+
 ![终端执行示例](https://s1.imagehub.cc/images/2025/09/15/25681c4221ff1bf29ee7c511e28e2654.png)
 
 
