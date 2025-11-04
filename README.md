@@ -1,4 +1,5 @@
-终身版0元优惠码：**nodeloc2025** 或者**linuxdo**或者**v2expro**｜购买地址：https://oneclip.cloud/purchase/lifetime
+终身版0元优惠码：**nodeloc2025** 或者**linuxdo**或者**v2expro**｜地址：https://oneclip.cloud/purchase/lifetime
+免费版已经足够用！！！
 
 <div align="center">
   <img src="https://picx.zhimg.com/80/v2-34b000e56d1af7ef61092dcd031dfd9a_1440w.webp?source=2c26e567" alt="OneClip Logo" width="120" height="120">
@@ -19,15 +20,6 @@
   <img src="https://img.shields.io/badge/Swift-5.9%2B-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="Swift 5.9+" />
 </p>
 
-<p align="center">
-  <a href="#概览">概览</a> •
-  <a href="#下载与安装">下载安装</a> •
-  <a href="#核心功能">核心功能</a> •
-  <a href="#使用指南">使用指南</a> •
-  <a href="#技术架构">技术架构</a> •
-  <a href="#常见问题">常见问题</a> •
-  <a href="#反馈与支持">反馈支持</a>
-</p>
 
 ---
 
