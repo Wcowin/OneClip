@@ -1,6 +1,7 @@
 终身版0元优惠码：**nodeloc2025** 或者**linuxdo**或者**v2expro**｜地址：https://oneclip.cloud/purchase/lifetime  
 
 免费版已经足够用！！！
+![IMG_8205.jpeg](https://s2.loli.net/2025/11/08/ogDwexfyWG9142Y.jpg)
 
 <div align="center">
   <img src="https://picx.zhimg.com/80/v2-34b000e56d1af7ef61092dcd031dfd9a_1440w.webp?source=2c26e567" alt="OneClip Logo" width="120" height="120">
