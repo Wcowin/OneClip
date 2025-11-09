@@ -1,8 +1,10 @@
 终身版0元优惠码：**nodeloc2025** 或者**linuxdo**或者**v2expro**｜地址：https://oneclip.cloud/purchase/lifetime  
 
 免费版已经足够用！！！
-点击链接加入群聊【OneClip交流群】https://qun.qq.com/universal-share/share?ac=1&authKey=58fV3ZMVeh79Ttqn8f2z1Zx94mCdt5G%2BrEFFoW7cMKtM%2B4ZDOK39XxykxFPSx%2FBX&busi_data=eyJncm91cENvZGUiOiIxMDYwMTU3MjkzIiwidG9rZW4iOiJGa0JGOUJTNEl4YjJUV1FzbWNLVHh1emVERFVIS1hNeW1NUkQ3VGdtRWgyUnArVW0ycVRPOXU3RlgwWVhGY3dEIiwidWluIjoiMTEzNTgwMTgwNiJ9&data=5v-nOdQyEsTPF0SMnnk0eNjs2DkC4tJQAb4940wgwQ9DRooso3Aqiu9G29MFo-pI3cYUXxDx3XROJvA4tkvimQ&svctype=4&tempid=h5_group_info
-![IMG_8205.jpeg](https://s2.loli.net/2025/11/08/ogDwexfyWG9142Y.jpg)
+
+点击链接加入群聊[OneClip交流群](https://qm.qq.com/q/xiImGHVMcM)
+
+
 
 <div align="center">
   <img src="https://picx.zhimg.com/80/v2-34b000e56d1af7ef61092dcd031dfd9a_1440w.webp?source=2c26e567" alt="OneClip Logo" width="120" height="120">
@@ -540,7 +542,10 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 | 📧 **邮件** | [vip@oneclip.cloud](mailto:vip@oneclip.cloud) | 任何问题都欢迎发邮件 |
 | 🐛 **问题反馈** | [GitHub Issues](https://github.com/Wcowin/OneClip/issues) | Bug 报告和问题追踪 |
 | 💡 **功能建议** | [GitHub Discussions](https://github.com/Wcowin/OneClip/discussions) | 功能建议和讨论 |
-| 👥 **QQ 群** | [1060157293](https://qm.qq.com/q/ckSQ6MXgLm) | 用户交流群 |
+| 👥 **QQ 群** | [1060157293](https://qm.qq.com/q/xiImGHVMcM) | 用户交流群 |
+
+
+![IMG_8205.jpeg](https://s2.loli.net/2025/11/08/ogDwexfyWG9142Y.jpg)
 
 ### ⭐ 支持项目
 

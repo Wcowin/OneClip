@@ -1,0 +1,88 @@
+:root {
+  --admonition-border-left-width: 0.2rem;
+  --base-border-radius: 1rem;
+  /* --card-hover-shadow: 0 0 0.2rem #ffffff40; */
+}
+
+/* 卡片圆角与悬浮阴影 */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .md-button,
+.md-typeset table:not([class]) {
+  border-radius: var(--base-border-radius);
+}
+.md-typeset .grid.cards > ul > li:hover {
+  box-shadow: var(--card-hover-shadow);
+}
+
+/* 页脚社交图标高度 */
+.md-social__link svg {
+  max-height: 1rem;
+}
+
+/* 搜索框及下拉结果圆角 */
+.md-search__form {
+  border-radius: var(--base-border-radius);
+}
+
+[data-md-toggle="search"]:checked ~ .md-header .md-search__form {
+  border-top-right-radius: var(--base-border-radius);
+  border-top-left-radius: var(--base-border-radius);
+}
+
+[dir="ltr"] .md-search__output {
+  border-bottom-right-radius: var(--base-border-radius);
+  border-bottom-left-radius: var(--base-border-radius);
+}
+
+/* 可选：如需恢复代码块、警告框等样式，取消注释即可 */
+/*
+.highlight span.filename {
+  border-bottom: none;
+  border-radius: var(--base-border-radius);
+  display: inline;
+  font-family: var(--md-code-font-family);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.highlight span.filename + pre > code,
+.md-typeset pre > code {
+  border-radius: var(--base-border-radius);
+  border-top-left-radius: 0;
+}
+.md-typeset .admonition {
+  border-width: 0px;
+  border-left-width: var(--admonition-border-left-width);
+}
+[dir="ltr"] .md-typeset blockquote {
+  border-radius: 0.2rem;
+  border-left-width: var(--admonition-border-left-width);
+}
+*/
+
+/* 可选：博客相关样式，按需启用 */
+
+/* .md-post--excerpt {
+  background-color: rgba(68,138,255,.1);
+  box-shadow: 0 0 0 1rem rgba(68,138,255,.1);
+  border-radius: var(--base-border-radius);
+}
+.md-post--excerpt .md-post__header {
+  justify-content: left;
+}
+.md-post--excerpt .md-post__content > h2,
+.md-post__action {
+  text-align: left;
+} */
+
+
+/* 让所有admonition（包括!!! tip）圆角化且更自然 */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 1.5em;
+  box-shadow: 0 2px 12px 0 rgba(60,60,60,0.07);
+  transition: border-radius 0.4s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+  overflow: hidden;
+}
+
