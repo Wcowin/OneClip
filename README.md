@@ -1,4 +1,4 @@
-终身版0元优惠码：**nodeloc2025** 或者**linuxdo**或者**v2expro**｜地址：https://oneclip.cloud/purchase/lifetime  
+终身版0元优惠码：**v2expro**（最后50个后续不再发）｜地址：https://oneclip.cloud/purchase/lifetime  
 
 免费版已经足够用！！！
 
