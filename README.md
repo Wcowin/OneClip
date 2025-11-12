@@ -1,4 +1,5 @@
 终身版0元优惠码：**v2expro**（最后50个后续不再发）｜地址：https://oneclip.cloud/purchase/lifetime  
+终身版固定10¥减免优惠兑换码：OneClip2025 ｜地址：https://oneclip.cloud/purchase/lifetime  
 
 免费版已经足够用！！！
 
