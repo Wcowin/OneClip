@@ -1,6 +1,6 @@
 终身版0元优惠码：**v2expro**（最后50个后续不再发）｜地址：https://oneclip.cloud/purchase/lifetime  
 
-免费版已经足够用！！！
+> 相信我，免费版已经足够用！！！
 
 点击链接加入群聊[OneClip交流群](https://qm.qq.com/q/xiImGHVMcM)
 
@@ -67,6 +67,8 @@ OneClip 是一款专为 macOS 打造的**专业级剪贴板管理工具**。采�
 - **🤖 AI 集成**：支持本地 AI 模型（Ollama）和在线 AI 服务
 
 - **☁️ 云同步**：支持 Syncthing 多设备同步，数据安全可控
+
+- **👍 访达增强**：支持访达Cmd+X剪切文件，然后Cmd+V移动文件（别处单独付费的功能，OneClip免费开放给大家）
 
 ![OneClip 主界面](https://s1.imagehub.cc/images/2025/11/03/972b5640666e851cf4625f1b6d88f785.png)
 
