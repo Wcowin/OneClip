@@ -6,7 +6,7 @@ description: OneClip macOS 剪贴板管理工具技术文档
 <!-- OneClip 公告栏 -->
 <div class="oneclip-announcement">
   <div class="oneclip-announcement-content">
-    🎉 <strong>2025/12/31之前限时免费！</strong>
+    🎉 <strong>2025/12/31 之前限时免费！</strong>
     <a href="https://oneclip.cloud/" target="_blank">OneClip</a>
     - 剪贴板管理工具，让你的工作效率翻倍！
     <a href="https://oneclip.cloud/" target="_blank" class="oneclip-cta">立即体验 →</a>
@@ -15,7 +15,7 @@ description: OneClip macOS 剪贴板管理工具技术文档
 
 # OneClip
 
-OneClip 是一款**专为 macOS 打造**的剪贴板管理工具，采用 **SwiftUI 原生技术开发**，提供高效的剪贴板历史管理功能。
+OneClip 是一款 **专为 macOS 打造** 的剪贴板管理工具，采用 **SwiftUI 原生技术开发** 的高效剪贴板历史管理应用。
 
 <div align="center" markdown="1">
 
@@ -34,7 +34,7 @@ OneClip 是一款**专为 macOS 打造**的剪贴板管理工具，采用 **Swif
 
 - **剪贴板历史记录**：自动保存复制的内容，支持文本、图片、文件等多种格式
 - **快速搜索**：支持关键词搜索历史记录
-- **全局快捷键**：`Cmd+Option+V` 呼出主界面，`Cmd+Option+R` 呼出快捷回复
+- **全局快捷键**：`Cmd + Option + V` 呼出主界面，`Cmd + Option + R` 呼出快捷回复
 - **菜单栏集成**：在菜单栏显示最近的剪贴板内容
 - **快捷回复**：预设常用文本，快速输入
 - **多种界面模式**：支持丰富模式和极简模式切换
@@ -94,8 +94,8 @@ brew install --cask wcowin/oneclip/oneclip
 
 ### 快捷键
 
-- **主界面**: `Cmd+Option+V`
-- **快捷回复**: `Cmd+Option+R`
+- **主界面**: `Cmd + Option + V`
+- **快捷回复**: `Cmd + Option + R`
 - **菜单栏**: 点击状态栏图标
 
 ### 基本操作

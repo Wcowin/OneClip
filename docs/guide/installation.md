@@ -8,17 +8,6 @@
 
 ## 安装方式
 
-### Homebrew 安装（推荐）
-
-```bash
-brew install --cask wcowin/oneclip/oneclip
-```
-
-更新应用：
-```bash
-brew upgrade --cask oneclip
-```
-
 ### 手动安装
 
 1. 从 [GitHub Releases](https://github.com/Wcowin/OneClip/releases) 下载最新版本

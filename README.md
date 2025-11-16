@@ -93,30 +93,7 @@ OneClip 是一款专为 macOS 打造的**专业级剪贴板管理工具**。采�
 - macOS 12.0 及以上
 - Apple Silicon+intel支持
 
-### 🍺 Homebrew 安装（推荐）
-
-如果你使用 Homebrew，可以通过以下命令快速安装：
-
-```bash
-# 一键安装（推荐）
-brew install --cask wcowin/oneclip/oneclip
-
-# 或者先添加 tap 再安装
-brew tap wcowin/oneclip
-brew install --cask oneclip
-```
-
-**更新应用：**
-```bash
-brew update && brew upgrade --cask oneclip
-```
-
-**卸载应用：**
-```bash
-brew uninstall --cask oneclip
-```
-
-### 📦 手动安装
+### 📦 安装
 
 **方式一：GitHub Releases（推荐）**
 

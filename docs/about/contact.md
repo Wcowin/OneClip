@@ -51,7 +51,7 @@
 
 ### 👥 QQ 群
 
-**QQ群号：** [1060157293](https://qm.qq.com/q/ckSQ6MXgLm)
+**QQ 群号：** [1060157293](https://qm.qq.com/q/ckSQ6MXgLm)
 
 适用于：
 
