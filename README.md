@@ -1,17 +1,16 @@
-终身版0元优惠码：**FREE2025**（最后5个后续不再发）｜地址：https://oneclip.cloud/purchase/lifetime  
-终身版固定10¥减免优惠兑换码：OneClip2025 ｜地址：https://oneclip.cloud/purchase/lifetime  
+终身版0元优惠码：已经送出了将近几百个优惠码，顶不住了，后续随机发放｜地址：https://oneclip.cloud/purchase/lifetime  
+终身版固定10¥减免优惠兑换码：**OneClip2025** (最后30个)｜地址：https://oneclip.cloud/purchase/lifetime  
 
 > 相信我，免费版已经足够用！！！
 
 点击链接加入群聊[OneClip交流群](https://qm.qq.com/q/xiImGHVMcM)
 
 
-
 <div align="center">
   <img src="https://picx.zhimg.com/80/v2-34b000e56d1af7ef61092dcd031dfd9a_1440w.webp?source=2c26e567" alt="OneClip Logo" width="120" height="120">
   <h1>OneClip</h1>
   <p><strong>一个简单专业的 macOS 剪贴板管理工具</strong></p>
-  <p>🚀 高效 · 🎨 现代 · ⚡ 流畅 · 🔒 安全</p>
+  <p>🚀 高效 · 🎨 现代 · ⚡️ 流畅 · 🔒 安全</p>
 </div>
 
 <p align="center">
@@ -39,7 +38,7 @@ OneClip 是一款专为 macOS 打造的**专业级剪贴板管理工具**。采�
 > - ✅ **独特创新**：栈粘贴板、拖拽容器等创新功能，提升工作效率
 > - ✅ **隐私安全**：数据完全本地存储，无任何网络上传
 > - ✅ **持续更新**：积极维护，快速响应用户反馈
-> - ✅ **免费试用**：提供完整功能试用，支持多种优惠码
+> - ✅ **免费试用**：提供完整功能试用
 
 ### 🎯 核心功能
 
@@ -55,21 +54,23 @@ OneClip 是一款专为 macOS 打造的**专业级剪贴板管理工具**。采�
 
 - **📥 栈粘贴板**：`Control+Shift+C`呼出栈粘贴板，方便管理。`Control+Shift+V`依次粘贴栈粘贴板内容。
 
-- **🎯 菜单栏集成**：一键粘贴最近内容，状态实时可见
+- **🎯 菜单栏集成**：一键复制粘贴最近内容，状态实时可见
+
+- **🫵🏻 自定义存储位置**：支持自定义存储位置，方便管理
 
 - **📦 拖拽容器**：`Control+Shift+D`呼出拖拽容器，方便管理
 
 - **🔧 灵活控制**：Dock 图标、后台模式、主题适配均可配置
 
-- **🍺 便捷安装**：支持 Homebrew 一键安装和Sparkle自动更新
+- **🍺 便捷安装**：支持 Homebrew 一键安装(即将支持)和Sparkle自动更新
 
 - **🎨 现代界面**：遵循 macOS 设计规范，毛玻璃与暗黑模式适配
 
 - **🤖 AI 集成**：支持本地 AI 模型（Ollama）和在线 AI 服务
 
-- **☁️ 云同步**：支持 Syncthing 多设备同步，数据安全可控
+- **☁️ 云同步**：支持 Syncthing 和自定义iCloud等等方式的多设备同步，数据安全可控
 
-- **👍 访达增强**：支持访达Cmd+X剪切文件，然后Cmd+V移动文件（别处单独付费的功能，OneClip免费开放给大家）
+- **👍 访达增强**：支持访达Cmd+X剪切文件，然后Cmd+V移动文件（别处单独付费的功能，**OneClip免费开放给大家**）
 
 ![OneClip 主界面](https://s1.imagehub.cc/images/2025/11/03/972b5640666e851cf4625f1b6d88f785.png)
 
@@ -84,7 +85,7 @@ OneClip 是一款专为 macOS 打造的**专业级剪贴板管理工具**。采�
 | **拖拽容器** | ✅  | ❌ |
 | **AI 集成** | ✅ 本地+云端 | 部分支持 |
 | **数据安全** | 完全本地存储 | 部分需云端 |
-| **自动更新** | Sparkle + Homebrew | 不统一 |
+| **自动更新** | Sparkle | 不统一 |
 
 ## ⬇️ 下载与安装
 
