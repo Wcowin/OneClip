@@ -1,5 +1,9 @@
+2025/11/28 黑色星期五40%终身许可证减免优惠码：**BLACKFRIDAY2025** (50个)｜地址：https://oneclip.cloud/purchase/lifetime   
+ 
+
 终身版0元优惠码：已经送出了将近几百个优惠码，顶不住了，后续随机发放｜地址：https://oneclip.cloud/purchase/lifetime  
 终身版固定10¥减免优惠兑换码：**OneClip2025** (最后30个)｜地址：https://oneclip.cloud/purchase/lifetime  
+
 
 > 相信我，免费版已经足够用！！！ ｜我已经开源了早期第一版
 
