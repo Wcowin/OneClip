@@ -3,10 +3,11 @@
 
 终身版固定10¥减免优惠兑换码：**OneClip2025** (最后30个)｜地址：https://oneclip.cloud/purchase/lifetime    
 
-终身版0元优惠码：已经送出了将近几百个优惠码，顶不住了，后续随机发放｜地址：https://oneclip.cloud/purchase/lifetime   
+终身版0元优惠码：已经送出了将近几百个优惠码，感觉亏本太多 后续随机发放｜地址：https://oneclip.cloud/purchase/lifetime   
 
 
-> 免费版已经足够用！！！ ｜🌟我已经开源了早期第一版
+> 免费版已经足够用！！！   
+> 🌟我已经开源了早期第一版在[上方](https://github.com/Wcowin/OneClip/blob/main/OneClip%20%E6%97%A9%E6%9C%9F%E7%89%88%E6%9C%AC%E5%BC%80%E6%BA%90%EF%BD%9C%E5%8F%AF%E4%BB%A5%E8%87%AA%E8%A1%8C%E4%B8%8B%E8%BD%BD%E6%9E%84%E5%BB%BA.zip) 但是是基于文件系统的 目前OneClip已经采用数据库存储 完成技术迭代任务 早期版本对我没有价值了  不放心的可以自行构建  谢谢大家
 
 点击链接加入群聊[OneClip交流群](https://qm.qq.com/q/xiImGHVMcM)
 
