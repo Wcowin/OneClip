@@ -84,6 +84,8 @@ OneClip 是一款专为 macOS 打造的**专业级剪贴板管理工具**。采�
 
 
 ![OneClip 主界面](https://s1.imagehub.cc/images/2025/11/03/972b5640666e851cf4625f1b6d88f785.png)
+![iShot 2025 12 02 20.20.57](https://s1.imagehub.cc/images/2025/12/02/e667ddd51d493e551f73cc83fbdd7114.jpg)
+![image](https://s1.imagehub.cc/images/2025/12/02/ce24ca11047d3a4cbb2d9672786266eb.png)
 <!--![image](https://s1.imagehub.cc/images/2025/11/30/88aefc6139fdb49164a50d166ea83ed1.png)-->
 ![oQICFYhCBWZFfF5W8SfyuU6mEkboX9ND.webp](https://cdn.nodeimage.com/i/oQICFYhCBWZFfF5W8SfyuU6mEkboX9ND.webp)
 ### ✨ 独特优势
