@@ -62,13 +62,11 @@ OneClip 是一款专为 macOS 打造的**专业级剪贴板管理工具**。采�
 
 - **😼 文本/图片编辑**：支持文本/图片编辑。
 
-- **PCS 自定义存储位置**：支持自定义存储位置，方便管理。
-
 - **📥 栈粘贴板**：`Control+Shift+C`呼出栈粘贴板，方便管理。`Control+Shift+V`依次粘贴栈粘贴板内容。
 
 - **🎯 菜单栏集成**：一键复制粘贴最近内容，状态实时可见。左键复制，右键粘贴，所见即所得。
 
-- **🫵🏻 自定义存储位置**：支持自定义存储位置，方便管理
+- **💾 自定义存储位置**：支持自定义存储位置，方便管理
 
 - **📦 拖拽容器**：`Control+Shift+D`呼出拖拽容器，方便管理
 
@@ -203,7 +201,7 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 
 - Swift 5.9+
 - SwiftUI (100% 原生)
-- Core Data (数据持久化)
+- SQLite + WAL (数据持久化)
 - Carbon Framework (全局热键)
 - Accessibility API (权限管理)
 - Sparkle (自动更新)
@@ -235,7 +233,7 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 | **SettingsManager** | 用户偏好设置管理 | 
 | **WindowManager** | 窗口状态和显示控制 | 
 | **HotkeyManager** | 全局快捷键处理 | 
-| **ClipboardStore** | Core Data 数据持久化 | 
+| **ClipboardStore** | SQLite 数据持久化 | 
 | **AIService** | AI 功能集成 | 
 | **SyncthingManager** | 云同步管理 |
 
@@ -463,7 +461,7 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 
 **购买方式**：
 - 官网购买：https://oneclip.cloud/purchase/lifetime
-- 使用优惠码：`nodeloc2025` / `linuxdo` / `v2expro`
+- 使用优惠码：`OneClip2025`（10¥减免）
 
 **激活方式**：
 1. 打开 OneClip 设置 → 激活
@@ -488,9 +486,7 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 - [x] 快捷回复系统
 - [x] 拖拽容器
 - [x] AI 功能集成
-- [x] Syncthing 云同步
 - [x] Sparkle 自动更新
-- [x] Homebrew 支持
 - [x] 更多 AI 服务商集成
 
 ### 🚧 进行中
@@ -556,7 +552,7 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 
 感谢以下开源项目和服务：
 
-- [SwiftUI](https://developer.apple.com/xcode/swiftui/) - Apple 的现代化 UI 框架
+- SwiftUI - Apple 的现代化 UI 框架
 - [Sparkle](https://sparkle-project.org/) - macOS 自动更新框架
 - [Syncthing](https://syncthing.net/) - 开源文件同步工具
 - [Ollama](https://ollama.ai/) - 本地 AI 模型运行环境
