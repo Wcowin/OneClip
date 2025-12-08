@@ -59,7 +59,7 @@ OneClip 是一款专为 macOS 打造的**专业级剪贴板管理工具**。采�
 
 - **🎨 布局多样**：支持列表/卡片双模式切换。支持Paste同款布局。
 
-- **😼 文本/图片编辑**：支持文本/图片编辑。
+- **😼 文本/图片编辑**：支持文本/图片编辑。删除内容可撤销。置顶、收藏、删除样样有。
 
 - **📥 栈粘贴板**：`⌘+⇧+C`呼出栈粘贴板，方便管理。`⌘+V`依次粘贴栈粘贴板内容。
 
@@ -84,11 +84,14 @@ OneClip 是一款专为 macOS 打造的**专业级剪贴板管理工具**。采�
 - **👍 访达增强**：支持访达⌘+X剪切文件，然后⌘+V移动文件（别处单独付费的功能，**OneClip免费开放给大家**）
 
 
-![OneClip 主界面](https://s1.imagehub.cc/images/2025/11/03/972b5640666e851cf4625f1b6d88f785.png)
-![iShot 2025 12 02 20.20.57](https://s1.imagehub.cc/images/2025/12/02/e667ddd51d493e551f73cc83fbdd7114.jpg)
-![image](https://s1.imagehub.cc/images/2025/12/02/ce24ca11047d3a4cbb2d9672786266eb.png)
+<!-- ![OneClip 主界面](https://s1.imagehub.cc/images/2025/11/03/972b5640666e851cf4625f1b6d88f785.png) -->
+
+![screenshot_1.5x_postspark_2025-12-08_18-46-39.png](https://i.imgant.com/v2/RKyVhgF.png)  
+<!-- ![iShot 2025 12 02 20.20.57](https://image.66ghz.com/uploads/6936a835e8747_1765189685.jpeg) -->
+![screenshot_1.5x_postspark_2025-12-08_18-50-28.png](https://i.imgant.com/v2/Zn6arLh.png)
+<!-- ![image](https://s1.imagehub.cc/images/2025/12/02/ce24ca11047d3a4cbb2d9672786266eb.png) -->
 <!--![image](https://s1.imagehub.cc/images/2025/11/30/88aefc6139fdb49164a50d166ea83ed1.png)-->
-![oQICFYhCBWZFfF5W8SfyuU6mEkboX9ND.webp](https://cdn.nodeimage.com/i/oQICFYhCBWZFfF5W8SfyuU6mEkboX9ND.webp)
+<!-- ![oQICFYhCBWZFfF5W8SfyuU6mEkboX9ND.webp](https://cdn.nodeimage.com/i/oQICFYhCBWZFfF5W8SfyuU6mEkboX9ND.webp) -->
 
 <!-- ### ✨ 独特优势
 
