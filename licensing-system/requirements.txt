@@ -12,7 +12,7 @@ PyNaCl==1.5.0
 # 使用Python标准库smtplib，无需额外安装
 
 # 数据库
-mysql-connector-python==8.2.0
+mysql-connector-python==9.1.0
 
 # 其他工具
 requests==2.31.0
