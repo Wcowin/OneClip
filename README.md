@@ -5,8 +5,8 @@
 终身版0元优惠码：已经送出了将近几百个优惠码，后续随机发放｜地址：https://oneclip.cloud/purchase/lifetime   
 
  
-> 🌟我已经开源了早期第一版在[上方](https://github.com/Wcowin/OneClip/blob/main/OneClip%20%E6%97%A9%E6%9C%9F%E7%89%88%E6%9C%AC%E5%BC%80%E6%BA%90%EF%BD%9C%E5%8F%AF%E4%BB%A5%E8%87%AA%E8%A1%8C%E4%B8%8B%E8%BD%BD%E6%9E%84%E5%BB%BA.zip)   
-> 但是是基于文件系统的，目前OneClip已经采用数据库存储，完成技术迭代任务，早期版本对我没有价值了，不放心的可以自行构建，谢谢大家
+> 🌟 早期第一版源码已开源在 [src/](https://github.com/Wcowin/OneClip/tree/main/src) 目录，可自行下载构建   
+> 早期版本基于文件系统，目前 OneClip 已采用数据库存储，完成技术迭代。不放心的可以自行构建，谢谢大家
 
 点击链接加入群聊[OneClip交流群](https://qm.qq.com/q/xiImGHVMcM)
 
@@ -29,6 +29,9 @@
   <img src="https://img.shields.io/badge/macOS-12%2B-0f172a?style=for-the-badge&logo=apple&logoColor=white" alt="macOS 12+" />
   <img src="https://img.shields.io/badge/Swift-5.9%2B-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="Swift 5.9+" />
   <img src="https://img.shields.io/badge/Privacy-Local%20Storage-green?style=for-the-badge" alt="Privacy Local Storage" />
+  <a href="https://github.com/Wcowin/OneClip/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License" />
+  </a>
 
 </p>
 
@@ -361,8 +364,33 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 - **数据清理**: 定期清理过期内容
 - **文件处理**: 大文件存储策略
 
-<!-- 开发构建部分暂不对外开放，如需试用内部版本请联系作者。 -->
+## 🛠️ 源码构建（早期版本）
 
+我们开源了早期版本的源码，你可以自行下载构建：
+
+### 快速开始
+
+```bash
+# 克隆仓库
+git clone https://github.com/Wcowin/OneClip.git
+cd OneClip/src
+
+# 构建
+chmod +x build.sh
+./build.sh
+
+# 运行
+open dist/OneClip.app
+```
+
+### 系统要求
+
+- macOS 12.0+
+- Xcode 15.0+
+
+详细构建说明请查看 [src/README.md](src/README.md)
+
+> ⚠️ **注意**：开源的是早期版本（基于文件系统），采用 MIT 协议。当前正式版已采用数据库存储，功能更完善，为商业软件。
 
 ## 📊 性能与体验
 
