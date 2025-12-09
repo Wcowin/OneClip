@@ -4,7 +4,7 @@
 
 终身版0元优惠码：已经送出了将近几百个优惠码，后续随机发放｜地址：https://oneclip.cloud/purchase/lifetime   
 
- 
+> [!NOTE]
 > 🌟 早期第一版源码已开源在 [src/](https://github.com/Wcowin/OneClip/tree/main/src) 目录，可自行下载构建   
 > 早期版本基于文件系统，目前 OneClip 已采用数据库存储，完成技术迭代。不放心的可以自行构建，谢谢大家
 
