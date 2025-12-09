@@ -44,7 +44,7 @@ Carthage/Checkouts/
 
 # Distribution
 dist/
-
+licensing-system/
 # Environment
 .env
 .env.local
