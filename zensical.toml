@@ -5,8 +5,8 @@
 
 [project]
 # ===== 基本信息 =====
-site_name = "OneClip"
-site_url = "https://wcowin.work/OneClip/"
+site_name = "OneClip文档"
+site_url = "https://wcowin.github.io/OneClip/"
 site_description = "OneClip - 简单专业的 macOS 剪贴板管理工具"
 site_author = "Wcowin"
 copyright = "Copyright &copy; 2025 Wcowin"
@@ -23,7 +23,7 @@ edit_uri = "edit/main/docs"
 extra_css = [
     "stylesheets/extra2.css",
     "https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/extra.css",
-    "https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/customize.css",
+    # "https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/customize.css",
     "https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/stylesheets/ziti.css"
 ]
 

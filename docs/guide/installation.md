@@ -46,7 +46,7 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 3. 状态栏显示 OneClip 图标
 
 !!! tip "提示"
-    OneClip 是后台运行的应用，启动后会在状态栏显示图标。使用快捷键 `⌘ + Shift + V` 打开主界面。
+    OneClip 是后台运行的应用，启动后会在状态栏显示图标。使用快捷键 `⌘ + ⇧ + V` 打开主界面。
 
 ## 更新应用
 
