@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OneClip 订单完成确认页面，显示您的购买详情、激活码和许可证信息。支持订单查询、激活码复制、使用指南等功能，确保您顺利完成 Mac 剪贴板管理工具的购买和激活流程。" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>OneClip 订单完成</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: #3b82f6;
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .save-pdf-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .save-pdf-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .success-icon {
+            text-align: center;
+            font-size: 64px;
+            margin-bottom: 30px;
+        }
+        
+        /* 购买信息卡片 */
+        .purchase-info-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 32px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .purchase-info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+        }
+        
+        .purchase-info-card h2 {
+            color: #1e293b;
+            margin-bottom: 24px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+        }
+        
+        .purchase-info-card h2::before {
+            content: '🎉';
+            margin-right: 10px;
+            font-size: 28px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .info-item {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .info-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-item-label {
+            font-weight: 600;
+            color: #64748b;
+            margin-bottom: 8px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .info-item-value {
+            color: #1e293b;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        .info-item-value.highlight {
+            color: #3b82f6;
+            font-size: 20px;
+        }
+        
+        /* 激活码区域 */
+        .activation-section {
+            background: #f8f9fa;
+            border: 2px solid #667eea;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .activation-section::before {
+            content: '🔑';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            /* background: white; */
+            padding: 0 20px;
+            font-size: 24px;
+        }
+        
+        .activation-code {
+            font-family: 'Courier New', monospace;
+            font-size: 28px;
+            font-weight: bold;
+            color: #667eea;
+            background: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            border: 2px dashed #667eea;
+            margin: 20px 0;
+            letter-spacing: 3px;
+            word-break: break-all;
+        }
+        
+        .copy-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .copy-btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+        
+        .copy-btn.success {
+            background: #28a745;
+        }
+        
+        /* 邮件发送区域 */
+        .email-section {
+            background: #e8f4fd;
+            border-left: 4px solid #2196F3;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .email-section h3 {
+            color: #1976D2;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .email-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .email-action-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+        
+        .email-action-btn.primary {
+            background: #2196F3;
+            color: white;
+        }
+        
+        .email-action-btn.primary:hover:not(:disabled) {
+            background: #1976D2;
+            transform: translateY(-2px);
+        }
+        
+        .email-action-btn.primary:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .email-action-btn.secondary {
+            background: #f5f5f5;
+            color: #666;
+            border: 1px solid #ddd;
+        }
+        
+        .email-action-btn.secondary:hover {
+            background: #e0e0e0;
+            color: #333;
+        }
+        
+        .email-auto-status {
+            background: #e3f2fd;
+            border: 1px solid #2196F3;
+            color: #1976D2;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .email-preview {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .email-choice label:hover {
+            border-color: #2196F3;
+            background: #f8f9fa;
+        }
+        
+        .email-choice input[type="radio"] {
+            margin-right: 15px;
+            transform: scale(1.3);
+        }
+        
+        .email-choice input[type="radio"]:checked + .choice-content {
+            color: #1976D2;
+        }
+        
+        .choice-content {
+            flex: 1;
+        }
+        
+        .choice-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .choice-desc {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .email-status {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .email-status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .email-status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .email-status.pending {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        
+        /* 过期时间特殊显示 */
+        .expiry-warning {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.1);
+        }
+        
+        .expiry-warning h4 {
+            color: #92400e;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .expiry-warning p {
+            color: #92400e;
+            margin: 5px 0;
+        }
+        
+        .expiry-warning .expiry-date {
+            font-weight: bold;
+            font-size: 18px;
+            color: #dc2626;
+        }
+        
+        /* 软件下载区域 */
+        .download-section {
+            background: #e8f5e8;
+            border-left: 4px solid #28a745;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .download-section h3 {
+            color: #155724;
+            margin-bottom: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .download-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .download-card:hover {
+            border-color: #28a745;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.2);
+        }
+        
+        .download-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .download-card h4 {
+            color: #155724;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .download-card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .download-btn.primary {
+            background: #28a745;
+            color: white;
+        }
+        
+        .download-btn.primary:hover {
+            background: #218838;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+        }
+        
+        .download-btn.secondary {
+            background: #6c757d;
+            color: white;
+        }
+        
+        .download-btn.secondary:hover {
+            background: #5a6268;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+        }
+        
+        /* 激活步骤 */
+        .steps-section {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        /* 联系信息 */
+        .contact-section {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .contact-section h3 {
+            color: #1976D2;
+            margin-bottom: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .contact-icon {
+            font-size: 20px;
+        }
+        
+        .contact-label {
+            color: #555;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .contact-email {
+            color: #2196F3;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-email:hover {
+            color: #1976D2;
+            text-decoration: underline;
+        }
+        
+        .steps-section h3 {
+            color: #856404;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .steps-section ol {
+            margin-left: 20px;
+        }
+        
+        .steps-section li {
+            margin: 12px 0;
+            color: #856404;
+            font-size: 16px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+        }
+        
+        .back-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .back-btn:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .header, .content {
+                padding: 20px;
+            }
+            
+            .activation-code {
+                font-size: 20px;
+                padding: 15px 20px;
+                letter-spacing: 2px;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .info-item {
+                padding: 15px;
+            }
+            
+            .email-choice label {
+                padding: 15px;
+            }
+            
+            .download-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .download-card {
+                padding: 20px;
+            }
+            
+            .download-icon {
+                font-size: 36px;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+                padding: 20px 15px;
+            }
+            
+            .contact-label {
+                font-size: 13px;
+            }
+            
+            .contact-email {
+                font-size: 15px;
+            }
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .purchase-info-card,
+        .activation-section,
+        .email-section,
+        .download-section,
+        .contact-section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .activation-section {
+            animation-delay: 0.2s;
+        }
+        
+        .email-section {
+            animation-delay: 0.4s;
+        }
+        
+        .download-section {
+            animation-delay: 0.6s;
+        }
+        
+        .contact-section {
+            animation-delay: 0.8s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button class="save-pdf-btn" onclick="saveToPDF()" title="保存本页为PDF，方便保存激活码">
+                <span>📥</span>
+                <span>保存为PDF</span>
+            </button>
+            <h1>🎉 订单完成</h1>
+            <p>您的 OneClip 许可证已准备就绪</p>
+            <p>感谢您的购买，祝您使用愉快</p>
+        </div>
+        <div class="content">
+            <!-- <div class="success-icon">✅</div> -->
+            
+            <!-- 激活码区域 -->
+            <div class="activation-section">
+                <h2>您的激活码</h2>
+                <div class="activation-code" id="activationCode">保密</div>
+                <button class="copy-btn" onclick="copyActivationCode()">📋 复制激活码</button>
+            </div>
+            
+            <!-- 购买信息卡片 -->
+            <div class="purchase-info-card">
+                <h2>购买信息</h2>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-item-label">📧 邮箱地址</div>
+                        <div class="info-item-value" id="userEmail">vip@oneclip.cloud</div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-item-label">📦 购买类型</div>
+                        <div class="info-item-value highlight" id="purchaseType">月度版</div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-item-label">🖥️ 设备上限</div>
+                        <div class="info-item-value" id="deviceLimit">5台</div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-item-label">🆔 许可证ID</div>
+                        <div class="info-item-value" id="licenseId">LIC-123456</div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-item-label">📋 订单号</div>
+                        <div class="info-item-value" id="orderId">ORDER-123456</div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-item-label">💰 支付金额</div>
+                        <div class="info-item-value" id="paymentAmount">¥5.00</div>
+                    </div>
+                    
+                    <!-- <div class="info-item">
+                        <div class="info-item-label">📅 购买时间</div>
+                        <div class="info-item-value" id="purchaseTime">现在</div>
+                    </div> -->
+                </div>
+                
+                <!-- 过期时间警告（仅月付/年付显示） -->
+                <div class="expiry-warning" id="expiryWarning" style="display: none;">
+                    <h4>⏰ 重要提醒</h4>
+                    <p>您的许可证将在以下日期过期：</p>
+                    <p class="expiry-date" id="expiryDate">2025-10-06 12:00:00</p>
+                    <p>请在过期前续费以继续使用服务</p>
+                </div>
+            </div>
+            
+            <!-- 邮件发送区域 -->
+            <div class="email-section">
+                <h3>📧 激活码邮件</h3>
+                <p style="color: #666; margin-bottom: 20px; text-align: center;">我们会自动将激活码发送到您的邮箱，您也可以手动操作</p>
+                
+                <div id="emailStatus" class="email-status" style="display: block;">
+                    <div class="email-auto-status">
+                        ⏳ 正在自动发送激活码邮件到您的邮箱...
+                        <br><small style="color: #666;">通常在30秒内完成，请稍候</small>
+                    </div>
+                </div>
+                
+                <div class="email-actions" style="margin-top: 20px;">
+                    <button class="email-action-btn primary" onclick="resendEmail()" id="resendBtn" disabled>
+                        🔄 重新发送邮件
+                    </button>
+                    <button class="email-action-btn secondary" onclick="openEmailApp()" id="openEmailBtn">
+                        📱 打开邮箱应用
+                    </button>
+                    <button class="email-action-btn secondary" onclick="showEmailPreviewToggle()" id="previewBtn">
+                        👁️ 查看邮件内容
+                    </button>
+                    <button class="email-action-btn secondary" onclick="skipEmail()" id="skipBtn">
+                        🚫 跳过邮件发送
+                    </button>
+                </div>
+                
+                <div id="emailPreview" class="email-preview" style="display: none; margin-top: 20px;"></div>
+            </div>
+            
+            <!-- 软件下载区域 -->
+            <div class="download-section">
+                <h3>📥 软件下载</h3>
+                <p style="color: #666; margin-bottom: 20px; text-align: center;">请根据您的设备选择合适的下载方式</p>
+                
+                <!-- Homebrew 推荐方式（暂时注释掉）-->
+                <!-- <div style="background: white; border: 2px solid #28a745; border-radius: 12px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.15);">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <span style="font-size: 42px;">🍺</span>
+                        <div>
+                            <div style="background: linear-gradient(135deg, #28a745, #20c997); color: white; padding: 4px 12px; border-radius: 15px; font-size: 12px; font-weight: 700; display: inline-block; margin-bottom: 8px;">⭐ 推荐方式</div>
+                            <h4 style="margin: 0; color: #155724; font-size: 20px; font-weight: 700;">Homebrew 一键安装</h4>
+                            <p style="margin: 5px 0 0 0; color: #666; font-size: 14px;">最简单的安装方式，自动处理权限，支持一键升级</p>
+                        </div>
+                    </div>
+                    <div style="background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 15px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+                        <code id="brew-code-order" style="flex: 1; color: #28a745; font-family: 'Monaco', 'Menlo', monospace; font-size: 14px; font-weight: 600;">brew install --cask Wcowin/oneclip/oneclip</code>
+                        <button onclick="copyBrewCommand()" style="background: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size:13px; white-space: nowrap; transition: all 0.3s ease;" onmouseover="this.style.background='#218838'" onmouseout="this.style.background='#28a745'">
+                            📋 复制
+                        </button>
+                    </div>
+                    <div style="display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap;">
+                        <span style="background: rgba(40, 167, 69, 0.1); border: 1px solid rgba(40, 167, 69, 0.3); color: #28a745; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600;">✨ 自动安装</span>
+                        <span style="background: rgba(40, 167, 69, 0.1); border: 1px solid rgba(40, 167, 69, 0.3); color: #28a745; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600;">🔄 一键升级</span>
+                        <span style="background: rgba(40, 167, 69, 0.1); border: 1px solid rgba(40, 167, 69, 0.3); color: #28a745; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600;">🔒 权限自动处理</span>
+                    </div>
+                </div> -->
+
+                <div style="text-align: center; margin: 20px 0; color: #999; font-size: 13px;">──── 选择下载方式 ────</div>
+                
+                <div class="download-grid">
+                    <div class="download-card">
+                        <div class="download-icon">🌿</div>
+                        <h4>Gitee 下载</h4>
+                        <p>国内高速镜像，支持所有 Mac（Intel + Apple Silicon）</p>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <a href="https://gitee.com/Wcowin/OneClip/releases/download/1.3.9/OneClip-1.3.9.dmg" target="_blank" rel="noopener noreferrer" class="download-btn primary">
+                                📥 下载 DMG（推荐）
+                            </a>
+                            <a href="https://gitee.com/Wcowin/OneClip/releases/download/1.3.9/OneClip-1.3.9.zip" target="_blank" rel="noopener noreferrer" class="download-btn secondary" style="font-size: 13px; padding: 10px 20px;">
+                                📦 下载 ZIP
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="download-card">
+                        <div class="download-icon">☁️</div>
+                        <h4>123云盘下载</h4>
+                        <p>备用下载源，下载速度快</p>
+                        <a href="https://www.123912.com/s/bXcDVv-HauG3" target="_blank" rel="noopener noreferrer" class="download-btn primary">
+                            📥 123云盘下载
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 首次打开提示横幅 -->
+            <div style="margin: 40px 0; background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(245, 158, 11, 0.08) 100%); border: 2px solid rgba(251, 191, 36, 0.3); border-radius: 24px; padding: 40px 35px; position: relative; overflow: hidden; backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);">
+                <!-- 装饰背景 -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 0% 50%, rgba(251, 191, 36, 0.08) 0%, transparent 50%), radial-gradient(circle at 100% 50%, rgba(245, 158, 11, 0.08) 0%, transparent 50%); pointer-events: none;"></div>
+                
+                <!-- 内容容器 -->
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; position: relative; z-index: 1; flex-wrap: wrap;">
+                    <!-- 左侧：图标和文本 -->
+                    <div style="display: flex; align-items: center; gap: 16px; flex: 1; min-width: 300px;">
+                        <div style="font-size: 40px; flex-shrink: 0;">🔓</div>
+                        <div>
+                            <h4 style="font-size: 18px; font-weight: 700; color: #1f2937; margin: 0 0 6px 0;">首次打开提示</h4>
+                            <p style="color: #4b5563; font-size: 14px; margin: 0; line-height: 1.5;">
+                                系统设置 → 隐私与安全性 → 点击"仍要打开"。查看详细解决办法
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 右侧：按钮 -->
+                    <a href="https://oneclip.cloud/OneClip%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #1f2937; padding: 12px 24px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0; box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);">
+                        <span>📄 查看 PDF</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-90deg);">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- 激活步骤 -->
+            <div class="steps-section">
+                <h3>💻 激活步骤</h3>
+                <ol>
+                    <li>下载并安装 OneClip 应用</li>
+                    <li>打开 OneClip 应用</li>
+                    <li>点击设置面板左侧的"高级功能"选项</li>
+                    <li>输入下单邮箱和上面的激活码</li>
+                    <li>点击"激活"即可完成</li>
+                </ol>
+            </div>
+            
+            <!-- 联系信息 -->
+            <div class="contact-section">
+                <h3>📞 需要帮助？</h3>
+                <p style="color: #666; margin-bottom: 15px; text-align: center;">如果您在激活过程中遇到任何问题，请随时联系我们</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span class="contact-label">技术支持邮箱：</span>
+                        <a href="mailto:vip@oneclip.cloud" class="contact-email">vip@oneclip.cloud</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- QQ群邀请 -->
+            <div style="background: #e8f4fd; border-left: 4px solid #2196F3; padding: 25px; margin: 30px 0; border-radius: 8px; text-align: center;">
+                <h3 style="color: #1976D2; margin-bottom: 15px; font-size: 18px;">👥 加入 OneClip 交流群</h3>
+                <p style="color: #666; margin-bottom: 20px; font-size: 15px;">与其他用户交流使用心得、获取最新功能动态</p>
+                <a href="https://qm.qq.com/q/WaTYdDNY8q" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #2196F3; color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px; transition: all 0.3s ease;" onmouseover="this.style.background='#1976D2'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#2196F3'; this.style.transform='translateY(0)'">
+                    点击链接加入群聊【OneClip交流群】
+                </a>
+            </div>
+            
+            <div style="text-align: center;">
+                <button class="back-btn" onclick="goBack()">← 返回首页</button>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script>
+        let currentEmailChoice = 'send';
+        
+        // 复制 Homebrew 命令（暂时注释掉）
+        /*
+        function copyBrewCommand() {
+            const code = document.getElementById('brew-code-order');
+            const btn = event.target;
+            
+            navigator.clipboard.writeText(code.textContent).then(() => {
+                const originalText = btn.textContent;
+                btn.textContent = '✓ 已复制';
+                btn.style.background = '#20c997';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '#28a745';
+                }, 3000);
+            }).catch(err => {
+                console.error('复制失败:', err);
+                btn.textContent = '❌ 失败';
+                setTimeout(() => {
+                    btn.textContent = '📋 复制';
+                }, 2000);
+            });
+        }
+        */
+        
+        function copyActivationCode() {
+            const activationCode = document.getElementById('activationCode').textContent;
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(activationCode).then(() => {
+                    showCopySuccess();
+                }).catch(() => {
+                    fallbackCopy(activationCode);
+                });
+            } else {
+                fallbackCopy(activationCode);
+            }
+        }
+        
+        function fallbackCopy(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showCopySuccess();
+            } catch (err) {
+                alert('复制失败，请手动复制激活码');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+        
+        function showCopySuccess() {
+            const btn = document.querySelector('.copy-btn');
+            const originalText = btn.textContent;
+            btn.textContent = '✅ 已复制';
+            btn.classList.add('success');
+            
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.classList.remove('success');
+            }, 2000);
+        }
+        
+        let emailSent = false;
+        let autoEmailTimer = null;
+        
+        // 自动邮件发送状态更新
+        function updateEmailAutoStatus(status, message, isSuccess = false, isError = false) {
+            const statusDiv = document.getElementById('emailStatus');
+            const resendBtn = document.getElementById('resendBtn');
+            
+            if (isSuccess) {
+                statusDiv.innerHTML = `<div class="email-auto-status" style="background: #e8f5e9; border-color: #4caf50; color: #2e7d32;">✅ ${message}</div>`;
+                resendBtn.disabled = false;
+                emailSent = true;
+            } else if (isError) {
+                statusDiv.innerHTML = `<div class="email-auto-status" style="background: #ffebee; border-color: #f44336; color: #c62828;">❌ ${message}</div>`;
+                resendBtn.disabled = false;
+                resendBtn.textContent = '🔄 重试发送邮件';
+            } else {
+                statusDiv.innerHTML = `<div class="email-auto-status">⏳ ${message}</div>`;
+            }
+        }
+        
+        // 自动发送邮件
+        function autoSendEmail() {
+            const orderIdFromUrl = getOrderIdFromUrl();
+            const email = document.getElementById('userEmail').textContent;
+            
+            if (!orderIdFromUrl || emailSent) return;
+            
+            updateEmailAutoStatus('sending', '正在自动发送激活码邮件到您的邮箱...请稍候');
+            
+            fetch('/api/payment/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    order_id: orderIdFromUrl,
+                    email: email,
+                    choice: 'send'
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    if (data.duplicate_prevented) {
+                        updateEmailAutoStatus('success', 
+                            '邮件之前已经发送过了，避免重复发送', true);
+                    } else {
+                        updateEmailAutoStatus('success', 
+                            '邮件发送成功！请检查您的邮箱（包括垃圾邮件文件夹）', true);
+                    }
+                } else {
+                    updateEmailAutoStatus('error', 
+                        '邮件发送失败：' + (data.message || '未知错误'), false, true);
+                }
+            })
+            .catch(error => {
+                updateEmailAutoStatus('error', 
+                    '邮件发送失败：网络错误或服务器问题', false, true);
+            });
+        }
+        
+        // 重新发送邮件
+        function resendEmail() {
+            const resendBtn = document.getElementById('resendBtn');
+            const orderIdFromUrl = getOrderIdFromUrl();
+            const email = document.getElementById('userEmail').textContent;
+            
+            if (!orderIdFromUrl) return;
+            
+            resendBtn.disabled = true;
+            resendBtn.textContent = '📤 发送中...';
+            updateEmailAutoStatus('sending', '正在重新发送激活码邮件...');
+            
+            fetch('/api/payment/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    order_id: orderIdFromUrl,
+                    email: email,
+                    choice: 'resend'  // 用户主动点击，允许重复发送
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    updateEmailAutoStatus('success', 
+                        '邮件重新发送成功！请检查您的邮箱（包括垃圾邮件文件夹）', true);
+                    resendBtn.textContent = '🔄 重新发送邮件';
+                } else {
+                    updateEmailAutoStatus('error', 
+                        '邮件发送失败：' + (data.message || '未知错误'), false, true);
+                }
+            })
+            .catch(error => {
+                updateEmailAutoStatus('error', 
+                    '邮件发送失败：网络错误或服务器问题', false, true);
+            });
+        }
+        
+        // 打开邮箱应用
+        function openEmailApp() {
+            const email = document.getElementById('userEmail').textContent;
+            const subject = encodeURIComponent('OneClip 激活码');
+            
+            // 尝试检测邮箱提供商并提供更好的体验
+            const emailDomain = email.split('@')[1];
+            let webmailUrl = '';
+            
+            switch(emailDomain) {
+                case 'gmail.com':
+                    webmailUrl = 'https://mail.google.com';
+                    break;
+                case 'qq.com':
+                    webmailUrl = 'https://mail.qq.com';
+                    break;
+                case '163.com':
+                    webmailUrl = 'https://mail.163.com';
+                    break;
+                case 'outlook.com':
+                case 'hotmail.com':
+                    webmailUrl = 'https://outlook.live.com';
+                    break;
+                default:
+                    webmailUrl = `mailto:${email}?subject=${subject}`;
+            }
+            
+            window.open(webmailUrl, '_blank');
+        }
+        
+        // 跳过邮件发送
+        function skipEmail() {
+            if (autoEmailTimer) {
+                clearTimeout(autoEmailTimer);
+            }
+            updateEmailAutoStatus('skipped', 
+                '已跳过邮件发送，激活码仅在此页面显示。请妥善保存！', false, false);
+            document.getElementById('resendBtn').disabled = false;
+        }
+        
+        // 显示/隐藏邮件内容预览
+        function showEmailPreviewToggle() {
+            const preview = document.getElementById('emailPreview');
+            const btn = document.getElementById('previewBtn');
+            
+            if (preview.style.display === 'none') {
+                generateEmailPreview();
+                preview.style.display = 'block';
+                btn.textContent = '🙈 隐藏邮件内容';
+            } else {
+                preview.style.display = 'none';
+                btn.textContent = '👁️ 查看邮件内容';
+            }
+        }
+        
+        // 生成邮件内容预览
+        function generateEmailPreview() {
+            // 安全获取元素内容，如果元素不存在则使用默认值
+            const email = document.getElementById('userEmail')?.textContent || '';
+            const activationCode = document.getElementById('activationCode')?.textContent || '';
+            const purchaseType = document.getElementById('purchaseType')?.textContent || '';
+            const deviceLimit = document.getElementById('deviceLimit')?.textContent || '';
+            const licenseId = document.getElementById('licenseId')?.textContent || '暂无';
+            const orderId = document.getElementById('orderId')?.textContent || '';
+            const expiryDate = document.getElementById('expiryDate')?.textContent || '终身有效';
+            const paymentAmount = document.getElementById('paymentAmount')?.textContent || '';
+            const purchaseTime = document.getElementById('purchaseTime')?.textContent || '';
+            
+            const previewHtml = `
+                <h4 style="margin-top: 0; color: #333;">📧 邮件内容预览</h4>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; font-family: monospace; font-size: 13px; line-height: 1.6;">
+                    <div style="margin-bottom: 15px;">
+                        <strong>📧 收件人:</strong> ${email}<br>
+                        <strong>📬 发件人:</strong> vip@oneclip.cloud<br>
+                        <strong>📝 主题:</strong> OneClip License Activation Code - ${purchaseType}
+                    </div>
+                    
+                    <div style="border-top: 1px solid #ddd; padding-top: 15px;">
+                        <strong>🛍️ 购买信息:</strong><br>
+                        &nbsp;&nbsp;• 购买类型: ${purchaseType}<br>
+                        &nbsp;&nbsp;• 设备上限: ${deviceLimit}<br>
+                        &nbsp;&nbsp;• 许可证ID: ${licenseId}<br>
+                        &nbsp;&nbsp;• 订单号: ${orderId}<br>
+                        &nbsp;&nbsp;• 支付金额: ${paymentAmount}<br>
+                        &nbsp;&nbsp;• 购买时间: ${purchaseTime}<br>
+                        &nbsp;&nbsp;• 有效期至: ${expiryDate}<br><br>
+                        
+                        <strong>🔐 激活码:</strong> <span style="background: #fff3cd; padding: 2px 6px; border-radius: 3px; font-weight: bold;">${activationCode}</span><br><br>
+                        
+                        <strong>📱 激活步骤:</strong><br>
+                        &nbsp;&nbsp;1. 下载并安装 OneClip 应用<br>
+                        &nbsp;&nbsp;2. 打开应用，进入设置<br>
+                        &nbsp;&nbsp;3. 点击"高级功能"选项<br>
+                        &nbsp;&nbsp;4. 输入激活码完成激活
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('emailPreview').innerHTML = previewHtml;
+        }
+        
+        function showEmailPreview(email, activationCode, purchaseType, deviceLimit, licenseId, orderId, expiryDate, paymentAmount, purchaseTime) {
+            const previewHtml = `
+                <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 8px; border: 1px solid #ddd;">
+                    <h4>📧 邮件内容预览:</h4>
+                    <div style="margin: 10px 0; padding: 15px; background: #f8f9fa; border-radius: 5px; font-family: monospace; font-size: 12px; line-height: 1.6;">
+                        <strong>收件人:</strong> ${email}<br>
+                        <strong>主题:</strong> OneClip 激活码 - ${purchaseType}<br><br>
+                        <strong>购买信息:</strong><br>
+                        &nbsp;&nbsp;• 购买类型: ${purchaseType}<br>
+                        &nbsp;&nbsp;• 设备上限: ${deviceLimit}<br>
+                        &nbsp;&nbsp;• 许可证ID: ${licenseId}<br>
+                        &nbsp;&nbsp;• 订单号: ${orderId}<br>
+                        &nbsp;&nbsp;• 支付金额: ${paymentAmount}<br>
+                        &nbsp;&nbsp;• 购买时间: ${purchaseTime}<br>
+                        &nbsp;&nbsp;• 有效期至: ${expiryDate}<br><br>
+                        <strong>激活码:</strong> ${activationCode}<br><br>
+                        <strong>激活步骤:</strong><br>
+                        &nbsp;&nbsp;1. 打开 OneClip 应用<br>
+                        &nbsp;&nbsp;2. 点击"激活许可证"<br>
+                        &nbsp;&nbsp;3. 输入激活码<br>
+                        &nbsp;&nbsp;4. 点击"激活"完成设置
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('emailStatus').innerHTML += previewHtml;
+        }
+        
+        function goBack() {
+            window.location.href = '/purchase';
+        }
+        
+        function getOrderIdFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('order_id');
+        }
+        
+        // 从API获取订单信息
+        async function loadOrderInfo() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderId = urlParams.get('order_id');
+            const email = urlParams.get('email');
+            
+            // 优先从URL参数获取，如果没有则从API获取
+            if (orderId || email) {
+                try {
+                    console.log('🔍 正在获取订单信息:', { orderId, email });
+                    const response = await fetch(`/api/order/complete?${urlParams.toString()}`);
+                    const data = await response.json();
+                    console.log('📦 API返回数据:', data);
+                    
+                    if (data.success && data.order) {
+                        const order = data.order;
+                        
+                        // 更新页面显示
+                        if (order.activation_code) {
+                            document.getElementById('activationCode').textContent = order.activation_code;
+                        }
+                        if (order.email) {
+                            document.getElementById('userEmail').textContent = order.email;
+                        }
+                        if (order.plan_name) {
+                            document.getElementById('purchaseType').textContent = order.plan_name;
+                        }
+                        if (order.device_cap) {
+                            document.getElementById('deviceLimit').textContent = order.device_cap + '台';
+                        }
+                        if (order.license_id) {
+                            document.getElementById('licenseId').textContent = order.license_id;
+                        }
+                        if (order.order_id) {
+                            console.log('✅ 更新订单号:', order.order_id);
+                            document.getElementById('orderId').textContent = order.order_id;
+                        }
+                        if (order.amount) {
+                            document.getElementById('paymentAmount').textContent = '¥' + order.amount.toFixed(2);
+                        }
+                        if (order.purchase_time) {
+                            document.getElementById('purchaseTime').textContent = order.purchase_time;
+                        }
+                        
+                        // 如果是月付或年付，显示过期时间警告
+                        if (order.is_subscription && order.valid_until) {
+                            const expiryWarning = document.getElementById('expiryWarning');
+                            const expiryDate = document.getElementById('expiryDate');
+                            
+                            expiryDate.textContent = order.valid_until;
+                            expiryWarning.style.display = 'block';
+                        }
+                    } else {
+                        console.error('获取订单信息失败:', data.message);
+                        // 如果API失败，尝试从URL参数获取
+                        loadFromUrlParams();
+                    }
+                } catch (error) {
+                    console.error('API请求失败:', error);
+                    // 如果API失败，尝试从URL参数获取
+                    loadFromUrlParams();
+                }
+            } else {
+                // 如果没有订单ID或邮箱，尝试从URL参数获取
+                loadFromUrlParams();
+            }
+        }
+        
+        // 从URL参数获取信息（备用方案）
+        function loadFromUrlParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderId = urlParams.get('order_id');
+            const plan = urlParams.get('plan');
+            const activationCode = urlParams.get('activation_code');
+            const deviceCap = urlParams.get('device_cap');
+            const validUntil = urlParams.get('valid_until');
+            const licenseId = urlParams.get('license_id');
+            const amount = urlParams.get('amount');
+            const purchaseTime = urlParams.get('purchase_time');
+            const email = urlParams.get('email');
+            
+            if (orderId) {
+                console.log('🔄 从URL参数更新订单号:', orderId);
+                document.getElementById('orderId').textContent = orderId;
+            }
+            if (activationCode) {
+                document.getElementById('activationCode').textContent = activationCode;
+            }
+            if (email) {
+                document.getElementById('userEmail').textContent = email;
+            }
+            if (plan) {
+                const planNames = {
+                    'monthly': '月度版',
+                    'yearly': '年度版',
+                    'lifetime': '终身版'
+                };
+                const planName = planNames[plan] || plan;
+                document.getElementById('purchaseType').textContent = planName;
+                
+                // 如果是月付或年付，显示过期时间警告
+                if (plan === 'monthly' || plan === 'yearly') {
+                    const expiryWarning = document.getElementById('expiryWarning');
+                    const expiryDate = document.getElementById('expiryDate');
+                    
+                    if (validUntil) {
+                        expiryDate.textContent = validUntil;
+                        expiryWarning.style.display = 'block';
+                    }
+                }
+            }
+            if (deviceCap) {
+                document.getElementById('deviceLimit').textContent = deviceCap + '台';
+            }
+            if (licenseId) {
+                document.getElementById('licenseId').textContent = licenseId;
+            }
+            if (amount) {
+                document.getElementById('paymentAmount').textContent = '¥' + parseFloat(amount).toFixed(2);
+            }
+            if (purchaseTime) {
+                document.getElementById('purchaseTime').textContent = purchaseTime;
+            }
+        }
+        
+        // 保存页面为PDF
+        function saveToPDF() {
+            const btn = event.target.closest('.save-pdf-btn');
+            const originalText = btn.innerHTML;
+            
+            // 更新按钮状态
+            btn.disabled = true;
+            btn.innerHTML = '<span>⏳</span><span>生成中...</span>';
+            
+            // 使用浏览器内置的打印功能保存为PDF
+            // 这是最兼容的方式，不需要额外的库
+            setTimeout(() => {
+                window.print();
+                
+                // 恢复按钮状态
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+            }, 100);
+        }
+        
+        // 针对打印样式的优化
+        const printStyles = document.createElement('style');
+        printStyles.textContent = `
+            @media print {
+                body {
+                    background: white;
+                }
+                
+                .container {
+                    box-shadow: none;
+                    max-width: 100%;
+                }
+                
+                .header {
+                    background: #3b82f6;
+                    color: white;
+                    page-break-after: avoid;
+                }
+                
+                .save-pdf-btn {
+                    display: none !important;
+                }
+                
+                .back-btn {
+                    display: none !important;
+                }
+                
+                .content {
+                    padding: 30px;
+                }
+                
+                .purchase-info-card,
+                .activation-section,
+                .steps-section,
+                .contact-section {
+                    page-break-inside: avoid;
+                    box-shadow: none;
+                    border: 1px solid #e2e8f0;
+                }
+                
+                a {
+                    color: #3b82f6;
+                    text-decoration: underline;
+                }
+                
+                button {
+                    display: none;
+                }
+                
+                .copy-btn {
+                    display: none !important;
+                }
+            }
+        `;
+        document.head.appendChild(printStyles);
+        
+        // 页面加载时获取订单信息并自动发送邮件
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrderInfo();
+            
+            // 延迟3秒后自动发送邮件，给用户时间看到页面
+            autoEmailTimer = setTimeout(() => {
+                autoSendEmail();
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+# OneClip 自动发激活码系统依赖包
+# ======================================
+
+# Web框架
+Flask==3.1.2
+flask-cors==6.0.1
+
+# 加密和签名
+PyNaCl==1.5.0
+
+# 邮件发送
+# 使用Python标准库smtplib，无需额外安装
+
+# 数据库
+mysql-connector-python==8.2.0
+
+# 其他工具
+requests==2.31.0
+cryptography==41.0.7
+python-dotenv==1.0.0
+
+# 额外需要的包
+functools32; python_version < '3.2'
+
+# 开发工具（可选）
+# black==23.12.1
+# flake8==7.0.0
+# pytest==7.4.4
+
+

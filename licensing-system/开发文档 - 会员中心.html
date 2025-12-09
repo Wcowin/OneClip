@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>开发文档 - 会员中心</title>
+<link rel="shortcut icon" href="https://cdn.z-pay.cn/images/favicon.ico" />
+<link href="https://cdn.z-pay.cn/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.z-pay.cn/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="https://cdn.z-pay.cn/css/style.min.css" rel="stylesheet">
+
+<style type="text/css">
+.qrcode{width:200px;height:200px}
+</style>
+</head>
+  
+<body>
+<div class="lyear-layout-web">
+  <div class="lyear-layout-container">
+  <aside class="lyear-layout-sidebar">
+      <!-- logo -->
+      <div id="logo" class="sidebar-header" style="background: #fff;height: 68px;line-height: 68px;">
+        <a href="./"><img src="https://cdn.z-pay.cn/images/z-pay.cn.png" title="ZPAY支付" alt="ZPAY支付" style="left: 0px;margin: 0px;max-height: 100%;height:50px" /></a>
+      </div>
+      <div class="lyear-layout-sidebar-scroll"> 
+        
+        <nav class="sidebar-main">
+          <ul class="nav nav-drawer">
+            <li class="nav-item "> <a href="./"><i class="mdi mdi-home"></i> 会员中心</a> </li>
+            <li class="nav-item nav-item-has-subnav">
+              <a href="javascript:void(0)"><i class="mdi mdi-settings"></i> 支付渠道</a>
+              <ul class="nav nav-subnav">
+                <li> <a href="channel.html">我的支付渠道</a> </li>
+                <li> <a href="myapi.html">API安全</a> </li>
+                <li> <a href="mycode.html">我的收款码</a> </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item nav-item-has-subnav">
+              <a href="javascript:void(0)"><i class="mdi mdi-file-document"></i> 开发文档</a>
+              <ul class="nav nav-subnav">
+                <li> <a href="doc.html">开发文档</a> </li>
+                <li> <a href="download.html">下载demo</a> </li>
+              </ul>
+            </li>
+            
+
+            <li class="nav-item nav-item-has-subnav">
+              <a href="javascript:void(0)"><i class="mdi mdi-cart"></i> 交易管理</a>
+              <ul class="nav nav-subnav">
+                
+                <li> <a href="orders.html">订单管理</a> </li>
+                <li> <a href="list.html">站内明细</a> </li>
+                <li> <a href="complain.html">投诉管理</a> </li>
+                <!--<li> <a href="black.html">IP黑名单</a> </li>-->
+                
+              </ul>
+            </li>
+
+            <li class="nav-item nav-item-has-subnav">
+              <a href="javascript:void(0)"><i class="mdi mdi-account-box"></i> 我的信息</a>
+              <ul class="nav nav-subnav">
+                <li> <a href="info.html">基本信息</a> </li>
+                <li> <a href="pwd.html">修改密码</a> </li>
+                <li> <a href="pay.html">账户充值</a> </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item nav-item-has-subnav">
+              <a href="javascript:void(0)"><i class="mdi mdi-seal"></i> 邀请返利</a>
+              <ul class="nav nav-subnav">
+                <li> <a href="agent.html">邀请规则</a> </li>
+                <li> <a href="invite.html">结算佣金</a> </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item nav-item-has-subnav">
+              <a href="javascript:void(0)"><i class="mdi mdi-new-box"></i> 常见问题</a>
+              <ul class="nav nav-subnav">
+                <li> <a href="news.html">常见问题</a> </li>
+                <li> <a href="log.html">操作日志</a> </li>
+                <li> <a href="notice.html">订阅通知</a> </li>
+              </ul>
+            </li>
+            
+            <!--<li class="nav-item "> <a href="feerate.html"><i class="mdi mdi-star"></i> 微信0.2%费率申请</a> </li>-->
+          </ul>
+        </nav>
+        
+        <!--<div style="width:100%;position:absolute;bottom:10px;left:0px">
+          <img src="images/gh_189707025d99_344.jpg" style="width:100%;padding:50px 50px 10px 50px">
+          <p style="font-size:12px;text-align:center">扫码微信小程序，随时关注交易动态</p>
+          </div>-->
+          
+      </div>
+    </aside>
+
+    <header class="lyear-layout-header">
+      
+      <nav class="navbar navbar-default">
+        <div class="topbar">
+          
+          <div class="topbar-left">
+            <div class="lyear-aside-toggler">
+              <span class="lyear-toggler-bar"></span>
+              <span class="lyear-toggler-bar"></span>
+              <span class="lyear-toggler-bar"></span>
+            </div>
+            
+          </div>
+          
+          <ul class="topbar-right">
+              
+            <li class="dropdown dropdown-profile">
+              <a href="javascript:void(0)" data-toggle="dropdown">
+                <img class="img-avatar img-avatar-48 m-r-10" src="images/head.jpg" alt="wcowin@qq.com" />
+                <span>wcowin@qq.com <span class="caret"></span></span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li> <a href="../" target="_blank"><i class="mdi mdi-account"></i> 前往首页</a> </li>
+                <li> <a href="../login.html?action=unlogin"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
+              </ul>
+            </li>
+            <li class="dropdown dropdown-profile">余额：6.11元 
+            <a href="pay.html" class="btn btn-xs btn-info" style="padding:0px">充值</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+<!--<a href="vip.php" style="position:fixed;bottom:10px;right:10px;z-index:999999"><img src="../images/10.1_gift.png" style="width:150px;animation: move 3s 0s infinite;
+	-webkit-animation: move 3s 0s infinite;
+	transform-origin: bottom;
+	-webkit-transform-origin: bottom;"></a>-->
+<style>
+    @keyframes move {
+
+	0%,
+	65% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	70% {
+		-webkit-transform: rotate(6deg);
+		transform: rotate(6deg);
+	}
+
+	75% {
+		-webkit-transform: rotate(-6deg);
+		transform: rotate(-6deg);
+	}
+
+	80% {
+		-webkit-transform: rotate(6deg);
+		transform: rotate(6deg);
+	}
+
+	85% {
+		-webkit-transform: rotate(-6deg);
+		transform: rotate(-6deg);
+	}
+
+	90% {
+		-webkit-transform: rotate(6deg);
+		transform: rotate(6deg);
+	}
+
+	95% {
+		-webkit-transform: rotate(-6deg);
+		transform: rotate(-6deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+}
+</style>
+
+<!--
+<script src="js/kefu.js"></script>
+
+<script>
+var kefu = new Kefu({
+    index: "../",
+    tel: "13888888888",//电话号码
+    qq: "450245869",//在线QQ
+    wechatPerson: {
+        state: true,// true是开启个人微信二维码, false不开启
+        imgURL: "https://cdn.z-pay.cn/images/5.png" //图片路径
+    },
+    wechatofficial: {
+        state: true,// true是开启微信公众号二维码, false不开启
+        imgURL: "https://cdn.z-pay.cn/images/2.png" //图片路径
+    }//微信公众号
+});
+</script>
+-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1a3478a030502c8b6b8c31188e8adc39";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"Jm92RUHF2CcUkOhy",ck:"Jm92RUHF2CcUkOhy"})</script>
+-->    <main class="lyear-layout-content">
+      <div class="container-fluid">
+                  <div class="alert alert-info alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert"
+                    aria-hidden="true">
+                &times;
+            </button>
+            如果您的网站已经集成了<b>易支付接口</b>，那么您可以直接使用该API信息，无需另外开发。
+        </div>
+        <div class="row">
+            
+								<div class="col-lg-12">
+								    <div class="card m-b-20">
+										<div class="card-header ">
+											<h4>API信息（兼容 <b>易支付</b> 接口）</h4>
+										</div>
+										<div class="card-body">
+										    <p>接口地址：https://zpayz.cn/</p>
+											<p>商户ID（PID）：2025090522454134</p>
+                    <p>商户密钥（PKEY）：3skhuHdNrNeubD5yDBzhKYL3awo2SC5t </p>
+
+										</div>
+
+									</div>
+									
+									
+									<div class="card m-b-20">
+										<div class="card-header ">
+											<h4>页面跳转支付</h4>
+										</div>
+										<div class="card-body">
+											<h5>请求URL</h5>
+https://zpayz.cn/submit.php
+<hr>
+<h5>请求方法</h5>
+POST 或 GET（推荐POST，不容易被劫持或屏蔽）<br>此接口可用于用户前台直接发起支付，使用form表单跳转或拼接成url跳转。
+<hr>
+<h5>请求参数</h5>
+<div class="table-responsive">
+<table class="table table-hover" style="min-width: 800px">
+<thead>
+<tr><th>参数</th><th>名称</th><th>类型</th><th>是否必填</th><th>描述</th><th>范例</th></tr>
+</thead>
+<tbody>
+<tr><td>name</td><td>商品名称</td><td>String</td><td><b>是</b></td><td>需体现出具体售卖的商品，否则容易被封</td><td>iPhone17苹果手机</td></tr>
+<tr><td>money</td><td>订单金额</td><td>String</td><td><b>是</b></td><td>最多保留两位小数</td><td>5.67</td></tr>
+<tr><td>type</td><td>支付方式</td><td>String</td><td><b>是</b></td><td>支付宝：alipay 微信支付：wxpay</td><td>alipay</td></tr>
+<tr><td>out_trade_no</td><td>订单编号</td><td>Num</td><td><b>是</b></td><td>每个商品不可重复</td><td>201911914837526544601</td></tr>
+<tr><td>notify_url</td><td>异步通知页面</td><td>String</td><td><b>是</b></td><td>交易信息回调页面，不支持带参数</td><td>http://www.aaa.com/bbb.php</td></tr>
+<tr><td>pid</td><td>商户唯一标识</td><td>String</td><td><b>是</b></td><td>一串字母数字组合</td><td>201901151314084206659771</td></tr>
+<tr><td>cid</td><td>支付渠道ID</td><td>String</td><td><b>否</b></td><td>支持填写多个，使用,隔开，如果不填则随机调用</td><td>1234</td></tr>
+<tr><td>param</td><td>附加内容</td><td>String</td><td><b>否</b></td><td>会通过notify_url原样返回</td><td>金色 256G</td></tr>
+<tr><td>return_url</td><td>跳转页面</td><td>String</td><td><b>是</b></td><td>交易完成后浏览器跳转，不支持带参数</td><td>http://www.aaa.com/ccc.php</td></tr>
+<tr><td>sign</td><td>签名（参考本页签名算法）</td><td>String</td><td><b>是</b></td><td>用于验证信息正确性，采用md5加密</td><td>28f9583617d9caf66834292b6ab1cc89</td></tr>
+<tr><td>sign_type</td><td>签名方法</td><td>String</td><td><b>是</b></td><td>默认为MD5</td><td>MD5</td></tr>
+</tbody>
+</table>
+</div>
+<hr>
+
+<h5>用法举例</h5>
+
+<p>https://zpayz.cn/submit.php?name=iphone xs Max 一台&money=0.03&out_trade_no=201911914837526544601&ampnotify_url=http://www.aaa.com/notify_url.php&pid=201901151314084206659771&ampparam=金色 256G&return_url=http://www.baidu.com&sign=28f9583617d9caf66834292b6ab1cc89&sign_type=MD5&type=alipay</p>
+
+<hr>
+<h5>成功返回</h5>
+
+直接跳转到付款页面<br>
+说明：该页面为收银台，直接访问这个url即可进行付款
+<hr>
+<h5>失败返回</h5>
+{"code":"error","msg":"具体的错误信息"}
+
+										</div>
+
+									</div>
+
+
+
+									<div class="card m-b-20">
+										<div class="card-header ">
+											<h4>API接口支付</h4>
+										</div>
+										<div class="card-body">
+											<h5>请求URL</h5>
+https://zpayz.cn/mapi.php
+<hr>
+<h5>请求方法</h5>
+POST（方式为form-data）
+<hr>
+<h5>请求参数</h5>
+<div class="table-responsive">
+<table class="table table-bordered table-hover">
+  <thead><tr><th>字段名</th><th>变量名</th><th>必填</th><th>类型</th><th>示例值</th><th>描述</th></tr></thead>
+  <tbody>
+  <tr><td>商户ID</td><td>pid</td><td>是</td><td>String</td><td>1001</td><td></td></tr>
+  <tr><td>支付渠道ID</td><td>cid</td><td>否</td><td>String</td><td>1234</td><td>支持填写多个，使用,隔开，如果不填则随机调用</td></tr>
+  <tr><td>支付方式</td><td>type</td><td>是</td><td>String</td><td>alipay</td><td>支付宝：alipay 微信支付：wxpay</td></tr>
+  <tr><td>商户订单号</td><td>out_trade_no</td><td>是</td><td>String</td><td>20160806151343349</td><td></td></tr>
+  <tr><td>异步通知地址</td><td>notify_url</td><td>是</td><td>String</td><td>http://www.pay.com/notify_url.php</td><td>服务器异步通知地址</td></tr>
+  
+  <tr><td>商品名称</td><td>name</td><td>是</td><td>String</td><td>iPhone17苹果手机</td><td>需体现出具体售卖的商品，否则容易被封</td></tr>
+  <tr><td>商品金额</td><td>money</td><td>是</td><td>String</td><td>1.00</td><td>单位：元，最大2位小数</td></tr>
+  <tr><td>用户IP地址</td><td>clientip</td><td>是</td><td>String</td><td>192.168.1.100</td><td>用户发起支付的IP地址</td></tr>
+  <tr><td>设备类型</td><td>device</td><td>否</td><td>String</td><td>pc</td><td>根据当前用户浏览器的UA判断，<br>传入用户所使用的浏览器<br>或设备类型，默认为pc</td></tr>
+  <tr><td>业务扩展参数</td><td>param</td><td>否</td><td>String</td><td>没有请留空</td><td>支付后原样返回</td></tr>
+  <tr><td>签名字符串</td><td>sign</td><td>是</td><td>String</td><td>202cb962ac59075b964b07152d234b70</td><td>签名算法参考本页底部</td></tr>
+  <tr><td>签名类型</td><td>sign_type</td><td>是</td><td>String</td><td>MD5</td><td>默认为MD5</td></tr>
+  </tbody>
+</table>
+</div>
+<hr>
+
+<h5>成功返回</h5>
+<table class="table table-bordered table-hover">
+  <thead><tr><th>字段名</th><th>变量名</th><th>类型</th><th>示例值</th><th>描述</th></tr></thead>
+  <tbody>
+  <tr><td>返回状态码</td><td>code</td><td>Int</td><td>1</td><td>1为成功，其它值为失败</td></tr>
+  <tr><td>返回信息</td><td>msg</td><td>String</td><td></td><td>失败时返回原因</td></tr>
+  <tr><td>订单号</td><td>trade_no</td><td>String</td><td>20160806151343349</td><td>支付订单号</td></tr>
+  <tr><td>ZPAY内部订单号</td><td>O_id</td><td>String</td><td>123456</td><td>ZPAY内部订单号</td></tr>
+  <tr><td>支付跳转url</td><td>payurl</td><td>String</td><td>https://xxx.cn/pay/wxpay/202010903/</td><td>如果返回该字段，则直接跳转到该url支付</td></tr>
+  <tr><td>二维码链接</td><td>qrcode</td><td>String</td><td>https://xxx.cn/pay/wxpay/202010903/</td><td>如果返回该字段，则根据该url生成二维码</td></tr>
+  <tr><td>二维码图片</td><td>img</td><td>String</td><td>https://zpayz.cn/qrcode/123.jpg</td><td>该字段为付款二维码的图片地址</td></tr>
+
+  </tbody>
+</table>
+
+<hr>
+<h5>失败返回</h5>
+{"code":"error","msg":"具体的错误信息"}
+
+										</div>
+
+									</div>
+									
+<!--
+									<div class="card m-b-20">
+										<div class="card-header ">
+											<h4>微信小程序支付</h4>
+										</div>
+										<div class="card-body">
+											
+<p>第一步：使用“API接口支付”获取到O_id参数</p>
+											<p>第二步：跳转 ZPAY 收银台小程序 appid 为: wxa9882fcbc23a0181</p>
+<pre><code>    <b>小程序具体跳转代码：</b>
+    wx.navigateToMiniProgram({
+        appId: 'wxa9882fcbc23a0181',
+        path: 'pages/pay/pay?type=wxapp&O_id=123456', //请将123456替换为第一步获取到的O_id
+        fail(res) {
+            wx.showToast({
+                title: res.errMsg,
+                icon: 'none',
+            });
+        },
+        success(res) {
+            wx.showToast({
+                title: 'ok',
+                icon: 'none',
+            });
+        },
+    });
+</code></pre>
+<p>支付成功或者取消，会跳回你的小程序，并携带参数:</p>
+<pre><code>    <b>支付成功：</b>
+    extraData: {
+        status: 'success'
+    }
+</code></pre>
+<pre><code>    <b>支付取消：</b>
+    extraData: {
+        status: 'cancel'
+    }
+</code></pre>
+										</div>
+
+									</div>
+									-->
+
+									<div class="card m-b-20">
+										<div class="card-header ">
+											<h4>查询单个订单</h4>
+										</div>
+										<div class="card-body">
+											<h5>请求URL</h5>
+https://zpayz.cn/api.php?act=order&pid={商户ID}&key={商户密钥}&out_trade_no={商户订单号}
+<hr>
+<h5>请求方法</h5>
+GET
+<hr>
+<h5>请求参数</h5>
+
+<div class="table-responsive">
+<table class="table table-hover" style="min-width: 800px">
+<thead>
+<tr><th>参数</th><th>名称</th><th>类型</th><th>必填</th><th>描述</th><th>范例</th></tr>
+</thead>
+<tbody>
+<tr><td>act</td><td>操作类型</td><td>String</td><td>是</td><td>此API固定值</td><td>order</td></tr>
+<tr><td>pid</td><td>商户ID</td><td>String</td><td>是</td><td></td><td>20220715225121</td></tr>
+<tr><td>key</td><td>商户密钥</td><td>String</td><td>是</td><td></td><td>89unJUB8HZ54Hj7x4nUj56HN4nUzUJ8i</td></tr>
+<tr><td>trade_no</td><td>系统订单号</td><td>String</td><td>选择</td><td></td><td>20160806151343312</td></tr>
+<tr><td>out_trade_no</td><td>商户订单号</td><td>String</td><td>选择</td><td></td><td>20160806151343349</td></tr>
+
+
+</tbody>
+</table>
+</div>
+<hr>
+<h5>返回结果</h5>
+
+<div class="table-responsive">
+<table class="table table-hover" style="min-width: 800px">
+  <thead><tr><th>字段名</th><th>变量名</th><th>类型</th><th>示例值</th><th>描述</th></tr></thead>
+  <tbody>
+  <tr><td>返回状态码</td><td>code</td><td>Int</td><td>1</td><td>1为成功，其它值为失败</td></tr>
+  <tr><td>返回信息</td><td>msg</td><td>String</td><td>查询订单号成功！</td><td></td></tr>
+  <tr><td>易支付订单号</td><td>trade_no</td><td>String</td><td>2016080622555342651</td><td>易支付订单号</td></tr>
+  <tr><td>商户订单号</td><td>out_trade_no</td><td>String</td><td>20160806151343349</td><td>商户系统内部的订单号</td></tr>
+  <tr><td>支付方式</td><td>type</td><td>String</td><td>alipay</td><td>支付宝：alipay 微信支付：wxpay</td></tr>
+  <tr><td>商户ID</td><td>pid</td><td>String</td><td>20220715225121</td><td>发起支付的商户ID</td></tr>
+  <tr><td>创建订单时间</td><td>addtime</td><td>String</td><td>2016-08-06 22:55:52</td><td></td></tr>
+  <tr><td>完成交易时间</td><td>endtime</td><td>String</td><td>2016-08-06 22:55:52</td><td></td></tr>
+  <tr><td>商品名称</td><td>name</td><td>String</td><td>VIP会员</td><td></td></tr>
+  <tr><td>商品金额</td><td>money</td><td>String</td><td>1.00</td><td></td></tr>
+  <tr><td>支付状态</td><td>status</td><td>Int</td><td>0</td><td>1为支付成功，0为未支付</td></tr>
+  <tr><td>业务扩展参数</td><td>param</td><td>String</td><td></td><td>默认留空</td></tr>
+  <tr><td>支付者账号</td><td>buyer</td><td>String</td><td></td><td>默认留空</td></tr>
+  </tbody>
+</table>
+</div>
+
+										</div>
+									</div>
+
+
+<div class="card m-b-20">
+										<div class="card-header ">
+											<h4>提交订单退款</h4>
+										</div>
+										<div class="card-body">
+											<h5>请求URL</h5>
+https://zpayz.cn/api.php?act=refund
+<hr>
+<h5>请求方法</h5>
+POST
+<hr>
+<h5>请求参数</h5>
+
+<div class="table-responsive">
+<table class="table table-hover" style="min-width: 800px">
+  <thead><tr><th>字段名</th><th>变量名</th><th>必填</th><th>类型</th><th>示例值</th><th>描述</th></tr></thead>
+  <tbody>
+  <tr><td>商户ID</td><td>pid</td><td>是</td><td>String</td><td>20220715225121</td><td></td></tr>
+  <tr><td>商户密钥</td><td>key</td><td>是</td><td>String</td><td>89unJUB8HZ54Hj7x4nUj56HN4nUzUJ8i</td><td></td></tr>
+  <tr><td>易支付订单号</td><td>trade_no</td><td>特殊可选</td><td>String</td><td>20160806151343349021</td><td>易支付订单号</td></tr>
+  <tr><td>商户订单号</td><td>out_trade_no</td><td>特殊可选</td><td>String</td><td>20160806151343349</td><td>订单支付时传入的商户订单号，商家自定义且保证商家系统中唯一</td></tr>
+  <tr><td>退款金额</td><td>money</td><td>是</td><td>String</td><td>1.50</td><td>大多数通道需要与原订单金额一致</td></tr>
+  </tbody>
+</table>
+</div>
+<hr>
+<h5>返回结果</h5>
+
+<div class="table-responsive">
+<table class="table table-hover" style="min-width: 800px">
+  <thead><tr><th>字段名</th><th>变量名</th><th>类型</th><th>示例值</th><th>描述</th></tr></thead>
+  <tbody>
+  <tr><td>返回状态码</td><td>code</td><td>Int</td><td>1</td><td>1为成功，其它值为失败</td></tr>
+  <tr><td>返回信息</td><td>msg</td><td>String</td><td>退款成功</td><td></td></tr>
+  </tbody>
+</table>
+</div>
+
+										</div>
+									</div>
+
+
+
+									<div class="card m-b-20">
+										<div class="card-header ">
+											<h4>支付结果通知</h4>
+										</div>
+										<div class="card-body">
+											<h5>请求URL</h5>
+服务器异步通知（notify_url）、页面跳转通知（return_url）
+<hr>
+<h5>请求方法</h5>
+GET
+<hr>
+<h5>请求参数</h5>
+
+<div class="table-responsive">
+<table class="table table-hover" style="min-width: 800px">
+<thead>
+<tr><th>参数</th><th>名称</th><th>类型</th><th>描述</th><th>范例</th></tr>
+</thead>
+<tbody>
+<tr><td>pid</td><td>商户ID</td><td>Int</td><td></td><td>201901151314084206659771</td></tr>
+<tr><td>name</td><td>商品名称</td><td>String</td><td>商品名称不超过100字</td><td>iphone</td></tr>
+<tr><td>money</td><td>订单金额</td><td>String</td><td>最多保留两位小数</td><td>5.67</td></tr>
+<tr><td>out_trade_no</td><td>商户订单号</td><td>Num</td><td>商户系统内部的订单号</td><td>201901191324552185692680</td></tr>
+<tr><td>trade_no</td><td>易支付订单号</td><td>String</td><td>易支付订单号</td><td>2019011922001418111011411195</td></tr>
+<tr><td>param</td><td>业务扩展参数</td><td>String</td><td>会通过notify_url原样返回</td><td>金色 256G</td></tr>
+<tr><td>trade_status</td><td>支付状态</td><td>String</td><td>只有TRADE_SUCCESS是成功</td><td>TRADE_SUCCESS</td></tr>
+<tr><td>type</td><td>支付方式</td><td>String</td><td>包括支付宝、微信</td><td>alipay</td></tr>
+<tr><td>sign</td><td>签名（参考本页签名算法）</td><td>String</td><td>用于验证接受信息的正确性</td><td>ef6e3c5c6ff45018e8c82fd66fb056dc</td></tr>
+<tr><td>sign_type</td><td>签名类型</td><td>String</td><td>默认为MD5</td><td>MD5</td></tr>
+
+</tbody>
+</table>
+</div>
+<hr>
+
+<h5>如何验证</h5>
+请根据签名算法，验证自己生成的签名与参数中传入的签名是否一致，如果一致则说明是由官方向您发送的真实信息
+<hr>
+<h5>注意事项</h5>
+<p>1.收到回调信息后请返回“success”，否则程序将判定您的回调地址未正确通知到。</p>
+<p>2.同样的通知可能会多次发送给商户系统。商户系统必须能够正确处理重复的通知。</p>
+<p>3.推荐的做法是，当收到通知进行处理时，首先检查对应业务数据的状态，判断该通知是否已经处理过，如果没有处理过再进行处理，如果处理过直接返回结果成功。在对业务数据进行状态检查和处理之前，要采用数据锁进行并发控制，以避免函数重入造成的数据混乱。</p>
+<p>4.特别提醒：商户系统对于支付结果通知的内容一定要做签名验证,并校验返回的订单金额是否与商户侧的订单金额一致，防止数据泄漏导致出现“假通知”，造成资金损失。</p>
+<p>5.对后台通知交互时，如果平台收到商户的应答不是纯字符串success或超过5秒后返回时，平台认为通知失败，平台会通过一定的策略（通知频率为0/15/15/30/180/1800/1800/1800/1800/3600，单位：秒）间接性重新发起通知，尽可能提高通知的成功率，但不保证通知最终能成功。</p>
+										</div>
+									</div>
+
+
+									<div class="card m-b-20">
+										<div class="card-header ">
+											<h4>MD5签名算法</h4>
+										</div>
+										<div class="card-body">
+<p>1、将发送或接收到的所有参数按照参数名ASCII码从小到大排序（a-z），sign、sign_type、和空值不参与签名！</p>
+<p>2、将排序后的参数拼接成URL键值对的格式，例如 a=b&c=d&e=f，参数值不要进行url编码。</p>
+<p>3、再将拼接好的字符串与商户密钥KEY进行MD5加密得出sign签名参数，sign = md5 ( a=b&c=d&e=f + KEY ) （注意：+ 为各语言的拼接符，不是字符！），md5结果为小写。
+<p>4、具体签名与发起支付的示例代码可下载SDK查看。</p>
+										</div>
+									</div>
+									
+								
+								</div>
+								
+							</div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script type="text/javascript" src="https://cdn.z-pay.cn/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.z-pay.cn/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.z-pay.cn/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="https://cdn.z-pay.cn/js/main.min.js"></script>
+
+<script src="https://cdn.z-pay.cn/js/bootstrap-notify.min.js"></script>
+<script type="text/javascript" src="https://cdn.z-pay.cn/js/lightyear.js"></script>
+<script src="https://cdn.z-pay.cn/js/jqPaginator.min.js" type="text/javascript"></script>
+<script src="https://cdn.z-pay.cn/js/help.js" type="text/javascript"></script>
+<script src="https://cdn.z-pay.cn/js/jconfirm/jquery-confirm.min.js"></script>
+
+<script type="text/javascript">
+
+  var path=window.location.pathname;
+  $("a").each(function(){
+    if(path.indexOf($(this).attr("href"))!=-1){
+      console.log($(this).attr("href"));
+      $(this).parent("li").addClass("active");
+      $(this).parent("li").parent("ul").parent("li").addClass("open active");
+    }
+  });
+</script>
+</body>
+</html>

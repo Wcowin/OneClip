@@ -1,145 +1,178 @@
 ---
-title: OneClip 技术文档
-description: OneClip macOS 剪贴板管理工具技术文档
+title: OneClip 文档
+description: OneClip - 简单专业的 macOS 剪贴板管理工具
 ---
-
-<!-- OneClip 公告栏 -->
-<div class="oneclip-announcement">
-  <div class="oneclip-announcement-content">
-    🎉 <strong>2025/12/31 之前限时免费！</strong>
-    <a href="https://oneclip.cloud/" target="_blank">OneClip</a>
-    - 剪贴板管理工具，让你的工作效率翻倍！
-    <a href="https://oneclip.cloud/" target="_blank" class="oneclip-cta">立即体验 →</a>
-  </div>
-</div>
-
-# OneClip
-
-OneClip 是一款 **专为 macOS 打造** 的剪贴板管理工具，采用 **SwiftUI 原生技术开发** 的高效剪贴板历史管理应用。
 
 <div align="center" markdown="1">
 
-![OneClip Logo](https://picx.zhimg.com/80/v2-34b000e56d1af7ef61092dcd031dfd9a_1440w.webp?source=2c26e567)
+![OneClip Logo](https://picx.zhimg.com/80/v2-34b000e56d1af7ef61092dcd031dfd9a_1440w.webp?source=2c26e567){ width="120" }
 
-🚀 高效 · 🎨 现代 · ⚡ 流畅 · 🔒 安全
+# OneClip
+
+**一个简单专业的 macOS 剪贴板管理工具**
+
+🚀 高效 · 🎨 现代 · ⚡️ 流畅 · 🔒 安全
 
 [![Release](https://img.shields.io/github/v/release/Wcowin/OneClip?style=for-the-badge&color=3b82f6)](https://github.com/Wcowin/OneClip/releases)
+[![Downloads](https://img.shields.io/github/downloads/Wcowin/OneClip/total?style=for-the-badge&color=22c55e)](https://github.com/Wcowin/OneClip/releases)
 ![Homebrew](https://img.shields.io/badge/Homebrew-Available-orange?style=for-the-badge&logo=homebrew&logoColor=white)
 ![macOS 12+](https://img.shields.io/badge/macOS-12%2B-0f172a?style=for-the-badge&logo=apple&logoColor=white)
-![Swift 5.9+](https://img.shields.io/badge/Swift-5.9%2B-F05138?style=for-the-badge&logo=swift&logoColor=white)
 
 </div>
 
-## 核心功能
+---
 
-- **剪贴板历史记录**：自动保存复制的内容，支持文本、图片、文件等多种格式
-- **快速搜索**：支持关键词搜索历史记录
-- **全局快捷键**：`Cmd + Option + V` 呼出主界面，`Cmd + Option + R` 呼出快捷回复
-- **菜单栏集成**：在菜单栏显示最近的剪贴板内容
-- **快捷回复**：预设常用文本，快速输入
-- **多种界面模式**：支持丰富模式和极简模式切换
+## 概览
 
-![OneClip界面预览](https://s1.imagehub.cc/images/2025/09/26/60252002e8ba561041062e3865e60f9a.jpg)
+OneClip 是一款专为 macOS 打造的**专业级剪贴板管理工具**。采用 **100% SwiftUI** 原生技术，实现更顺滑的动画、更自然的系统融合与更低的资源占用。
 
-## 系统要求
+!!! tip "为什么选择 OneClip？"
+    - ✅ **纯原生开发**：100% SwiftUI，无第三方框架依赖，性能卓越
+    - ✅ **独特创新**：栈粘贴板、拖拽容器等创新功能，提升工作效率
+    - ✅ **隐私安全**：数据完全本地存储，无任何网络上传
+    - ✅ **持续更新**：社群积极维护，快速响应用户反馈
+    - ✅ **免费试用**：提供完整功能试用
+
+![OneClip 主界面](https://i.imgant.com/v2/RKyVhgF.png)
+
+## 🎯 核心功能
+
+- **📋 智能记录**：自动保存剪贴板历史，支持文本、图片、文件等格式
+- **🔎 极速搜索**：随打随搜，多维筛选快速定位
+- **🗂️ 全格式支持**：图片/视频/音频/文档等，完整保留元数据
+- **⌨️ 全局快捷键**：`⌘+⇧+V` 呼出主界面，支持自定义组合
+- **� 快捷回复**：`⌘+⇧+R` 呼出快捷回复界面
+- **🎨 布局多样**：支持列表/卡片双模式切换，支持 Paste 同款布局
+- **📥 栈粘贴板**：`⌘+⇧+C` 呼出栈粘贴板，`⌘+V` 依次粘贴栈内容
+- **📦 拖拽容器**：`⌘+⇧+D` 呼出拖拽容器，方便管理
+- **🧀 OCR 识别**：支持屏幕/图片内容识别，OCR 翻译
+- **🤖 AI 集成**：支持本地 AI（Ollama/LMStudio）和在线 AI 服务
+- **☁️ 云同步**：支持 Syncthing 和自定义 iCloud 等多设备同步
+- **👍 访达增强**：支持访达 `⌘+X` 剪切文件，然后 `⌘+V` 移动文件
+
+![OneClip 功能展示](https://i.imgant.com/v2/Zn6arLh.png)
+
+## ⬇️ 下载与安装
+
+### 系统要求
 
 - macOS 12.0 及以上
-- 推荐使用 Apple Silicon（M 系列芯片）
+- Apple Silicon + Intel 支持
 
-## 安装方式
+### 📦 安装方式
 
-### Homebrew 安装（推荐）
+=== "Homebrew（推荐）"
+
+    ```bash
+    brew install --cask Wcowin/oneclip/oneclip
+    ```
+
+=== "GitHub Releases"
+
+    1. 前往 [Releases 页面](https://github.com/Wcowin/OneClip/releases) 下载最新版本
+    2. 将 `OneClip.app` 拖入 `Applications` 文件夹
+
+=== "网盘下载"
+
+    - [123网盘下载](https://www.123912.com/s/bXcDVv-HauG3)
+
+### 🔓 解决安全提示
+
+如提示"来自未知开发者"或"已损坏"：
+
+**方法一：终端命令（推荐）**
 
 ```bash
-brew install --cask wcowin/oneclip/oneclip
+sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 ```
 
-### 手动安装
+**方法二：系统设置**
 
-1. 从 [GitHub Releases](https://github.com/Wcowin/OneClip/releases) 下载最新版本
-2. 将 `OneClip.app` 拖入 `Applications` 文件夹
-3. 如提示安全警告，在终端执行：
-   ```bash
-   sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
-   ```
+1. 打开 `系统设置` → `隐私与安全性`
+2. 找到 OneClip 相关提示
+3. 点击"仍然打开"
 
-## 技术架构
+## ⌨️ 快捷键速查表
 
-### 核心技术栈
+| 功能 | 默认快捷键 | 说明 |
+|------|-----------|------|
+| **主窗口呼出** | `⌘+⇧+V` | 打开/关闭主界面 |
+| **快捷回复** | `⌘+⇧+R` | 呼出快捷回复窗口 |
+| **栈面板呼出** | `⌘+⇧+C` | 打开栈粘贴板面板 |
+| **拖拽容器** | `⌘+⇧+D` | 打开拖拽容器 |
+| **预览** | `Space` | 预览选中内容 |
 
-- Swift + SwiftUI
-- Core Data（数据持久化）
-- Carbon Framework（全局热键）
-- Accessibility API（系统权限）
+> 💡 所有快捷键均可在设置中自定义，支持检测冲突
 
-### 主要组件
+## 🎬 功能演示
 
-- **ClipboardManager**: 剪贴板监控和数据管理
-- **HotkeyManager**: 全局快捷键处理
-- **WindowManager**: 窗口状态控制
-- **SettingsManager**: 用户设置管理
+### 1️⃣ 主窗口 - 快速访问历史
 
-### 权限要求
+- 按 `⌘+⇧+V` 呼出主窗口
+- 支持列表/卡片双模式切换
+- 实时搜索、分类筛选
+- 点击即可粘贴到当前应用
 
-应用需要以下系统权限：
+### 2️⃣ 栈粘贴板 - 批量复制粘贴
+
+- `⌘+⇧+C` 呼出栈面板
+- 将多个项目加入栈中
+- `⌘+V` 依次粘贴
+- 适合表单填写、批量编辑场景
+
+### 3️⃣ 快捷回复 - 常用文本模板
+
+- `⌘+⇧+R` 呼出快捷回复
+- 支持文本、图片、文件模板
+- 可设置独立快捷键
+
+### 4️⃣ 拖拽容器 - 文件临时存储
+
+- `⌘+⇧+D` 呼出拖拽容器
+- 暂存文件、图片等内容
+- 支持拖出到其他应用
+
+## 🔐 权限配置
+
+首次启动时，OneClip 需要以下系统权限：
 
 1. **辅助功能权限**（必需）
-   - 用于全局快捷键功能
-   - 在系统设置 → 隐私与安全性 → 辅助功能中添加 OneClip
+   - 系统偏好设置 → 安全性与隐私 → 隐私 → 辅助功能
+   - 添加 OneClip 并启用
 
-2. **完全磁盘访问权限**（可选）
-   - 用于文件类型内容的处理
+2. **磁盘访问权限**（可选，用于文件操作）
+   - 系统偏好设置 → 安全性与隐私 → 隐私 → 完全磁盘访问
+   - 添加 OneClip 并启用
 
-## 基础使用
+## 📊 性能与体验
 
-### 快捷键
+| 指标 | 数值 |
+|------|------|
+| 内存占用 | ~120MB |
+| CPU 使用 | 空闲时 < 1% |
+| 启动时间 | < 1 秒 |
+| 响应速度 | < 100ms |
 
-- **主界面**: `Cmd + Option + V`
-- **快捷回复**: `Cmd + Option + R`
-- **菜单栏**: 点击状态栏图标
+## 🛠️ 技术架构
 
-### 基本操作
+- **Swift 5.9+** + **SwiftUI**（100% 原生）
+- **SQLite + WAL**（数据持久化）
+- **Carbon Framework**（全局热键）
+- **Sparkle**（自动更新）
 
-1. 复制任何内容，自动保存到历史记录
-2. 使用快捷键打开主界面浏览历史
-3. 点击任意项目即可粘贴到当前位置
-4. 支持搜索功能快速定位内容
+## 🚀 获取 OneClip
 
-### 主要设置
-
-- **历史记录数量**: 可调整最大保存条目数
-- **界面模式**: 丰富模式/极简模式切换
-- **Dock 图标**: 可选择显示或隐藏
-- **开机启动**: 支持自动启动
-
-## 性能特点
-
-- 内存占用：约 120MB
-- CPU 使用率：空闲时 < 1%
-- 启动时间：< 1 秒
-- 快捷键响应：< 100ms
-
-## 常见问题
-
-### 快捷键不工作？
-请确保已授予辅助功能权限，并重启应用。
-
-### 状态栏图标消失？
-重启应用或检查系统状态栏设置。
-
-### 内存占用过高？
-可在设置中调整历史记录数量限制。
-
-## 获取 OneClip
-
-### 免费试用
-
-[🚀 免费下载试用](https://github.com/Wcowin/OneClip/releases/download/1.2.6/OneClip-1.2.6-apple-silicon.dmg){ .md-button }
-
-### 解锁完整功能 🔥
-
-[购买许可证 - 仅¥29.90起](purchase/index.md){ .md-button .md-button--primary }
+[🚀 免费下载试用](https://github.com/Wcowin/OneClip/releases){ .md-button }
+[💎 购买许可证 - ¥29.90起](purchase/index.md){ .md-button .md-button--primary }
 
 ---
+
+## 📮 联系方式
+
+| 方式 | 链接 |
+|------|------|
+| 📧 **邮件** | [vip@oneclip.cloud](mailto:vip@oneclip.cloud) |
+| 👥 **QQ 群** | [1060157293](https://qm.qq.com/q/xiImGHVMcM) |
+| 🌐 **官网** | [https://oneclip.cloud](https://oneclip.cloud) |
 
 需要帮助？查看 [常见问题](help/faq.md) 或 [联系我们](about/contact.md)。

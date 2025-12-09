@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OneClip 常见问题解答：如何安装、权限设置、数据安全、同步问题、快捷键冲突等。快速找到你遇到的问题的解决方案，解决 Mac 剪贴板管理使用中的各种疑问。涵盖许可证激活、多设备同步配置、AI 功能使用、数据备份与恢复、性能优化、兼容性问题等常见场景，帮助用户快速解决使用中遇到的各种问题。">
+    <meta name="keywords" content="OneClip FAQ, OneClip 常见问题, Mac 剪贴板问题, 剪贴板不同步, 剪贴板权限, OneClip 安装问题, 剪贴板快捷键冲突, 使用问题">
+    <title>OneClip 常见问题 FAQ - 使用疑问解答 | Mac 剪贴板管理工具问题解决方案</title>
+    <link rel="icon" type="image/png" href="https://s1.imagehub.cc/images/2025/10/25/ed2260baf7775b21ec934604f5b4ba4a.png" />
+    <link rel="apple-touch-icon" href="https://s1.imagehub.cc/images/2025/10/25/d0916e38974fa2e460e904aee6526a80.png" />
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        
+        /* 引入霞鹜文楷字体 */
+        @import url('https://fontsapi.zeoseven.com/292/main/result.css');
+        
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #06b6d4;
+            --bg-dark: #0f172a;
+            --bg-darker: #020617;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --border-color: rgba(59, 130, 246, 0.2);
+            --card-bg: rgba(15, 23, 42, 0.8);
+            --code-bg: #1e293b;
+        }
+        
+        body {
+            font-family: "LXGW WenKai", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 16px 0;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .nav-logo span {
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 100px auto 40px;
+            padding: 0 24px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+        
+        .page-header {
+            margin-bottom: 48px;
+        }
+        
+        .page-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin: 0 0 16px 0;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .page-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        /* 搜索框 */
+        .search-box {
+            background: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 32px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .search-box input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .search-box input::placeholder {
+            color: var(--text-secondary);
+        }
+        
+        /* FAQ分类 */
+        .faq-categories {
+            display: flex;
+            gap: 12px;
+            margin: 32px 0;
+            flex-wrap: wrap;
+        }
+        
+        .faq-category {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+            background: transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .faq-category:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .faq-category.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* FAQ 项 */
+        .faq-section {
+            margin: 48px 0;
+        }
+        
+        .faq-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+        
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin: 16px 0;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+        
+        .faq-item:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .faq-question {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+        
+        .faq-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .faq-toggle {
+            font-size: 24px;
+            color: var(--primary-color);
+            transition: transform 0.3s;
+        }
+        
+        details[open] .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            padding: 0 24px 24px 24px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        .faq-answer p {
+            margin: 12px 0;
+        }
+        
+        .faq-answer ul, .faq-answer ol {
+            margin: 12px 0;
+            padding-left: 24px;
+        }
+        
+        .faq-answer li {
+            margin: 8px 0;
+        }
+        
+        .faq-answer code {
+            background: var(--code-bg);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .faq-answer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .faq-answer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 36px;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span>OneClip</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">首页</a>
+                <a href="/docs.html" class="active">文档</a>
+                <a href="/purchase">购买</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/docs.html">文档</a>
+            <span>/</span>
+            <span>常见问题</span>
+        </div>
+
+        <div class="page-header">
+            <h1 class="page-title">❓ 常见问题</h1>
+            <p class="page-subtitle">快速找到您需要的答案</p>
+        </div>
+
+        <div class="search-box">
+            <span style="font-size: 20px;">🔍</span>
+            <input type="text" placeholder="搜索问题..." id="faq-search">
+        </div>
+
+        <div class="faq-categories">
+            <button class="faq-category active" data-category="all">全部</button>
+            <button class="faq-category" data-category="basic">基础使用</button>
+            <button class="faq-category" data-category="permission">权限设置</button>
+            <button class="faq-category" data-category="ai">AI 功能</button>
+            <button class="faq-category" data-category="sync">云同步</button>
+            <button class="faq-category" data-category="performance">性能问题</button>
+        </div>
+
+        <!-- 基础使用 -->
+        <div class="faq-section" data-category="basic">
+            <h2>🚀 基础使用</h2>
+            
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">📋</span>
+                    <span style="flex: 1;">如何快速打开 OneClip？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>有三种方式可以打开 OneClip：</p>
+                    <ol>
+                        <li><strong>快捷键</strong>：按 <code>⌘ + Shift + V</code>（默认，可自定义）</li>
+                        <li><strong>菜单栏</strong>：点击菜单栏的 OneClip 图标</li>
+                        <li><strong>Dock</strong>：点击 Dock 中的 OneClip 图标</li>
+                    </ol>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">⌨️</span>
+                    <span style="flex: 1;">可以自定义快捷键吗？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p><strong>可以！</strong>OneClip 支持完全自定义快捷键。</p>
+                    <p><strong>设置方法：</strong></p>
+                    <ol>
+                        <li>打开 OneClip 设置</li>
+                        <li>进入"快捷键"标签页</li>
+                        <li>点击要修改的快捷键</li>
+                        <li>按下新的组合键</li>
+                        <li>系统会自动检测冲突</li>
+                    </ol>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🗑️</span>
+                    <span style="flex: 1;">如何删除不需要的历史记录？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>有多种方式删除历史记录：</p>
+                    <ul>
+                        <li><strong>单个删除</strong>：鼠标悬停在项目上，点击删除图标</li>
+                        <li><strong>右键删除</strong>：右键点击项目，选择"删除"</li>
+                        <li><strong>批量删除</strong>：点击左上角批量操作按钮，选择多个项目后删除</li>
+                        <li><strong>清空全部</strong>：在主界面点击清空按钮（收藏项不会被删除）</li>
+                    </ul>
+                    <p><strong>注意</strong>：收藏的项目需要手动删除，不会被自动清理。</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">💾</span>
+                    <span style="flex: 1;">OneClip 的数据存储在哪里？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>OneClip 使用 macOS 标准的应用数据目录：</p>
+                    <code>~/Library/Application Support/OneClip/</code>
+                    <p><strong>数据结构：</strong></p>
+                    <ul>
+                        <li><code>clipboard.db</code> - SQLite 数据库（剪贴板历史、收藏、分类等）</li>
+                        <li><code>QuickReplyFiles/</code> - 快捷回复附件文件</li>
+                        <li><code>Backups/</code> - 每日自动备份</li>
+                        <li><code>Logs/</code> - 应用日志</li>
+                        <li><code>plugins/</code> - 插件目录（如 OCR 模型）</li>
+                    </ul>
+                    <p>所有数据都在本地，不会上传到服务器。如果您启用了云同步（iCloud/Dropbox），图片文件会同步到云端，但数据库始终保留在本地以确保数据安全。</p>
+                </div>
+            </details>
+        </div>
+
+        <!-- 权限设置 -->
+        <div class="faq-section" data-category="permission">
+            <h2>🔐 权限设置</h2>
+            
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🔓</span>
+                    <span style="flex: 1;">为什么需要"辅助功能"权限？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>OneClip 需要"辅助功能"权限来监控全局剪贴板变化和注册全局快捷键。这是 macOS 的安全机制要求。</p>
+                    <p><strong>OneClip 会做什么：</strong></p>
+                    <ul>
+                        <li>✅ 监控剪贴板内容变化</li>
+                        <li>✅ 注册全局快捷键</li>
+                        <li>✅ 响应快捷键呼出窗口</li>
+                    </ul>
+                    <p><strong>OneClip 不会：</strong></p>
+                    <ul>
+                        <li>❌ 记录您的键盘输入</li>
+                        <li>❌ 监控其他应用的行为</li>
+                        <li>❌ 上传任何数据</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">⚙️</span>
+                    <span style="flex: 1;">如何重新授予权限？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>如果权限被意外撤销，可以按以下步骤重新授予：</p>
+                    <ol>
+                        <li>打开"系统设置"</li>
+                        <li>进入"隐私与安全性"</li>
+                        <li>点击左侧的"辅助功能"</li>
+                        <li>在右侧列表中找到 OneClip</li>
+                        <li>勾选启用（如果已启用，先关闭再开启）</li>
+                        <li>返回 OneClip，权限状态会自动更新</li>
+                    </ol>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🔒</span>
+                    <span style="flex: 1;">OneClip 安全吗？会上传我的数据吗？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p><strong>OneClip 100% 安全</strong>，我们高度重视您的隐私：</p>
+                    <ul>
+                        <li>✅ <strong>本地存储</strong>：所有数据存储在您的Mac上</li>
+                        <li>✅ <strong>不联网运行</strong>：除AI和云同步功能外，无需网络连接</li>
+                        <li>✅ <strong>隐私保护</strong>：不收集、不上传任何用户数据</li>
+                        <li>✅ <strong>无数据收集</strong>：不包含任何追踪和统计代码</li>
+                        <li>✅ <strong>加密存储</strong>：敏感数据使用Keychain加密</li>
+                    </ul>
+                    <p><strong>关于云同步</strong>：如果您启用云同步功能，数据会通过 云存储 进行端到端加密同步，OneClip 不参与数据传输，保护您的隐私。</p>
+                </div>
+            </details>
+        </div>
+
+        <!-- AI 功能 -->
+        <div class="faq-section" data-category="ai">
+            <h2>🤖 AI 功能</h2>
+            
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🤔</span>
+                    <span style="flex: 1;">OneClip 支持哪些 AI 服务？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>OneClip 支持两种 AI 服务模式：</p>
+                    <ul>
+                        <li><strong>☁️ 云端 AI（智谱 AI）</strong>
+                            <ul>
+                                <li>需要 API Key</li>
+                                <li>提供免费额度</li>
+                                <li>性能强大，响应快速</li>
+                                <li>需要网络连接</li>
+                            </ul>
+                        </li>
+                        <li><strong>🏠 本地 AI（Ollama）</strong>
+                            <ul>
+                                <li>完全免费，无使用限制</li>
+                                <li>数据完全本地处理，隐私安全</li>
+                                <li>离线可用，不依赖网络</li>
+                                <li>需要先安装 Ollama 和下载模型</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>可以在 OneClip 设置 → AI 功能中选择使用哪种模式。</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🔑</span>
+                    <span style="flex: 1;">为什么 AI 功能需要 API Key？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p><strong>仅云端 AI 模式需要 API Key</strong>，本地 AI 模式不需要。</p>
+                    <p><strong>获取智谱 AI API Key：</strong></p>
+                    <ol>
+                        <li>访问 <a href="https://bigmodel.cn/usercenter/apikeys" target="_blank">智谱AI开放平台</a></li>
+                        <li>注册/登录账号（支持手机号、微信）</li>
+                        <li>在"API Keys"页面点击"创建新的 API Key"</li>
+                        <li>复制生成的 API Key</li>
+                        <li>在 OneClip 设置中粘贴并保存</li>
+                    </ol>
+                    <p><strong>免费额度</strong>：新用户注册即可获得免费调用额度，日常使用完全够用。</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🏠</span>
+                    <span style="flex: 1;">如何使用 Ollama 本地 AI？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p><strong>使用 Ollama 本地 AI 的步骤：</strong></p>
+                    <ol>
+                        <li><strong>安装 Ollama</strong>
+                            <ul>
+                                <li>访问 <a href="https://ollama.ai" target="_blank">ollama.ai</a> 下载安装</li>
+                                <li>或在终端运行：<code>curl -fsSL https://ollama.ai/install.sh | sh</code></li>
+                            </ul>
+                        </li>
+                        <li><strong>下载 AI 模型</strong>
+                            <ul>
+                                <li>文本模型（推荐）：<code>ollama pull qwen3:4b</code></li>
+                                <li>视觉模型（OCR）：<code>ollama pull llava:7b</code></li>
+                            </ul>
+                        </li>
+                        <li><strong>在 OneClip 中配置</strong>
+                            <ul>
+                                <li>打开 OneClip 设置 → AI 功能</li>
+                                <li>选择"本地 AI 模型"模式</li>
+                                <li>OneClip 会自动检测 Ollama 服务和已安装的模型</li>
+                                <li>选择对应的文本模型和视觉模型</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p>查看 <a href="docs-ai.html">AI 功能文档</a> 了解详细配置步骤。</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">💰</span>
+                    <span style="flex: 1;">AI 功能收费吗？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p><strong>OneClip 本身不收取任何 AI 功能费用。</strong></p>
+                    <p><strong>云端 AI（智谱 AI）：</strong></p>
+                    <ul>
+                        <li>需要自己的智谱 AI API Key</li>
+                        <li>智谱 AI 提供<strong>免费额度</strong>，新用户足够日常使用</li>
+                        <li>超出免费额度后按智谱 AI 的定价收费（非常便宜）</li>
+                    </ul>
+                    <p><strong>本地 AI（Ollama）：</strong></p>
+                    <ul>
+                        <li>完全免费，无任何费用</li>
+                        <li>无使用次数限制</li>
+                        <li>只需要一次性下载模型（2-5GB）</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🌐</span>
+                    <span style="flex: 1;">AI 功能可以离线使用吗？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p><strong>取决于您选择的 AI 模式：</strong></p>
+                    <ul>
+                        <li><strong>云端 AI（智谱 AI）</strong>
+                            <ul>
+                                <li>❌ 需要网络连接</li>
+                                <li>AI 计算在云端完成</li>
+                                <li>不占用本地计算资源</li>
+                            </ul>
+                        </li>
+                        <li><strong>本地 AI（Ollama）</strong>
+                            <ul>
+                                <li>✅ 完全离线可用</li>
+                                <li>AI 计算在本地完成</li>
+                                <li>数据不会离开您的设备</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p><strong>注意</strong>：OneClip 的其他功能（剪贴板管理、搜索等）完全离线可用，不受 AI 模式影响。</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🔒</span>
+                    <span style="flex: 1;">AI 功能会上传我的剪贴板内容吗？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p><strong>取决于您选择的 AI 模式：</strong></p>
+                    <ul>
+                        <li><strong>云端 AI（智谱 AI）</strong>
+                            <ul>
+                                <li>仅在您主动使用 AI 功能时，才会将选中的内容发送到智谱 AI 服务器</li>
+                                <li>不会自动上传任何内容</li>
+                                <li>智谱 AI 不会存储您的数据</li>
+                            </ul>
+                        </li>
+                        <li><strong>本地 AI（Ollama）</strong>
+                            <ul>
+                                <li>✅ 数据完全在本地处理</li>
+                                <li>✅ 不会上传任何内容</li>
+                                <li>✅ 完全隐私保护</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p><strong>隐私保护建议</strong>：如果您处理敏感数据，推荐使用 Ollama 本地 AI 模式。</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🎯</span>
+                    <span style="flex: 1;">AI 识别准确率如何？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>OneClip 使用智谱 GLM-4V-Flash 视觉模型和 GLM-4-Flash 文本模型：</p>
+                    <ul>
+                        <li><strong>OCR 识别</strong>：中文 95%+，英文 98%+</li>
+                        <li><strong>翻译质量</strong>：接近专业翻译水平</li>
+                        <li><strong>摘要准确性</strong>：能准确提取核心要点</li>
+                    </ul>
+                    <p><strong>提升识别率的技巧</strong>：</p>
+                    <ul>
+                        <li>使用高分辨率图片</li>
+                        <li>确保文字清晰可见</li>
+                        <li>避免过度倾斜或变形</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <!-- 云同步 -->
+        <div class="faq-section" data-category="sync">
+            <h2>☁️ 云同步</h2>
+            
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🔄</span>
+                    <span style="flex: 1;">OneClip 支持哪些同步方式？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>OneClip 支持基于 云存储 的端到端加密同步：</p>
+                    <ul>
+                        <li><strong>自动配对</strong>：扫描二维码即可连接设备</li>
+                        <li><strong>实时同步</strong>：剪贴板内容秒级同步</li>
+                        <li><strong>端到端加密</strong>：数据传输全程加密</li>
+                        <li><strong>冲突处理</strong>：智能合并不同设备的数据</li>
+                    </ul>
+                    <p>在 OneClip 设置 → 云同步 中可以配置同步功能，查看 <a href="docs-features.html">功能指南</a> 了解更多。</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">📱</span>
+                    <span style="flex: 1;">支持 iOS 同步吗？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>目前 OneClip 仅支持 macOS 平台。</p>
+                    <p><strong>跨设备同步</strong>：</p>
+                    <ul>
+                        <li>✅ Mac ↔ Mac：完全支持</li>
+                        <li>📱 Mac ↔ iOS：规划中</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <!-- 性能问题 -->
+        <div class="faq-section" data-category="performance">
+            <h2>⚡ 性能问题</h2>
+            
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">💻</span>
+                    <span style="flex: 1;">OneClip 会占用很多内存吗？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p><strong>OneClip 的内存占用非常低：</strong></p>
+                    <ul>
+                        <li>基础运行：30-50 MB</li>
+                        <li>正常使用：50-100 MB</li>
+                        <li>大量图片：100-150 MB</li>
+                    </ul>
+                    <p><strong>优化措施</strong>：</p>
+                    <ul>
+                        <li>智能缓存管理</li>
+                        <li>大文件按需加载</li>
+                        <li>自动清理过期数据</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🔋</span>
+                    <span style="flex: 1;">OneClip 耗电吗？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p><strong>OneClip 针对能耗进行了深度优化：</strong></p>
+                    <ul>
+                        <li>CPU 使用：0.1-2%（几乎感知不到）</li>
+                        <li>低电量模式：自动降低监控频率</li>
+                        <li>智能休眠：长时间无操作自动降频</li>
+                    </ul>
+                    <p>正常使用对电池续航几乎没有影响。</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🐌</span>
+                    <span style="flex: 1;">感觉 OneClip 变慢了怎么办？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p><strong>可能的原因和解决方案：</strong></p>
+                    <ol>
+                        <li><strong>历史记录过多</strong>
+                            <ul>
+                                <li>建议：定期清理不需要的历史记录</li>
+                                <li>在设置中调整自动清理策略</li>
+                            </ul>
+                        </li>
+                        <li><strong>缓存文件过大</strong>
+                            <ul>
+                                <li>进入设置 → 存储管理</li>
+                                <li>点击"清理缓存"按钮</li>
+                            </ul>
+                        </li>
+                        <li><strong>系统资源紧张</strong>
+                            <ul>
+                                <li>OneClip 会自动适应系统负载</li>
+                                <li>关闭其他占用资源的应用</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </details>
+        </div>
+
+        <!-- 其他问题 -->
+        <div class="faq-section" data-category="basic">
+            <h2>🔧 其他问题</h2>
+            
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🔄</span>
+                    <span style="flex: 1;">如何更新 OneClip？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>OneClip 支持自动更新检测：</p>
+                    <ul>
+                        <li><strong>自动检查</strong>：应用会定期检查更新</li>
+                        <li><strong>手动检查</strong>：OneClip 菜单 → "检查更新"</li>
+                        <li><strong>Homebrew</strong>：运行 <code>brew upgrade oneclip</code></li>
+                    </ul>
+                    <p>更新时会保留所有数据和设置。</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🎨</span>
+                    <span style="flex: 1;">可以切换主题吗？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>OneClip 自动跟随系统的外观设置：</p>
+                    <ul>
+                        <li>☀️ 浅色模式：清爽明亮</li>
+                        <li>🌙 深色模式：护眼舒适</li>
+                        <li>🔄 自动切换：跟随系统设置</li>
+                    </ul>
+                    <p>在 macOS 系统设置 → 外观中切换，OneClip 会自动适配。</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🆘</span>
+                    <span style="flex: 1;">遇到崩溃或 Bug 怎么办？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>如果遇到问题，请按以下步骤：</p>
+                    <ol>
+                        <li><strong>查看日志</strong>：
+                            <ul>
+                                <li>日志位置：<code>~/Library/Application Support/OneClip/Logs/</code></li>
+                                <li>日志包含详细的错误信息</li>
+                            </ul>
+                        </li>
+                        <li><strong>重启应用</strong>：
+                            <ul>
+                                <li>完全退出 OneClip</li>
+                                <li>重新启动应用</li>
+                            </ul>
+                        </li>
+                        <li><strong>联系支持</strong>：
+                            <ul>
+                                <li>邮件：vip@oneclip.cloud</li>
+                                <li>提供详细的问题描述和日志</li>
+                                <li>我们会尽快响应</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span class="faq-icon">🌍</span>
+                    <span style="flex: 1;">OneClip 支持哪些语言？</span>
+                    <span class="faq-toggle">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>OneClip 目前支持：</p>
+                    <ul>
+                        <li>🇨🇳 简体中文</li>
+                        <li>🇺🇸 English (英文)</li>
+                    </ul>
+                    <p>可以在设置 → 语言中切换界面语言。</p>
+                    <p><strong>AI 功能语言支持</strong>：</p>
+                    <ul>
+                        <li>OCR：支持中文、英文、日文、韩文等</li>
+                        <li>翻译：支持中英互译</li>
+                        <li>其他 AI 功能：主要支持中英文</li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 16px; padding: 32px; margin: 48px 0; text-align: center;">
+            <h3 style="margin: 0 0 16px 0;">没有找到答案？</h3>
+            <p style="color: var(--text-secondary); margin: 0 0 24px 0;">
+                查看其他文档或联系我们获取帮助
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="docs-getting-started.html" style="padding: 12px 24px; background: var(--primary-color); color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">
+                    快速开始
+                </a>
+                <a href="mailto:vip@oneclip.cloud" style="padding: 12px 24px; border: 2px solid var(--primary-color); color: var(--primary-color); text-decoration: none; border-radius: 8px; font-weight: 600;">
+                    联系支持
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // FAQ搜索功能
+        const searchInput = document.getElementById('faq-search');
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            faqItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(query) ? 'block' : 'none';
+            });
+        });
+        
+        // 分类筛选
+        const categoryBtns = document.querySelectorAll('.faq-category');
+        const sections = document.querySelectorAll('.faq-section');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+                
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                if (category === 'all') {
+                    sections.forEach(s => s.style.display = 'block');
+                } else {
+                    sections.forEach(s => {
+                        s.style.display = s.dataset.category === category ? 'block' : 'none';
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

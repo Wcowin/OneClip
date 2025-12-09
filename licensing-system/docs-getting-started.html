@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OneClip 快速入门教程：5分钟学会使用 Mac 剪贴板管理。包括安装配置、基础使用、快捷键设置、高级功能。适合新手的完整教程，让你快速掌握 Mac 剪贴板管理技巧。从零开始学习如何查看剪贴板历史、使用智能搜索、设置快捷键、启用 AI 功能、配置多设备同步等，全面提升工作效率。">
+    <meta name="keywords" content="OneClip 教程, Mac 剪贴板使用教程, OneClip 快速入门, 剪贴板管理指南, Mac 剪贴板快捷键, OneClip 安装, 剪贴板工具教程, 新手教程">
+    <title>OneClip 快速入门教程 - 5分钟学会使用 Mac 剪贴板管理 | 新手完整指南</title>
+    <link rel="icon" type="image/png" href="https://s1.imagehub.cc/images/2025/10/25/ed2260baf7775b21ec934604f5b4ba4a.png" />
+    <link rel="apple-touch-icon" href="https://s1.imagehub.cc/images/2025/10/25/d0916e38974fa2e460e904aee6526a80.png" />
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        
+        /* 引入霞鹜文楷字体 */
+        @import url('https://fontsapi.zeoseven.com/292/main/result.css');
+        
+        :root {
+            --primary-color: #3b82f6;
+            --secondary-color: #06b6d4;
+            --bg-dark: #0f172a;
+            --bg-darker: #020617;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --border-color: rgba(59, 130, 246, 0.2);
+            --card-bg: rgba(15, 23, 42, 0.8);
+            --code-bg: #1e293b;
+            --success-color: #10b981;
+        }
+        
+        body {
+            font-family: "LXGW WenKai", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 16px 0;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .nav-logo span {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 100px auto 40px;
+            padding: 0 24px;
+        }
+        
+        /* 面包屑 */
+        .breadcrumb {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* 标题区 */
+        .page-header {
+            margin-bottom: 48px;
+        }
+        
+        .page-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin: 0 0 16px 0;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .page-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        /* 内容区 */
+        .content {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .content h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 48px 0 24px 0;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+        
+        .content h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+            color: var(--text-primary);
+        }
+        
+        .content p {
+            margin: 16px 0;
+            color: var(--text-secondary);
+        }
+        
+        .content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        
+        .content a:hover {
+            border-bottom-color: var(--primary-color);
+        }
+        
+        /* 步骤卡片 */
+        .step-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px 32px 48px 32px;
+            margin: 24px 0;
+            position: relative;
+            overflow: visible;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -16px;
+            left: 32px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .step-card h3 {
+            margin: 8px 0 16px 0;
+            font-size: 22px;
+        }
+        
+        /* 提示框 */
+        .tip-box {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--primary-color);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+        
+        .tip-box strong {
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .warning-box {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid #f59e0b;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .warning-box strong {
+            color: #f59e0b;
+        }
+        
+        .success-box {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success-color);
+            border-left: 4px solid var(--success-color);
+        }
+        
+        .success-box strong {
+            color: var(--success-color);
+        }
+        
+        /* 代码块 */
+        .code-block {
+            background: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+            overflow-x: auto;
+        }
+        
+        code {
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+            font-size: 14px;
+            color: #e2e8f0;
+        }
+        
+        .inline-code {
+            background: var(--code-bg);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        /* 按钮 */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            color: white !important;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color) !important;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: var(--primary-dark);
+        }
+        
+        /* 导航按钮 */
+        .doc-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            margin-top: 64px;
+            padding-top: 32px;
+            border-top: 2px solid var(--border-color);
+        }
+        
+        .doc-nav-btn {
+            flex: 1;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .doc-nav-btn:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-4px);
+        }
+        
+        .doc-nav-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .doc-nav-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 36px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .doc-nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span>OneClip</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">首页</a>
+                <a href="/docs.html" class="active">文档</a>
+                <a href="/purchase">购买</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/docs.html">文档</a>
+            <span>/</span>
+            <span>快速开始</span>
+        </div>
+
+        <div class="page-header">
+            <h1 class="page-title">快速开始</h1>
+            <p class="page-subtitle">5分钟快速上手 OneClip，开启高效剪贴板管理之旅</p>
+        </div>
+
+        <div class="content">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>安装 OneClip</h3>
+                <p>有三种方式可以安装 OneClip：</p>
+                
+                <h4>📦 方式一：通过 Homebrew 安装（推荐）</h4>
+                <div class="code-block">
+                    <code># 首次安装请先添加 tap</code><br>
+                    <code>brew tap Wcowin/oneclip https://gitee.com/Wcowin/homebrew-oneclip.git</code><br>
+                    <code># 然后安装</code><br>
+                    <code>brew install --cask oneclip</code>
+                </div>
+                
+                <h4>🌐 方式二：官网下载</h4>
+                <p>访问 <a href="https://oneclip.cloud">https://oneclip.cloud</a> 下载最新版本的 .dmg 文件</p>
+                <ol>
+                    <li>打开下载的 .dmg 文件</li>
+                    <li>将 OneClip 拖拽到应用程序文件夹</li>
+                    <li>首次打开时允许来自互联网的应用</li>
+                </ol>
+                
+                <h4>💎 方式三：官方渠道购买</h4>
+                <p>访问 <a href="https://oneclip.cloud/purchase">购买页面</a> 获取完整功能版本</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>授予权限</h3>
+                <p>首次启动 OneClip 时，需要授予以下权限：</p>
+                
+                <div class="warning-box tip-box">
+                    <strong>⚠️ 重要提示</strong>
+                    <p>OneClip 需要"辅助功能"权限才能正常监控剪贴板。这是 macOS 安全机制的要求。</p>
+                </div>
+                
+                <h4>如何授予辅助功能权限：</h4>
+                <ol>
+                    <li>首次启动会自动弹出引导窗口</li>
+                    <li>点击"前往系统设置"按钮</li>
+                    <li>在"隐私与安全性" → "辅助功能"中启用 OneClip</li>
+                    <li>返回 OneClip，权限状态会自动更新</li>
+                </ol>
+                
+                <div class="tip-box">
+                    <strong>💡 提示</strong>
+                    <p>如果没有自动弹出引导窗口，可以在设置中手动配置权限。</p>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>开始使用</h3>
+                <p>配置完成后，OneClip 会自动开始监控您的剪贴板！</p>
+                
+                <h4>⌨️ 核心快捷键</h4>
+                <ul>
+                    <li><code class="inline-code">⌘ + Shift + V</code> - 呼出主窗口（查看历史记录）</li>
+                    <li><code class="inline-code">⌘ + Shift + R</code> - 呼出快捷回复窗口</li>
+                    <li><code class="inline-code">⌘ + F</code> - 在主窗口中搜索</li>
+                    <li><code class="inline-code">Space</code> - 预览选中项</li>
+                    <li><code class="inline-code">Enter</code> - 复制选中项到剪贴板</li>
+                </ul>
+                
+                <h4>📥 栈粘贴板快捷键</h4>
+                <ul>
+                    <li><code class="inline-code">Control + Shift + C</code> - 呼出栈粘贴板，方便管理</li>
+                    <li><code class="inline-code">Cmd + V</code> - 依次粘贴栈粘贴板内容</li>
+                </ul>
+                <div class="tip-box">
+                    <strong>💡 提示：</strong>栈粘贴板可以帮助您按顺序管理和粘贴多个内容，非常适合需要批量粘贴的场景。
+                </div>
+                
+                <h4>📦 拖拽容器快捷键</h4>
+                <ul>
+                    <li><code class="inline-code">Control + Shift + D</code> - 呼出拖拽容器，方便管理拖拽内容</li>
+                </ul>
+                <div class="tip-box">
+                    <strong>💡 提示：</strong>拖拽容器可以临时存储需要拖拽的内容，让文件和内容的拖拽操作更加便捷。
+                </div>
+                
+                <h4>🎯 菜单栏集成</h4>
+                <p>点击菜单栏的 OneClip 图标可以：</p>
+                <ul>
+                    <li>查看最近的剪贴板内容</li>
+                    <li>一键粘贴最近项目，状态实时可见</li>
+                    <li>快速访问栈粘贴板和拖拽容器</li>
+                    <li>打开主窗口</li>
+                    <li>访问设置和偏好</li>
+                </ul>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>基础操作</h3>
+                
+                <h4>📋 查看剪贴板历史</h4>
+                <ol>
+                    <li>复制任何内容（文本、图片、文件等）</li>
+                    <li>按 <code class="inline-code">⌘ + Shift + V</code> 打开 OneClip</li>
+                    <li>您会看到所有复制的内容按时间排序</li>
+                    <li>点击任意项目即可复制</li>
+                </ol>
+                
+                <h4>🔍 搜索内容</h4>
+                <ol>
+                    <li>打开 OneClip 主窗口</li>
+                    <li>在搜索框输入关键词</li>
+                    <li>支持模糊搜索、内容搜索、来源应用搜索</li>
+                    <li>使用左侧分类标签快速筛选</li>
+                </ol>
+                
+                <h4>⭐ 收藏重要内容</h4>
+                <ol>
+                    <li>找到需要收藏的项目</li>
+                    <li>点击项目右侧的星标图标</li>
+                    <li>收藏的内容会永久保存，不会被自动清理</li>
+                    <li>在左侧分类中选择"收藏"快速查看</li>
+                </ol>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <h3>探索更多功能</h3>
+                
+                <div class="tip-box success-box">
+                    <strong>🎉 恭喜！您已掌握 OneClip 基础操作</strong>
+                    <p>现在可以探索更多高级功能：</p>
+                </div>
+                
+                <ul>
+                    <li><strong>AI 功能</strong> - 文字识别、智能翻译、文本摘要 <a href="docs-ai.html">查看详情 →</a></li>
+                    <li><strong>云同步</strong> - 多设备实时同步剪贴板（云存储） <a href="docs-features.html#clipboard">查看详情 →</a></li>
+                    <li><strong>快捷回复</strong> - 预设常用文本模板 <a href="docs-features.html#quick-reply">查看详情 →</a></li>
+                    <li><strong>自定义分类</strong> - 创建自己的分类规则 <a href="docs-features.html#categories">查看详情 →</a></li>
+                </ul>
+                
+                <div style="margin-top: 32px; margin-bottom: 8px; display: flex; gap: 16px; flex-wrap: wrap;">
+                    <a href="docs-features.html" class="btn btn-primary">
+                        <span style="font-size: 20px;">📖</span>
+                        <span>查看完整功能</span>
+                    </a>
+                    <a href="docs-ai.html" class="btn btn-secondary">
+                        <span style="font-size: 20px;">🤖</span>
+                        <span>AI 功能详解</span>
+                    </a>
+                </div>
+            </div>
+
+            <h2>💡 使用技巧</h2>
+            
+            <div class="tip-box">
+                <strong>💡 设置开机自启动</strong>
+                <p>打开 OneClip 设置 → 常规 → 启用"开机自动启动"，让 OneClip 始终为您服务。</p>
+            </div>
+            
+            <div class="tip-box">
+                <strong>💡 自定义快捷键</strong>
+                <p>在设置 → 快捷键中，您可以自定义所有快捷键组合，避免与其他应用冲突。</p>
+            </div>
+            
+            <div class="tip-box">
+                <strong>💡 隐藏 Dock 图标</strong>
+                <p>如果您更喜欢纯菜单栏模式，可以在设置中隐藏 Dock 图标。</p>
+            </div>
+
+            <h2>❓ 遇到问题？</h2>
+            <p>如果遇到任何问题，可以查看以下资源：</p>
+            <ul>
+                <li><a href="docs-faq.html">常见问题 FAQ</a> - 20+ 个常见问题快速解答</li>
+                <li>联系支持：<a href="mailto:vip@oneclip.cloud">vip@oneclip.cloud</a></li>
+                <li>官方网站：<a href="https://oneclip.cloud">https://oneclip.cloud</a></li>
+            </ul>
+
+            <div class="doc-nav">
+                <a href="docs.html" class="doc-nav-btn">
+                    <div class="doc-nav-label">← 上一页</div>
+                    <div class="doc-nav-title">文档首页</div>
+                </a>
+                <a href="docs-features.html" class="doc-nav-btn" style="text-align: right;">
+                    <div class="doc-nav-label">下一页 →</div>
+                    <div class="doc-nav-title">功能指南</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OneClip 技术文档中心，提供完整的使用指南、功能说明和常见问题解答。包含快速开始教程、功能概览、AI 功能详解、FAQ 等，帮助您快速上手 Mac 剪贴板管理工具，解决使用中遇到的各种问题。涵盖安装配置、基础使用、高级功能、AI 功能、多设备同步、快捷键设置、性能优化等全方位文档，适合所有用户查阅。">
+    <meta name="keywords" content="OneClip, 文档, 使用指南, 教程, 剪贴板管理, 技术文档, 使用手册, Mac 剪贴板教程">
+    <title>OneClip 技术文档 - 使用指南与教程 | Mac 剪贴板管理工具完整文档中心</title>
+    <link rel="icon" type="image/png" href="https://s1.imagehub.cc/images/2025/10/25/ed2260baf7775b21ec934604f5b4ba4a.png" />
+    <link rel="apple-touch-icon" href="https://s1.imagehub.cc/images/2025/10/25/d0916e38974fa2e460e904aee6526a80.png" />
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        /* 引入霞鹜文楷字体 */
+        @import url('https://fontsapi.zeoseven.com/292/main/result.css');
+        
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary-color: #06b6d4;
+            --bg-dark: #0f172a;
+            --bg-darker: #020617;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --border-color: rgba(59, 130, 246, 0.2);
+            --card-bg: rgba(15, 23, 42, 0.8);
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+        }
+        
+        body {
+            font-family: "LXGW WenKai", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        /* 导航栏 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 16px 0;
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .nav-logo span {
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+        
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+        
+        /* 主容器 */
+        .docs-container {
+            max-width: 1400px;
+            margin: 80px auto 0;
+            padding: 40px 24px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 60px;
+        }
+        
+        /* 侧边栏 */
+        .sidebar {
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+            max-height: calc(100vh - 140px);
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding-right: 8px;
+        }
+        
+        /* 侧边栏滚动条样式 */
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .sidebar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.3);
+            border-radius: 3px;
+        }
+        
+        .sidebar::-webkit-scrollbar-thumb {
+            background: rgba(59, 130, 246, 0.4);
+            border-radius: 3px;
+        }
+        
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: rgba(59, 130, 246, 0.6);
+        }
+        
+        .sidebar-section {
+            margin-bottom: 32px;
+        }
+        
+        .sidebar-title {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+        
+        .sidebar-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-links li {
+            margin-bottom: 8px;
+        }
+        
+        .sidebar-links a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .sidebar-links a:hover {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--text-primary);
+        }
+        
+        .sidebar-links a.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .sidebar-links .icon {
+            font-size: 18px;
+        }
+        
+        /* 主内容区 */
+        .main-content {
+            max-width: 800px;
+        }
+        
+        .doc-header {
+            margin-bottom: 48px;
+        }
+        
+        .doc-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin: 0 0 16px 0;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .doc-subtitle {
+            font-size: 20px;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.8;
+        }
+        
+        /* 卡片网格 */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .doc-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .doc-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .doc-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .doc-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+        
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+            color: var(--text-primary);
+        }
+        
+        .card-description {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .card-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 16px;
+            transition: gap 0.3s;
+        }
+        
+        .doc-card:hover .card-arrow {
+            gap: 12px;
+        }
+        
+        /* 特性列表 */
+        .features-list {
+            display: grid;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        
+        .feature-item {
+            display: flex;
+            gap: 16px;
+            align-items: start;
+            padding: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+        
+        .feature-item-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .feature-item-content h3 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+            color: var(--text-primary);
+        }
+        
+        .feature-item-content p {
+            margin: 0;
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* 快速链接 */
+        .quick-links {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 48px;
+        }
+        
+        .quick-links h3 {
+            margin: 0 0 24px 0;
+            font-size: 20px;
+        }
+        
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        
+        .quick-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s;
+        }
+        
+        .quick-link:hover {
+            background: rgba(59, 130, 246, 0.2);
+            transform: translateX(4px);
+        }
+        
+        .quick-link-icon {
+            font-size: 20px;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .docs-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 24px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .doc-title {
+                font-size: 36px;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span>OneClip</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">首页</a>
+                <a href="/docs.html" class="active">文档</a>
+                <a href="/purchase">购买</a>
+                <!-- <a href="#support">支持</a> -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主容器 -->
+    <div class="docs-container">
+        <!-- 侧边栏导航 -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">开始使用</div>
+                <ul class="sidebar-links">
+                    <li><a href="docs.html" class="active"><span class="icon">📖</span>文档首页</a></li>
+                    <li><a href="docs-getting-started.html"><span class="icon">🚀</span>快速开始</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-title">功能指南</div>
+                <ul class="sidebar-links">
+                    <li><a href="docs-features.html"><span class="icon">✨</span>功能概览</a></li>
+                    <li><a href="docs-ai.html"><span class="icon">🤖</span>AI 功能</a></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-title">帮助与支持</div>
+                <ul class="sidebar-links">
+                    <li><a href="docs-faq.html"><span class="icon">❓</span>常见问题</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- 主内容 -->
+        <main class="main-content">
+            <div class="doc-header">
+                <h1 class="doc-title">OneClip 技术文档</h1>
+                <p class="doc-subtitle">
+                    欢迎使用 OneClip！这里有您需要的一切信息，从快速入门到高级功能，让您充分发挥 OneClip 的强大能力。
+                </p>
+            </div>
+
+            <!-- 核心文档卡片 -->
+            <div class="cards-grid">
+                <a href="docs-getting-started.html" class="doc-card">
+                    <span class="card-icon">🚀</span>
+                    <h3 class="card-title">快速开始</h3>
+                    <p class="card-description">
+                        5分钟快速上手，了解 OneClip 的基本使用方法和核心功能
+                    </p>
+                    <span class="card-arrow">开始使用 →</span>
+                </a>
+
+                <a href="docs-features.html" class="doc-card">
+                    <span class="card-icon">✨</span>
+                    <h3 class="card-title">功能指南</h3>
+                    <p class="card-description">
+                        深入了解剪贴板管理、AI 功能、云同步等所有功能特性
+                    </p>
+                    <span class="card-arrow">探索功能 →</span>
+                </a>
+
+                <a href="docs-ai.html" class="doc-card">
+                    <span class="card-icon">🤖</span>
+                    <h3 class="card-title">AI 功能</h3>
+                    <p class="card-description">
+                        OCR 文字识别、智能翻译、文本摘要等 AI 增强功能详解
+                    </p>
+                    <span class="card-arrow">了解更多 →</span>
+                </a>
+
+                <a href="docs-faq.html" class="doc-card">
+                    <span class="card-icon">❓</span>
+                    <h3 class="card-title">常见问题</h3>
+                    <p class="card-description">
+                        权限设置、使用技巧、问题解决等常见问题快速解答
+                    </p>
+                    <span class="card-arrow">查看 FAQ →</span>
+                </a>
+            </div>
+
+            <!-- 核心特性 -->
+            <div class="features-list">
+                <div class="feature-item">
+                    <span class="feature-item-icon">📋</span>
+                    <div class="feature-item-content">
+                        <h3>全格式剪贴板管理</h3>
+                        <p>支持文本、图片、视频、音频、文档、代码等 9+ 种格式，完整保留元数据和历史记录</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <span class="feature-item-icon">🔍</span>
+                    <div class="feature-item-content">
+                        <h3>智能搜索与分类</h3>
+                        <p>强大的搜索引擎，支持内容预览、来源识别、智能分类，随打随搜快速定位</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <span class="feature-item-icon">☁️</span>
+                    <div class="feature-item-content">
+                        <h3>跨设备云同步</h3>
+                        <p>基于 云存储 的端到端加密同步，支持多设备实时同步，保护隐私安全</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <span class="feature-item-icon">🤖</span>
+                    <div class="feature-item-content">
+                        <h3>AI 智能增强</h3>
+                        <p>集成智谱 AI，提供 OCR、翻译、摘要、格式化、代码解释等强大 AI 功能</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 快速链接 -->
+            <div class="quick-links">
+                <h3>📚 推荐阅读</h3>
+                <div class="quick-links-grid">
+                    <a href="docs-getting-started.html" class="quick-link">
+                        <span class="quick-link-icon">🚀</span>
+                        <span>快速开始</span>
+                    </a>
+                    <a href="docs-features.html" class="quick-link">
+                        <span class="quick-link-icon">✨</span>
+                        <span>功能指南</span>
+                    </a>
+                    <a href="docs-ai.html" class="quick-link">
+                        <span class="quick-link-icon">🤖</span>
+                        <span>AI 功能</span>
+                    </a>
+                    <a href="docs-faq.html" class="quick-link">
+                        <span class="quick-link-icon">❓</span>
+                        <span>常见问题</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

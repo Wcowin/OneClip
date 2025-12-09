@@ -1,0 +1,5370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <!-- <script defer src="https://cloud.umami.is/script.js" data-website-id="6553205c-4770-48f1-8685-54043f958444"></script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="msvalidate.01" content="2CF020F6DBEC4E9FC7956F9166A96064" />
+    <meta name="baidu-site-verification" content="codeva-knom3RyN9Q" />
+    <meta name="google-site-verification" content="r0I3Yxlrw_1CbuQnPXjDZXo9EEYxd5MFmm43skR4Uaw" />
+    <meta name="description" content="OneClip 是 Mac 上最专业的剪贴板管理工具，支持无限历史记录、智能搜索、AI 本地模型、粘贴板堆栈、拖拽容器、云存储多设备同步。提升工作效率 10 倍，限时免费下载。适合程序员、设计师、写作者。" />
+    <meta name="keywords" content="OneClip, Mac 剪贴板工具, macOS 剪贴板管理器, 剪贴板历史记录软件, 剪贴板同步工具, 剪贴板多设备同步, 剪贴板智能搜索, 剪贴板 AI 助手, Paste 替代品, Mac 效率工具, 程序员剪贴板, 设计师工具, 生产力工具, 剪贴板快捷键" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="OneClip - 专业的剪贴板管理工具" />
+    <meta property="og:description" content="OneClip 提供多格式剪贴板历史、智能搜索、云同步、快捷回复、设备管理等专业功能，助你提升工作效率。" />
+    <meta property="og:url" content="https://oneclip.cloud/" />
+    <meta property="og:image" content="https://s1.imagehub.cc/images/2025/09/13/7ecd704eb3ea1fe445aaff739c94bf83.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="OneClip - 专业的剪贴板管理工具" />
+    <meta name="twitter:description" content="剪贴板历史、安全本地存储、智能搜索，OneClip 让复制粘贴更高效。" />
+    <meta name="twitter:image" content="https://s1.imagehub.cc/images/2025/09/13/7ecd704eb3ea1fe445aaff739c94bf83.png" />
+    <link rel="canonical" href="https://oneclip.cloud/" />
+    <link rel="icon" type="image/png" href="https://s1.imagehub.cc/images/2025/10/25/ed2260baf7775b21ec934604f5b4ba4a.png" />
+    <link rel="apple-touch-icon" href="https://s1.imagehub.cc/images/2025/10/25/d0916e38974fa2e460e904aee6526a80.png" />
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="6553205c-4770-48f1-8685-54043f958444"></script>
+    <!-- Tidio 在线客服 -->
+    <script src="//code.tidio.co/6jmawe9m5wy4ahvlhub2riyrnujz7xxi.js" async></script>
+    <title>OneClip - Mac 最好用的剪贴板管理工具 | 无限历史 AI 加持 多设备同步</title>
+    <style>
+        /* 引入霞鹜文楷字体 */
+        @import url('https://fontsapi.zeoseven.com/292/main/result.css');
+        
+        *, *::before, *::after { 
+            box-sizing: border-box; 
+        }
+        
+        /* 移动端触摸优化 */
+        @media (hover: none) and (pointer: coarse) {
+            a, button, .btn-primary, .btn-secondary, .nav-cta, .promo-cta-btn {
+                -webkit-tap-highlight-color: rgba(59, 130, 246, 0.2);
+                touch-action: manipulation;
+            }
+        }
+        body { 
+            font-family: "LXGW WenKai", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; 
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
+            color: #e2e8f0; 
+            margin: 0; 
+            line-height: 1.6;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+        
+        /* 导航栏 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            z-index: 1000;
+            padding: 12px 0;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+        .nav-logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+        .nav-logo span {
+            font-size: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nav-cta {
+            background: linear-gradient(135deg, #0891b2, #06b6d4);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(29, 78, 216, 0.4);
+        }
+        
+        /* 限免宣传卡片 */
+        .promo-card-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%);
+        }
+
+        .promo-card {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(59, 130, 246, 0.1);
+        }
+
+        .promo-card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .promo-card-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .promo-card-icon {
+            font-size: 48px;
+            animation: promo-pulse 2s infinite;
+        }
+
+        @keyframes promo-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .promo-card-text {
+            flex: 1;
+        }
+
+        .promo-card-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin: 0 0 12px 0;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .promo-card-desc {
+            font-size: 16px;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+        }
+
+        .promo-card-features {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .promo-feature {
+            font-size: 14px;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .promo-card-action {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .promo-countdown-wrapper {
+            text-align: center;
+        }
+
+        .promo-countdown-label {
+            font-size: 15px;
+            color: #cbd5e1;
+            margin-bottom: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .promo-countdown {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.1) 100%);
+            border: 2px solid rgba(96, 165, 250, 0.4);
+            border-radius: 16px;
+            padding: 16px 12px;
+            min-width: 75px;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .countdown-item:hover {
+            transform: translateY(-2px);
+            border-color: rgba(96, 165, 250, 0.6);
+            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        .countdown-number {
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa 0%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            position: relative;
+            z-index: 1;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', sans-serif;
+        }
+
+        .countdown-unit {
+            font-size: 13px;
+            color: #cbd5e1;
+            margin-top: 6px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .countdown-separator {
+            font-size: 28px;
+            font-weight: 700;
+            color: #60a5fa;
+            margin: 0 4px;
+            opacity: 0.6;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.4;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        .promo-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(59, 130, 246, 0.5);
+        }
+
+        .promo-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.4);
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+        }
+
+        .promo-cta-btn svg {
+            transform: rotate(-90deg);
+            transition: transform 0.3s ease;
+        }
+
+        .promo-cta-btn:hover svg {
+            transform: rotate(-90deg) translateX(-2px);
+        }
+        
+        /* 英雄区域 */
+        .hero {
+            padding: 100px 0 40px;
+            text-align: center;
+        }
+        .hero-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        .hero-logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+        }
+        .hero-logo h1 {
+            font-size: 64px;
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: 24px;
+            color: #94a3b8;
+            margin-bottom: 35px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* 社会证明样式 */
+        .social-proof {
+            margin: 40px 0 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .stats-container {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 0 20px;
+        }
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: #60a5fa;
+            margin-bottom: 4px;
+            text-shadow: 0 2px 10px rgba(96, 165, 250, 0.3);
+        }
+        .stat-label {
+            font-size: 14px;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+        .trust-badges {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .trust-badge {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* 用户评价样式 */
+        .testimonials {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.6) 0%, rgba(30, 41, 59, 0.4) 100%);
+            position: relative;
+        }
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%);
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            border-radius: 24px;
+            padding: 35px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            font-size: 80px;
+            font-family: Georgia, serif;
+            color: rgba(59, 130, 246, 0.15);
+            line-height: 1;
+            font-weight: 700;
+            z-index: 0;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 10px 30px rgba(59, 130, 246, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        .testimonial-content {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #e2e8f0;
+            margin-bottom: 25px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        .author-name {
+            font-weight: 700;
+            color: #f1f5f9;
+            font-size: 17px;
+            letter-spacing: 0.3px;
+        }
+        .author-role {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-top: 2px;
+        }
+        .testimonial-rating {
+            font-size: 18px;
+        }
+        
+        /* 产品演示样式 */
+        .demo-section {
+            padding: 80px 0;
+            background: rgba(17, 24, 39, 0.3);
+        }
+        .demo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .demo-video {
+            position: relative;
+        }
+        .video-placeholder {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .video-placeholder:hover {
+            border-color: #3b82f6;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+        .play-button {
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        .video-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 8px;
+        }
+        .video-description {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+        .demo-features {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .demo-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .demo-step {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .demo-content h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin: 0 0 8px 0;
+        }
+        .demo-content p {
+            color: #94a3b8;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        /* 信任信号样式 */
+        .trust-section {
+            padding: 100px 0 80px;
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .trust-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent);
+        }
+        .trust-section::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        /* 信任板块 - 信任盾牌风格 */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .trust-item {
+            text-align: center;
+            padding: 40px 30px;
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .trust-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent);
+            opacity: 0.5;
+        }
+        .trust-item:hover {
+            /* 减小上浮幅度 */
+            transform: translateY(-3px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 
+                0 10px 20px rgba(0, 0, 0, 0.3),
+                0 0 15px rgba(59, 130, 246, 0.1);
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.95) 100%);
+        }
+        .trust-icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        }
+        .trust-item:hover .trust-icon {
+            /* 去掉旋转，仅微小放大 */
+            transform: scale(1.05);
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+        }
+        .trust-item h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin: 0 0 12px 0;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        .trust-item:hover h4 {
+            color: #60a5fa;
+        }
+        .trust-item p {
+            font-size: 15px;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin: 0;
+            max-width: 90%;
+        }
+        .trust-item:hover p {
+            color: #cbd5e1;
+        }
+        .final-cta {
+            text-align: center;
+            margin-top: 100px;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.12) 0%, rgba(139, 92, 246, 0.12) 50%, rgba(16, 185, 129, 0.1) 100%);
+            border: 2px solid rgba(59, 130, 246, 0.4);
+            border-radius: 32px;
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            animation: gradient-shift 8s ease-in-out infinite;
+        }
+        @keyframes gradient-shift {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+        .final-cta h3 {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f1f5f9, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0 0 20px 0;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
+        }
+        .final-cta > p {
+            font-size: 19px;
+            color: #cbd5e1;
+            margin: 0 0 45px 0;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        .final-buttons {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 1;
+        }
+        .guarantee {
+            font-size: 17px;
+            color: #10b981;
+            font-weight: 700;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.3px;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #0891b2, #06b6d4);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(29, 78, 216, 0.4);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(29, 78, 216, 0.5);
+        }
+        .btn-primary.enhanced {
+            background: linear-gradient(135deg, #10b981, #059669);
+            box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3);
+            animation: glow-green 2s infinite alternate;
+        }
+        .btn-primary.enhanced:hover {
+            box-shadow: 0 12px 40px rgba(16, 185, 129, 0.5);
+        }
+        .btn-purchase {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(220, 38, 38, 0.3);
+            animation: pulse-red 3s infinite;
+        }
+        .btn-purchase:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(220, 38, 38, 0.5);
+        }
+        @keyframes glow-green {
+            from { box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3); }
+            to { box-shadow: 0 8px 32px rgba(16, 185, 129, 0.6); }
+        }
+        @keyframes pulse-red {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* 首次打开提示横幅样式 */
+        #first-open-pdf-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4) !important;
+            background: linear-gradient(135deg, #fcd34d, #fbbf24) !important;
+        }
+        
+        #first-open-pdf-btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn-secondary {
+            background: rgba(31, 41, 55, 0.8);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+            padding: 16px 32px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: rgba(31, 41, 55, 1);
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* 产品展示 */
+        .product-showcase {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.3) 0%, rgba(30, 41, 59, 0.2) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .product-showcase::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .showcase-content {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+        .showcase-text {
+            padding-right: 20px;
+        }
+        .showcase-desc {
+            font-size: 19px;
+            color: #94a3b8;
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+        .showcase-image {
+            position: relative;
+            text-align: center;
+        }
+        .showcase-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+        .product-screenshot {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 24px;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.4) 0%, rgba(51, 65, 85, 0.3) 100%);
+            padding: 6px;
+            box-shadow: 
+                0 0 0 1px rgba(59, 130, 246, 0.2),
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 10px 30px rgba(59, 130, 246, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transform: none;
+        }
+        
+        /* 特色功能 */
+        .features {
+            padding: 30px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 45px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #f1f5f9;
+        }
+        .showcase-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #f1f5f9;
+            line-height: 1.2;
+        }
+        /* Bento 风格网格 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .feature-card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 32px 28px;
+            text-align: left;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        /* 前两个卡片设为大卡片，跨列 */
+        .feature-card:nth-child(1),
+        .feature-card:nth-child(2) {
+            grid-column: span 1; /* 3列时，前两个其实不需要跨列，或者我们可以做成第1个跨2列 */
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%);
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+        /* 让第1个卡片跨2列，突出核心功能 */
+        .feature-card:first-child {
+            grid-column: span 2;
+        }
+        .feature-card:nth-child(1) .feature-icon,
+        .feature-card:nth-child(2) .feature-icon {
+            font-size: 48px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.05));
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .feature-card:hover {
+            background: rgba(30, 41, 59, 0.8);
+            /* 减小上浮幅度，去掉缩放 */
+            transform: translateY(-2px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover .feature-icon {
+            /* 仅微小上浮，去掉旋转 */
+            transform: translateY(-2px);
+        }
+        .feature-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 10px;
+        }
+        .feature-desc {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        /* 小卡片紧凑布局 */
+        .feature-card:nth-child(n+3) {
+            padding: 24px;
+        }
+        .feature-card:nth-child(n+3) .feature-icon {
+            margin-bottom: 12px;
+            font-size: 32px;
+        }
+        .feature-card:nth-child(n+3) .feature-title {
+            font-size: 18px;
+        }
+        
+        /* 价格预览 */
+        .pricing-preview {
+            padding: 40px 0;
+            background: rgba(17, 24, 39, 0.5);
+        }
+        .pricing-scroll-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(59, 130, 246, 0.5) rgba(31, 41, 55, 0.3);
+            padding: 10px 0 20px 0;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+        .pricing-scroll-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        .pricing-scroll-container::-webkit-scrollbar-track {
+            background: rgba(31, 41, 55, 0.3);
+            border-radius: 10px;
+        }
+        .pricing-scroll-container::-webkit-scrollbar-thumb {
+            background: rgba(59, 130, 246, 0.5);
+            border-radius: 10px;
+        }
+        .pricing-scroll-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(59, 130, 246, 0.7);
+        }
+        .pricing-grid {
+            display: flex;
+            gap: 25px;
+            min-width: min-content;
+            padding: 0 20px;
+        }
+        .pricing-card {
+            background: rgba(17, 24, 39, 0.9);
+            border: 2px solid rgba(31, 41, 55, 0.5);
+            border-radius: 20px;
+            padding: 28px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+            position: relative;
+            min-width: 280px;
+            flex-shrink: 0;
+        }
+        .pricing-card.free {
+            border-color: rgba(107, 114, 128, 0.5);
+        }
+        .pricing-card.popular {
+            border-color: #f59e0b;
+            box-shadow: 0 8px 32px rgba(245, 158, 11, 0.2);
+        }
+        .pricing-card.popular::before {
+            content: '最受欢迎';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: #f59e0b;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .pricing-card.lifetime {
+            border-color: #8b5cf6;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2);
+        }
+        .pricing-card.lifetime::before {
+            content: '超值推荐';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: #8b5cf6;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .pricing-name {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #f1f5f9;
+        }
+        .pricing-price {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 6px;
+            color: #60a5fa;
+        }
+        .pricing-period {
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+        .pricing-features li {
+            padding: 8px 0;
+            color: #cbd5e1;
+        }
+        .pricing-cta {
+            background: linear-gradient(135deg, #0891b2, #06b6d4);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .pricing-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(29, 78, 216, 0.4);
+        }
+        .pricing-card.popular .pricing-cta {
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        .pricing-card.popular .pricing-cta:hover {
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+        }
+        .pricing-card.lifetime .pricing-cta {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+        .pricing-card.lifetime .pricing-cta:hover {
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+        
+        /* 软件下载 */
+        .download-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.9) 0%, rgba(30, 41, 59, 0.7) 100%);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            position: relative;
+        }
+        .download-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+        }
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .download-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(17, 24, 39, 0.95) 100%);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            border-radius: 24px;
+            padding: 40px 35px;
+            text-align: center;
+            backdrop-filter: blur(20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+        .download-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 
+                0 25px 60px rgba(0, 0, 0, 0.5),
+                0 10px 30px rgba(59, 130, 246, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        .download-icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+        .download-card:hover .download-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .download-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #f1f5f9;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.3px;
+        }
+        .download-desc {
+            color: #cbd5e1;
+            margin-bottom: 24px;
+            line-height: 1.7;
+            font-size: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        .download-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 1;
+        }
+        .feature-tag {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(16, 185, 129, 0.1) 100%);
+            color: #60a5fa;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            transition: all 0.3s ease;
+            letter-spacing: 0.3px;
+        }
+        .feature-tag:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-2px);
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 17px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            min-width: 200px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.3px;
+        }
+        .download-btn.primary {
+            background: linear-gradient(135deg, #0891b2, #06b6d4, #10b981);
+            color: white;
+            box-shadow: 0 6px 20px rgba(8, 145, 178, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        .download-btn.primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .download-btn.primary:hover::before {
+            left: 100%;
+        }
+        .download-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(8, 145, 178, 0.5);
+        }
+        .download-btn.secondary {
+            background: rgba(31, 41, 55, 0.8);
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+        }
+        .download-btn.secondary:hover {
+            background: rgba(31, 41, 55, 1);
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* Homebrew 安装区域样式 */
+        .install-method-featured {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%);
+            border: 2px solid rgba(6, 182, 212, 0.4);
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .install-method-featured::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        .featured-badge {
+            background: linear-gradient(135deg, #f59e0b, #f97316);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+        }
+        .featured-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .featured-icon {
+            font-size: 64px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+        .featured-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+        }
+        .featured-desc {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+        .code-block {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+            overflow-x: auto;
+        }
+        .code-block pre {
+            margin: 0;
+            flex: 1;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .code-block code {
+            color: #06b6d4;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 16px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .copy-btn {
+            background: linear-gradient(135deg, #0891b2, #06b6d4);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+        }
+        .copy-btn.copied {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        .featured-benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .benefit-tag {
+            background: rgba(6, 182, 212, 0.2);
+            border: 1px solid rgba(6, 182, 212, 0.4);
+            color: #06b6d4;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        
+        .download-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .info-card {
+            background: rgba(17, 24, 39, 0.8);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: left;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+        .info-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        .info-card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #f1f5f9;
+        }
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .info-card li {
+            padding: 6px 0;
+            color: #cbd5e1;
+            position: relative;
+            padding-left: 20px;
+        }
+        .info-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #22c55e;
+            font-weight: bold;
+        }
+        
+        /* 技术规格 - HUD 仪表盘风格 */
+        .specs {
+            padding: 80px 0;
+            background: radial-gradient(circle at center, rgba(30, 41, 59, 0.3) 0%, transparent 70%);
+        }
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(17, 24, 39, 0.6);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 24px;
+            backdrop-filter: blur(20px);
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        /* 添加网格分割线 */
+        .specs-grid::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 1px;
+            background: linear-gradient(180deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+        }
+        .specs-grid::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+            z-index: 1;
+        }
+        .spec-item {
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            transition: background 0.3s ease;
+        }
+        /* 内部垂直分割线 */
+        .spec-item:not(:nth-child(4n))::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            bottom: 20%;
+            width: 1px;
+            background: rgba(59, 130, 246, 0.1);
+        }
+        .spec-item:hover {
+            background: rgba(59, 130, 246, 0.05);
+            /* 移除位移和阴影，保持平稳 */
+            transform: none;
+            box-shadow: none;
+        }
+        .spec-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
+            opacity: 0.9;
+            transform: scale(1);
+            transition: all 0.3s ease;
+        }
+        .spec-item:hover .spec-icon {
+            /* 仅微小放大，更精致 */
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.5));
+            opacity: 1;
+        }
+        .spec-value {
+            font-size: 42px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+            letter-spacing: -1px;
+            /* 移除文字缩放动画 */
+        }
+        .spec-label {
+            color: #64748b;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .spec-item:hover .spec-label {
+            color: #94a3b8;
+        }
+        
+        /* 底部 */
+        .footer {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(10, 15, 30, 0.98) 100%);
+            border-top: 2px solid transparent;
+            background-image: 
+                linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(10, 15, 30, 0.98) 100%),
+                linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), rgba(139, 92, 246, 0.5), transparent);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 60%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            animation: footer-glow 10s ease-in-out infinite;
+        }
+
+        @keyframes footer-glow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+
+        .footer-main {
+            padding: 80px 0 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .footer-section {
+            color: #e2e8f0;
+        }
+
+        .footer-brand {
+            max-width: 320px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            transform: translateX(5px);
+        }
+
+        .footer-logo img {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            box-shadow: 
+                0 6px 16px rgba(59, 130, 246, 0.4),
+                0 0 0 2px rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .footer-logo:hover img {
+            box-shadow: 
+                0 8px 20px rgba(59, 130, 246, 0.5),
+                0 0 0 2px rgba(59, 130, 246, 0.4);
+            transform: rotate(5deg);
+        }
+
+        .footer-logo span {
+            font-size: 22px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-description {
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 28px;
+            font-size: 15px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 14px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 10px;
+            color: #60a5fa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .footer-title {
+            font-size: 17px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f1f5f9, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 24px;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #06b6d4, #10b981);
+            border-radius: 2px;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 14px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            display: inline-block;
+            padding-left: 0;
+        }
+
+        .footer-links a::before {
+            content: '→';
+            position: absolute;
+            left: -20px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: #3b82f6;
+        }
+
+        .footer-links a:hover::before {
+            left: -18px;
+            opacity: 1;
+        }
+
+        .footer-links a:hover {
+            color: #60a5fa;
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            background: linear-gradient(135deg, rgba(10, 15, 30, 0.95) 0%, rgba(15, 23, 42, 0.9) 100%);
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 30px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-bottom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.4), transparent);
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-copyright {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .footer-copyright p {
+            margin: 0 0 6px 0;
+            line-height: 1.6;
+        }
+
+        .footer-icp a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 13px;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .footer-icp a:hover {
+            opacity: 1;
+            color: #3b82f6;
+        }
+
+        .footer-stats {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(59, 130, 246, 0.05);
+            padding: 10px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .stats-number {
+            color: #60a5fa;
+            font-weight: 500;
+            background: rgba(59, 130, 246, 0.1);
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+        
+        /* ========== 🔧 移动端适配补充 ========== */
+        
+        /* 平板和小屏幕 (768px 以下) */
+        @media (max-width: 768px) {
+            /* 导航栏 */
+            .nav-cta {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+            
+            .nav-logo span {
+                font-size: 16px;
+            }
+            
+            /* 英雄区域 */
+            .hero {
+                padding: 80px 0 30px;
+            }
+            
+            .hero-logo h1 {
+                font-size: 40px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+            
+            /* 移动端主标题适配 */
+            .hero h1 {
+                font-size: 36px !important;
+                line-height: 1.2 !important;
+            }
+            
+            /* 移动端统计数据适配 */
+            .hero-stats {
+                gap: 24px !important;
+                flex-wrap: wrap !important;
+            }
+            
+            .hero-stat-number {
+                font-size: 28px !important;
+            }
+            
+            /* 移动端按钮适配 */
+            .hero-buttons .btn-primary,
+            .hero-buttons .btn-secondary {
+                padding: 14px 24px !important;
+                font-size: 16px !important;
+                width: 100%;
+                justify-content: center;
+            }
+            
+            /* 移动端应用图标适配 */
+            .hero-app-icon {
+                width: 80px !important;
+                height: 80px !important;
+                border-radius: 20px !important;
+            }
+            
+            /* 限免宣传卡片 */
+            .promo-card {
+                padding: 30px;
+            }
+            
+            .promo-card-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .promo-card-icon {
+                font-size: 36px;
+            }
+            
+            .promo-card-title {
+                font-size: 22px;
+            }
+            
+            .promo-card-action {
+                margin-top: 10px;
+            }
+            
+            .countdown-item {
+                min-width: 60px;
+                padding: 12px 8px;
+            }
+            
+            .countdown-number {
+                font-size: 24px;
+            }
+            
+            .countdown-unit {
+                font-size: 11px;
+            }
+            
+            /* 标题 */
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+            
+            .showcase-title {
+                font-size: 24px;
+            }
+            
+            /* 产品展示 */
+            .showcase-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 20px;
+            }
+            
+            .showcase-text {
+                padding-right: 0;
+            }
+            
+            .showcase-desc {
+                font-size: 16px;
+            }
+            
+            /* 功能卡片 */
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .feature-card {
+                padding: 25px;
+            }
+            
+            .feature-title {
+                font-size: 20px;
+            }
+            
+            /* 演示区域 */
+            .demo-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .demo-features {
+                gap: 20px;
+            }
+            
+            .demo-feature {
+                gap: 15px;
+            }
+            
+            .demo-step {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+            
+            .demo-content h4 {
+                font-size: 18px;
+            }
+            
+            /* 用户评价 */
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .testimonial-card {
+                padding: 25px;
+            }
+            
+            .testimonial-content {
+                font-size: 15px;
+            }
+            
+            /* 信任信号 */
+            .trust-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .trust-item {
+                padding: 30px 20px;
+            }
+            
+            .trust-icon {
+                font-size: 40px;
+                width: 64px;
+                height: 64px;
+                margin-bottom: 16px;
+            }
+            
+            .trust-item h4 {
+                font-size: 18px;
+            }
+            
+            .trust-item p {
+                font-size: 14px;
+            }
+
+            /* 技术规格移动端适配 */
+            .specs-grid {
+                grid-template-columns: repeat(2, 1fr);
+                border-radius: 16px;
+            }
+            /* 移除移动端的大网格分割线 */
+            .specs-grid::after, .specs-grid::before {
+                display: none;
+            }
+            /* 移动端内部边框调整 */
+            .spec-item {
+                border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+                border-right: 1px solid rgba(59, 130, 246, 0.1);
+                padding: 20px 10px;
+            }
+            /* 去除偶数列的右边框 */
+            .spec-item:nth-child(2n) {
+                border-right: none;
+            }
+            /* 去除最后两行的底边框 */
+            .spec-item:nth-last-child(-n+2) {
+                border-bottom: none;
+            }
+            /* 移除原有的伪元素分割线 */
+            .spec-item::after {
+                display: none;
+            }
+            
+            .spec-value {
+                font-size: 28px;
+            }
+            
+            .spec-icon {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            
+            /* Bento 网格移动端适配 */
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            
+            /* 取消跨列 */
+            .feature-card:first-child {
+                grid-column: auto;
+            }
+            
+            .feature-card {
+                padding: 24px;
+            }
+            
+            .feature-card:nth-child(1) .feature-icon,
+            .feature-card:nth-child(2) .feature-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 32px;
+            }
+            
+            .trust-item h4 {
+                font-size: 18px;
+            }
+            
+            /* 下载卡片 */
+            .download-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .download-card {
+                padding: 30px 20px;
+            }
+            
+            .download-card[style*="grid-column: span 2"] {
+                grid-column: span 1 !important;
+            }
+            
+            .download-title {
+                font-size: 22px;
+            }
+            
+            .download-desc {
+                font-size: 14px;
+            }
+            
+            .download-features {
+                gap: 8px;
+                margin-bottom: 20px;
+            }
+            
+            .feature-tag {
+                padding: 5px 12px;
+                font-size: 12px;
+            }
+            
+            .download-btn {
+                padding: 14px 24px;
+                font-size: 15px;
+                min-width: 100%;
+            }
+            
+            /* 代码块 */
+            .install-method-featured {
+                padding: 25px;
+                margin-bottom: 25px;
+            }
+            
+            .featured-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .featured-icon {
+                font-size: 48px;
+            }
+            
+            .featured-title {
+                font-size: 22px;
+            }
+            
+            .code-block {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 15px;
+            }
+            
+            .code-block code {
+                font-size: 14px;
+            }
+            
+            .copy-btn {
+                width: 100%;
+                padding: 12px 16px;
+            }
+            
+            .featured-benefits {
+                gap: 8px;
+            }
+            
+            .benefit-tag {
+                padding: 5px 12px;
+                font-size: 12px;
+            }
+            
+            /* 技术规格 */
+            .specs-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .spec-item {
+                padding: 20px 15px;
+            }
+            
+            .spec-value {
+                font-size: 28px;
+            }
+            
+            .spec-label {
+                font-size: 12px;
+            }
+            
+            /* 价格卡片 */
+            .pricing-card {
+                min-width: 240px;
+                padding: 20px;
+            }
+            
+            .pricing-name {
+                font-size: 18px;
+            }
+            
+            .pricing-price {
+                font-size: 28px;
+            }
+            
+            .pricing-cta {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            /* 最终 CTA */
+            .final-cta {
+                padding: 40px 25px;
+                margin-top: 60px;
+            }
+            
+            .final-cta h3 {
+                font-size: 28px;
+            }
+            
+            .final-cta > p {
+                font-size: 16px;
+            }
+            
+            .final-buttons {
+                gap: 16px;
+            }
+            
+            /* 按钮统一 */
+            .btn-primary,
+            .btn-secondary,
+            .btn-purchase,
+            .promo-cta-btn {
+                padding: 14px 24px;
+                font-size: 15px;
+                min-height: 44px;
+            }
+            
+            /* 页脚 */
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-main {
+                padding: 50px 0 30px;
+            }
+            
+            .footer-logo span {
+                font-size: 18px;
+            }
+            
+            .footer-title {
+                font-size: 15px;
+                margin-bottom: 16px;
+            }
+            
+            .footer-links li {
+                margin-bottom: 10px;
+            }
+            
+            .footer-links a {
+                font-size: 14px;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            
+            .footer-copyright {
+                font-size: 13px;
+            }
+            
+            .footer-stats {
+                width: 100%;
+            }
+        }
+        
+        /* 手机屏幕 (480px 以下) */
+        @media (max-width: 480px) {
+            /* 容器 */
+            .container {
+                padding: 0 16px;
+            }
+            
+            .nav-container {
+                padding: 0 16px;
+            }
+            
+            /* 导航栏 */
+            .nav-logo span {
+                font-size: 14px;
+            }
+            
+            .nav-cta {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            
+            /* 英雄区域 */
+            .hero {
+                padding: 60px 0 20px;
+            }
+            
+            .hero-logo {
+                gap: 12px;
+                margin-bottom: 25px;
+            }
+            
+            .hero-logo img {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .hero-logo h1 {
+                font-size: 32px;
+            }
+            
+            .hero-subtitle {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+            
+            .hero-buttons {
+                gap: 12px;
+            }
+            
+            /* 限免卡片 */
+            .promo-card-section {
+                padding: 40px 0;
+            }
+            
+            .promo-card {
+                padding: 20px;
+                border-radius: 16px;
+            }
+            
+            .promo-card-title {
+                font-size: 18px;
+            }
+            
+            .promo-card-desc {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+            
+            .promo-card-features {
+                gap: 12px;
+            }
+            
+            .promo-feature {
+                font-size: 12px;
+            }
+            
+            .countdown-item {
+                min-width: 50px;
+                padding: 10px 6px;
+                border-radius: 12px;
+            }
+            
+            .countdown-number {
+                font-size: 20px;
+            }
+            
+            .countdown-unit {
+                font-size: 10px;
+                margin-top: 4px;
+            }
+            
+            .countdown-separator {
+                font-size: 20px;
+                margin: 0 2px;
+            }
+            
+            .promo-cta-btn {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+            
+            /* 标题 */
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .showcase-title {
+                font-size: 20px;
+            }
+            
+            /* 社会证明 */
+            .stats-container {
+                gap: 20px;
+            }
+            
+            .stat-item {
+                padding: 0 10px;
+            }
+            
+            .stat-number {
+                font-size: 24px;
+            }
+            
+            .stat-label {
+                font-size: 12px;
+            }
+            
+            .trust-badges {
+                gap: 8px;
+            }
+            
+            .trust-badge {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            
+            /* 功能卡片 */
+            .feature-card {
+                padding: 20px;
+                border-radius: 16px;
+            }
+            
+            .feature-icon {
+                font-size: 36px;
+            }
+            
+            .feature-title {
+                font-size: 18px;
+            }
+            
+            .feature-desc {
+                font-size: 14px;
+            }
+            
+            /* 演示 */
+            .demo-step {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+            
+            .demo-content h4 {
+                font-size: 16px;
+            }
+            
+            .demo-content p {
+                font-size: 14px;
+            }
+            
+            /* 评价卡片 */
+            .testimonial-card {
+                padding: 20px;
+                border-radius: 16px;
+            }
+            
+            .testimonial-card::before {
+                font-size: 60px;
+                left: 15px;
+            }
+            
+            .testimonial-content {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+            
+            .author-name {
+                font-size: 15px;
+            }
+            
+            .author-role {
+                font-size: 12px;
+            }
+            
+            /* 信任项 */
+            .trust-item {
+                padding: 20px 15px;
+                border-radius: 16px;
+            }
+            
+            .trust-icon {
+                font-size: 36px;
+                margin-bottom: 16px;
+            }
+            
+            .trust-item h4 {
+                font-size: 16px;
+            }
+            
+            .trust-item p {
+                font-size: 13px;
+            }
+            
+            /* 下载卡片 */
+            .download-card {
+                padding: 25px 15px;
+                border-radius: 16px;
+            }
+            
+            .download-card[style*="grid-column: span 2"] {
+                grid-column: span 1 !important;
+            }
+            
+            .download-icon {
+                font-size: 44px;
+            }
+            
+            .download-title {
+                font-size: 20px;
+            }
+            
+            .download-desc {
+                font-size: 13px;
+            }
+            
+            .feature-tag {
+                padding: 4px 10px;
+                font-size: 11px;
+            }
+            
+            .download-btn {
+                padding: 12px 20px;
+                font-size: 14px;
+                min-width: 100%;
+            }
+            
+            /* 代码块 */
+            .install-method-featured {
+                padding: 20px;
+                border-radius: 16px;
+            }
+            
+            .featured-icon {
+                font-size: 40px;
+            }
+            
+            .featured-title {
+                font-size: 20px;
+            }
+            
+            .featured-desc {
+                font-size: 14px;
+            }
+            
+            .code-block {
+                padding: 12px;
+                border-radius: 8px;
+            }
+            
+            .code-block code {
+                font-size: 12px;
+            }
+            
+            .copy-btn {
+                padding: 10px 14px;
+                font-size: 12px;
+            }
+            
+            /* 规格 */
+            .specs-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .spec-item {
+                padding: 16px 12px;
+                border-radius: 16px;
+            }
+            
+            .spec-icon {
+                font-size: 28px;
+            }
+            
+            .spec-value {
+                font-size: 24px;
+            }
+            
+            .spec-label {
+                font-size: 11px;
+            }
+            
+            /* 价格卡片 */
+            .pricing-card {
+                min-width: 220px;
+                padding: 18px;
+            }
+            
+            .pricing-name {
+                font-size: 16px;
+            }
+            
+            .pricing-price {
+                font-size: 24px;
+            }
+            
+            .pricing-period {
+                font-size: 12px;
+            }
+            
+            .pricing-features li {
+                padding: 6px 0;
+                font-size: 13px;
+            }
+            
+            .pricing-cta {
+                padding: 10px 18px;
+                font-size: 13px;
+            }
+            
+            /* 最终 CTA */
+            .final-cta {
+                padding: 30px 20px;
+                margin-top: 50px;
+                border-radius: 20px;
+            }
+            
+            .final-cta h3 {
+                font-size: 22px;
+            }
+            
+            .final-cta > p {
+                font-size: 14px;
+                margin-bottom: 30px;
+            }
+            
+            .final-buttons {
+                gap: 12px;
+                margin-bottom: 25px;
+            }
+            
+            .guarantee {
+                font-size: 14px;
+            }
+            
+            /* 按钮 */
+            .btn-primary,
+            .btn-secondary,
+            .btn-purchase,
+            .promo-cta-btn {
+                padding: 12px 20px;
+                font-size: 14px;
+                min-height: 44px;
+            }
+            
+            /* 页脚 */
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .footer-main {
+                padding: 40px 0 25px;
+            }
+            
+            .footer-logo {
+                gap: 10px;
+                margin-bottom: 16px;
+            }
+            
+            .footer-logo img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .footer-logo span {
+                font-size: 16px;
+            }
+            
+            .footer-description {
+                font-size: 13px;
+                margin-bottom: 16px;
+            }
+            
+            .footer-social {
+                gap: 10px;
+            }
+            
+            .footer-social a {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .footer-title {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+            
+            .footer-links li {
+                margin-bottom: 8px;
+            }
+            
+            .footer-links a {
+                font-size: 13px;
+            }
+            
+            .footer-bottom {
+                padding: 20px 0;
+            }
+            
+            .footer-copyright {
+                font-size: 12px;
+            }
+            
+            .footer-copyright p {
+                margin-bottom: 4px;
+            }
+            
+            .footer-icp a {
+                font-size: 11px;
+            }
+            
+            .footer-stats {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+        
+        /* 无障碍优化 */
+        a:focus-visible,
+        button:focus-visible,
+        .btn-primary:focus-visible,
+        .btn-secondary:focus-visible,
+        .download-btn:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+        
+        /* 高对比度模式 */
+        @media (prefers-contrast: more) {
+            .testimonial-card,
+            .feature-card,
+            .trust-item,
+            .download-card {
+                border-width: 3px;
+            }
+            
+            .btn-primary,
+            .btn-secondary,
+            .download-btn {
+                font-weight: 800;
+            }
+        }
+        
+        /* 减少动画模式 */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* 平板设备优化 */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .footer-container {
+                grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+                gap: 25px;
+            }
+            
+            .footer-brand {
+                max-width: 280px;
+            }
+            
+            .footer-title {
+                font-size: 15px;
+            }
+            
+            .footer-links a {
+                font-size: 14px;
+            }
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            /* 导航栏移动端优化 */
+            .navbar {
+                padding: 12px 0;
+            }
+            .nav-container {
+                padding: 0 16px;
+                gap: 12px;
+            }
+            .nav-logo img {
+                width: 32px;
+                height: 32px;
+            }
+            .nav-logo span {
+                font-size: 20px;
+            }
+            
+            /* 导航按钮移动端优化 */
+            .nav-container > div {
+                gap: 8px !important;
+            }
+            
+            .nav-container > div > a {
+                padding: 10px 14px !important;
+                font-size: 13px !important;
+                min-height: 40px !important;
+                border-radius: 10px !important;
+            }
+            
+            .nav-cta {
+                padding: 10px 16px !important;
+                font-size: 13px !important;
+                min-height: 40px !important;
+                white-space: nowrap;
+            }
+            /* 限免卡片移动端优化 */
+            .promo-card-section {
+                padding: 40px 0;
+            }
+            
+            .promo-card {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+            
+            .promo-card-content {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                text-align: center;
+            }
+            
+            .promo-card-icon {
+                font-size: 40px;
+            }
+            
+            .promo-card-title {
+                font-size: 24px;
+            }
+            
+            .promo-card-desc {
+                font-size: 15px;
+            }
+            
+            .promo-card-features {
+                justify-content: center;
+                gap: 16px;
+            }
+            
+            .promo-feature {
+                font-size: 13px;
+            }
+            
+            .countdown-item {
+                padding: 14px 10px;
+                min-width: 65px;
+                border-radius: 12px;
+            }
+            
+            .countdown-number {
+                font-size: 26px;
+            }
+            
+            .countdown-unit {
+                font-size: 12px;
+                margin-top: 4px;
+            }
+
+            .countdown-separator {
+                font-size: 22px;
+                margin: 0 2px;
+            }
+
+            .promo-countdown {
+                gap: 8px;
+            }
+
+            .promo-countdown-label {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+            
+            .promo-cta-btn {
+                padding: 16px 32px;
+                font-size: 15px;
+                min-height: 56px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            /* 英雄区域移动端优化 */
+            .hero {
+                padding: 80px 0 30px;
+            }
+            
+            /* 版本标签移动端优化 */
+            .hero > .container > div:first-child {
+                padding: 6px 12px !important;
+                margin-bottom: 24px !important;
+            }
+            
+            .hero > .container > div:first-child span:last-child {
+                font-size: 12px !important;
+            }
+            
+            /* 主标题移动端优化 */
+            .hero > .container > h1 {
+                font-size: 36px !important;
+                line-height: 1.2 !important;
+                margin: 0 0 20px 0 !important;
+                padding: 0 10px;
+            }
+            
+            /* 副标题移动端优化 */
+            .hero > .container > p:first-of-type {
+                font-size: 16px !important;
+                line-height: 1.6 !important;
+                margin-bottom: 24px !important;
+                padding: 0 10px;
+            }
+            
+            /* 特性标签移动端优化 */
+            .hero > .container > div:nth-of-type(2) {
+                gap: 12px !important;
+                font-size: 12px !important;
+                margin-bottom: 32px !important;
+                padding: 0 10px;
+            }
+            
+            .hero-logo {
+                gap: 12px;
+                margin-bottom: 30px;
+            }
+            .hero-logo img {
+                width: 60px;
+                height: 60px;
+            }
+            .hero-logo h1 {
+                font-size: 42px;
+            }
+            .hero-subtitle {
+                font-size: 18px;
+                margin-bottom: 30px;
+                padding: 0 10px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+            }
+            .btn-primary, .btn-secondary {
+                padding: 16px 32px;
+                font-size: 16px;
+                width: 100%;
+                max-width: 280px;
+                min-height: 56px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            /* 产品演示移动端优化 */
+            .demo-section {
+                padding: 40px 0;
+            }
+            .demo-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            .demo-video {
+                order: 1;
+            }
+            .demo-features {
+                order: 2;
+            }
+            .video-placeholder {
+                padding: 60px 20px;
+                margin: 0 auto;
+                max-width: 320px;
+            }
+            .play-button {
+                font-size: 40px;
+                margin-bottom: 16px;
+            }
+            .video-title {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+            .video-description {
+                font-size: 14px;
+            }
+            .demo-feature {
+                margin-bottom: 24px;
+                padding: 20px;
+                border-radius: 16px;
+                background: rgba(31, 41, 55, 0.5);
+            }
+            .demo-step {
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+            .demo-content h4 {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+            .demo-content p {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            /* 产品展示移动端优化 */
+            .product-showcase {
+                padding: 40px 0;
+            }
+            .showcase-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            .showcase-text {
+                padding-right: 0;
+                order: 2;
+            }
+            .showcase-image {
+                order: 1;
+            }
+            .showcase-title {
+                font-size: 28px;
+                margin-bottom: 16px;
+            }
+            .showcase-desc {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+            .product-screenshot {
+                max-width: 90%;
+                border-radius: 16px;
+            }
+            /* 特色功能移动端优化 */
+            .features {
+                padding: 25px 0;
+            }
+            .section-title {
+                font-size: 32px;
+                margin-bottom: 16px;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-bottom: 30px;
+            }
+            .feature-card {
+                padding: 24px 20px;
+                border-radius: 20px;
+            }
+            .feature-icon {
+                font-size: 40px;
+                margin-bottom: 12px;
+            }
+            .feature-title {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            .feature-desc {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            /* 价格预览移动端优化 */
+            .pricing-preview {
+                padding: 30px 0;
+            }
+            .pricing-scroll-container {
+                padding: 10px 0 20px 0;
+            }
+            .pricing-grid {
+                gap: 20px;
+                padding: 0 10px;
+            }
+            .pricing-card {
+                padding: 24px 20px;
+                border-radius: 20px;
+                min-width: 260px;
+            }
+            .pricing-name {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+            .pricing-price {
+                font-size: 32px;
+                margin-bottom: 8px;
+            }
+            .pricing-period {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+            .pricing-features {
+                margin: 12px 0;
+            }
+            .pricing-features li {
+                padding: 6px 0;
+                font-size: 14px;
+            }
+            .pricing-cta {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+            /* 代码块移动端优化 */
+            .code-block {
+                padding: 16px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .code-block pre {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .code-block code {
+                font-size: 13px;
+                display: block;
+                white-space: nowrap;
+            }
+            
+            .copy-btn {
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+            
+            /* 下载区域移动端优化 */
+            .download-section {
+                padding: 30px 0;
+            }
+            .download-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-bottom: 25px;
+            }
+            .download-card {
+                padding: 24px 20px;
+                border-radius: 20px;
+            }
+            .download-card[style*="grid-column: span 2"] {
+                grid-column: span 1 !important;
+            }
+            .download-icon {
+                font-size: 40px;
+                margin-bottom: 12px;
+            }
+            .download-title {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            .download-desc {
+                font-size: 14px;
+                margin-bottom: 16px;
+                line-height: 1.5;
+            }
+            .download-features {
+                gap: 6px;
+                margin-bottom: 20px;
+            }
+            .feature-tag {
+                font-size: 11px;
+                padding: 4px 10px;
+            }
+            .download-btn {
+                padding: 14px 24px;
+                font-size: 14px;
+                min-width: 160px;
+                min-height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .download-info {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .info-card {
+                padding: 20px;
+                border-radius: 16px;
+            }
+            .info-icon {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+            .info-card h4 {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+            .info-card li {
+                padding: 4px 0;
+                font-size: 13px;
+            }
+            /* 技术规格移动端优化 */
+            .specs {
+                padding: 30px 0;
+            }
+            .specs-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+                max-width: 100%;
+            }
+            .spec-item {
+                padding: 20px 12px;
+                border-radius: 16px;
+            }
+            .spec-icon {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            .spec-value {
+                font-size: 28px;
+                margin-bottom: 6px;
+            }
+            .spec-label {
+                font-size: 12px;
+            }
+            /* 底部移动端优化 */
+            .footer-main {
+                padding: 40px 0 30px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 0 16px;
+                text-align: center;
+            }
+            
+            .footer-brand {
+                max-width: none;
+            }
+            
+            .footer-logo {
+                justify-content: center;
+                margin-bottom: 16px;
+            }
+            
+            .footer-logo img {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .footer-logo span {
+                font-size: 18px;
+            }
+            
+            .footer-description {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+            
+            .footer-social {
+                justify-content: center;
+            }
+            
+            .footer-title {
+                font-size: 15px;
+                margin-bottom: 16px;
+            }
+            
+            .footer-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 25px;
+            }
+            
+            .footer-links a {
+                font-size: 13px;
+                padding: 8px 4px;
+                display: block;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .footer-links li {
+                margin-bottom: 4px;
+            }
+            
+            .footer-bottom {
+                padding: 20px 0;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
+            }
+            
+            .footer-copyright {
+                font-size: 13px;
+            }
+            
+            .footer-stats {
+                justify-content: center;
+                font-size: 13px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 12px;
+            }
+            /* 导航栏小屏优化 */
+            .nav-container {
+                padding: 0 12px;
+            }
+            .nav-logo img {
+                width: 24px;
+                height: 24px;
+            }
+            .nav-logo span {
+                font-size: 16px;
+            }
+            .nav-cta {
+                padding: 12px 16px;
+                font-size: 13px;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            /* 限免卡片小屏优化 */
+            .promo-card-section {
+                padding: 30px 0;
+            }
+            
+            .promo-card {
+                padding: 24px 16px;
+                border-radius: 16px;
+            }
+            
+            .promo-card-content {
+                gap: 20px;
+            }
+            
+            .promo-card-icon {
+                font-size: 36px;
+            }
+            
+            .promo-card-title {
+                font-size: 22px;
+            }
+            
+            .promo-card-desc {
+                font-size: 14px;
+            }
+            
+            .promo-card-features {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .promo-feature {
+                font-size: 12px;
+            }
+            
+            .countdown-item {
+                padding: 12px 8px;
+                min-width: 60px;
+                border-radius: 10px;
+            }
+            
+            .countdown-number {
+                font-size: 24px;
+            }
+            
+            .countdown-unit {
+                font-size: 11px;
+                margin-top: 3px;
+            }
+            
+            .countdown-separator {
+                font-size: 20px;
+                margin: 0 1px;
+            }
+
+            .promo-countdown {
+                gap: 6px;
+            }
+
+            .promo-countdown-label {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+            
+            .promo-cta-btn {
+                padding: 14px 28px;
+                font-size: 14px;
+                min-height: 52px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+            }
+
+            /* 产品演示小屏优化 */
+            .demo-section {
+                padding: 30px 0;
+            }
+            .demo-container {
+                gap: 30px;
+            }
+            .video-placeholder {
+                padding: 50px 16px;
+                max-width: 280px;
+            }
+            .play-button {
+                font-size: 36px;
+                margin-bottom: 12px;
+            }
+            .video-title {
+                font-size: 16px;
+                margin-bottom: 6px;
+            }
+            .video-description {
+                font-size: 13px;
+            }
+            .demo-feature {
+                margin-bottom: 20px;
+                padding: 16px;
+            }
+            .demo-step {
+                width: 28px;
+                height: 28px;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+            .demo-content h4 {
+                font-size: 16px;
+                margin-bottom: 6px;
+            }
+            .demo-content p {
+                font-size: 13px;
+            }
+
+            /* 英雄区域小屏优化 */
+            .hero {
+                padding: 70px 0 25px;
+            }
+            .hero-logo {
+                gap: 10px;
+                margin-bottom: 25px;
+            }
+            .hero-logo img {
+                width: 50px;
+                height: 50px;
+            }
+            .hero-logo h1 {
+                font-size: 32px;
+            }
+            .hero-subtitle {
+                font-size: 16px;
+                margin-bottom: 25px;
+                padding: 0 5px;
+            }
+            .hero-buttons {
+                gap: 12px;
+            }
+            .btn-primary, .btn-secondary {
+                padding: 16px 28px;
+                font-size: 15px;
+                max-width: 280px;
+                min-height: 52px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            /* 社会证明小屏优化 */
+            .social-proof {
+                margin: 30px 0 25px;
+                padding: 0 10px;
+            }
+            .stats-container {
+                flex-direction: row;
+                gap: 12px;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .stat-item {
+                padding: 16px 12px;
+                text-align: center;
+                min-width: 100px;
+                flex: 1;
+                max-width: 140px;
+                background: rgba(59, 130, 246, 0.05);
+                border-radius: 12px;
+                border: 1px solid rgba(59, 130, 246, 0.2);
+            }
+            .stat-number {
+                font-size: 24px;
+                margin-bottom: 6px;
+                font-weight: 700;
+            }
+            .stat-label {
+                font-size: 12px;
+                color: #94a3b8;
+            }
+            .trust-badges {
+                flex-direction: row;
+                gap: 12px;
+                align-items: center;
+                justify-content: center;
+                margin-top: 20px;
+                flex-wrap: wrap;
+            }
+            .trust-badge {
+                padding: 8px 14px;
+                font-size: 12px;
+                min-width: 90px;
+                white-space: nowrap;
+            }
+            /* 产品展示小屏优化 */
+            .product-showcase {
+                padding: 30px 0;
+            }
+            .showcase-content {
+                gap: 25px;
+            }
+            .showcase-title {
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+            .showcase-desc {
+                font-size: 15px;
+            }
+            .product-screenshot {
+                max-width: 95%;
+                border-radius: 12px;
+            }
+            /* 特色功能小屏优化 */
+            .features {
+                padding: 20px 0;
+            }
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 12px;
+            }
+            .features-grid {
+                gap: 16px;
+                margin-bottom: 25px;
+            }
+            .feature-card {
+                padding: 20px 16px;
+                border-radius: 16px;
+            }
+            .feature-icon {
+                font-size: 36px;
+                margin-bottom: 10px;
+            }
+            .feature-title {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+            .feature-desc {
+                font-size: 13px;
+            }
+            /* 价格预览小屏优化 */
+            .pricing-preview {
+                padding: 25px 0;
+            }
+            .pricing-scroll-container {
+                padding: 10px 0 15px 0;
+            }
+            .pricing-grid {
+                gap: 16px;
+                padding: 0 8px;
+            }
+            .pricing-card {
+                padding: 20px 16px;
+                border-radius: 16px;
+                min-width: 240px;
+            }
+            .pricing-name {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+            .pricing-price {
+                font-size: 28px;
+                margin-bottom: 6px;
+            }
+            .pricing-period {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+            .pricing-features {
+                margin: 10px 0;
+            }
+            .pricing-features li {
+                padding: 4px 0;
+                font-size: 13px;
+            }
+            .pricing-cta {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+            /* 下载区域小屏优化 */
+            .download-section {
+                padding: 25px 0;
+            }
+            .download-grid {
+                gap: 16px;
+                margin-bottom: 20px;
+            }
+            .download-card {
+                padding: 20px 16px;
+                border-radius: 16px;
+            }
+            .download-icon {
+                font-size: 36px;
+                margin-bottom: 10px;
+            }
+            .download-title {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+            .download-desc {
+                font-size: 13px;
+                margin-bottom: 12px;
+            }
+            .download-features {
+                gap: 4px;
+                margin-bottom: 16px;
+            }
+            .feature-tag {
+                font-size: 10px;
+                padding: 3px 8px;
+            }
+            .download-btn {
+                padding: 12px 20px;
+                font-size: 13px;
+                min-width: 140px;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .download-info {
+                gap: 12px;
+            }
+            .info-card {
+                padding: 16px;
+                border-radius: 12px;
+            }
+            .info-icon {
+                font-size: 24px;
+                margin-bottom: 8px;
+            }
+            .info-card h4 {
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+            .info-card li {
+                padding: 3px 0;
+                font-size: 12px;
+            }
+            /* 技术规格小屏优化 */
+            .specs {
+                padding: 25px 0;
+            }
+            .specs-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .spec-item {
+                padding: 16px 10px;
+                border-radius: 12px;
+            }
+            .spec-icon {
+                font-size: 20px;
+                margin-bottom: 8px;
+            }
+            .spec-value {
+                font-size: 24px;
+                margin-bottom: 4px;
+            }
+            .spec-label {
+                font-size: 11px;
+            }
+            /* 底部小屏优化 */
+            .footer-main {
+                padding: 30px 0 20px;
+            }
+            
+            .footer-container {
+                padding: 0 12px;
+                gap: 25px;
+            }
+            
+            .footer-logo img {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .footer-logo span {
+                font-size: 16px;
+            }
+            
+            .footer-description {
+                font-size: 13px;
+                margin-bottom: 16px;
+            }
+            
+            .footer-social a {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .footer-title {
+                font-size: 14px;
+                margin-bottom: 14px;
+            }
+            
+            .footer-title::after {
+                width: 20px;
+            }
+            
+            .footer-links a {
+                font-size: 12px;
+                padding: 10px 4px;
+                display: block;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .footer-links li {
+                margin-bottom: 2px;
+            }
+            
+            .footer-bottom {
+                padding: 16px 0;
+            }
+            
+            .footer-bottom-content {
+                gap: 12px;
+            }
+            
+            .footer-copyright {
+                font-size: 12px;
+            }
+            
+            .footer-stats {
+                font-size: 12px;
+            }
+            
+            .stats-number {
+                padding: 3px 6px;
+                font-size: 11px;
+            }
+        }
+        
+        /* 动画效果 */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* 页面加载动画 */
+        .hero, .testimonials, .features {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        /* 导航链接悬停效果 */
+        .nav-container a[href^="#"]:hover {
+            color: #f1f5f9 !important;
+        }
+        
+        /* 移动端汉堡菜单 */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: rgba(59, 130, 246, 0.15);
+            border: 2px solid rgba(59, 130, 246, 0.4);
+            border-radius: 10px;
+            padding: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        
+        .mobile-menu-toggle span {
+            width: 26px;
+            height: 3px;
+            background: #60a5fa;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-toggle:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 68px;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            z-index: 999;
+        }
+        
+        .mobile-menu.active {
+            max-height: 600px;
+        }
+        
+        .mobile-menu-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        
+        .mobile-menu-item {
+            padding: 16px 20px;
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .mobile-menu-item:hover {
+            background: rgba(59, 130, 246, 0.1);
+            color: #f1f5f9;
+            padding-left: 28px;
+        }
+        
+        .mobile-menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        @media (max-width: 768px) {
+            /* 显示汉堡菜单按钮 */
+            .mobile-menu-toggle {
+                display: flex !important;
+            }
+            
+            /* 隐藏桌面端导航菜单 */
+            .nav-container > div:nth-child(2) {
+                display: none !important;
+            }
+            
+            /* 隐藏所有辅助按钮 */
+            .nav-secondary-btn {
+                display: none !important;
+            }
+            
+            .nav-cta {
+                display: none !important;
+            }
+            
+            /* 显示移动端菜单 */
+            .mobile-menu {
+                display: block;
+            }
+            
+            /* 确保导航栏容器正确布局 */
+            .nav-container {
+                justify-content: space-between;
+            }
+        }
+        
+        /* FAQ 悬停效果 */
+        .faq-item:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.5) !important;
+            box-shadow: 0 12px 40px rgba(59, 130, 246, 0.2) !important;
+        }
+        
+        /* 辅助导航按钮悬停效果 */
+        .nav-secondary-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        
+        .nav-secondary-btn:active {
+            transform: translateY(0);
+        }
+        
+        /* 触摸设备优化 */
+        @media (hover: none) and (pointer: coarse) {
+            .nav-cta:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .btn-primary:hover, .btn-secondary:hover {
+                transform: none;
+                box-shadow: 0 8px 25px rgba(29, 78, 216, 0.4);
+            }
+            .feature-card:hover {
+                transform: none;
+                border-color: rgba(59, 130, 246, 0.2);
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            }
+            .pricing-card:hover {
+                transform: none;
+                border-color: rgba(31, 41, 55, 0.5);
+            }
+            .download-card:hover {
+                transform: none;
+                border-color: rgba(59, 130, 246, 0.2);
+                box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+            }
+            .spec-item:hover {
+                transform: none;
+                border-color: rgba(59, 130, 246, 0.2);
+                box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+            }
+            .footer-links a:hover {
+                color: #60a5fa;
+                transform: none;
+            }
+            .footer-social a:hover {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+        
+        /* 横屏优化 */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero {
+                padding: 60px 0 20px;
+            }
+            .hero-logo {
+                margin-bottom: 20px;
+            }
+            .hero-logo h1 {
+                font-size: 36px;
+            }
+            .hero-subtitle {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+            .hero-buttons {
+                flex-direction: row;
+                gap: 12px;
+            }
+            .btn-primary, .btn-secondary {
+                width: auto;
+                max-width: none;
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            .product-showcase {
+                padding: 25px 0;
+            }
+            .showcase-content {
+                gap: 20px;
+            }
+            .showcase-title {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            .showcase-desc {
+                font-size: 14px;
+            }
+            .features {
+                padding: 20px 0;
+            }
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 12px;
+            }
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .feature-card {
+                padding: 16px 12px;
+            }
+            .feature-icon {
+                font-size: 32px;
+                margin-bottom: 8px;
+            }
+            .feature-title {
+                font-size: 16px;
+                margin-bottom: 6px;
+            }
+            .feature-desc {
+                font-size: 12px;
+            }
+            .pricing-preview {
+                padding: 20px 0;
+            }
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+            .pricing-card {
+                padding: 16px 12px;
+            }
+            .pricing-name {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+            .pricing-price {
+                font-size: 24px;
+                margin-bottom: 4px;
+            }
+            .pricing-period {
+                font-size: 11px;
+                margin-bottom: 8px;
+            }
+            .pricing-features {
+                margin: 8px 0;
+            }
+            .pricing-features li {
+                padding: 3px 0;
+                font-size: 11px;
+            }
+            .pricing-cta {
+                padding: 8px 12px;
+                font-size: 11px;
+            }
+            .download-section {
+                padding: 20px 0;
+            }
+            .download-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .download-card {
+                padding: 16px 12px;
+            }
+            .download-card[style*="grid-column: span 2"] {
+                grid-column: span 2 !important;
+            }
+            .download-icon {
+                font-size: 32px;
+                margin-bottom: 8px;
+            }
+            .download-title {
+                font-size: 16px;
+                margin-bottom: 6px;
+            }
+            .download-desc {
+                font-size: 12px;
+                margin-bottom: 8px;
+            }
+            .download-features {
+                gap: 4px;
+                margin-bottom: 12px;
+            }
+            .feature-tag {
+                font-size: 9px;
+                padding: 2px 6px;
+            }
+            .download-btn {
+                padding: 8px 12px;
+                font-size: 11px;
+                min-width: 120px;
+            }
+            .download-info {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .info-card {
+                padding: 12px;
+            }
+            .info-icon {
+                font-size: 20px;
+                margin-bottom: 6px;
+            }
+            .info-card h4 {
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+            .info-card li {
+                padding: 2px 0;
+                font-size: 10px;
+            }
+            .specs {
+                padding: 20px 0;
+            }
+            .specs-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+                max-width: 100%;
+            }
+            .spec-item {
+                padding: 12px 8px;
+            }
+            .spec-icon {
+                font-size: 18px;
+                margin-bottom: 6px;
+            }
+            .spec-value {
+                font-size: 20px;
+                margin-bottom: 3px;
+            }
+            .spec-label {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 可访问性：跳过导航 -->
+    <a href="#main-content" class="skip-link">跳到主要内容</a>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="https://picx.zhimg.com/80/v2-34b000e56d1af7ef61092dcd031dfd9a_1440w.webp?source=2c26e567" alt="OneClip" />
+                <span>OneClip</span>
+            </a>
+            <!-- 导航菜单 -->
+            <div style="display: flex; gap: 24px; align-items: center;">
+                <a href="#features" style="color: #cbd5e1; text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.3s ease;">功能特性</a>
+                <a href="#testimonials" style="color: #cbd5e1; text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.3s ease;">用户评价</a>
+                <a href="#pricing" style="color: #cbd5e1; text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.3s ease;">价格方案</a>
+                <a href="#faq" style="color: #cbd5e1; text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.3s ease;">常见问题</a>
+            </div>
+            <!-- 右侧操作 -->
+            <div style="display: flex; gap: 8px; align-items: center;">
+                <!-- 文档按钮 -->
+                <a href="/docs.html" class="nav-secondary-btn" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 10px; color: #60a5fa; text-decoration: none; font-size: 14px; font-weight: 600; transition: all 0.3s ease;">
+                    <span style="font-size: 16px;">📖</span>
+                    <span>文档</span>
+                </a>
+                <!-- 博客按钮 -->
+                <a href="/blog.html" class="nav-secondary-btn" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 10px; color: #a78bfa; text-decoration: none; font-size: 14px; font-weight: 600; transition: all 0.3s ease;">
+                    <span style="font-size: 16px;">📝</span>
+                    <span>博客</span>
+                </a>
+                <!-- 反馈按钮 -->
+                <a href="mailto:vip@oneclip.cloud" class="nav-secondary-btn" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 10px; color: #10b981; text-decoration: none; font-size: 14px; font-weight: 600; transition: all 0.3s ease;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>反馈</span>
+                </a>
+                <!-- 免费下载按钮 -->
+                <a href="#download" class="nav-cta" style="margin-left: 4px;">免费下载</a>
+                <!-- 移动端汉堡菜单按钮 -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="菜单">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- 移动端下拉菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <a href="#features" class="mobile-menu-item">
+                <span>✨</span>
+                <span>功能特性</span>
+            </a>
+            <a href="#testimonials" class="mobile-menu-item">
+                <span>💬</span>
+                <span>用户评价</span>
+            </a>
+            <a href="#pricing" class="mobile-menu-item">
+                <span>💰</span>
+                <span>价格方案</span>
+            </a>
+            <a href="#faq" class="mobile-menu-item">
+                <span>❓</span>
+                <span>常见问题</span>
+            </a>
+            <a href="/docs.html" class="mobile-menu-item">
+                <span>📖</span>
+                <span>文档</span>
+            </a>
+            <a href="/blog.html" class="mobile-menu-item">
+                <span>📝</span>
+                <span>博客</span>
+            </a>
+            <a href="mailto:vip@oneclip.cloud" class="mobile-menu-item">
+                <span>💌</span>
+                <span>反馈问题</span>
+            </a>
+            <a href="#download" class="mobile-menu-item" style="background: linear-gradient(135deg, rgba(8, 145, 178, 0.2) 0%, rgba(6, 182, 212, 0.15) 100%); color: #06b6d4; font-weight: 700; margin-top: 12px; border-radius: 12px;">
+                <span>⬇️</span>
+                <span>免费下载</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 英雄区域 -->
+    <main id="main-content" role="main">
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="container">
+            <!-- 产品图标和徽章 -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; margin-bottom: 32px;">
+                <!-- 应用图标 -->
+                <div style="position: relative;">
+                    <img class="hero-app-icon" src="https://picx.zhimg.com/80/v2-34b000e56d1af7ef61092dcd031dfd9a_1440w.webp?source=2c26e567" alt="OneClip" style="width: 120px; height: 120px; border-radius: 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(59, 130, 246, 0.2);" />
+                    <!-- 光晕效果 -->
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 140px; height: 140px; background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%); z-index: -1; animation: pulse 3s ease-in-out infinite;"></div>
+                </div>
+                <!-- 徽章组 -->
+                <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+                    <div style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(245, 158, 11, 0.15)); border: 1px solid rgba(251, 191, 36, 0.4); border-radius: 20px;">
+                        <span style="font-size: 14px;">🏆</span>
+                        <span style="color: #fbbf24; font-size: 13px; font-weight: 600;">Product Hunt 推荐</span>
+                    </div>
+                    <div style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 20px;">
+                        <span style="font-size: 14px;">⭐</span>
+                        <span style="color: #60a5fa; font-size: 13px; font-weight: 600;">4.9/5.0 用户评分</span>
+                    </div>
+                    <div style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 20px;">
+                        <span style="font-size: 14px;">✨</span>
+                        <span style="color: #10b981; font-size: 13px; font-weight: 600;">v1.3.9 通用版本</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 主标题 - 借鉴 Paste 的大胆风格 -->
+            <h1 style="font-size: 64px; font-weight: 800; line-height: 1.1; margin: 0 0 24px 0; background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                永不丢失<br>任何复制内容
+            </h1>
+            
+            <!-- 副标题 - 融入设计哲学 -->
+            <p class="hero-subtitle" style="font-size: 22px; color: #94a3b8; line-height: 1.6; margin: 0 0 16px 0; max-width: 700px; margin-left: auto; margin-right: auto;">
+                让复杂的事情变简单，让简单的事情变优雅
+            </p>
+            <p style="font-size: 16px; color: #64748b; margin-bottom: 32px;">
+                无限历史 · 列表/卡片布局 · 粘贴板堆栈 · 拖拽容器 · OCR识别 · AI 加持
+            </p>
+            <!-- 社会证明 - 统计数据 -->
+            <div class="hero-stats" style="display: flex; justify-content: center; gap: 60px; margin-bottom: 24px;">
+                <div style="text-align: center;">
+                    <div class="hero-stat-number" style="font-size: 36px; font-weight: 800; color: #e2e8f0; letter-spacing: -1px;">550+</div>
+                    <div style="font-size: 13px; color: #64748b; margin-top: 4px;">活跃用户</div>
+                </div>
+                <div style="text-align: center;">
+                    <div class="hero-stat-number" style="font-size: 36px; font-weight: 800; color: #e2e8f0; letter-spacing: -1px;">4.9🌟</div>
+                    <div style="font-size: 13px; color: #64748b; margin-top: 4px;">用户评分</div>
+                </div>
+                <div style="text-align: center;">
+                    <div class="hero-stat-number" style="font-size: 36px; font-weight: 800; color: #e2e8f0; letter-spacing: -1px;">1000+</div>
+                    <div style="font-size: 13px; color: #64748b; margin-top: 4px;">累计下载</div>
+                </div>
+            </div>            
+            <!-- 行动按钮 - 放在最显眼位置 -->
+            <div class="hero-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;">
+                <a href="https://gitee.com/Wcowin/OneClip/releases/download/1.3.9/OneClip-1.3.9.dmg" class="btn-primary enhanced" style="display: inline-flex; align-items: center; gap: 12px; padding: 18px 40px; background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%); color: white; text-decoration: none; border-radius: 16px; font-size: 18px; font-weight: 700; box-shadow: 0 10px 40px rgba(6, 182, 212, 0.3); transition: all 0.3s ease;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    免费下载
+                </a>
+                <a href="/purchase" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 8px; padding: 18px 32px; background: rgba(255, 255, 255, 0.05); color: #e2e8f0; text-decoration: none; border-radius: 16px; font-size: 18px; font-weight: 600; border: 2px solid rgba(59, 130, 246, 0.3); transition: all 0.3s ease;">
+                    查看定价
+                </a>
+            </div>
+            
+            <!-- 版本信息 -->
+            <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; color: #64748b; font-size: 14px; margin-bottom: 40px;">
+                <span>✓ macOS 12.0+</span>
+                <span>✓ 通用版本</span>
+                <span>✓ 软件大小不到30M</span>
+                <span>✓ 本地存储</span>
+            </div>
+            
+
+            
+            <!-- 信任徽章 -->
+            <div style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+                <span style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 10px; color: #94a3b8; font-size: 13px; font-weight: 500;">🔒 安全可靠</span>
+                <span style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 10px; color: #94a3b8; font-size: 13px; font-weight: 500;">🚀 性能优异</span>
+                <span style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 10px; color: #94a3b8; font-size: 13px; font-weight: 500;">💻 Swift原生应用</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 限免宣传卡片 -->
+    <section class="promo-card-section">
+        <div class="container">
+            <div class="promo-card">
+                <div class="promo-card-bg"></div>
+                <div class="promo-card-content">
+                    <div class="promo-card-icon">🎉</div>
+                    <div class="promo-card-text">
+                        <h3 class="promo-card-title">限时免费使用</h3>
+                        <p class="promo-card-desc">2025年12月31日前，OneClip完全免费！抢先体验专业剪贴板管理工具的强大功能。</p>
+                        <div class="promo-card-features">
+                            <span class="promo-feature">🎉 智能分类搜索</span>
+                            <span class="promo-feature">✨ 无限历史记录</span>
+                            <span class="promo-feature">🚀 AI 本地模型（永久免费）</span>
+                            <span class="promo-feature">☁️ 自定义云存储同步粘贴板</span>
+                            <span class="promo-feature">📚 粘贴板堆栈</span>
+                            <span class="promo-feature">🎯 拖拽容器</span>
+                            <span class="promo-feature">👍 OCR识别</span>
+                            <span class="promo-feature">📱 多设备同步（开发中）</span>
+
+                        </div>
+                    </div>
+                    <div class="promo-card-action">
+                        <div class="promo-countdown-wrapper">
+                            <div class="promo-countdown-label">限免倒计时</div>
+                            <div class="promo-countdown" id="countdown-display">
+                                <span class="countdown-item">
+                                    <span class="countdown-number" id="days">--</span>
+                                    <span class="countdown-unit">天</span>
+                                </span>
+                                <span class="countdown-separator">:</span>
+                                <span class="countdown-item">
+                                    <span class="countdown-number" id="hours">--</span>
+                                    <span class="countdown-unit">时</span>
+                                </span>
+                                <span class="countdown-separator">:</span>
+                                <span class="countdown-item">
+                                    <span class="countdown-number" id="minutes">--</span>
+                                    <span class="countdown-unit">分</span>
+                                </span>
+                            </div>
+                        </div>
+                        <a href="#download" class="promo-cta-btn">
+                            <span>立即免费下载</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 14l5-5 5 5z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品演示 - 暂时隐藏，等有视频后再启用 -->
+    <section class="demo-section" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">看看 OneClip 如何提升您的效率</h2>
+            <div class="demo-container">
+                <div class="demo-video">
+                    <div class="video-placeholder" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1)); border: 2px dashed rgba(59, 130, 246, 0.3); border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 300px;">
+                        <div style="font-size: 48px; margin-bottom: 16px;">🎬</div>
+                        <div class="video-title" style="font-size: 20px; font-weight: 600; color: #e2e8f0; margin-bottom: 8px;">产品演示视频</div>
+                        <div class="video-description" style="font-size: 14px; color: #64748b;">即将推出，敬请期待</div>
+                    </div>
+                </div>
+                <div class="demo-features">
+                    <div class="demo-feature">
+                        <div class="demo-step">1</div>
+                        <div class="demo-content">
+                            <h4>智能记录</h4>
+                            <p>自动保存所有复制内容，支持文本、图片、文件等格式</p>
+                        </div>
+                    </div>
+                    <div class="demo-feature">
+                        <div class="demo-step">2</div>
+                        <div class="demo-content">
+                            <h4>快速搜索</h4>
+                            <p>随打随搜，快速找到历史剪贴板内容</p>
+                        </div>
+                    </div>
+                    <div class="demo-feature">
+                        <div class="demo-step">3</div>
+                        <div class="demo-content">
+                            <h4>一键粘贴</h4>
+                            <p>点击即可粘贴，提升工作效率10倍</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品展示 -->
+    <section class="product-showcase">
+        <div class="container">
+            <div class="showcase-content">
+                <div class="showcase-text">
+                    <h2 class="showcase-title">专业剪贴板管理，让工作更高效</h2>
+                    <p class="showcase-desc">
+                        OneClip 是一款专为 macOS 设计的剪贴板管理工具，支持多种格式内容管理，
+                        智能搜索和分类，让您的复制粘贴操作更加便捷高效。
+                    </p>
+                </div>
+                <div class="showcase-image">
+                    <img src="https://i.imgant.com/v2/SyeDvxq.png" 
+                        alt="OneClip 界面展示" 
+                        class="product-screenshot" />
+                </div>
+                <!-- 卡片横排样式展示 -->
+                <div class="showcase-text" style="margin-top: 60px;">
+                    <h2 class="showcase-title">卡片横排模式，一目了然</h2>
+                    <p class="showcase-desc">
+                        精美卡片横排布局，支持文本、图片、视频、文档、压缩包等多种格式，
+                        让您快速预览和选择需要的内容，操作更加直观高效。
+                    </p>
+                </div>
+                <div class="showcase-image" style="margin-top: 40px;">
+                    <img src="https://i.imgant.com/v2/Zn6arLh.png" 
+                        alt="OneClip 卡片横排样式" 
+                        class="product-screenshot" />
+                </div>
+                <!-- 设置功能展示 -->
+                <div class="showcase-text" style="margin-top: 60px;">
+                    <h2 class="showcase-title">设置功能多样，个性化定制</h2>
+                    <p class="showcase-desc">
+                        丰富的设置选项，包括云同步、快捷键配置、语言切换等，
+                        满足不同用户的个性化需求，打造专属于您的剪贴板工具。
+                    </p>
+                </div>
+                <div class="showcase-image" style="margin-top: 40px;">
+                    <img src="https://i.imgant.com/v2/G8SHVSr.jpeg" 
+                        alt="OneClip 设置功能" 
+                        class="product-screenshot" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户评价 -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">用户怎么说</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-content">
+                        "OneClip 彻底改变了我的工作流程！再也不用担心丢失重要的剪贴板内容了。无限历史记录和智能搜索让我的工作效率提升了至少 3 倍。"
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 12px; margin-top: 20px;">
+                        <!-- 用户头像 -->
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face" alt="张云峰" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid rgba(59, 130, 246, 0.3); object-fit: cover;" />
+                        <div style="flex: 1;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span class="author-name">张云峰</span>
+                                <!-- 社交媒体图标 -->
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#60a5fa" style="opacity: 0.7;">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </div>
+                            <div class="author-role">软件工程师</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-content">
+                        "界面简洁美观，功能强大实用。作为设计师，经常需要复制各种素材，OneClip 的图片预览和拖拽功能帮了大忙！特别喜欢粘贴板堆栈功能。"
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 12px; margin-top: 20px;">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=96&h=96&fit=crop&crop=face" alt="李芜" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid rgba(59, 130, 246, 0.3); object-fit: cover;" />
+                        <div style="flex: 1;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span class="author-name">李芜</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#60a5fa" style="opacity: 0.7;">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </div>
+                            <div class="author-role">UI/UX 设计师</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-content">
+                        "性能优秀，占用资源少。最重要的是数据安全，本地存储让我很放心。AI 功能也很实用，翻译和总结都很准确。强烈推荐给所有 Mac 用户！"
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 12px; margin-top: 20px;">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop&crop=face" alt="陶经理" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid rgba(59, 130, 246, 0.3); object-fit: cover;" />
+                        <div style="flex: 1;">
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <span class="author-name">陶经理</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#60a5fa" style="opacity: 0.7;">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </div>
+                            <div class="author-role">产品经理</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特色功能 -->
+    <section class="features" id="features" aria-labelledby="features-title">
+        <div class="container">
+            <h2 id="features-title" class="section-title">为什么选择 OneClip？</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3 class="feature-title">全格式支持</h3>
+                    <p class="feature-desc">
+                        支持文本、图片、视频、音频、文档、代码、压缩包等 9+ 种格式，完整保留元数据，满足各种复制需求
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">智能搜索</h3>
+                    <p class="feature-desc">
+                        强大的搜索引擎，支持内容预览、来源应用识别、智能分类，随打随搜快速定位
+                    </p>
+                </div>
+                <div class="feature-card" style="position: relative;">
+                    <!-- 开发中标签 -->
+                    <div style="position: absolute; top: 16px; right: 16px; padding: 4px 12px; background: rgba(251, 191, 36, 0.2); border: 1px solid rgba(251, 191, 36, 0.4); border-radius: 12px; font-size: 12px; font-weight: 600; color: #fbbf24;">
+                        开发中
+                    </div>
+                    <div class="feature-icon">☁️</div>
+                    <h3 class="feature-title">跨设备云同步</h3>
+                    <p class="feature-desc">
+                        通过 iCloud、Dropbox 等云存储实现端到端加密云同步，支持多设备实时同步（目前仅支持文本和图片，其他格式正在开发中）
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">快捷回复</h3>
+                    <p class="feature-desc">
+                        一键呼出快捷回复（Cmd+Option+R），预设常用文本，提升沟通效率，支持自定义分类管理
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3 class="feature-title">设备管理</h3>
+                    <p class="feature-desc">
+                        多设备许可证管理，支持最多 5 台设备同时使用，灵活暂停恢复，实时同步激活状态
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3 class="feature-title">智能收藏</h3>
+                    <p class="feature-desc">
+                        重要内容一键收藏，智能保护收藏项目不被自动清理，支持自定义分类，永久保存重要信息
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3 class="feature-title">粘贴板堆栈</h3>
+                    <p class="feature-desc">
+                        创新的堆栈功能，按顺序批量粘贴多个内容，完美支持表单填写、批量操作等场景，大幅提升效率
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">拖拽容器</h3>
+                    <p class="feature-desc">
+                        直观的拖拽交互，支持拖拽到应用、文件夹，轻松整理和使用剪贴板内容，让操作更自然流畅
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📌</div>
+                    <h3 class="feature-title">菜单栏快捷访问</h3>
+                    <p class="feature-desc">
+                        菜单栏常驻，一键访问最近复制内容，支持快速粘贴、搜索、收藏，随时随地高效管理剪贴板
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">极速响应</h3>
+                    <p class="feature-desc">
+                        毫秒级响应速度，自适应监控策略，智能性能优化，CPU 空闲时 <1%，内存占用约 120MB
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">现代设计</h3>
+                    <p class="feature-desc">
+                        100% SwiftUI 原生技术，遵循 macOS 设计规范，毛玻璃效果，暗黑模式自动适配，界面精美流畅
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">安全可靠</h3>
+                    <p class="feature-desc">
+                        本地存储，端到端加密同步，支持自动清理和存储优化，多层安全防护，保护您的隐私和数据安全
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 未来功能横幅 -->
+    <section style="padding: 60px 20px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%); border-top: 1px solid rgba(59, 130, 246, 0.2); border-bottom: 1px solid rgba(59, 130, 246, 0.2);">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <div style="display: inline-flex; align-items: center; gap: 12px; padding: 8px 20px; background: rgba(59, 130, 246, 0.15); border-radius: 50px; margin-bottom: 20px;">
+                    <span style="font-size: 24px; animation: pulse 2s ease-in-out infinite;">✨</span>
+                    <span style="font-weight: 600; color: #3b82f6; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">持续进化</span>
+                </div>
+                <h2 style="font-size: 36px; font-weight: 800; margin: 0 0 16px 0; background: linear-gradient(135deg, #06b6d4, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                    未来支持更多功能
+                </h2>
+                <p style="font-size: 18px; color: #94a3b8; line-height: 1.8; margin: 0;">
+                    我们正在不断开发新功能，包括更强大的 AI 能力、更多平台支持、更丰富的插件生态。购买一次，永久享受所有未来更新。
+                </p>
+                <div style="display: flex; gap: 16px; justify-content: center; margin-top: 32px; flex-wrap: wrap;">
+                    <div style="padding: 12px 24px; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px;">
+                        <span style="font-size: 20px; margin-right: 8px;">🤖</span>
+                        <span style="color: #e2e8f0; font-weight: 500;">更强 AI</span>
+                    </div>
+                    <div style="padding: 12px 24px; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px;">
+                        <span style="font-size: 20px; margin-right: 8px;">📱</span>
+                        <span style="color: #e2e8f0; font-weight: 500;">iOS 支持</span>
+                    </div>
+                    <div style="padding: 12px 24px; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px;">
+                        <span style="font-size: 20px; margin-right: 8px;">🔌</span>
+                        <span style="color: #e2e8f0; font-weight: 500;">插件生态</span>
+                    </div>
+                    <div style="padding: 12px 24px; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px;">
+                        <span style="font-size: 20px; margin-right: 8px;">🌟</span>
+                        <span style="color: #e2e8f0; font-weight: 500;">更多惊喜</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+    </style>
+
+    <!-- 价格预览 -->
+    <section class="pricing-preview" id="pricing" aria-labelledby="pricing-title">
+        <div class="container">
+            <h2 id="pricing-title" class="section-title">选择适合您的方案</h2>
+            
+            <!-- 添加社会证明 -->
+            <!-- <div style="text-align: center; margin-bottom: 40px;">
+                <div style="display: inline-flex; gap: 48px; flex-wrap: wrap; justify-content: center;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 28px; font-weight: 700; color: #3b82f6;">550+</div>
+                        <div style="font-size: 12px; color: #94a3b8; margin-top: 4px;">活跃用户</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 28px; font-weight: 700; color: #10b981;">4.9/5.0</div>
+                        <div style="font-size: 12px; color: #94a3b8; margin-top: 4px;">用户评分</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 28px; font-weight: 700; color: #f59e0b;">100%</div>
+                        <div style="font-size: 12px; color: #94a3b8; margin-top: 4px;">满意度</div>
+                    </div>
+                </div>
+            </div> -->
+            
+            <!-- 滑动提示 -->
+            <div style="text-align: center; margin-bottom: 20px;">
+                <p style="color: #94a3b8; font-size: 14px;">
+                    👈 左右滑动查看更多方案 👉
+                </p>
+            </div>
+            
+            <div class="pricing-scroll-container">
+                <div class="pricing-grid">
+                    <div class="pricing-card free">
+                        <h3 class="pricing-name">免费版</h3>
+                        <div class="pricing-price">¥0</div>
+                        <div class="pricing-period">永久免费</div>
+                        <ul class="pricing-features">
+                            <li>基础剪贴板管理</li>
+                            <li>1天历史记录</li>
+                            <li>20个收藏</li>
+                            <li>6个自定义分类</li>
+                            <li>快捷回复功能</li>
+                            <li>粘贴板堆栈</li>
+                            <li>拖拽容器</li>
+                            <li>AI 本地模型</li>
+                            <li>云存储同步（iCloud/Dropbox）</li>
+                            <li>数据导入导出</li>
+                            <li>复制内容智能分类</li>
+                            <li>基础快捷键</li>
+                        </ul>
+                        <a href="#download" class="pricing-cta" style="background: linear-gradient(135deg, #6b7280, #4b5563);">免费下载</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h3 class="pricing-name">月度版</h3>
+                    <div class="pricing-price">¥5.00</div>
+                    <div class="pricing-period">/月</div>
+                    <ul class="pricing-features">
+                        <li>免费版所有功能</li>
+                        <li>扩展历史记录（无限存储）</li>
+                        <li>无限收藏</li>
+                        <li>无限自定义分类</li>
+                        <li>自动清理</li>
+                        <li>高级设置</li>
+                        <li>支持5台设备</li>
+                        <li>30天有效期</li>
+                        <li>跨设备云同步</li>
+                    </ul>
+                    <a href="/purchase/monthly" class="pricing-cta">选择月度版</a>
+                </div>
+                <div class="pricing-card popular">
+                    <h3 class="pricing-name">年度版</h3>
+                    <div class="pricing-price">¥50.00</div>
+                    <div class="pricing-period">/年</div>
+                    <ul class="pricing-features">
+                        <li>免费版所有功能</li>
+                        <li>扩展历史记录（无限存储）</li>
+                        <li>无限收藏</li>
+                        <li>无限自定义分类</li>
+                        <li>自动清理</li>
+                        <li>高级设置</li>
+                        <li>支持5台设备</li>
+                        <li>365天有效期</li>
+                        <li>节省¥10</li>
+                        <li>跨设备云同步（加密）</li>
+                        <li>免费功能更新</li>
+                    </ul>
+                    <a href="/purchase/yearly" class="pricing-cta">选择年度版</a>
+                </div>
+                <div class="pricing-card lifetime">
+                    <h3 class="pricing-name">终身版</h3>
+                    <div class="pricing-price">¥29.90</div>
+                    <div class="pricing-period">/终身</div>
+                    <ul class="pricing-features">
+                        <li>免费版所有功能</li>
+                        <li>扩展历史记录（无限存储）</li>
+                        <li>无限收藏</li>
+                        <li>无限自定义分类</li>
+                        <li>自动清理</li>
+                        <li>高级设置</li>
+                        <li>支持5台设备</li>
+                        <li>永久有效</li>
+                        <li>超值优惠</li>
+                        <li>跨设备云同步（端到端加密）</li>
+                        <li>终身免费更新</li>
+                        <li>专属功能优先体验</li>
+                    </ul>
+                    <a href="/purchase/lifetime" class="pricing-cta">选择终身版</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 软件下载 -->
+    <section class="download-section" id="download" style="padding: 100px 0; background: linear-gradient(135deg, rgba(17, 24, 39, 0.7) 0%, rgba(30, 41, 59, 0.5) 100%);">
+        <div class="container">
+            <h2 id="download-title" class="section-title">立即下载体验</h2>
+            <p style="text-align: center; color: #94a3b8; font-size: 18px; margin-bottom: 40px;">
+                选择适合您的下载方式，开始体验 OneClip 的强大功能
+            </p>
+            
+            <!-- Homebrew 安装方式（暂时注释掉）-->
+            <!-- <div class="install-method-featured">
+                <div class="featured-badge">⭐ 推荐方式</div>
+                <div class="featured-content">
+                    <div class="featured-icon">🍺</div>
+                    <div class="featured-text">
+                        <h3 class="featured-title">Homebrew 一键安装</h3>
+                        <p class="featured-desc">最简单的安装方式，自动处理权限，支持一键升级</p>
+                    </div>
+                </div>
+                <div class="code-block">
+                    <pre><code id="brew-code">brew install --cask Wcowin/oneclip/oneclip</code></pre>
+                    <button class="copy-btn" onclick="copyBrewCommand()">📋 复制</button>
+                </div>
+                <div class="featured-benefits">
+                    <span class="benefit-tag">✨ 自动安装</span>
+                    <span class="benefit-tag">🔄 一键升级</span>
+                    <span class="benefit-tag">🔒 权限自动处理</span>
+                    <span class="benefit-tag">⚡ 最快捷</span>
+                </div>
+            </div> -->
+
+            <div style="text-align: center; margin: 30px 0; color: #64748b; font-size: 14px;">
+                ──── 选择下载方式 ────
+            </div>
+
+            <div class="download-grid">
+                <div class="download-card" style="border-color: rgba(6, 182, 212, 0.6); box-shadow: 0 10px 40px rgba(6, 182, 212, 0.2);">
+                    <!-- 推荐标识 -->
+                    <div style="position: absolute; top: 15px; right: 20px; background: linear-gradient(135deg, #f59e0b, #f97316); color: white; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4); z-index: 10;">
+                        ⭐ 推荐下载
+                    </div>
+                    <div class="download-icon">🌿</div>
+                    <h3 class="download-title">高速下载</h3>
+                    <p class="download-desc">国内高速镜像，支持所有 Mac（Intel + Apple Silicon）</p>
+                    <div class="download-features">
+                        <span class="feature-tag">🆕 v1.3.9</span>
+                        <span class="feature-tag">⚡ 极速下载</span>
+                        <span class="feature-tag">🌍 通用版本</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <a href="https://gitee.com/Wcowin/OneClip/releases/download/1.3.9/OneClip-1.3.9.dmg" target="_blank" rel="noopener noreferrer" class="download-btn primary">
+                            📥 下载 DMG（推荐）
+                        </a>
+                        <a href="https://gitee.com/Wcowin/OneClip/releases/download/1.3.9/OneClip-1.3.9.zip" target="_blank" rel="noopener noreferrer" class="download-btn secondary" style="font-size: 14px; padding: 10px 20px;">
+                            📦 下载 ZIP
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">☁️</div>
+                    <h3 class="download-title">123云盘下载</h3>
+                    <p class="download-desc">备用下载源，下载速度快，稳定可靠</p>
+                    <div class="download-features">
+                        <span class="feature-tag">🚀 高速下载</span>
+                        <span class="feature-tag">📱 备用源</span>
+                        <span class="feature-tag">🔒 安全可靠</span>
+                    </div>
+                    <a href="https://www.123912.com/s/bXcDVv-HauG3" target="_blank" rel="noopener noreferrer" class="download-btn primary">
+                        📥 123云盘下载
+                    </a>
+                </div>
+
+                <div class="download-card" style="grid-column: span 2;">
+                    <div class="download-icon">🍺</div>
+                    <h3 class="download-title">Homebrew 安装</h3>
+                    <p class="download-desc">一键安装，自动处理权限，支持一键升级</p>
+                    <div class="download-features">
+                        <span class="feature-tag">✨ 自动安装</span>
+                        <span class="feature-tag">🔄 一键升级</span>
+                        <span class="feature-tag">⚡ 最快捷</span>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <!-- 首次安装：添加 tap -->
+                        <div style="font-size: 12px; color: #94a3b8; margin-bottom: 4px;">首次安装请先添加 tap：</div>
+                        <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 12px; font-family: 'Monaco', 'Courier New', monospace; font-size: 12px; color: #06b6d4; word-break: break-all; line-height: 1.5;">
+                            brew tap Wcowin/oneclip https://gitee.com/Wcowin/homebrew-oneclip.git
+                        </div>
+                        <button onclick="copyToClipboard('brew tap Wcowin/oneclip https://gitee.com/Wcowin/homebrew-oneclip.git')" style="background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 10px 16px; border-radius: 10px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                            📋 复制 tap 命令
+                        </button>
+                        
+                        <!-- 安装命令 -->
+                        <div style="font-size: 12px; color: #94a3b8; margin-top: 8px; margin-bottom: 4px;">然后安装：</div>
+                        <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; padding: 12px; font-family: 'Monaco', 'Courier New', monospace; font-size: 13px; color: #10b981; word-break: break-all; line-height: 1.5;">
+                            brew install --cask oneclip
+                        </div>
+                        <button onclick="copyToClipboard('brew install --cask oneclip')" style="background: linear-gradient(135deg, #06b6d4, #0891b2); color: white; border: none; padding: 12px 20px; border-radius: 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                            📋 复制安装命令
+                        </button>
+                    </div>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(59, 130, 246, 0.2); font-size: 12px; color: #94a3b8; line-height: 1.6;">
+                        <p style="margin: 0 0 8px 0;"><strong>🔄 升级方式：</strong></p>
+                        <p style="margin: 0; background: rgba(59, 130, 246, 0.1); padding: 8px; border-radius: 8px; font-family: 'Monaco', monospace; color: #60a5fa;">brew upgrade --cask oneclip</p>
+                        <p style="margin: 12px 0 0 0;"><strong>🗑️ 卸载方式：</strong></p>
+                        <p style="margin: 4px 0 0 0; background: rgba(239, 68, 68, 0.1); padding: 8px; border-radius: 8px; font-family: 'Monaco', monospace; color: #ef4444;">brew uninstall --cask oneclip</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 首次打开提示横幅 -->
+            <div style="margin-top: 60px; background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(245, 158, 11, 0.08) 100%); border: 2px solid rgba(251, 191, 36, 0.3); border-radius: 24px; padding: 40px 35px; position: relative; overflow: hidden; backdrop-filter: blur(10px); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);">
+                <!-- 装饰背景 -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 0% 50%, rgba(251, 191, 36, 0.08) 0%, transparent 50%), radial-gradient(circle at 100% 50%, rgba(245, 158, 11, 0.08) 0%, transparent 50%); pointer-events: none;"></div>
+                
+                <!-- 内容容器 -->
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; position: relative; z-index: 1; flex-wrap: wrap;">
+                    <!-- 左侧：图标和文本 -->
+                    <div style="display: flex; align-items: center; gap: 16px; flex: 1; min-width: 300px;">
+                        <div style="font-size: 40px; flex-shrink: 0;">🔓</div>
+                        <div>
+                            <h4 style="font-size: 18px; font-weight: 700; color: #f1f5f9; margin: 0 0 6px 0;">首次打开提示</h4>
+                            <p style="color: #cbd5e1; font-size: 14px; margin: 0; line-height: 1.5;">
+                                系统设置 → 隐私与安全性 → 点击"仍要打开"。查看详细解决办法
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- 右侧：按钮 -->
+                    <a href="#" id="first-open-pdf-btn" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #1f2937; padding: 12px 24px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.3s ease; white-space: nowrap; flex-shrink: 0; box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);">
+                        <span>📄 查看 PDF</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-90deg);">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技术规格 -->
+    <section class="specs" aria-labelledby="specs-title">
+        <div class="container">
+            <h2 id="specs-title" class="section-title">技术规格</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-icon">📁</div>
+                    <div class="spec-value">9+</div>
+                    <div class="spec-label">支持格式</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-icon">📊</div>
+                    <div class="spec-value">无限条</div>
+                    <div class="spec-label">最大历史记录</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-icon">💻</div>
+                    <div class="spec-value">5</div>
+                    <div class="spec-label">支持设备数</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-icon">☁️</div>
+                    <div class="spec-value">云存储</div>
+                    <div class="spec-label">自定义云同步方式</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-icon">⚡</div>
+                    <div class="spec-value"><100ms</div>
+                    <div class="spec-label">快捷键响应</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-icon">💾</div>
+                    <div class="spec-value">~120MB</div>
+                    <div class="spec-label">内存占用</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-icon">⚡</div>
+                    <div class="spec-value">0.3s</div>
+                    <div class="spec-label">响应速度</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-icon">🔒</div>
+                    <div class="spec-value">100%</div>
+                    <div class="spec-label">本地存储</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 FAQ -->
+    <section class="faq-section" id="faq" style="padding: 100px 0; background: linear-gradient(135deg, rgba(17, 24, 39, 0.4) 0%, rgba(30, 41, 59, 0.3) 100%);">
+        <div class="container">
+            <h2 class="section-title">常见问题</h2>
+            <p style="text-align: center; color: #94a3b8; font-size: 18px; margin-bottom: 60px;">
+                快速了解 OneClip 的常见疑问
+            </p>
+            
+            <div style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
+                <!-- FAQ 项目 1 -->
+                <div class="faq-item" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%); border: 2px solid rgba(59, 130, 246, 0.2); border-radius: 16px; padding: 24px; transition: all 0.3s ease;">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+                        <span style="font-size: 24px;">❓</span>
+                        <h3 style="font-size: 20px; font-weight: 700; color: #f1f5f9; margin: 0;">OneClip 支持哪些系统？</h3>
+                    </div>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin: 0; padding-left: 40px;">
+                        OneClip 支持 macOS 12.0 及以上版本，包括 Intel 和 Apple Silicon 芯片的 Mac。我们提供通用版本，可在所有 Mac 上完美运行。
+                    </p>
+                </div>
+                
+                <!-- FAQ 项目 2 -->
+                <div class="faq-item" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%); border: 2px solid rgba(59, 130, 246, 0.2); border-radius: 16px; padding: 24px; transition: all 0.3s ease;">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+                        <span style="font-size: 24px;">💰</span>
+                        <h3 style="font-size: 20px; font-weight: 700; color: #f1f5f9; margin: 0;">免费版和付费版有什么区别？</h3>
+                    </div>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin: 0; padding-left: 40px;">
+                        免费版保留 1 天内的历史记录和基础功能。终身版包含所有功能和未来更新，性价比最高。
+                    </p>
+                </div>
+                
+                <!-- FAQ 项目 3 -->
+                <div class="faq-item" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%); border: 2px solid rgba(59, 130, 246, 0.2); border-radius: 16px; padding: 24px; transition: all 0.3s ease;">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+                        <span style="font-size: 24px;">🔒</span>
+                        <h3 style="font-size: 20px; font-weight: 700; color: #f1f5f9; margin: 0;">我的数据安全吗？</h3>
+                    </div>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin: 0; padding-left: 40px;">
+                        绝对安全！OneClip 所有数据都存储在您的本地设备，不会上传到任何云端服务器。云存储同步功能采用端到端加密，只有您的设备可以访问数据。
+                    </p>
+                </div>
+                
+                <!-- FAQ 项目 4 -->
+                <div class="faq-item" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%); border: 2px solid rgba(59, 130, 246, 0.2); border-radius: 16px; padding: 24px; transition: all 0.3s ease;">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+                        <span style="font-size: 24px;">☁️</span>
+                        <h3 style="font-size: 20px; font-weight: 700; color: #f1f5f9; margin: 0;">支持多设备同步吗？</h3>
+                    </div>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin: 0; padding-left: 40px;">
+                        支持！OneClip 通过 iCloud、Dropbox 等云存储提供多设备同步功能，完全免费且端到端加密。只需将 OneClip 数据文件夹放在云存储中即可自动同步。目前支持文本和图片同步，其他格式正在开发中。
+                    </p>
+                </div>
+                
+                <!-- FAQ 项目 5 -->
+                <div class="faq-item" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%); border: 2px solid rgba(59, 130, 246, 0.2); border-radius: 16px; padding: 24px; transition: all 0.3s ease;">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+                        <span style="font-size: 24px;">🤖</span>
+                        <h3 style="font-size: 20px; font-weight: 700; color: #f1f5f9; margin: 0;">AI 功能需要联网吗？</h3>
+                    </div>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin: 0; padding-left: 40px;">
+                        可以不需要！OneClip 的 AI 功能支持使用本地模型，完全离线运行，保护您的隐私。支持智能翻译、内容总结、格式转换等功能，而且永久免费。
+                    </p>
+                </div>
+                
+                <!-- FAQ 项目 6 -->
+                <div class="faq-item" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(17, 24, 39, 0.9) 100%); border: 2px solid rgba(59, 130, 246, 0.2); border-radius: 16px; padding: 24px; transition: all 0.3s ease;">
+                    <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+                        <span style="font-size: 24px;">💳</span>
+                        <h3 style="font-size: 20px; font-weight: 700; color: #f1f5f9; margin: 0;">支持退款吗？</h3>
+                    </div>
+                    <p style="color: #cbd5e1; line-height: 1.7; margin: 0; padding-left: 40px;">
+                        支持！我们提供 7 天无理由退款保障。如果您对产品不满意，可以在购买后 7 天内联系我们申请全额退款。
+                    </p>
+                </div>
+            </div>
+            
+            <!-- 更多问题 -->
+            <div style="text-align: center; margin-top: 60px;">
+                <p style="color: #94a3b8; font-size: 16px; margin-bottom: 20px;">
+                    还有其他问题？
+                </p>
+                <a href="mailto:vip@oneclip.cloud" style="display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(16, 185, 129, 0.15) 100%); border: 2px solid rgba(59, 130, 246, 0.4); border-radius: 12px; color: #60a5fa; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>联系我们</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 信任信号 -->
+    <section class="trust-section">
+        <div class="container">
+            <h2 class="section-title">为什么信任 OneClip？</h2>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">🛡️</div>
+                    <h4>数据安全</h4>
+                    <p>所有数据本地存储，绝不主动上传云端，保护您的隐私安全</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🔓</div>
+                    <h4>透明可信赖</h4>
+                    <p>接受社区监督，透明可信赖</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">💰</div>
+                    <h4>7天退款</h4>
+                    <p>不满意无理由退款，让您购买无忧</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🔄</div>
+                    <h4>终身更新</h4>
+                    <p>一次购买，终身享受免费功能更新</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">⚡</div>
+                    <h4>性能卓越</h4>
+                    <p>原生SwiftUI开发，占用资源少，运行流畅</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">☺️</div>
+                    <h4>用户好评</h4>
+                    <p>4.9星好评，口碑见证</p>
+                </div>
+            </div>
+            
+            <!-- 最后的行动号召 -->
+            <div class="final-cta">
+                <h3>准备好提升您的工作效率了吗？</h3>
+                <p>加入众多用户的选择，体验专业级剪贴板管理</p>
+                <div class="final-buttons">
+                    <a href="#download" class="btn-primary enhanced">🚀 免费下载试用</a>
+                    <a href="/purchase" class="btn-purchase">💎 立即购买终身版</a>
+                </div>
+                <p class="guarantee">💎 限时特价 ¥29.90 | 🛡️ 7天退款保障 | ⚡ 即买即用</p>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- 底部 -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-container">
+                <!-- 公司信息区域 -->
+                <div class="footer-section footer-brand">
+                    <div class="footer-logo">
+                        <img src="https://picx.zhimg.com/80/v2-34b000e56d1af7ef61092dcd031dfd9a_1440w.webp?source=2c26e567" alt="OneClip" />
+                        <span>OneClip</span>
+                    </div>
+                    <p class="footer-description">
+                        让复杂的事情变简单，让简单的事情变优雅。<br>
+                        专业的 macOS 剪贴板管理工具，提升您的工作效率。
+                    </p>
+                    <!-- 社交链接 -->
+                    <div style="display: flex; gap: 12px; margin-top: 20px;">
+                        <a href="https://github.com/Wcowin/OneClip" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 10px; color: #60a5fa; text-decoration: none; transition: all 0.3s ease;" title="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://gitee.com/Wcowin/OneClip" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 10px; color: #60a5fa; text-decoration: none; transition: all 0.3s ease;" title="Gitee">
+                            <span style="font-size: 20px;">🌿</span>
+                        </a>
+                        <a href="mailto:vip@oneclip.cloud" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 10px; color: #60a5fa; text-decoration: none; transition: all 0.3s ease;" title="Email">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(59, 130, 246, 0.2);">
+                        <p style="color: #94a3b8; font-size: 14px; margin: 0 0 6px 0;">© 2025 OneClip. 保留所有权利。</p>
+                        <p style="margin: 0;">
+                            <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer" style="color: #60a5fa; text-decoration: none; font-size: 13px; opacity: 0.9;">
+                                豫ICP备2025144955号
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 产品 -->
+                <div class="footer-section">
+                    <h4 class="footer-title">产品</h4>
+                    <ul class="footer-links">
+                        <li><a href="#features">功能介绍</a></li>
+                        <li><a href="#download">免费下载</a></li>
+                        <li><a href="/purchase/lifetime">购买许可</a></li>
+                        <li><a href="https://github.com/Wcowin/OneClip" target="_blank" rel="noopener noreferrer">GitHub 仓库</a></li>
+                    </ul>
+                </div>
+
+                <!-- 文档 -->
+                <div class="footer-section">
+                    <h4 class="footer-title">文档</h4>
+                    <ul class="footer-links">
+                        <li><a href="/docs.html">使用文档</a></li>
+                        <li><a href="/docs-getting-started.html">快速开始</a></li>
+                        <li><a href="/docs-features.html">功能详解</a></li>
+                        <li><a href="/docs-faq.html">常见问题</a></li>
+                        <li><a href="/blog.html">博客</a></li>
+                    </ul>
+                </div>
+
+                <!-- 支持 -->
+                <div class="footer-section">
+                    <h4 class="footer-title">支持</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:vip@oneclip.cloud">技术支持</a></li>
+                        <li><a href="https://qm.qq.com/q/CumVuhfApc">加入QQ交流群</a></li>
+                        <li><a href="https://github.com/Wcowin/OneClip/issues" target="_blank" rel="noopener noreferrer">GitHub问题反馈</a></li>
+                    </ul>
+                </div>
+
+                <!-- 法律 -->
+                <div class="footer-section">
+                    <h4 class="footer-title">法律</h4>
+                    <ul class="footer-links">
+                        <li><a href="/terms.html">服务条款</a></li>
+                        <li><a href="/privacy.html">隐私政策</a></li>
+                        <li><a href="/disclaimer.html">免责声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 访问量统计 - 放在3个分类下方 -->
+            <div style="max-width: 1200px; margin: 40px auto 0; padding: 0 20px;">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 16px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%); padding: 20px 32px; border-radius: 16px; border: 1px solid rgba(59, 130, 246, 0.2);">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #60a5fa;">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        <span style="color: #94a3b8; font-size: 15px; font-weight: 500;">总访问量</span>
+                    </div>
+                    <div style="height: 24px; width: 1px; background: rgba(59, 130, 246, 0.3);"></div>
+                    <span id="finicount_views" style="color: #60a5fa; font-weight: 700; font-size: 20px; background: rgba(59, 130, 246, 0.1); padding: 6px 16px; border-radius: 10px; border: 1px solid rgba(59, 130, 246, 0.2); min-width: 80px; text-align: center;">-</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 访客计数器脚本 -->
+    <script async src="//finicounter.eu.org/finicounter.js"></script>
+    <script>
+        // 移动端菜单切换
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+            
+            // 点击菜单项后关闭菜单
+            document.querySelectorAll('.mobile-menu-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+            
+            // 点击菜单外部关闭菜单
+            document.addEventListener('click', function(e) {
+                if (!mobileMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                    mobileMenuToggle.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        }
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 导航栏滚动效果和高亮
+        const navLinks = document.querySelectorAll('.nav-container a[href^="#"]');
+        const sections = document.querySelectorAll('section[id]');
+        
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+            
+            // 导航高亮
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.style.color = '#cbd5e1';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.color = '#f1f5f9';
+                }
+            });
+        });
+
+        // 通用复制到剪贴板函数
+        function copyToClipboard(text) {
+            const btn = event.target;
+            
+            // 复制到剪贴板
+            navigator.clipboard.writeText(text).then(() => {
+                // 更新按钮状态
+                const originalText = btn.textContent;
+                btn.textContent = '✓ 已复制';
+                btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                
+                // 3秒后恢复
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = 'linear-gradient(135deg, #06b6d4, #0891b2)';
+                }, 3000);
+            }).catch(err => {
+                console.error('复制失败:', err);
+                btn.textContent = '❌ 复制失败';
+                btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+                setTimeout(() => {
+                    btn.textContent = '📋 复制命令';
+                    btn.style.background = 'linear-gradient(135deg, #06b6d4, #0891b2)';
+                }, 2000);
+            });
+        }
+
+        // Homebrew 命令复制功能
+        function copyBrewCommand() {
+            const code = document.getElementById('brew-code');
+            const btn = event.target;
+            
+            // 复制到剪贴板
+            navigator.clipboard.writeText(code.textContent).then(() => {
+                // 更新按钮状态
+                const originalText = btn.textContent;
+                btn.textContent = '✓ 已复制';
+                btn.classList.add('copied');
+                
+                // 3秒后恢复
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('copied');
+                }, 3000);
+            }).catch(err => {
+                console.error('复制失败:', err);
+                btn.textContent = '❌ 复制失败';
+                setTimeout(() => {
+                    btn.textContent = '📋 复制';
+                }, 2000);
+            });
+        }
+
+        // 限免倒计时功能
+        function updateCountdown() {
+            const endDate = new Date('2025-12-31 23:59:59');
+            const now = new Date();
+            const diff = endDate - now;
+            
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            } else {
+                // 活动结束后显示
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+            }
+        }
+
+        // 首次打开提示 PDF 链接处理
+        document.addEventListener('DOMContentLoaded', function() {
+            const pdfBtn = document.getElementById('first-open-pdf-btn');
+            if (pdfBtn) {
+                pdfBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // 打开根目录下的 OneClip安装说明.pdf
+                    window.open('/OneClip%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E.pdf', '_blank');
+                });
+            }
+            
+            updateCountdown();
+            setInterval(updateCountdown, 60000); // 每分钟更新一次
+        });
+    </script>
+</body>
+</html>

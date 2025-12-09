@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8" />
+    <title>404 - 页面未找到</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <style>
+        :root {
+            --md-primary-fg-color: #518FC1;
+            --md-default-bg-color: #ffffff;
+            --md-default-fg-color: rgba(0,0,0,0.87);
+            --md-default-fg-color--light: rgba(0,0,0,0.54);
+            --md-default-fg-color--lighter: rgba(0,0,0,0.32);
+        }
+
+        [data-md-color-scheme="slate"] {
+            --md-default-bg-color: #1F2128;
+            --md-default-fg-color: rgba(255,255,255,0.87);
+            --md-default-fg-color--light: rgba(255,255,255,0.54);
+            --md-default-fg-color--lighter: rgba(255,255,255,0.32);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--md-default-bg-color);
+            color: var(--md-default-fg-color);
+            transition: background-color 0.25s, color 0.25s;
+        }
+
+        .main-content {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 300;
+            color: var(--md-primary-fg-color);
+            margin: 0;
+            line-height: 1;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 400;
+            margin: 1rem 0;
+            color: var(--md-default-fg-color);
+        }
+
+        .error-description {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--md-default-fg-color--light);
+            margin: 1.5rem 0 2rem 0;
+            line-height: 1.6;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--md-primary-fg-color);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.0892857143em;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background-color: #4682b4;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transform: translateY(-1px);
+        }
+
+        .btn--outline {
+            background-color: transparent;
+            color: var(--md-primary-fg-color);
+            border: 1px solid var(--md-primary-fg-color);
+        }
+
+        .btn--outline:hover {
+            background-color: var(--md-primary-fg-color);
+            color: #ffffff;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--md-default-fg-color--lighter);
+            font-size: 0.875rem;
+            color: var(--md-default-fg-color--light);
+            text-align: center;
+        }
+
+        .footer a {
+            color: var(--md-primary-fg-color);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1rem;
+            }
+
+            .error-code {
+                font-size: 6rem;
+            }
+
+            .error-title {
+                font-size: 1.5rem;
+            }
+
+            .error-description {
+                font-size: 1rem;
+            }
+
+            .actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .error-code {
+                font-size: 4rem;
+            }
+
+            .error-title {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* 暗色主题检测 */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --md-default-bg-color: #1F2128;
+                --md-default-fg-color: rgba(255,255,255,0.87);
+                --md-default-fg-color--light: rgba(255,255,255,0.54);
+                --md-default-fg-color--lighter: rgba(255,255,255,0.32);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">页面未找到</h2>
+        <p class="error-description">
+            抱歉，您访问的页面不存在或已被移动。<br>
+            请检查URL是否正确，或使用下面的链接返回。
+        </p>
+
+        <div class="actions">
+            <a href="/" class="btn">
+                返回首页
+            </a>
+            <a href="javascript:history.back()" class="btn btn--outline">
+                返回上一页
+            </a>
+            <a href="mailto:wcowin@qq.com" class="btn btn--outline">
+                联系我
+            </a>
+        </div>
+
+        <div class="footer">
+            Powered by <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a> |
+            <a href="https://github.com/Wcowin">GitHub</a>
+        </div>
+    </div>
+
+    <script>
+        // 检测系统主题偏好
+        function detectTheme() {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-md-color-scheme', 'slate');
+            } else {
+                document.documentElement.setAttribute('data-md-color-scheme', 'default');
+            }
+        }
+
+        // 监听主题变化
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', detectTheme);
+        }
+
+        // 初始化主题
+        detectTheme();
+    </script>
+</body>
+</html>

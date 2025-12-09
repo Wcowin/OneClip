@@ -24,7 +24,7 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 
 - 查看屏幕顶部右侧的状态栏
 - 寻找 OneClip 的图标
-- 使用快捷键 `Cmd + Option + V` 打开主界面
+- 使用快捷键 `⌘ + ⇧ + V` 打开主界面
 
 ### Q: Homebrew 安装失败
 
@@ -105,11 +105,12 @@ brew install --cask wcowin/oneclip/oneclip
 
 ### Q: 如何备份历史记录
 
-**A: OneClip 使用 Core Data 存储数据：**
+**A: OneClip 使用 SQLite 存储数据：**
 
 - 数据文件位于 `~/Library/Application Support/OneClip/`
 - 可以复制整个文件夹进行备份
-- 设置中可能有导出功能
+- 支持自定义存储位置
+- 支持 Syncthing 等云同步方式
 
 ### Q: 如何清空所有历史记录
 
@@ -167,6 +168,57 @@ brew upgrade --cask oneclip
 brew uninstall --cask oneclip
 ```
 
+## AI 功能
+
+### Q: 如何使用 AI 功能？
+
+**A: OneClip 支持本地 AI 和在线 AI 服务：**
+
+**本地 AI（Ollama）：**
+
+1. 安装 [Ollama](https://ollama.ai/)
+2. 下载所需模型（如 `ollama pull llama2`）
+3. 在 OneClip 设置中配置 Ollama 连接
+
+**在线 AI 服务：**
+
+1. 在设置中选择 AI 服务提供商（智谱清言、通义千问等）
+2. 输入 API Key
+3. 配置模型参数
+
+### Q: 如何使用 OCR 功能？
+
+**A: OneClip 支持多种 OCR 方式：**
+
+- **图片 OCR**：右键点击图片 → OCR 识别
+- **截图 OCR**：使用 OCR 全局快捷键截取屏幕区域
+- **静默 OCR**：后台识别，不弹出窗口
+
+## 许可证
+
+### Q: 如何获取许可证？
+
+**A: 购买方式：**
+
+- 官网购买：[https://oneclip.cloud/purchase](https://oneclip.cloud/purchase)
+- 使用优惠码：`OneClip2025`（10￥减免）
+
+**激活方式：**
+
+1. 打开 OneClip 设置 → 激活
+2. 输入许可证密钥
+3. 点击激活
+
+**试用政策：**
+
+- 免费 7 天试用完整功能
+- 试用期结束后仍可使用基础功能
+
 ## 需要更多帮助？
 
-如果以上解决方案无法解决您的问题，请查看 [联系我们](../about/contact.md) 页面获取详细的联系方式。
+如果以上解决方案无法解决您的问题：
+
+- 📧 邮件：[vip@oneclip.cloud](mailto:vip@oneclip.cloud)
+- 👥 QQ 群：[1060157293](https://qm.qq.com/q/xiImGHVMcM)
+
+查看 [联系我们](../about/contact.md) 页面获取更多联系方式。

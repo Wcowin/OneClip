@@ -1,0 +1,135 @@
+{# 
+  Twikoo 评论系统配置
+  
+  使用方法：
+  1. 在页面 front matter 中添加 comments: true 启用评论
+  2. 添加 hide_comment: true 可以隐藏评论（用于特殊页面）
+  
+  示例：
+  ---
+  title: 文章标题
+  comments: true
+  ---
+#}
+
+{% if page.meta.comments and not page.meta.hide_comment %}
+  <!-- Twikoo 评论系统 -->
+  <div class="twikoo-container" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.1);">
+    <h2 id="__comments" style="margin-bottom: 1rem; font-size: 1.2rem; font-weight: 500;">💬 {{ lang.t("meta.comments") or "评论" }}</h2>
+    <div id="tcomment" class="loading" style="min-height: 200px;">
+      <p style="text-align: center; color: #666; padding: 2rem;">评论系统加载中...</p>
+    </div>
+  </div>
+
+  <style>
+  .twikoo-container {
+    max-width: 100%;
+  }
+
+  /* 暗色模式适配 */
+  [data-md-color-scheme="slate"] .twikoo-container {
+    border-top-color: rgba(255,255,255,0.1);
+  }
+
+  [data-md-color-scheme="slate"] .twikoo-container h2 {
+    color: rgba(255,255,255,0.87);
+  }
+
+  /* 加载状态样式 */
+  #tcomment.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.02);
+    border-radius: 8px;
+  }
+
+  [data-md-color-scheme="slate"] #tcomment.loading {
+    background: rgba(255,255,255,0.05);
+  }
+
+  [data-md-color-scheme="slate"] #tcomment.loading p {
+    color: rgba(255,255,255,0.6);
+  }
+  </style>
+
+  <script>
+  (function() {
+    // 防止重复加载
+    if (window.twikooInitialized) {
+      return;
+    }
+
+    function loadTwikoo() {
+      // 检查是否已经加载过 Twikoo
+      if (window.twikoo) {
+        initTwikoo();
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = 'https://registry.npmmirror.com/twikoo/1.6.44/files/dist/twikoo.min.js';
+      script.onload = function() {
+        console.log('Twikoo 脚本加载成功');
+        initTwikoo();
+      };
+      script.onerror = function() {
+        console.error('Twikoo 脚本加载失败');
+        const commentEl = document.getElementById('tcomment');
+        if (commentEl) {
+          commentEl.classList.remove('loading');
+          commentEl.innerHTML = '<p style="text-align: center; color: #f56565; padding: 2rem;">评论系统加载失败，请刷新页面重试</p>';
+        }
+      };
+      document.head.appendChild(script);
+    }
+
+    function initTwikoo() {
+      const commentEl = document.getElementById('tcomment');
+      if (!commentEl) {
+        console.warn('评论容器未找到');
+        return;
+      }
+
+      commentEl.classList.remove('loading');
+
+      try {
+        twikoo.init({
+          envId: 'https://superb-salamander-e730b6.netlify.app/.netlify/functions/twikoo',
+          el: '#tcomment',
+          lang: 'zh-CN',
+          path: location.pathname,
+          onCommentLoaded: function () {
+            console.log('评论加载完成');
+          },
+          onError: function(err) {
+            console.error('Twikoo 初始化失败:', err);
+            commentEl.innerHTML = '<p style="text-align: center; color: #f56565; padding: 2rem;">评论系统初始化失败，请检查网络连接</p>';
+          }
+        });
+        window.twikooInitialized = true;
+      } catch (error) {
+        console.error('Twikoo 初始化异常:', error);
+        commentEl.innerHTML = '<p style="text-align: center; color: #f56565; padding: 2rem;">评论系统初始化异常</p>';
+      }
+    }
+
+    // 支持即时导航
+    if (typeof window.document$ !== 'undefined' && !window.document$.isStopped) {
+      window.document$.subscribe(function() {
+        // 重置初始化标志
+        window.twikooInitialized = false;
+        // 延迟加载以确保 DOM 已更新
+        setTimeout(loadTwikoo, 100);
+      });
+    } else {
+      // 页面加载完成后初始化
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadTwikoo);
+      } else {
+        loadTwikoo();
+      }
+    }
+  })();
+  </script>
+{% endif %}
