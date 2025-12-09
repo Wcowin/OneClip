@@ -1,12 +1,12 @@
-2025/11/28 黑色星期五40%终身许可证减免优惠码：**BLACKFRIDAY2025** (50个)｜地址：https://oneclip.cloud/purchase/lifetime   
+<!-- 2025/12/9 黑色星期五40%终身许可证减免优惠码：**BLACKFRIDAY2025** (50个)｜地址：https://oneclip.cloud/purchase/lifetime    -->
 
-终身版固定10¥减免优惠兑换码：**OneClip2025** (最后30个)｜地址：https://oneclip.cloud/purchase/lifetime    
+2025/12/9 终身版固定10¥减免优惠兑换码：**OneClip2025** (最后12个)｜地址：https://oneclip.cloud/purchase/lifetime    
 
 终身版0元优惠码：已经送出了将近几百个优惠码，后续随机发放｜地址：https://oneclip.cloud/purchase/lifetime   
 
-
-> 免费版已经足够用！！！   
-> 🌟我已经开源了早期第一版在[上方](https://github.com/Wcowin/OneClip/blob/main/OneClip%20%E6%97%A9%E6%9C%9F%E7%89%88%E6%9C%AC%E5%BC%80%E6%BA%90%EF%BD%9C%E5%8F%AF%E4%BB%A5%E8%87%AA%E8%A1%8C%E4%B8%8B%E8%BD%BD%E6%9E%84%E5%BB%BA.zip) 但是是基于文件系统的 目前OneClip已经采用数据库存储 完成技术迭代任务 早期版本对我没有价值了  不放心的可以自行构建  谢谢大家
+ 
+> 🌟我已经开源了早期第一版在[上方](https://github.com/Wcowin/OneClip/blob/main/OneClip%20%E6%97%A9%E6%9C%9F%E7%89%88%E6%9C%AC%E5%BC%80%E6%BA%90%EF%BD%9C%E5%8F%AF%E4%BB%A5%E8%87%AA%E8%A1%8C%E4%B8%8B%E8%BD%BD%E6%9E%84%E5%BB%BA.zip)   
+> 但是是基于文件系统的，目前OneClip已经采用数据库存储，完成技术迭代任务，早期版本对我没有价值了，不放心的可以自行构建，谢谢大家
 
 点击链接加入群聊[OneClip交流群](https://qm.qq.com/q/xiImGHVMcM)
 
@@ -28,6 +28,8 @@
   <img src="https://img.shields.io/badge/Homebrew-Available-orange?style=for-the-badge&logo=homebrew&logoColor=white" alt="Homebrew" />
   <img src="https://img.shields.io/badge/macOS-12%2B-0f172a?style=for-the-badge&logo=apple&logoColor=white" alt="macOS 12+" />
   <img src="https://img.shields.io/badge/Swift-5.9%2B-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="Swift 5.9+" />
+  <img src="https://img.shields.io/badge/Privacy-Local%20Storage-green?style=for-the-badge" alt="Privacy Local Storage" />
+
 </p>
 
 
@@ -562,6 +564,10 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 - [Ollama](https://ollama.ai/) - 本地 AI 模型运行环境
 
 感谢所有用户的支持和反馈！🎉
+  
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Wcowin/OneClip&type=date&legend=top-left)](https://www.star-history.com/#Wcowin/OneClip&type=date&legend=top-left)  
 
 ---
 
