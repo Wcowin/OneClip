@@ -1,12 +1,13 @@
 <!-- 2025/12/9 黑色星期五40%终身许可证减免优惠码：**BLACKFRIDAY2025** (50个)｜地址：https://oneclip.cloud/purchase/lifetime    -->
 
-2025/12/9 终身版固定10¥减免优惠兑换码：**OneClip2025** (最后12个)｜地址：https://oneclip.cloud/purchase/lifetime    
+2025/12/9 终身版固定5¥减免优惠兑换码：**OneClip2026** (最后10个)｜选购地址：https://oneclip.cloud/purchase/lifetime    
 
-终身版0元优惠码：已经送出了将近几百个优惠码，后续随机发放｜地址：https://oneclip.cloud/purchase/lifetime   
+终身版0元优惠码：已经送出了将近几百个优惠码，后续随机在github仓库发放｜兑换地址：https://oneclip.cloud/purchase/lifetime   
 
 > [!NOTE]
 > 🌟 早期第一版源码已开源在 [src/](https://github.com/Wcowin/OneClip/tree/main/src) 目录，可自行下载构建   
 > 早期版本基于文件系统，目前 OneClip 已采用数据库存储，完成技术迭代。不放心的可以自行构建，谢谢大家
+> Windows版本正在开发中，敬请期待！仓库地址：https://github.com/Wcowin/OneClip-Windows
 
 点击链接加入群聊[OneClip交流群](https://qm.qq.com/q/xiImGHVMcM)
 
