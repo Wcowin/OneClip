@@ -62,15 +62,15 @@ OneClip 是一款专为 macOS 打造的**专业级剪贴板管理工具**。采�
 
 - **📥 栈粘贴板**：`⌘+⇧+C`呼出栈粘贴板，方便管理。`⌘+V`依次粘贴栈粘贴板内容。
 
-- **🎯 菜单栏集成**：一键复制粘贴最近内容，状态实时可见。左键复制，右键粘贴，所见即所得。
+- **🎯 菜单栏集成**：支持菜单栏分类搜索，一键复制粘贴最近内容，状态实时可见。只需要左键复制/粘贴，所见即所得。
 
 - **💾 自定义存储位置**：支持自定义存储位置，方便管理
 
-- **📦 拖拽容器**：`⌘+⇧+D`呼出拖拽容器，方便管理
+- **📦 拖拽容器**：`⌘+⇧+D`呼出拖拽容器，存取文件方便快捷 
 
 - **🧀 OCR识别**：支持主动识别屏幕/图片内容识别，OCR翻译，快速提取文字和翻译
 
-- **🔧 灵活控制**：Dock 图标、后台模式、主题适配均可配置
+- **🔧 灵活控制**：Dock 图标、后台模式、主题适配均可配置。列表/卡片双模式切换。支持Paste同款布局。
 
 - **🍺 便捷安装**：支持 Homebrew 一键安装(即将支持)和Sparkle自动更新
 
@@ -78,7 +78,7 @@ OneClip 是一款专为 macOS 打造的**专业级剪贴板管理工具**。采�
 
 - **🤖 AI 集成**：支持本地 AI 模型（Ollama/LMStudio）和在线 AI 服务（比如智谱清言、通义千问），智能总结与翻译
 
-- **☁️ 云同步**：支持 Syncthing 和自定义iCloud等等方式的多设备同步，数据安全可控
+- **☁️ 云同步**：支持iCloud/Dropbox等自定义方式的多设备历史记录同步，数据安全可控
 
 - **👍 访达增强**：支持访达⌘+X剪切文件，然后⌘+V移动文件（别处单独付费的功能，**OneClip免费开放给大家**）
 
@@ -86,12 +86,9 @@ OneClip 是一款专为 macOS 打造的**专业级剪贴板管理工具**。采�
 <!-- ![OneClip 主界面](https://s1.imagehub.cc/images/2025/11/03/972b5640666e851cf4625f1b6d88f785.png) -->
 
 ![screenshot_1.5x_postspark_2025-12-08_18-46-39.png](https://i.imgant.com/v2/RKyVhgF.png)  
-<!-- ![iShot 2025 12 02 20.20.57](https://image.66ghz.com/uploads/6936a835e8747_1765189685.jpeg) -->
 ![screenshot_1.5x_postspark_2025-12-08_18-50-28.png](https://i.imgant.com/v2/Zn6arLh.png)
 ![screenshot_1.5x_postspark_2025-12-08_19-02-21.png](https://i.imgant.com/v2/G8SHVSr.jpeg)
-<!-- ![image](https://s1.imagehub.cc/images/2025/12/02/ce24ca11047d3a4cbb2d9672786266eb.png) -->
-<!--![image](https://s1.imagehub.cc/images/2025/11/30/88aefc6139fdb49164a50d166ea83ed1.png)-->
-<!-- ![oQICFYhCBWZFfF5W8SfyuU6mEkboX9ND.webp](https://cdn.nodeimage.com/i/oQICFYhCBWZFfF5W8SfyuU6mEkboX9ND.webp) -->
+
 
 <!-- ### ✨ 独特优势
 
@@ -175,9 +172,8 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 
 ## 🎬 功能演示
 
-> 📹 **视频教程**（即将上线）
-> - B 站：OneClip 完整使用教程
-> - YouTube：OneClip Full Tutorial
+> 📹 **视频教程**
+> - B 站：https://space.bilibili.com/1407028951/lists/5012369?type=series
 
 ### 核心功能展示
 
@@ -324,10 +320,10 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 #### 🔄 数据备份与同步
 
 - **本地备份**：自动/手动备份到本地
-- **云同步**：基于 Syncthing 的多设备同步（TODO）
+- **云同步**：自定义同步方案
 - **导入导出**：支持配置和数据的导入导出
 
-## ⚙️ 配置选项
+<!-- ## ⚙️ 配置选项
 
 ### ⌨️ 快捷键速查表
 
@@ -342,7 +338,6 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 | **粘贴** | `⌘+V` | ❌ | 系统默认粘贴 |
 | **菜单显示** | 左键复制，右键粘贴 | ✅ | 快速查看最近项目/复制/粘贴|
 
-> 💡 所有快捷键均可在设置中自定义，支持检测冲突
 
 ### 界面设置
 
@@ -356,7 +351,7 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 
 - **历史时长**: 可设置最大保存时长（如7天、30天等）
 - **数据清理**: 定期清理过期内容
-- **文件处理**: 大文件存储策略
+- **文件处理**: 大文件存储策略 -->
 
 ## 🛠️ 源码构建（早期版本）
 
@@ -385,17 +380,6 @@ open dist/OneClip.app
 详细构建说明请查看 [src/README.md](src/README.md)
 
 > ⚠️ **注意**：开源的是早期版本（基于文件系统），采用 MIT 协议。当前正式版已采用数据库存储，功能更完善，为商业软件。
-
-## 📊 性能与体验
-
-- **内存占用**: 运行时约120MB
-- **CPU 使用**: 空闲时 < 1%
-- **启动时间**: < 1 秒
-- **响应速度**: 快捷键响应 < 100ms
-- **存储效率**: 智能压缩，节省磁盘空间
-- **性能优化**: 智能管理，优化性能
-- **性能监控**: 实时监控性能指标
-- **粘贴板自适应监控**: 根据活动与资源自动调整频率
 
 ## 🐛 常见问题（FAQ）
 
@@ -516,7 +500,7 @@ open dist/OneClip.app
 - [x] AI 功能集成
 - [x] Sparkle 自动更新
 - [x] 更多 AI 服务商集成
-- [x] 自定义同步
+- [x] 自定义同步方案
 
 ### 🚧 进行中
 
@@ -526,9 +510,9 @@ open dist/OneClip.app
 
 ### 📋 计划中
 
-- [ ] iCloud 同步支持
 - [ ] 插件系统
 - [ ] 团队协作功能
+- [ ] 保密剪切板空间
 - [ ] iOS/iPadOS 客户端
 
 💡 有功能建议？欢迎在 [GitHub Discussions](https://github.com/Wcowin/OneClip/discussions) 提出！
