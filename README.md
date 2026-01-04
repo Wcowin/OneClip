@@ -473,7 +473,7 @@ open dist/OneClip.app
 
 **购买方式**：
 - 官网购买：https://oneclip.cloud/purchase/lifetime
-- 使用优惠码：`OneClip2025`（10¥减免）
+- 使用优惠码：`OneClip2026`（5¥减免）
 
 **激活方式**：
 1. 打开 OneClip 设置 → 激活
