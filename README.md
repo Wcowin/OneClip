@@ -564,7 +564,7 @@ open dist/OneClip.app
 
 感谢以下开源项目和服务：
 
-- SwiftUI - Apple 的现代化 UI 框架
+- [SwiftUI](https://developer.apple.com/tutorials/swiftui) - Apple 的现代化 UI 框架
 - [Sparkle](https://sparkle-project.org/) - macOS 自动更新框架
 - [Syncthing](https://syncthing.net/) - 开源文件同步工具
 - [Ollama](https://ollama.ai/) - 本地 AI 模型运行环境
