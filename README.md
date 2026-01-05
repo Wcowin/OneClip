@@ -6,8 +6,8 @@
 
 > [!NOTE]
 > 🌟 早期第一版源码已开源在 [src/](https://github.com/Wcowin/OneClip/tree/main/src) 目录，可自行下载构建   
-> 早期版本基于文件系统，目前 OneClip 已采用 CoreData (SQLite) 数据库存储，完成技术迭代。不放心的可以自行构建，谢谢大家
-> Windows版本正在开发中，敬请期待！仓库地址：https://github.com/Wcowin/OneClip-Windows
+> 早期版本基于文件系统，目前 OneClip 已采用 CoreData (SQLite) 数据库存储，完成技术迭代。不放心的可以自行构建，谢谢大家  
+> Windows版本正在画饼开发中，敬请期待！仓库地址：https://github.com/Wcowin/OneClip-Windows
 
 点击链接加入群聊[OneClip交流群](https://qm.qq.com/q/xiImGHVMcM)
 
@@ -523,9 +523,9 @@ open dist/OneClip.app
   <img src="https://s1.imagehub.cc/images/2025/07/25/27c0e105ea7efbed5d046d3a8c303e9d.jpeg" alt="Wcowin" width="80" height="80" style="border-radius: 50%;">
   <h3>Wcowin</h3>
   <p>
-    <a href="https://wcowin.work/blog/Mac/sunhuai/">📝 博客</a> •
-    <a href="https://github.com/Wcowin">🐙 GitHub</a> •
-    <a href="mailto:vip@oneclip.cloud">📧 邮箱</a>
+    <a href="https://wcowin.work/blog/Mac/sunhuai/"> 博客</a> •
+    <a href="https://github.com/Wcowin"> GitHub</a> •
+    <a href="mailto:vip@oneclip.cloud"> 邮箱</a>
   </p>
 </div>
 
