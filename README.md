@@ -6,7 +6,7 @@
 
 > [!NOTE]
 > 🌟 早期第一版源码已开源在 [src/](https://github.com/Wcowin/OneClip/tree/main/src) 目录，可自行下载构建   
-> 早期版本基于文件系统，目前 OneClip 已采用 CoreData (SQLite) 数据库存储，完成技术迭代。不放心的可以自行构建，谢谢大家    
+> 早期版本基于文件系统，目前 OneClip 已采用 SQLite (WAL 模式) 数据库存储，完成技术迭代。不放心的可以自行构建，谢谢大家    
 > Windows版本正在画饼开发中，敬请期待！仓库地址：https://github.com/Wcowin/OneClip-Windows
 
 点击链接加入群聊  
@@ -228,7 +228,7 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 
 - Swift 5.9+
 - SwiftUI (100% 原生)
-- CoreData + SQLite + WAL (数据持久化)
+- SQLite + WAL (数据持久化)
 - Carbon Framework (全局热键)
 - Accessibility API (权限管理)
 - Sparkle (自动更新)
@@ -260,7 +260,7 @@ sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 | **SettingsManager** | 用户偏好设置管理 | 
 | **WindowManager** | 窗口状态和显示控制 | 
 | **HotkeyManager** | 全局快捷键处理 | 
-| **ClipboardStore** | CoreData (SQLite) 数据持久化 | 
+| **ClipboardStore** | SQLite (WAL 模式) 数据持久化 | 
 | **AIService** | AI 功能集成 | 
 | **SyncthingManager** | 云同步管理 |
 
