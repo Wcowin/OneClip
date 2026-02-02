@@ -9,10 +9,9 @@
 > 早期版本基于文件系统，目前 OneClip 已采用 SQLite (WAL 模式) 数据库存储，完成技术迭代。不放心的可以自行构建，谢谢大家    
 > Windows版本正在画饼开发中，敬请期待！仓库地址：https://github.com/Wcowin/OneClip-Windows
 
-点击链接加入群聊  
-
-[OneClip交流群](https://qm.qq.com/q/xiImGHVMcM)  
-[TG群组](https://t.me/+I7S6R0pw5180YzRl)
+> [!NOTE]
+>欢迎点击链接加入群聊 ： 
+> [OneClip交流群](https://qm.qq.com/q/xiImGHVMcM)  ｜[TG群组](https://t.me/+I7S6R0pw5180YzRl)
 
 
 <div align="center">
@@ -485,6 +484,8 @@ open dist/OneClip.app
 - [x] 快速粘贴面板
 - [x] 云同步功能
 - [x] UI/UX 改进
+- [x] 脚本系统 
+- [x] 密码保护
 
 ### 🚧 进行中
 
@@ -494,9 +495,8 @@ open dist/OneClip.app
 ### 📋 计划中
 
 - [ ] 插件系统
-- [ ] 脚本系统
 - [ ] 团队协作功能
-- [ ] iOS/iPadOS 客户端
+- [ ] iOS/iPadOS/Windows客户端
 
 💡 有功能建议？欢迎在 [GitHub Discussions](https://github.com/Wcowin/OneClip/discussions) 提出！
 
