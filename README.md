@@ -68,9 +68,11 @@ OneClip 是一款专为 macOS 打造的**专业级剪贴板管理工具**。采�
 - **访达增强**：支持访达 ⌘+X 剪切文件，然后 ⌘+V 在其他位置移动文件（别处单独付费的功能，**OneClip 免费开放给大家**）
 
 
-![screenshot_1.5x_postspark_2025-12-08_18-46-39.png](https://cdn.nodeimage.com/i/eYSz3X0E6J8JZl3wGXF3KecrbHCFhz2O.webp)  
-![screenshot_1.5x_postspark_2025-12-08_18-50-28.png](https://i.imgant.com/v2/Zn6arLh.png)
-![screenshot_1.5x_postspark_2025-12-08_19-02-21.png](https://s1.imagehub.cc/images/2026/01/12/a26a96c52c6a0629979cffe671bf8d27.png)
+![img1.png](https://cdn.nodeimage.com/i/eYSz3X0E6J8JZl3wGXF3KecrbHCFhz2O.webp)  
+![img2.png](https://s1.imagehub.cc/images/2026/01/12/a26a96c52c6a0629979cffe671bf8d27.png)
+![img3.png](https://i.imgant.com/v2/Zn6arLh.png)
+![img4.png](https://s1.imagehub.cc/images/2026/02/06/9e116bd44476ce5d599f9d5a022fc3ce.png)
+
 
 
 ## 下载与安装
