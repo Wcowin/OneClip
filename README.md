@@ -1,3 +1,7 @@
+[English](README_EN.md) | [简体中文](README.md)
+
+---
+
 2026/02/06 终身版固定5¥减免优惠兑换码：**OneClip2026** (最后15个)｜兑换地址：https://oneclip.cloud/purchase/lifetime      
 
 > [!NOTE]
