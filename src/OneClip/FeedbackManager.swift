@@ -24,14 +24,14 @@ class FeedbackManager: ObservableObject {
     }
     
     func showSuccess(_ message: String) {
-        print("✅ \(message)")
+        print("\(message)")
     }
     
     func showError(_ message: String) {
-        print("❌ \(message)")
+        print("\(message)")
     }
     
     func showErrorFeedback(_ error: Error) {
-        print("❌ 错误: \(error.localizedDescription)")
+        print("错误: \(error.localizedDescription)")
     }
 }

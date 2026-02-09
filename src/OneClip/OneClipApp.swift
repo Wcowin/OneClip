@@ -121,10 +121,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     
     // 验证并修复状态栏项目
     private func verifyAndFixStatusBarItem() {
-        logDebug("🔍 开始验证状态栏项目...")
+        logDebug("开始验证状态栏项目...")
         
         if statusItem == nil {
-            logWarning("⚠️ 状态栏项目为空，重新创建...")
+            logWarning("状态栏项目为空，重新创建...")
             if statusBarRetryCount < maxStatusBarRetries {
                 createStatusBarItem()
             }
@@ -135,7 +135,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         
         // 检查状态栏项目是否可见
         if !statusItem.isVisible {
-            logWarning("⚠️ 状态栏项目不可见，设置为可见...")
+            logWarning("状态栏项目不可见，设置为可见...")
             statusItem.isVisible = true
         }
         
@@ -144,7 +144,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         
         // 检查按钮是否存在
         if statusItem.button == nil {
-            logWarning("⚠️ 状态栏按钮为空，重新创建状态栏项目...")
+            logWarning("状态栏按钮为空，重新创建状态栏项目...")
             if statusBarRetryCount < maxStatusBarRetries {
                 createStatusBarItem()
             }
@@ -153,7 +153,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         
         // 检查按钮是否有图像
         if statusItem.button?.image == nil {
-            logWarning("⚠️ 状态栏按钮没有图像，重新设置...")
+            logWarning("状态栏按钮没有图像，重新设置...")
             setupStatusBarButtonImage()
         }
         
@@ -166,16 +166,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
             statusItem.isVisible = true
         }
         
-        logDebug("✅ 状态栏项目验证通过")
+        logDebug("状态栏项目验证通过")
     }
     
     // 确保状态栏图标在应用策略变更后保持可见
     private func ensureStatusBarVisibilityAfterPolicyChange() {
-        logDebug("🔧 确保状态栏图标在策略变更后可见...")
+        logDebug("确保状态栏图标在策略变更后可见...")
         
         // 立即检查并修复状态栏项目
         guard let statusItem = statusItem else {
-            logWarning("⚠️ 状态栏项目为空，立即重新创建...")
+            logWarning("状态栏项目为空，立即重新创建...")
             createStatusBarItem()
             return
         }
@@ -192,7 +192,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
                 setupStatusBarButtonImage()
             }
         } else {
-            logWarning("⚠️ 状态栏按钮为空，重新创建状态栏项目...")
+            logWarning("状态栏按钮为空，重新创建状态栏项目...")
             createStatusBarItem()
             return
         }
@@ -206,7 +206,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
             // 再次确认可见性
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 statusItem.isVisible = true
-                logDebug("✅ 状态栏图标策略变更后可见性已确保")
+                logDebug("状态栏图标策略变更后可见性已确保")
             }
         }
     }
@@ -259,7 +259,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         
         // 最后的备选方案 - 使用简单文本
         if button.image == nil {
-            button.title = "📋"
+            button.title = "剪贴板"
             logDebug("使用文本图标作为最后备选方案")
         }
         
@@ -362,7 +362,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
             // 无法创建状态栏项目
             
             // 暂时禁用重试逻辑以避免编译卡死
-        logWarning("⚠️ 状态栏项目创建失败")
+        logWarning("状态栏项目创建失败")
             return
         }
         
@@ -386,7 +386,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
             // 状态栏按钮创建失败
             
             // 暂时禁用重试逻辑以避免编译卡死
-        logWarning("⚠️ 状态栏按钮创建失败")
+        logWarning("状态栏按钮创建失败")
             return
         }
         
@@ -659,16 +659,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
             menu.addItem(separator)
         } else {
             // 如果没有剪贴板项目，显示更友好的提示信息
-            let emptyItem = NSMenuItem(title: "📋 暂无剪贴板历史", action: nil, keyEquivalent: "")
+            let emptyItem = NSMenuItem(title: "暂无剪贴板历史", action: nil, keyEquivalent: "")
             emptyItem.isEnabled = false
             
             // 添加提示子项
             menu.addItem(emptyItem)
             
-            let tipItem = NSMenuItem(title: "💡 复制内容后将出现在这里", action: nil, keyEquivalent: "")
+            let tipItem = NSMenuItem(title: "复制内容后将出现在这里", action: nil, keyEquivalent: "")
             tipItem.isEnabled = false
             tipItem.attributedTitle = NSAttributedString(
-                string: "💡 复制内容后将出现在这里",
+                string: "复制内容后将出现在这里",
                 attributes: [
                     .font: NSFont.systemFont(ofSize: 11),
                     .foregroundColor: NSColor.secondaryLabelColor
@@ -698,7 +698,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
             toggleIcon.size = NSSize(width: 16, height: 16)
             toggleItem.image = toggleIcon
         }
-        toggleItem.toolTip = "快捷键: ⌘⌃V"
+        toggleItem.toolTip = "快捷键: Cmd+Ctrl+V"
         menu.addItem(toggleItem)
         
         // 快速粘贴功能已删除
@@ -740,13 +740,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
             settingsIcon.size = NSSize(width: 16, height: 16)
             settingsItem.image = settingsIcon
         }
-        settingsItem.toolTip = "打开应用设置 (⌘,)"
+        settingsItem.toolTip = "打开应用设置 (Cmd+,)"
         menu.addItem(settingsItem)
         
         // 添加权限测试菜单项（调试用）
         #if DEBUG
         menu.addItem(NSMenuItem.separator())
-        let permissionTestItem = NSMenuItem(title: "🔧辅助功能授权", action: #selector(testPermissionDialog), keyEquivalent: "")
+        let permissionTestItem = NSMenuItem(title: "辅助功能授权", action: #selector(testPermissionDialog), keyEquivalent: "")
         permissionTestItem.toolTip = "调试功能：测试辅助功能权限弹窗"
         menu.addItem(permissionTestItem)
         #endif
@@ -768,7 +768,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
             quitIcon.size = NSSize(width: 16, height: 16)
             quitItem.image = quitIcon
         }
-        quitItem.toolTip = "退出应用 (⌘Q)"
+        quitItem.toolTip = "退出应用 (Cmd+Q)"
         menu.addItem(quitItem)
         
         // 确保菜单分配给状态栏项目
@@ -1709,7 +1709,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         let versionContainer = NSView(frame: NSRect(x: 20, y: 20, width: 180, height: 50))
         
         // 版本图标 - 更精美的设计
-        let versionIcon = NSTextField(labelWithString: "🏷️")
+        let versionIcon = NSTextField(labelWithString: "版本")
         versionIcon.frame = NSRect(x: 0, y: 15, width: 30, height: 30)
         versionIcon.font = NSFont.systemFont(ofSize: 22)
         versionIcon.isBezeled = false
@@ -1754,7 +1754,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         let authorContainer = NSView(frame: NSRect(x: 20, y: 20, width: 180, height: 50))
         
         // 作者图标 - 更精美的设计
-        let authorIcon = NSTextField(labelWithString: "👨‍💻")
+        let authorIcon = NSTextField(labelWithString: "作者")
         authorIcon.frame = NSRect(x: 0, y: 15, width: 30, height: 30)
         authorIcon.font = NSFont.systemFont(ofSize: 22)
         authorIcon.isBezeled = false
@@ -1817,7 +1817,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         let emailContainer = NSView(frame: NSRect(x: 35, y: 40, width: 370, height: 25))
         
         // 邮箱图标 - 更大更清晰
-        let emailIcon = NSTextField(labelWithString: "📧")
+        let emailIcon = NSTextField(labelWithString: "邮箱")
         emailIcon.frame = NSRect(x: 0, y: 4, width: 24, height: 24)
         emailIcon.font = NSFont.systemFont(ofSize: 18)
         emailIcon.isBezeled = false
@@ -1849,7 +1849,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         let githubContainer = NSView(frame: NSRect(x: 35, y: 10, width: 370, height: 25))
         
         // GitHub图标 - 更大更清晰
-        let githubIcon = NSTextField(labelWithString: "🌐")
+        let githubIcon = NSTextField(labelWithString: "GitHub")
         githubIcon.frame = NSRect(x: 0, y: 4, width: 24, height: 24)
         githubIcon.font = NSFont.systemFont(ofSize: 18)
         githubIcon.isBezeled = false
@@ -1919,7 +1919,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         let shortcutsCard = createSimpleCard(frame: NSRect(x: 60, y: 50, width: 440, height: 95))
         
         // 快捷键标题 - 增加内边距
-        let shortcutsTitle = NSTextField(labelWithString: "⌨️ 快捷键")
+        let shortcutsTitle = NSTextField(labelWithString: "快捷键")
         shortcutsTitle.frame = NSRect(x: 28, y: 70, width: 400, height: 22)
         shortcutsTitle.font = NSFont.systemFont(ofSize: 17, weight: .bold)
         shortcutsTitle.textColor = NSColor.labelColor
@@ -1931,8 +1931,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         
         // 快捷键列表 - 现代化设计
         let shortcuts = [
-            "⌘ + ^ + V - 显示/隐藏剪贴板窗口",
-            "⌘ + Q - 退出应用"
+            "Cmd + Ctrl + V - 显示/隐藏剪贴板窗口",
+            "Cmd + Q - 退出应用"
         ]
         
         for (index, shortcut) in shortcuts.enumerated() {
@@ -1950,7 +1950,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         containerView.addSubview(shortcutsCard)
         
         // 底部标语 - 简洁设计
-        let sloganLabel = NSTextField(labelWithString: "🎯 让您的剪贴板更智能，工作更高效！")
+        let sloganLabel = NSTextField(labelWithString: "让您的剪贴板更智能，工作更高效！")
         sloganLabel.frame = NSRect(x: 20, y: 20, width: windowSize.width - 40, height: 28)
         sloganLabel.font = NSFont.systemFont(ofSize: 17, weight: .medium)
         sloganLabel.alignment = .center
@@ -2302,7 +2302,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     // MARK: - 调试和测试方法
     
     @objc private func testPermissionDialog() {
-        print("🔧 [TEST] 用户点击了权限测试菜单")
+        print("[TEST] 用户点击了权限测试菜单")
         // 强制激活应用到最前面
         NSApp.activate(ignoringOtherApps: true)
         
@@ -2501,23 +2501,23 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     }
     
     private func setupGlobalHotkey() {
-        print("🔍 [DEBUG] setupGlobalHotkey 开始执行")
+        print("[DEBUG] setupGlobalHotkey 开始执行")
         
         // 确保在主线程上执行
         DispatchQueue.main.async {
-            print("🔍 [DEBUG] 在主线程中创建 HotkeyManager 实例")
+            print("[DEBUG] 在主线程中创建 HotkeyManager 实例")
             // 创建 HotkeyManager 实例
             self.hotkeyManager = HotkeyManager()
             
             // 使用优化的权限检查
-            print("🔍 [DEBUG] 开始异步权限检查")
+            print("[DEBUG] 开始异步权限检查")
             self.checkPermissionAsync { [weak self] hasPermission in
                 guard let self = self else { return }
                 
-                print("🔍 [DEBUG] setupGlobalHotkey 权限检查结果: \(hasPermission)")
+                print("[DEBUG] setupGlobalHotkey 权限检查结果: \(hasPermission)")
                 
                 // 设置全局快捷键，传递必要的依赖项
-                print("🔍 [DEBUG] 设置全局快捷键")
+                print("[DEBUG] 设置全局快捷键")
                 self.hotkeyManager?.setupGlobalHotkeys(
                     onToggleWindow: { [weak self] in
                         guard let self = self else { return }
@@ -2530,19 +2530,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
                     windowManager: nil // WindowManager 将在需要时传递
                 )
                 
-                print("✅ [DEBUG] 全局热键设置完成: Cmd+Ctrl+V")
+                print("[DEBUG] 全局热键设置完成: Cmd+Ctrl+V")
                 
                 // 如果没有权限，请求权限（集中处理）
                 if !hasPermission {
-                    print("🔍 [DEBUG] 权限不足，调用 requestAccessibilityPermissions")
+                    print("[DEBUG] 权限不足，调用 requestAccessibilityPermissions")
                     self.requestAccessibilityPermissions()
                 } else {
-                    print("✅ [DEBUG] 权限已获得，无需请求权限")
+                    print("[DEBUG] 权限已获得，无需请求权限")
                 }
                 
                 // 延迟验证快捷键注册状态
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
-                    print("🔍 [DEBUG] 开始验证快捷键注册状态")
+                    print("[DEBUG] 开始验证快捷键注册状态")
                     self?.verifyHotkeyRegistration()
                 }
             }
@@ -2569,41 +2569,41 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     }
     
     private func requestAccessibilityPermissions() {
-        print("🔍 [DEBUG] requestAccessibilityPermissions 开始执行")
+        print("[DEBUG] requestAccessibilityPermissions 开始执行")
         
         // 防止重复检查权限
         if isCheckingPermissions {
-            print("⚠️ [DEBUG] 权限检查正在进行中，跳过重复检查")
+            print("[DEBUG] 权限检查正在进行中，跳过重复检查")
             return
         }
         
         // 检查用户是否选择了不再提示（这是唯一应该阻止弹窗的条件）
         let disablePrompt = UserDefaults.standard.bool(forKey: "DisableAccessibilityPrompt")
-        print("🔍 [DEBUG] DisableAccessibilityPrompt 设置: \(disablePrompt)")
+        print("[DEBUG] DisableAccessibilityPrompt 设置: \(disablePrompt)")
         if disablePrompt {
-            print("⚠️ [DEBUG] 用户已选择不再提示辅助功能权限，退出")
+            print("[DEBUG] 用户已选择不再提示辅助功能权限，退出")
             return
         }
         
-        print("🔍 [DEBUG] 开始权限检查流程")
+        print("[DEBUG] 开始权限检查流程")
         isCheckingPermissions = true
         defer { 
             isCheckingPermissions = false
-            print("🔍 [DEBUG] 权限检查流程结束")
+            print("[DEBUG] 权限检查流程结束")
         }
         
         // 使用优化的权限检查
         checkPermissionAsync { accessEnabled in
-            print("🔍 [DEBUG] 权限检查结果: \(accessEnabled)")
+            print("[DEBUG] 权限检查结果: \(accessEnabled)")
             if !accessEnabled {
-                print("🔍 [DEBUG] 需要辅助功能权限，准备显示弹窗")
+                print("[DEBUG] 需要辅助功能权限，准备显示弹窗")
                 // 需要辅助功能权限
                 self.hasShownPermissionAlert = true
                 self.wasAccessibilityDenied = true
                 
                 // 获取设置管理器
                 let settingsManager = SettingsManager.shared
-                print("🔍 [DEBUG] isFirstLaunch: \(settingsManager.isFirstLaunch)")
+                print("[DEBUG] isFirstLaunch: \(settingsManager.isFirstLaunch)")
                 
                 // 确保状态栏图标在权限检查期间保持可见
                 DispatchQueue.main.async {
@@ -2615,18 +2615,18 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
                 
                 // 延迟显示权限提示，避免影响状态栏显示
                 let delay = settingsManager.isFirstLaunch ? 2.0 : 0.5 // 减少延迟时间
-                print("🔍 [DEBUG] 将在 \(delay) 秒后显示权限弹窗")
+                print("[DEBUG] 将在 \(delay) 秒后显示权限弹窗")
                 DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-                    print("🔍 [DEBUG] 延迟时间到，开始最终权限检查")
+                    print("[DEBUG] 延迟时间到，开始最终权限检查")
                     // 简化权限弹窗条件检查
                     self.checkPermissionAsync { hasPermission in
-                        print("🔍 [DEBUG] 最终权限检查结果: \(hasPermission)")
+                        print("[DEBUG] 最终权限检查结果: \(hasPermission)")
                         if !hasPermission {
-                            print("🔍 [DEBUG] 准备显示权限弹窗，isFirstLaunch: \(settingsManager.isFirstLaunch)")
+                            print("[DEBUG] 准备显示权限弹窗，isFirstLaunch: \(settingsManager.isFirstLaunch)")
                             // 直接显示权限弹窗，不进行过多的状态检查
                             self.showPermissionAlert(isFirstLaunch: settingsManager.isFirstLaunch)
                         } else {
-                            print("🔍 [DEBUG] 权限已获得，不显示弹窗")
+                            print("[DEBUG] 权限已获得，不显示弹窗")
                         }
                         
                         // 权限弹窗后再次确保状态栏图标可见
@@ -2637,7 +2637,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
                 }
             } else {
                 // 辅助功能权限已获得
-                print("✅ [DEBUG] 辅助功能权限已获得，不需要显示弹窗")
+                print("[DEBUG] 辅助功能权限已获得，不需要显示弹窗")
                 self.hasShownPermissionAlert = false
                 self.wasAccessibilityDenied = false
                 
@@ -2651,11 +2651,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     }
     
     private func showPermissionAlert(isFirstLaunch: Bool = false) {
-        print("🔍 [DEBUG] showPermissionAlert 开始执行，isFirstLaunch: \(isFirstLaunch)")
+        print("[DEBUG] showPermissionAlert 开始执行，isFirstLaunch: \(isFirstLaunch)")
         
         // 全局弹窗状态检查
         if AppDelegate.isPermissionDialogShowing {
-            print("⚠️ [DEBUG] 权限弹窗正在显示中，跳过重复弹窗")
+            print("[DEBUG] 权限弹窗正在显示中，跳过重复弹窗")
             return
         }
         
@@ -2663,41 +2663,41 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         let currentTime = Date()
         let timeSinceLastDialog = currentTime.timeIntervalSince(AppDelegate.lastPermissionDialogTime)
         if timeSinceLastDialog < AppDelegate.permissionDialogCooldown {
-            print("⚠️ [DEBUG] 权限弹窗冷却时间未到（剩余\(Int(AppDelegate.permissionDialogCooldown - timeSinceLastDialog))秒），跳过弹窗")
+            print("[DEBUG] 权限弹窗冷却时间未到（剩余\(Int(AppDelegate.permissionDialogCooldown - timeSinceLastDialog))秒），跳过弹窗")
             return
         }
         
         // 确保在主线程执行
         DispatchQueue.main.async {
-            print("🔍 [DEBUG] 在主线程中执行权限弹窗显示")
+            print("[DEBUG] 在主线程中执行权限弹窗显示")
             
             // 再次检查全局弹窗状态（防止竞态条件）
             if AppDelegate.isPermissionDialogShowing {
-                print("⚠️ [DEBUG] 权限弹窗正在显示中（二次检查），跳过重复弹窗")
+                print("[DEBUG] 权限弹窗正在显示中（二次检查），跳过重复弹窗")
                 return
             }
             
             // 基本权限检查：如果已有权限则不显示弹窗
             let currentPermission = AXIsProcessTrusted()
-            print("🔍 [DEBUG] 当前权限状态: \(currentPermission)")
+            print("[DEBUG] 当前权限状态: \(currentPermission)")
             guard !currentPermission else {
-                print("⚠️ [DEBUG] 权限已获得，取消弹窗显示")
+                print("[DEBUG] 权限已获得，取消弹窗显示")
                 return
             }
             
             // 检查用户是否选择了不再提示
             let disablePrompt = UserDefaults.standard.bool(forKey: "DisableAccessibilityPrompt")
-            print("🔍 [DEBUG] 不再提示设置: \(disablePrompt), isFirstLaunch: \(isFirstLaunch)")
+            print("[DEBUG] 不再提示设置: \(disablePrompt), isFirstLaunch: \(isFirstLaunch)")
             if !isFirstLaunch && disablePrompt {
-                print("⚠️ [DEBUG] 用户已选择不再提示，取消弹窗")
+                print("[DEBUG] 用户已选择不再提示，取消弹窗")
                 return
             }
             
             // 简化检查：只检查是否有其他模态窗口
             let hasModalWindow = NSApp.modalWindow != nil
-            print("🔍 [DEBUG] 是否有模态窗口: \(hasModalWindow)")
+            print("[DEBUG] 是否有模态窗口: \(hasModalWindow)")
             if hasModalWindow {
-                print("⚠️ [DEBUG] 有其他模态窗口，延迟1秒后重试")
+                print("[DEBUG] 有其他模态窗口，延迟1秒后重试")
                 // 有其他模态窗口，延迟显示
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                     self.showPermissionAlert(isFirstLaunch: isFirstLaunch)
@@ -2709,7 +2709,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
             AppDelegate.isPermissionDialogShowing = true
             AppDelegate.lastPermissionDialogTime = Date()
             
-            print("✅ [DEBUG] 开始创建权限弹窗")
+            print("[DEBUG] 开始创建权限弹窗")
             // 暂时停止全局点击监听，避免弹窗期间的误操作
             NotificationCenter.default.post(name: NSNotification.Name("PreventAutoHide"), object: true)
             
@@ -2719,12 +2719,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
                 // 首次启动的友好提示
                 alert.messageText = "欢迎使用 OneClip！"
                 alert.informativeText = """
-                🎉 感谢您选择 OneClip 剪贴板管理器！
+                感谢您选择 OneClip 剪贴板管理器！
                 
                 为了让您体验完整功能，我们需要申请辅助功能权限：
                 
-                ✅ 基本功能：菜单栏图标和剪贴板管理已可正常使用
-                🚀 增强功能：全局快捷键 (Cmd+Ctrl+V) 需要此权限
+                基本功能：菜单栏图标和剪贴板管理已可正常使用
+                全局快捷键 (Cmd+Ctrl+V) 需要此权限
                 
                 权限用途：仅用于注册全局快捷键，不会访问任何敏感信息
                 授权步骤：系统设置 → 隐私与安全性 → 辅助功能 → 添加 OneClip
@@ -2750,9 +2750,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
                 alert.addButton(withTitle: "不再提示")
             }
             
-            print("🔍 [DEBUG] 权限弹窗已创建，等待用户响应")
+            print("[DEBUG] 权限弹窗已创建，等待用户响应")
             let response = alert.runModal()
-            print("🔍 [DEBUG] 用户响应: \(response.rawValue)")
+            print("[DEBUG] 用户响应: \(response.rawValue)")
             
             // 恢复全局点击监听
             // 延迟恢复，确保弹窗完全关闭
@@ -2764,7 +2764,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
             AppDelegate.isPermissionDialogShowing = false
             
             // 弹窗处理完成
-            print("🔍 [DEBUG] 开始处理用户选择")
+            print("[DEBUG] 开始处理用户选择")
             switch response {
             case .alertFirstButtonReturn:
                 // 授权按钮 - 启动权限监控等待用户授权
@@ -2813,7 +2813,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     
     /// 强制触发权限检查（用于调试）
     func forcePermissionCheck() {
-        print("🔍 强制触发权限检查...")
+        print("强制触发权限检查...")
         
         // 重置相关标志
         isCheckingPermissions = false
@@ -2824,20 +2824,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         
         // 立即检查权限
         checkPermissionAsync { hasPermission in
-            print("🔍 当前权限状态: \(hasPermission)")
+            print("当前权限状态: \(hasPermission)")
             if !hasPermission {
-                print("🔍 权限不足，显示权限弹窗")
+                print("权限不足，显示权限弹窗")
                 let settingsManager = SettingsManager.shared
                 self.showPermissionAlert(isFirstLaunch: settingsManager.isFirstLaunch)
             } else {
-                print("✅ 权限已获得")
+                print("权限已获得")
             }
         }
     }
     
     /// 强制显示权限弹窗（用于调试，无论当前权限状态）
     func forceShowPermissionDialog() {
-        print("🔍 [DEBUG] 强制显示权限弹窗（调试模式）")
+        print("[DEBUG] 强制显示权限弹窗（调试模式）")
         
         // 清除所有阻止弹窗的设置
         UserDefaults.standard.removeObject(forKey: "DisableAccessibilityPrompt")
@@ -2908,7 +2908,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
             let alert = NSAlert()
             alert.messageText = "辅助功能权限授权成功！"
             alert.informativeText = """
-            🎉 太棒了！现在您可以使用全局快捷键功能了：
+            太棒了！现在您可以使用全局快捷键功能了：
             
             • Cmd+Ctrl+V：显示/隐藏 OneClip 窗口
             
@@ -2990,7 +2990,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         
         // 检查是否有有效的bundle（避免调试模式下的bundle问题）
         guard Bundle.main.bundleIdentifier != nil else {
-            print("⚠️ 检测到调试模式，跳过通知系统初始化")
+            print("检测到调试模式，跳过通知系统初始化")
             return
         }
         

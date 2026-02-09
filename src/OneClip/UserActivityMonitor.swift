@@ -76,7 +76,7 @@ class UserActivityMonitor {
             self?.checkActivityState()
         }
         
-        logger.info("🔍 用户活动监控已启动")
+        logger.info("用户活动监控已启动")
     }
     
     // 停止监控
@@ -85,7 +85,7 @@ class UserActivityMonitor {
         activityTimer?.invalidate()
         activityTimer = nil
         
-        logger.info("⏹️ 用户活动监控已停止")
+        logger.info("用户活动监控已停止")
     }
     
     // 获取不活跃持续时间
@@ -105,7 +105,7 @@ class UserActivityMonitor {
         if currentState != .active {
             currentState = .active
             NotificationCenter.default.post(name: .userBecameActive, object: nil)
-            logger.info("🟢 用户重新活跃")
+            logger.info("用户重新活跃")
         }
     }
     
@@ -157,12 +157,12 @@ class UserActivityMonitor {
             case .active:
                 if previousState != .active {
                     NotificationCenter.default.post(name: .userBecameActive, object: nil)
-                    logger.info("🟢 用户状态: 活跃")
+                    logger.info("用户状态: 活跃")
                 }
             case .inactive, .sleeping:
                 if previousState == .active {
                     NotificationCenter.default.post(name: .userBecameInactive, object: nil)
-                    logger.info("🟡 用户状态: \(newState == .sleeping ? "深度休眠" : "不活跃")")
+                    logger.info("用户状态: \(newState == .sleeping ? "深度休眠" : "不活跃")")
                 }
             }
         }

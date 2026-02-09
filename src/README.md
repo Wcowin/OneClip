@@ -1,24 +1,23 @@
 # OneClip 源码构建指南
 
-这是 OneClip 早期版本的开源代码，基于文件系统存储。当前正式版已迁移至数据库存储。
+这是 OneClip 的开源代码，基于文件系统存储。
 
 ## 系统要求
 
-- **macOS** 12.0+
+- **macOS** 14.0+
 - **Xcode** 15.0+
-- **Swift** 5.9+
+- **Swift** 5.0+
 
 ## 快速构建
 
 ### 方式一：使用构建脚本（推荐）
 
 ```bash
-cd src
 chmod +x build.sh
 ./build.sh
 ```
 
-构建完成后，应用位于 `src/dist/OneClip.app`。
+构建完成后，应用位于 `dist/OneClip.app`。
 
 ### 方式二：使用 Xcode
 
@@ -29,7 +28,6 @@ chmod +x build.sh
 ### 方式三：命令行构建
 
 ```bash
-cd src
 xcodebuild -project OneClip.xcodeproj -scheme OneClip -configuration Release build
 ```
 

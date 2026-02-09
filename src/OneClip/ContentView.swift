@@ -356,12 +356,12 @@ struct ContentView: View {
                              isSelected: selectedIndex == index,
                              onHover: { isHovering in
                                  if isHovering {
-                                     print("🔍 鼠标悬浮在索引 \(index) 的项目上，设置selectedIndex = \(index)")
+                                     print("鼠标悬浮在索引 \(index) 的项目上，设置selectedIndex = \(index)")
                                      selectedIndex = index
                                  } else {
                                      // 鼠标离开时，只有当前选中的是这个项目时才重置
                                      if selectedIndex == index {
-                                         print("🔍 鼠标离开索引 \(index) 的项目，重置selectedIndex = nil")
+                                         print("鼠标离开索引 \(index) 的项目，重置selectedIndex = nil")
                                          selectedIndex = nil
                                      }
                                  }
@@ -662,18 +662,18 @@ struct ContentView: View {
             clipboardManager.updateUserActivity()
             
             // 调试信息：记录Cmd+Delete键被按下
-            print("🔍 Cmd+Delete键被按下，当前selectedIndex: \(selectedIndex?.description ?? "nil")，filteredItems数量: \(filteredItems.count)")
+            print("Cmd+Delete键被按下，当前selectedIndex: \(selectedIndex?.description ?? "nil")，filteredItems数量: \(filteredItems.count)")
             
             // Cmd+Delete 键删除选中项目 - 需要二次确认
             if let index = selectedIndex, index < filteredItems.count {
-                print("🔍 准备删除索引 \(index) 的项目")
+                print("准备删除索引 \(index) 的项目")
                 showDeleteConfirmation = true
             } else if !filteredItems.isEmpty {
-                print("🔍 没有选中项目，选中第一个项目并准备删除")
+                print("没有选中项目，选中第一个项目并准备删除")
                 selectedIndex = 0
                 showDeleteConfirmation = true
             } else {
-                print("🔍 没有可删除的项目")
+                print("没有可删除的项目")
             }
             return .handled
         }

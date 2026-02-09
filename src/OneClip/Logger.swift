@@ -9,10 +9,10 @@ enum LogLevel: String, CaseIterable {
     
     var emoji: String {
         switch self {
-        case .debug: return "🔍"
-        case .info: return "ℹ️"
-        case .warning: return "⚠️"
-        case .error: return "❌"
+        case .debug: return "[DEBUG]"
+        case .info: return "[INFO]"
+        case .warning: return "[WARN]"
+        case .error: return "[ERROR]"
         }
     }
     

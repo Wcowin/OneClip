@@ -15,63 +15,63 @@ class NotificationManager: ObservableObject {
     }
     
     private func requestNotificationPermission() {
-        print("🔔 开始请求通知权限...")
+        print("开始请求通知权限...")
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] granted, error in
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 if let error = error {
-                    print("❌ 通知权限请求失败: \(error.localizedDescription)")
+                    print("通知权限请求失败: \(error.localizedDescription)")
                 } else if granted {
-                    print("✅ 通知权限已授予")
+                    print("通知权限已授予")
                 } else {
-                    print("❌ 通知权限被用户拒绝")
-                    print("💡 提示：请在系统偏好设置 > 通知 > OneClip 中启用通知")
+                    print("通知权限被用户拒绝")
+                    print("提示：请在系统偏好设置 > 通知 > OneClip 中启用通知")
                 }
             }
         }
     }
     
     func showClipboardNotification(content: String) {
-        print("📢 NotificationManager: 收到通知请求，内容: \(String(content.prefix(20)))...")
+        print("NotificationManager: 收到通知请求，内容: \(String(content.prefix(20)))...")
         
         // 检查设置是否启用通知
         guard SettingsManager.shared.enableNotifications else {
-            print("❌ 通知已在设置中禁用")
+            print("通知已在设置中禁用")
             return
         }
         
-        print("✅ 通知设置已启用，继续处理...")
+        print("通知设置已启用，继续处理...")
         
         // 检查通知权限
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             DispatchQueue.main.async {
-                print("🔍 当前通知权限状态: \(settings.authorizationStatus.rawValue)")
-                print("🔍 通知中心设置: \(settings.notificationCenterSetting.rawValue)")
-                print("🔍 锁屏设置: \(settings.lockScreenSetting.rawValue)")
-                print("🔍 横幅设置: \(settings.alertSetting.rawValue)")
+                print("当前通知权限状态: \(settings.authorizationStatus.rawValue)")
+                print("通知中心设置: \(settings.notificationCenterSetting.rawValue)")
+                print("锁屏设置: \(settings.lockScreenSetting.rawValue)")
+                print("横幅设置: \(settings.alertSetting.rawValue)")
                 
                 switch settings.authorizationStatus {
                 case .authorized, .provisional:
-                    print("✅ 通知权限已授权，发送通知")
+                    print("通知权限已授权，发送通知")
                     self.sendNotification(content: content)
                 case .denied:
-                    print("❌ 通知权限被拒绝，请在系统设置中启用")
+                    print("通知权限被拒绝，请在系统设置中启用")
                 case .notDetermined:
-                    print("⚠️ 通知权限未确定，重新请求权限")
+                    print("通知权限未确定，重新请求权限")
                     self.requestNotificationPermission()
                     // 权限请求后再次尝试发送
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                         self.sendNotification(content: content)
                     }
                 @unknown default:
-                    print("❓ 未知的通知权限状态")
+                    print("未知的通知权限状态")
                 }
             }
         }
     }
     
     private func sendNotification(content: String) {
-        print("🚀 开始发送通知...")
+        print("开始发送通知...")
         
         let notificationContent = UNMutableNotificationContent()
         notificationContent.title = "新的剪贴板内容"
@@ -90,14 +90,14 @@ class NotificationManager: ObservableObject {
             trigger: nil // 立即显示
         )
         
-        print("📤 发送通知请求: \(request.identifier)")
+        print("发送通知请求: \(request.identifier)")
         
         UNUserNotificationCenter.current().add(request) { error in
             DispatchQueue.main.async {
                 if let error = error {
-                    print("❌ 通知发送失败: \(error.localizedDescription)")
+                    print("通知发送失败: \(error.localizedDescription)")
                 } else {
-                    print("✅ 通知发送成功，badge 数量: \(self.badgeCount)")
+                    print("通知发送成功，badge 数量: \(self.badgeCount)")
                     // 同步更新 Dock 图标的 badge
                     self.setBadgeCount(self.badgeCount)
                 }
@@ -120,7 +120,7 @@ class NotificationManager: ObservableObject {
     
     // 清除 badge 数量
     func clearBadge() {
-        print("🔔 清除应用 badge 数量")
+        print("清除应用 badge 数量")
         badgeCount = 0
         
         // 清除应用图标上的 badge
@@ -131,21 +131,21 @@ class NotificationManager: ObservableObject {
         // 清除通知中心的 badge
         UNUserNotificationCenter.current().setBadgeCount(0) { error in
             if let error = error {
-                print("❌ 清除通知 badge 失败: \(error.localizedDescription)")
+                print("清除通知 badge 失败: \(error.localizedDescription)")
             } else {
-                print("✅ 通知 badge 已清除")
+                print("通知 badge 已清除")
             }
         }
     }
     
     // 设置 badge 数量
     func setBadgeCount(_ count: Int) {
-        print("🔔 设置 badge 数量为: \(count)")
+        print("设置 badge 数量为: \(count)")
         badgeCount = count
         
         // 只有在启用通知时才显示红标
         guard SettingsManager.shared.enableNotifications else {
-            print("❌ 通知已禁用，不显示 badge")
+            print("通知已禁用，不显示 badge")
             DispatchQueue.main.async {
                 NSApp.dockTile.badgeLabel = nil
             }
@@ -162,9 +162,9 @@ class NotificationManager: ObservableObject {
         
         UNUserNotificationCenter.current().setBadgeCount(count) { error in
             if let error = error {
-                print("❌ 设置通知 badge 失败: \(error.localizedDescription)")
+                print("设置通知 badge 失败: \(error.localizedDescription)")
             } else {
-                print("✅ 通知 badge 已设置为: \(count)")
+                print("通知 badge 已设置为: \(count)")
             }
         }
     }

@@ -74,7 +74,7 @@ class AccessibilityPermissionManager: ObservableObject {
         stopMonitoring()
         
         #if DEBUG
-        print("🔄 开始监控辅助功能权限（间隔: \(monitoringInterval)秒）")
+        print("开始监控辅助功能权限（间隔: \(monitoringInterval)秒）")
         #endif
         
         permissionTimer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { [weak self] _ in
@@ -88,7 +88,7 @@ class AccessibilityPermissionManager: ObservableObject {
         permissionTimer = nil
         
         #if DEBUG
-        print("⏹️ 停止监控辅助功能权限")
+        print("停止监控辅助功能权限")
         #endif
     }
     
@@ -107,13 +107,13 @@ class AccessibilityPermissionManager: ObservableObject {
     /// - Returns: 当前权限状态
     @discardableResult
     func requestPermission(showPrompt: Bool = false) -> Bool {
-        print("🔍 [AccessibilityPermissionManager] 检查权限状态（不弹窗）")
+        print("[AccessibilityPermissionManager] 检查权限状态（不弹窗）")
         
         // 只检查权限状态，不显示弹窗
         let hasPermission = AXIsProcessTrusted()
         updatePermissionStatus(hasPermission)
         
-        print("🔍 [AccessibilityPermissionManager] 权限检查结果: \(hasPermission)")
+        print("[AccessibilityPermissionManager] 权限检查结果: \(hasPermission)")
         return hasPermission
     }
     
@@ -127,17 +127,17 @@ class AccessibilityPermissionManager: ObservableObject {
     
     /// 强制显示权限对话框（已废弃，权限弹窗统一由OneClipApp管理）
     func forceShowPermissionDialog() {
-        print("🔍 [AccessibilityPermissionManager] 强制权限检查（不弹窗，统一由OneClipApp管理）")
+        print("[AccessibilityPermissionManager] 强制权限检查（不弹窗，统一由OneClipApp管理）")
         
         // 只检查权限状态，不显示弹窗
         let hasPermission = AXIsProcessTrusted()
         updatePermissionStatus(hasPermission)
         
-        print("🔍 [AccessibilityPermissionManager] 权限检查结果: \(hasPermission)")
+        print("[AccessibilityPermissionManager] 权限检查结果: \(hasPermission)")
         
         // 如果需要弹窗，通知OneClipApp处理
         if !hasPermission {
-            print("⚠️ [AccessibilityPermissionManager] 缺少权限，建议通过OneClipApp统一处理弹窗")
+            print("[AccessibilityPermissionManager] 缺少权限，建议通过OneClipApp统一处理弹窗")
         }
     }
     
@@ -152,7 +152,7 @@ class AccessibilityPermissionManager: ObservableObject {
         // 如果状态发生变化，通知观察者
         if oldStatus != newStatus {
             #if DEBUG
-            print("🔒 辅助功能权限状态变化: \(oldStatus ? "已授权" : "未授权") → \(newStatus ? "已授权" : "未授权")")
+            print("辅助功能权限状态变化: \(oldStatus ? "已授权" : "未授权") → \(newStatus ? "已授权" : "未授权")")
             #endif
             
             notifyObservers()

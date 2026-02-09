@@ -147,7 +147,7 @@ class ClipboardManager: ObservableObject {
         // 添加应用状态监听器
         setupApplicationStateObservers()
         
-        logger.info("🔄 剪贴板监控已设置，初始检查频率: \(currentMonitoringInterval * 1000)ms (智能调节模式)")
+        logger.info("剪贴板监控已设置，初始检查频率: \(currentMonitoringInterval * 1000)ms (智能调节模式)")
     }
     
     // 设置应用状态监听器
@@ -176,7 +176,7 @@ class ClipboardManager: ObservableObject {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            self?.logger.info("💤 系统即将休眠")
+            self?.logger.info("系统即将休眠")
         }
         
         NotificationCenter.default.addObserver(
@@ -184,19 +184,19 @@ class ClipboardManager: ObservableObject {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            self?.logger.info("🌅 系统从休眠中唤醒")
+            self?.logger.info("系统从休眠中唤醒")
             // 强制检查剪贴板状态
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
                 self?.checkClipboardChange()
             }
         }
         
-        logger.debug("🔧 应用状态监听器已设置")
+        logger.debug("应用状态监听器已设置")
     }
     
     // 应用状态处理方法
     private func handleApplicationDidBecomeActive() {
-        logger.info("📱 应用重新获得焦点（从后台返回或重新激活）")
+        logger.info("应用重新获得焦点（从后台返回或重新激活）")
         isAppActive = true
         lastActiveTime = Date()
         
@@ -211,7 +211,7 @@ class ClipboardManager: ObservableObject {
     
     // MARK: - 未读计数管理
     func clearUnreadCount() {
-        logger.info("🔄 清除未读计数: \(unreadCount) -> 0")
+        logger.info("清除未读计数: \(unreadCount) -> 0")
         unreadCount = 0
         // 只有在启用通知时才清除dock栏角标
         if SettingsManager.shared.enableNotifications {
@@ -231,7 +231,7 @@ class ClipboardManager: ObservableObject {
     }
     
     private func handleApplicationWillResignActive() {
-        logger.info("📱 应用失去焦点（进入后台或失去活跃状态）")
+        logger.info("应用失去焦点（进入后台或失去活跃状态）")
         isAppActive = false
     }
     
@@ -241,7 +241,7 @@ class ClipboardManager: ObservableObject {
         
         // 尝试访问剪贴板以检查权限
         guard pasteboard.types != nil else {
-            logger.error("❌ 剪贴板访问被拒绝 - 可能需要在系统偏好设置中授予权限")
+            logger.error("剪贴板访问被拒绝 - 可能需要在系统偏好设置中授予权限")
             
             // 显示用户友好的错误提示
             DispatchQueue.main.async {
@@ -298,17 +298,17 @@ class ClipboardManager: ObservableObject {
     }
     
     private func retryClipboardAccess() {
-        logger.info("🔄 尝试重新访问剪贴板...")
+        logger.info("尝试重新访问剪贴板...")
         
         let pasteboard = NSPasteboard.general
         
         // 尝试重新获取类型信息
         if let types = pasteboard.types, !types.isEmpty {
-            logger.info("✅ 剪贴板访问恢复，重新处理内容")
+            logger.info("剪贴板访问恢复，重新处理内容")
             // 重新处理剪贴板内容
             handleClipboardChange()
         } else {
-            logger.warning("⚠️ 剪贴板仍然无法访问，可能需要用户手动授权")
+            logger.warning("剪贴板仍然无法访问，可能需要用户手动授权")
             
             // 检查是否需要显示权限提示
             DispatchQueue.main.async {
@@ -360,17 +360,17 @@ class ClipboardManager: ObservableObject {
         // 初始化当前监控间隔
         currentMonitoringInterval = activeMonitoringInterval
         
-        logger.info("🔍 用户活动监控已设置")
+        logger.info("用户活动监控已设置")
     }
     
     private func handleUserBecameActive() {
-        logger.info("🟢 用户重新活跃，切换到活跃监控模式")
+        logger.info("用户重新活跃，切换到活跃监控模式")
         currentActivityState = .active
         updateMonitoringInterval(to: activeMonitoringInterval)
     }
     
     private func handleUserBecameInactive() {
-        logger.info("🟡 用户进入不活跃状态，切换到节能监控模式")
+        logger.info("用户进入不活跃状态，切换到节能监控模式")
         currentActivityState = .inactive
         
         // 根据不活跃时间决定监控间隔
@@ -378,7 +378,7 @@ class ClipboardManager: ObservableObject {
         if inactivityDuration > 300 { // 5分钟以上进入深度休眠
             currentActivityState = .sleeping
             updateMonitoringInterval(to: sleepMonitoringInterval)
-            logger.info("😴 进入深度休眠模式")
+            logger.info("进入深度休眠模式")
         } else {
             updateMonitoringInterval(to: inactiveMonitoringInterval)
         }
@@ -395,7 +395,7 @@ class ClipboardManager: ObservableObject {
             self?.checkClipboardChange()
         }
         
-        logger.info("⏱️ 监控间隔已调整为: \(newInterval)秒 (状态: \(currentActivityState.description))")
+        logger.info("监控间隔已调整为: \(newInterval)秒 (状态: \(currentActivityState.description))")
     }
     
     private func checkClipboardChange() {
@@ -403,7 +403,7 @@ class ClipboardManager: ObservableObject {
         let currentChangeCount = pasteboard.changeCount
         
         if currentChangeCount != lastChangeCount {
-            logger.debug("📋 检测到剪贴板变化: \(lastChangeCount) -> \(currentChangeCount)")
+            logger.debug("检测到剪贴板变化: \(lastChangeCount) -> \(currentChangeCount)")
             
             // 检查是否是我们自己的复制操作触发的
             let now = Date().timeIntervalSince1970
@@ -425,7 +425,7 @@ class ClipboardManager: ObservableObject {
             lastChangeTimestamp = now
             
             // 处理剪贴板变化
-            logger.info("🚀 处理剪贴板变化")
+            logger.info("处理剪贴板变化")
             handleClipboardChange()
         }
     }
@@ -437,15 +437,15 @@ class ClipboardManager: ObservableObject {
         let pasteboard = NSPasteboard.general
         
         // 详细的剪贴板状态检查
-        logger.debug("📋 剪贴板变化检测开始")
-        logger.debug("📋 剪贴板变化计数: \(pasteboard.changeCount)")
+        logger.debug("剪贴板变化检测开始")
+        logger.debug("剪贴板变化计数: \(pasteboard.changeCount)")
         
         let types = pasteboard.types
-        logger.debug("📋 剪贴板可用类型: \(types?.map { $0.rawValue } ?? ["nil"])")
+        logger.debug("剪贴板可用类型: \(types?.map { $0.rawValue } ?? ["nil"])")
         
         // 如果 types 为空，尝试权限检查和重试
         if types == nil || types?.isEmpty == true {
-            logger.error("❌ 剪贴板类型为空，可能是权限问题或系统限制")
+            logger.error("剪贴板类型为空，可能是权限问题或系统限制")
             
             // 尝试重新获取权限并重试
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -473,7 +473,7 @@ class ClipboardManager: ObservableObject {
         // 1. 首先检查是否有本地文件URL（访达复制文件的情况）
         if let fileURLs = pasteboard.readObjects(forClasses: [NSURL.self], options: nil) as? [URL],
            !fileURLs.isEmpty {
-            logger.info("📁 发现URL: \(fileURLs.map { $0.absoluteString })")
+            logger.info("发现URL: \(fileURLs.map { $0.absoluteString })")
             
             // 过滤出真正的本地文件URL（file:// 协议且文件存在）
             let localFileURLs = fileURLs.filter { url in
@@ -481,7 +481,7 @@ class ClipboardManager: ObservableObject {
             }
             
             if !localFileURLs.isEmpty {
-                logger.info("📁 确认本地文件URL: \(localFileURLs.map { $0.path })")
+                logger.info("确认本地文件URL: \(localFileURLs.map { $0.path })")
                 
                 // 检查是否为图片文件
                 let imageFileURLs = localFileURLs.filter { url in
@@ -802,7 +802,7 @@ class ClipboardManager: ObservableObject {
         }
         
         if hasRealImageData {
-            logger.debug("�️ 检测到真实图片数据")
+            logger.debug("检测到真实图片数据")
             return true
         }
         
@@ -810,7 +810,7 @@ class ClipboardManager: ObservableObject {
         if let fileURLs = pasteboard.readObjects(forClasses: [NSURL.self], options: nil) as? [URL],
            !fileURLs.isEmpty,
            pasteboard.data(forType: NSPasteboard.PasteboardType("com.apple.icns")) != nil {
-            logger.debug("🔍 只有文件URL和ICNS图标，无真实图片数据，不认为是图片内容")
+            logger.debug("只有文件URL和ICNS图标，无真实图片数据，不认为是图片内容")
             return false
         }
         
@@ -849,22 +849,22 @@ class ClipboardManager: ObservableObject {
             NSPasteboard.PasteboardType("org.webmproject.webp")
         ]
         
-        logger.debug("🔍 检查剪贴板中的图片内容，可用类型: \(pasteboard.types ?? [])")
+        logger.debug("检查剪贴板中的图片内容，可用类型: \(pasteboard.types ?? [])")
         
         // 检查是否有任何图片类型的数据
         for type in imageTypes {
             if pasteboard.data(forType: type) != nil {
-                logger.debug("✅ 检测到图片类型: \(type.rawValue)")
+                logger.debug("检测到图片类型: \(type.rawValue)")
                 return true
             }
         }
         
-        logger.debug("❌ 未检测到图片内容")
+        logger.debug("未检测到图片内容")
         return false
     }
     
     private func handleImageContentSync(_ pasteboard: NSPasteboard) {
-        logger.info("🖼️ 开始处理图片内容")
+        logger.info("开始处理图片内容")
         
         // 简化的图片格式检测，重点解决预览问题
         var imageData: Data?
@@ -898,7 +898,7 @@ class ClipboardManager: ObservableObject {
             if let data = pasteboard.data(forType: pasteboardType), data.count > 20 {
                 imageData = data
                 detectedFormat = formatName
-                logger.info("🖼️ 成功获取 \(formatName) 格式图片: \(data.count) 字节")
+                logger.info("成功获取 \(formatName) 格式图片: \(data.count) 字节")
                 
                 // 输出数据头部用于调试
                 let headerBytes = data.prefix(16)
@@ -910,7 +910,7 @@ class ClipboardManager: ObservableObject {
         
         // 如果标准格式都没找到，扫描所有包含 "image" 的类型
         if imageData == nil, let types = pasteboard.types {
-            logger.debug("🔍 扫描自定义图片格式...")
+            logger.debug("扫描自定义图片格式...")
             for type in types {
                 let typeString = type.rawValue.lowercased()
                 if (typeString.contains("image") || typeString.contains("photo")) &&
@@ -918,7 +918,7 @@ class ClipboardManager: ObservableObject {
                     if let data = pasteboard.data(forType: type), data.count > 20 {
                         imageData = data
                         detectedFormat = "自定义(\(type.rawValue))"
-                        logger.info("🖼️ 找到自定义图片格式: \(type.rawValue), 大小: \(data.count) 字节")
+                        logger.info("找到自定义图片格式: \(type.rawValue), 大小: \(data.count) 字节")
                         break
                     }
                 }
@@ -926,7 +926,7 @@ class ClipboardManager: ObservableObject {
         }
         
         guard let data = imageData else {
-            logger.warning("❌ 无法获取任何格式的图片数据")
+            logger.warning("无法获取任何格式的图片数据")
             return
         }
         
@@ -938,13 +938,13 @@ class ClipboardManager: ObservableObject {
         // 使用数据哈希进行更准确的重复检测
         let uniqueKey = "img_\(detectedFormat)_\(data.count)_\(dataHash)"
         if isDuplicateContent(uniqueKey, type: ClipboardItemType.image) {
-            logger.debug("⏭️ 跳过重复图片内容（数据哈希匹配）")
+            logger.debug("跳过重复图片内容（数据哈希匹配）")
             return
         }
         
         // 直接保存原始数据，让 ImagePreviewView 处理解码
         addClipboardItemWithData(content: imageInfo, type: ClipboardItemType.image, data: data)
-        logger.info("✅ 图片数据已添加: \(imageInfo)")
+        logger.info("图片数据已添加: \(imageInfo)")
         
         // 立即通知UI更新
         DispatchQueue.main.async {
@@ -957,9 +957,9 @@ class ClipboardManager: ObservableObject {
         let imageInfo = "SVG 矢量图 (\(ByteCountFormatter.string(fromByteCount: Int64(data.count), countStyle: .file)))"
         if !isDuplicateContent(imageInfo, type: .image) {
             addClipboardItemWithData(content: imageInfo, type: .image, data: data)
-            logger.info("✅ SVG 图片已添加: \(imageInfo)")
+            logger.info("SVG 图片已添加: \(imageInfo)")
         } else {
-            logger.debug("⏭️ 跳过重复 SVG 内容")
+            logger.debug("跳过重复 SVG 内容")
         }
     }
     
@@ -990,9 +990,9 @@ class ClipboardManager: ObservableObject {
                 let imageInfo = "PDF 图片 (\(ByteCountFormatter.string(fromByteCount: Int64(data.count), countStyle: .file)))"
                 if !isDuplicateContent(imageInfo, type: .image) {
                     addClipboardItemWithData(content: imageInfo, type: .image, data: pngData)
-                    logger.info("✅ PDF 图片已添加: \(imageInfo)")
+                    logger.info("PDF 图片已添加: \(imageInfo)")
                 } else {
-                    logger.debug("⏭️ 跳过重复 PDF 内容")
+                    logger.debug("跳过重复 PDF 内容")
                 }
                 return
             }
@@ -1002,13 +1002,13 @@ class ClipboardManager: ObservableObject {
         let imageInfo = "PDF 文档 (\(ByteCountFormatter.string(fromByteCount: Int64(data.count), countStyle: .file)))"
         if !isDuplicateContent(imageInfo, type: .document) {
             addClipboardItemWithData(content: imageInfo, type: .document, data: data)
-            logger.info("✅ PDF 文档已添加: \(imageInfo)")
+            logger.info("PDF 文档已添加: \(imageInfo)")
         }
     }
     
     // 处理位图格式图片
     private func handleBitmapImage(data: Data, format: String, originalType: NSPasteboard.PasteboardType?) {
-        logger.info("🖼️ 处理位图图片: \(format), 数据大小: \(data.count) 字节")
+        logger.info("处理位图图片: \(format), 数据大小: \(data.count) 字节")
         
         // 使用缓存验证避免重复处理
         if !isValidImageDataCached(data) {
@@ -1022,67 +1022,67 @@ class ClipboardManager: ObservableObject {
         
         // 首先尝试直接解析
         nsImage = NSImage(data: data)
-        logger.debug("🖼️ 直接解析结果: \(nsImage != nil ? "成功" : "失败")")
+        logger.debug("直接解析结果: \(nsImage != nil ? "成功" : "失败")")
         
         // 如果直接解析失败，尝试数据修复
         if nsImage == nil {
-            logger.debug("🔧 尝试修复图片数据...")
+            logger.debug("尝试修复图片数据...")
             if let repairedData = attemptDataRepair(data, format: format) {
                 nsImage = NSImage(data: repairedData)
                 if nsImage != nil {
                     processedData = repairedData
-                    logger.info("🔧 数据修复成功")
+                    logger.info("数据修复成功")
                 } else {
-                    logger.warning("🔧 数据修复后仍无法解析")
+                    logger.warning("数据修复后仍无法解析")
                 }
             }
         }
         
         // 如果还是失败，尝试不同的解码方式
         if nsImage == nil {
-            logger.debug("🔧 尝试其他解码方式...")
+            logger.debug("尝试其他解码方式...")
             
             // 尝试 CGImage 方式
             if let cgImageSource = CGImageSourceCreateWithData(data as CFData, nil),
                let cgImage = CGImageSourceCreateImageAtIndex(cgImageSource, 0, nil) {
                 nsImage = NSImage(cgImage: cgImage, size: NSSize(width: CGFloat(cgImage.width), height: CGFloat(cgImage.height)))
-                logger.info("🔧 CGImage 解码成功")
+                logger.info("CGImage 解码成功")
             }
         }
         
         // 如果仍然失败，但数据看起来像图片，就保存原始数据并提供详细信息
         if nsImage == nil {
             if isValidImageDataHeader(data.prefix(16), format: format) {
-                logger.warning("⚠️ 无法解析图片但数据头部有效，保存原始数据")
+                logger.warning("无法解析图片但数据头部有效，保存原始数据")
                 
                 // 生成详细的调试信息
                 let headerBytes = data.prefix(16)
                 let hexString = headerBytes.map { String(format: "%02x", $0) }.joined(separator: " ")
-                logger.debug("📊 数据头部: \(hexString)")
+                logger.debug("数据头部: \(hexString)")
                 
                 // 检测可能的格式
                 let detectedFormat = detectImageFormatFromHeader(data)
-                logger.info("🔍 检测到的格式: \(detectedFormat)")
+                logger.info("检测到的格式: \(detectedFormat)")
                 
                 let imageInfo = "图片数据 (\(detectedFormat), \(ByteCountFormatter.string(fromByteCount: Int64(data.count), countStyle: .file)))"
                 if !isDuplicateContent(imageInfo, type: .image) {
                     addClipboardItemWithData(content: imageInfo, type: .image, data: data)
-                    logger.info("✅ 原始图片数据已添加: \(imageInfo)")
+                    logger.info("原始图片数据已添加: \(imageInfo)")
                 }
                 return
             } else {
-                logger.error("❌ 无法解析图片数据且数据头部无效")
+                logger.error("无法解析图片数据且数据头部无效")
                 
                 // 即使无法解析，也要提供调试信息
                 let headerBytes = data.prefix(16)
                 let hexString = headerBytes.map { String(format: "%02x", $0) }.joined(separator: " ")
-                logger.debug("📊 无效数据头部: \(hexString)")
+                logger.debug("无效数据头部: \(hexString)")
                 
                 // 作为未知数据保存，让用户知道有内容但无法预览
                 let imageInfo = "无法识别的图片数据 (\(format), \(ByteCountFormatter.string(fromByteCount: Int64(data.count), countStyle: .file)))"
                 if !isDuplicateContent(imageInfo, type: .image) {
                     addClipboardItemWithData(content: imageInfo, type: .image, data: data)
-                    logger.info("⚠️ 无法识别的图片数据已添加: \(imageInfo)")
+                    logger.info("无法识别的图片数据已添加: \(imageInfo)")
                 }
                 return
             }
@@ -1091,7 +1091,7 @@ class ClipboardManager: ObservableObject {
         // 验证图片尺寸
         guard let imageSize = nsImage?.size,
               imageSize.width > 0 && imageSize.height > 0 else {
-            logger.warning("❌ 图片尺寸无效: \(nsImage?.size ?? CGSize.zero)")
+            logger.warning("图片尺寸无效: \(nsImage?.size ?? CGSize.zero)")
             return
         }
         
@@ -1107,14 +1107,14 @@ class ClipboardManager: ObservableObject {
             // 最终验证
             if NSImage(data: stableImageData) != nil {
                 addClipboardItemWithData(content: imageInfo, type: .image, data: stableImageData)
-                logger.info("✅ 位图图片已添加: \(imageInfo)")
+                logger.info("位图图片已添加: \(imageInfo)")
             } else {
                 // 如果预处理失败，使用原始数据
                 addClipboardItemWithData(content: imageInfo, type: .image, data: processedData)
-                logger.info("✅ 原始位图数据已添加: \(imageInfo)")
+                logger.info("原始位图数据已添加: \(imageInfo)")
             }
         } else {
-            logger.debug("⏭️ 跳过重复图片内容")
+            logger.debug("跳过重复图片内容")
         }
     }
     
@@ -1280,7 +1280,7 @@ class ClipboardManager: ObservableObject {
             if !bytes.starts(with: [0xFF, 0xD8]) {
                 if let startIndex = findJPEGStart(in: bytes) {
                     let repairedData = Data(bytes.dropFirst(startIndex))
-                    logger.info("🔧 修复了 JPEG 数据开头，移除了 \(startIndex) 字节")
+                    logger.info("修复了 JPEG 数据开头，移除了 \(startIndex) 字节")
                     return repairedData
                 }
             }
@@ -1290,7 +1290,7 @@ class ClipboardManager: ObservableObject {
                 let jpegHeader: [UInt8] = [0xFF, 0xD8, 0xFF, 0xE0]
                 var repairedBytes = jpegHeader
                 repairedBytes.append(contentsOf: bytes)
-                logger.info("🔧 尝试为 JPEG 添加标准头部")
+                logger.info("尝试为 JPEG 添加标准头部")
                 return Data(repairedBytes)
             }
         }
@@ -1300,7 +1300,7 @@ class ClipboardManager: ObservableObject {
             if !bytes.starts(with: [0x89, 0x50, 0x4E, 0x47]) {
                 if let startIndex = findPNGStart(in: bytes) {
                     let repairedData = Data(bytes.dropFirst(startIndex))
-                    logger.info("🔧 修复了 PNG 数据开头，移除了 \(startIndex) 字节")
+                    logger.info("修复了 PNG 数据开头，移除了 \(startIndex) 字节")
                     return repairedData
                 }
             }
@@ -1311,7 +1311,7 @@ class ClipboardManager: ObservableObject {
             if !bytes.starts(with: [0x47, 0x49, 0x46]) {
                 if let startIndex = findGIFStart(in: bytes) {
                     let repairedData = Data(bytes.dropFirst(startIndex))
-                    logger.info("🔧 修复了 GIF 数据开头，移除了 \(startIndex) 字节")
+                    logger.info("修复了 GIF 数据开头，移除了 \(startIndex) 字节")
                     return repairedData
                 }
             }
@@ -1322,7 +1322,7 @@ class ClipboardManager: ObservableObject {
             for i in 1..<min(100, bytes.count - 10) {
                 let testData = Data(bytes.dropFirst(i))
                 if NSImage(data: testData) != nil {
-                    logger.info("🔧 通用修复成功，移除了 \(i) 字节")
+                    logger.info("通用修复成功，移除了 \(i) 字节")
                     return testData
                 }
             }
@@ -1438,34 +1438,34 @@ class ClipboardManager: ObservableObject {
     }
     
     private func handleImageFileContent(_ fileURLs: [URL]) {
-        logger.info("🖼️ 处理图片文件内容: \(fileURLs.count) 个图片文件")
+        logger.info("处理图片文件内容: \(fileURLs.count) 个图片文件")
         
         // 验证图片文件是否存在
         let validImageFiles = fileURLs.filter { url in
             let exists = FileManager.default.fileExists(atPath: url.path)
             if !exists {
-                logger.warning("⚠️ 图片文件不存在: \(url.path)")
+                logger.warning("图片文件不存在: \(url.path)")
             }
             return exists
         }
         
         guard !validImageFiles.isEmpty else {
-            logger.error("❌ 没有有效的图片文件")
+            logger.error("没有有效的图片文件")
             return
         }
         
         // 处理第一个图片文件（通常只有一个）
         let imageFile = validImageFiles.first!
-        logger.info("📁 加载图片文件: \(imageFile.path)")
+        logger.info("加载图片文件: \(imageFile.path)")
         
         do {
             // 读取原始图片文件数据
             let imageData = try Data(contentsOf: imageFile)
-            logger.info("✅ 成功读取图片文件，大小: \(imageData.count) 字节")
+            logger.info("成功读取图片文件，大小: \(imageData.count) 字节")
             
             // 验证是否为有效图片
             if NSImage(data: imageData) != nil {
-                logger.info("✅ 图片文件验证成功，添加到剪贴板历史")
+                logger.info("图片文件验证成功，添加到剪贴板历史")
                 
                 // 生成合适的预览文本
                 let fileName = imageFile.lastPathComponent
@@ -1475,24 +1475,24 @@ class ClipboardManager: ObservableObject {
                 // 创建图片项目，使用原始图片数据
                 if !isDuplicateContent(previewText, type: .image) {
                     addClipboardItem(content: previewText, type: .image, data: imageData)
-                    logger.info("✅ 图片文件已添加到剪贴板历史")
+                    logger.info("图片文件已添加到剪贴板历史")
                 } else {
-                    logger.debug("⏭️ 跳过重复的图片文件")
+                    logger.debug("跳过重复的图片文件")
                 }
             } else {
-                logger.error("❌ 图片文件格式无效或损坏: \(imageFile.path)")
+                logger.error("图片文件格式无效或损坏: \(imageFile.path)")
                 // 仍然作为文件处理
                 handleFileContent(validImageFiles)
             }
         } catch {
-            logger.error("❌ 读取图片文件失败: \(error.localizedDescription)")
+            logger.error("读取图片文件失败: \(error.localizedDescription)")
             // 降级为文件处理
             handleFileContent(validImageFiles)
         }
     }
     
     private func handleFileContent(_ fileURLs: [URL]) {
-        logger.info("🗂️ 处理文件内容: \(fileURLs.count) 个文件")
+        logger.info("处理文件内容: \(fileURLs.count) 个文件")
         
         // 验证所有文件是否存在
         let validFiles = fileURLs.filter { url in
@@ -1830,13 +1830,13 @@ class ClipboardManager: ObservableObject {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: fileInfos)
             addClipboardItem(content: contentTitle, type: itemType, data: jsonData)
-            print("✅ 文件内容已立即添加: \(contentTitle)")
+            print("文件内容已立即添加: \(contentTitle)")
             return true
         } catch {
             // 备用方案：只保存文件路径
             let filePaths = validFiles.map { $0.path }.joined(separator: "\n")
             addClipboardItem(content: contentTitle, type: itemType, data: filePaths.data(using: .utf8))
-            print("✅ 文件内容已添加（简化版）: \(contentTitle)")
+            print("文件内容已添加（简化版）: \(contentTitle)")
             return true
         }
     }
@@ -1905,13 +1905,13 @@ class ClipboardManager: ObservableObject {
                 let timeSinceCreation = Date().timeIntervalSince(existingItem.timestamp)
                 
                 if timeSinceCreation < 30 { // 30秒内相同图片数据不重复添加
-                    logger.debug("⏭️ 跳过重复图片数据（\(timeSinceCreation)秒内已存在，Hash: \(newDataHash)）")
+                    logger.debug("跳过重复图片数据（\(timeSinceCreation)秒内已存在，Hash: \(newDataHash)）")
                     return
                 }
                 
                 // 移除旧的图片项目
                 clipboardItems.remove(at: existingIndex)
-                logger.debug("🔄 更新现有图片项目 (Hash: \(newDataHash))")
+                logger.debug("更新现有图片项目 (Hash: \(newDataHash))")
             }
         } else {
             // 对于非图片类型，使用内容文本进行重复检测
@@ -1922,7 +1922,7 @@ class ClipboardManager: ObservableObject {
                 let timeSinceCreation = Date().timeIntervalSince(existingItem.timestamp)
                 
                 if timeSinceCreation < 300 { // 5分钟内相同内容不重复添加
-                    logger.debug("⏭️ 跳过重复内容（\(timeSinceCreation)秒内已存在）")
+                    logger.debug("跳过重复内容（\(timeSinceCreation)秒内已存在）")
                     return
                 }
                 
@@ -1958,9 +1958,9 @@ class ClipboardManager: ObservableObject {
         // 生成日志信息
         if type == .image, let imageData = data {
             let dataHash = String(imageData.hashValue)
-            print("✅ 添加新图片项目: \(type.displayName), 数据大小: \(imageData.count) 字节, Hash: \(dataHash)")
+            print("添加新图片项目: \(type.displayName), 数据大小: \(imageData.count) 字节, Hash: \(dataHash)")
         } else {
-            print("✅ 添加新项目: \(type.displayName)")
+            print("添加新项目: \(type.displayName)")
         }
         
         // 限制历史记录数量（使用设置管理器），但保护收藏项目
@@ -1995,11 +1995,11 @@ class ClipboardManager: ObservableObject {
         
         // 发送用户通知
         if let firstItem = clipboardItems.first {
-            logger.info("📢 准备发送通知，内容: \(String(firstItem.content.prefix(20)))...")
+            logger.info("准备发送通知，内容: \(String(firstItem.content.prefix(20)))...")
             
             // 检查通知设置
             if SettingsManager.shared.enableNotifications {
-                logger.info("✅ 通知已启用，发送通知")
+                logger.info("通知已启用，发送通知")
                 
                 // 增加未读计数
                 unreadCount += 1
@@ -2010,14 +2010,14 @@ class ClipboardManager: ObservableObject {
                 // 直接调用 NotificationManager 发送通知
                 NotificationManager.shared.showClipboardNotification(content: firstItem.content)
             } else {
-                logger.info("❌ 通知已禁用，跳过发送和计数")
+                logger.info("通知已禁用，跳过发送和计数")
                 // 通知禁用时不增加未读计数，也不显示badge
             }
         }
     }
     
     func copyToClipboard(item: ClipboardItem) {
-        logger.info("🔄 准备复制项目到剪贴板: \(item.type.displayName)")
+        logger.info("准备复制项目到剪贴板: \(item.type.displayName)")
         
         // 设置标志位防止重复监控
         isPerformingCopyOperation = true
@@ -2065,30 +2065,30 @@ class ClipboardManager: ObservableObject {
         
         // 如果内存中没有数据，尝试从磁盘加载
         if imageData == nil || (imageData?.isEmpty == true) {
-            logger.info("🔄 图片数据为空，尝试从磁盘加载: \(item.filePath ?? "无路径")")
+            logger.info("图片数据为空，尝试从磁盘加载: \(item.filePath ?? "无路径")")
             
             if let filePath = item.filePath {
                 let url = URL(fileURLWithPath: filePath)
                 do {
                     imageData = try Data(contentsOf: url)
-                    logger.info("✅ 成功从磁盘加载图片数据，大小: \(imageData?.count ?? 0) 字节")
+                    logger.info("成功从磁盘加载图片数据，大小: \(imageData?.count ?? 0) 字节")
                 } catch {
-                    logger.error("❌ 从磁盘加载图片失败: \(error.localizedDescription)")
+                    logger.error("从磁盘加载图片失败: \(error.localizedDescription)")
                     throw ClipboardError.dataCorrupted
                 }
             } else {
-                logger.error("❌ 图片文件路径为空")
+                logger.error("图片文件路径为空")
                 throw ClipboardError.dataCorrupted
             }
         }
         
         guard let data = imageData, !data.isEmpty else {
-            logger.error("❌ 图片数据无效或为空")
+            logger.error("图片数据无效或为空")
             throw ClipboardError.dataCorrupted
         }
         
         guard let nsImage = NSImage(data: data) else {
-            logger.error("❌ 无法从数据创建NSImage")
+            logger.error("无法从数据创建NSImage")
             throw ClipboardError.imageProcessingFailed
         }
         
@@ -2109,52 +2109,52 @@ class ClipboardManager: ObservableObject {
     }
     
     private func copyFileToClipboard(_ item: ClipboardItem, pasteboard: NSPasteboard) throws {
-        logger.info("🗂️ 开始复制文件类型内容: \(item.content)")
-        logger.debug("📋 项目类型: \(item.type)")
-        logger.debug("📋 数据大小: \(item.data?.count ?? 0) 字节")
+        logger.info("开始复制文件类型内容: \(item.content)")
+        logger.debug("项目类型: \(item.type)")
+        logger.debug("数据大小: \(item.data?.count ?? 0) 字节")
         
         var fileURLs: [URL] = []
         
         // 方案1: 从JSON数据中解析文件URL
         if let jsonData = item.data {
-            logger.debug("🔍 尝试解析JSON数据...")
+            logger.debug("尝试解析JSON数据...")
             
             do {
                 if let fileInfos = try JSONSerialization.jsonObject(with: jsonData) as? [[String: Any]] {
-                    logger.debug("✅ 成功解析JSON，包含 \(fileInfos.count) 个文件信息")
+                    logger.debug("成功解析JSON，包含 \(fileInfos.count) 个文件信息")
                     
                     fileURLs = fileInfos.compactMap { info -> URL? in
                         guard let path = info["path"] as? String else { 
-                            logger.warning("⚠️ 无效的文件路径: \(info)")
+                            logger.warning("无效的文件路径: \(info)")
                             return nil 
                         }
                         
-                        logger.debug("🔍 处理文件路径: \(path)")
+                        logger.debug("处理文件路径: \(path)")
                         
                         let url = URL(fileURLWithPath: path)
                         let exists = FileManager.default.fileExists(atPath: url.path)
                         
                         if !exists {
-                            logger.warning("⚠️ 文件不存在: \(path)")
+                            logger.warning("文件不存在: \(path)")
                             return nil
                         }
                         
-                        logger.debug("✅ 文件存在: \(url.lastPathComponent)")
+                        logger.debug("文件存在: \(url.lastPathComponent)")
                         return url
                     }
                     
-                    logger.info("🔍 从JSON解析到 \(fileURLs.count) 个有效文件")
+                    logger.info("从JSON解析到 \(fileURLs.count) 个有效文件")
                 } else {
-                    logger.warning("⚠️ JSON数据格式不正确")
+                    logger.warning("JSON数据格式不正确")
                 }
             } catch {
-                logger.error("❌ JSON解析失败: \(error)")
+                logger.error("JSON解析失败: \(error)")
             }
         }
         
         // 方案2: 如果JSON解析失败，尝试从content中提取文件名并搜索
         if fileURLs.isEmpty {
-            logger.debug("🔍 尝试从content中提取文件名: \(item.content)")
+            logger.debug("尝试从content中提取文件名: \(item.content)")
             
             // 从类似 "文档: 高等学校毕业生档案转递单 - (附件3) .docx" 中提取文件名
             var fileName: String?
@@ -2168,7 +2168,7 @@ class ClipboardManager: ObservableObject {
             }
             
             if let searchFileName = fileName, !searchFileName.isEmpty {
-                logger.debug("🔍 搜索文件名: \(searchFileName)")
+                logger.debug("搜索文件名: \(searchFileName)")
                 
                 // 在常用位置搜索文件
                 let searchPaths = [
@@ -2181,17 +2181,17 @@ class ClipboardManager: ObservableObject {
                     let potentialFile = searchPath.appendingPathComponent(searchFileName)
                     if FileManager.default.fileExists(atPath: potentialFile.path) {
                         fileURLs.append(potentialFile)
-                        logger.info("✅ 找到文件: \(potentialFile.path)")
+                        logger.info("找到文件: \(potentialFile.path)")
                         break
                     }
                 }
                 
                 // 如果还没找到，进行递归搜索
                 if fileURLs.isEmpty {
-                    logger.debug("🔍 进行递归搜索...")
+                    logger.debug("进行递归搜索...")
                     if let foundURL = searchFileRecursively(fileName: searchFileName) {
                         fileURLs.append(foundURL)
-                        logger.info("✅ 递归搜索找到文件: \(foundURL.path)")
+                        logger.info("递归搜索找到文件: \(foundURL.path)")
                     }
                 }
             }
@@ -2199,7 +2199,7 @@ class ClipboardManager: ObservableObject {
         
         // 方案3: 执行文件复制
         if !fileURLs.isEmpty {
-            logger.info("🔄 准备复制 \(fileURLs.count) 个文件到剪贴板")
+            logger.info("准备复制 \(fileURLs.count) 个文件到剪贴板")
             
             pasteboard.clearContents()
             
@@ -2208,29 +2208,29 @@ class ClipboardManager: ObservableObject {
             let success = pasteboard.writeObjects(nsURLs)
             
             if success {
-                logger.info("✅ 文件已成功复制到剪贴板: \(fileURLs.map { $0.lastPathComponent }.joined(separator: ", "))")
+                logger.info("文件已成功复制到剪贴板: \(fileURLs.map { $0.lastPathComponent }.joined(separator: ", "))")
                 return
             } else {
-                logger.warning("⚠️ writeObjects失败，尝试备用方案")
+                logger.warning("writeObjects失败，尝试备用方案")
                 
                 // 备用方案：使用文件路径列表
                 pasteboard.clearContents()
                 let filePaths = fileURLs.map { $0.path }
                 
                 if pasteboard.setPropertyList(filePaths, forType: NSPasteboard.PasteboardType("NSFilenamesPboardType")) {
-                    logger.info("✅ 文件已成功复制到剪贴板 (NSFilenamesPboardType)")
+                    logger.info("文件已成功复制到剪贴板 (NSFilenamesPboardType)")
                     return
                 } else {
-                    logger.error("❌ 所有文件复制方法都失败了")
+                    logger.error("所有文件复制方法都失败了")
                     throw ClipboardError.fileOperationFailed
                 }
             }
         } else {
-            logger.error("❌ 没有找到有效的文件路径")
+            logger.error("没有找到有效的文件路径")
             // 最后的备用方案：将内容作为文本复制
             pasteboard.clearContents()
             if pasteboard.setString(item.content, forType: .string) {
-                logger.warning("⚠️ 已将内容作为文本复制")
+                logger.warning("已将内容作为文本复制")
             } else {
                 throw ClipboardError.fileOperationFailed
             }
@@ -2251,7 +2251,7 @@ class ClipboardManager: ObservableObject {
         for basePath in commonPaths {
             let fileURL = basePath.appendingPathComponent(fileName)
             if FileManager.default.fileExists(atPath: fileURL.path) {
-                logger.info("✅ 快速搜索找到文件: \(fileURL.path)")
+                logger.info("快速搜索找到文件: \(fileURL.path)")
                 return fileURL
             }
         }
@@ -2262,7 +2262,7 @@ class ClipboardManager: ObservableObject {
             
             DispatchQueue.main.async {
                 // 如果找到文件，可以选择性地通知UI或缓存结果
-                self.logger.info("✅ 异步搜索找到文件: \(url.path)")
+                self.logger.info("异步搜索找到文件: \(url.path)")
             }
         }
         
@@ -2317,7 +2317,7 @@ class ClipboardManager: ObservableObject {
                 return ByteCountFormatter.string(fromByteCount: fileSize, countStyle: .file)
             }
         } catch {
-            logger.warning("⚠️ 无法获取文件大小: \(url.path)")
+            logger.warning("无法获取文件大小: \(url.path)")
         }
         return "未知大小"
     }
@@ -2590,7 +2590,7 @@ class ClipboardManager: ObservableObject {
     // MARK: - 文件处理辅助方法
     
     private func extractFileURLsFromContent(_ content: String) -> [URL]? {
-        print("🔍 从内容中提取文件URL: \(content.prefix(50))")
+        print("从内容中提取文件URL: \(content.prefix(50))")
         
         // 方法1：从文件内容格式中提取
         if content.hasPrefix("Files: ") {
@@ -2631,7 +2631,7 @@ class ClipboardManager: ObservableObject {
     }
     
     private func extractURLsFromFilesString(_ filesString: String) -> [URL]? {
-        print("🔍 解析文件字符串: \(filesString)")
+        print("解析文件字符串: \(filesString)")
         
         var fileNames: [String] = []
         
@@ -2651,7 +2651,7 @@ class ClipboardManager: ObservableObject {
             return cleaned.isEmpty ? fileName : cleaned
         }
         
-        print("🔍 提取的文件名: \(fileNames)")
+        print("提取的文件名: \(fileNames)")
         
         var validURLs: [URL] = []
         
@@ -2667,11 +2667,11 @@ class ClipboardManager: ObservableObject {
     private func findFileByName(_ fileName: String) -> [URL]? {
         guard !fileName.isEmpty else { return nil }
         
-        print("🔍 查找文件: \(fileName)")
+        print("查找文件: \(fileName)")
         
         // 验证文件名安全性
         guard isValidFileName(fileName) else {
-            print("⚠️ 文件名包含非法字符: \(fileName)")
+            print("文件名包含非法字符: \(fileName)")
             return nil
         }
         
@@ -2686,7 +2686,7 @@ class ClipboardManager: ObservableObject {
             
             if FileManager.default.fileExists(atPath: url.path) {
                 foundURLs.append(url)
-                print("✅ 找到文件: \(fullPath)")
+                print("找到文件: \(fullPath)")
             }
         }
         
@@ -2699,7 +2699,7 @@ class ClipboardManager: ObservableObject {
                 while let fileURL = enumerator.nextObject() as? URL {
                     if fileURL.lastPathComponent == fileName {
                         foundURLs.append(fileURL)
-                        logger.info("✅ 在主目录找到文件: \(fileURL.path)")
+                        logger.info("在主目录找到文件: \(fileURL.path)")
                         
                         // 限制搜索结果数量
                         if foundURLs.count >= 3 {
@@ -2708,7 +2708,7 @@ class ClipboardManager: ObservableObject {
                     }
                 }
             } else {
-                logger.warning("⚠️ 无法创建主目录枚举器")
+                logger.warning("无法创建主目录枚举器")
             }
         }
         
@@ -3073,12 +3073,12 @@ class ClipboardManager: ObservableObject {
         }
         
         if success {
-            logger.info("✅ 已恢复到系统剪贴板: \(item.content.prefix(30))")
+            logger.info("已恢复到系统剪贴板: \(item.content.prefix(30))")
             
             // 更新剪贴板计数以同步状态
             lastChangeCount = NSPasteboard.general.changeCount
         } else {
-            logger.error("❌ 恢复到剪贴板失败: \(item.content.prefix(30))")
+            logger.error("恢复到剪贴板失败: \(item.content.prefix(30))")
         }
         
         // 延迟恢复监控状态
@@ -3095,7 +3095,7 @@ class ClipboardManager: ObservableObject {
     // 新增：手动清理存储
     func performManualCleanup() {
         DispatchQueue.global(qos: .utility).async { [weak self] in
-            self?.logger.info("🧹 开始手动清理存储...")
+            self?.logger.info("开始手动清理存储...")
             self?.store.performManualCleanup()
             
             // 重新加载剪贴板项目
@@ -3104,7 +3104,7 @@ class ClipboardManager: ObservableObject {
                 self?.loadClipboardItems()
             }
             
-            self?.logger.info("✅ 手动清理完成")
+            self?.logger.info("手动清理完成")
         }
     }
     
@@ -3205,31 +3205,31 @@ class ClipboardManager: ObservableObject {
         
         // URL检测
         if let url = URL(string: trimmed), url.scheme != nil {
-            return "🌐 链接"
+            return "链接"
         }
         
         // 邮箱检测
         if trimmed.contains("@") && trimmed.contains(".") {
             let emailRegex = try? NSRegularExpression(pattern: #"^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"#)
             if emailRegex?.firstMatch(in: trimmed, range: NSRange(location: 0, length: trimmed.count)) != nil {
-                return "📧 邮箱"
+                return "邮箱"
             }
         }
         
         // 电话号码检测
         let phoneRegex = try? NSRegularExpression(pattern: #"^[+]?[\d\s\-\(\)]{8,}$"#)
         if phoneRegex?.firstMatch(in: trimmed, range: NSRange(location: 0, length: trimmed.count)) != nil {
-            return "📞 电话"
+            return "电话"
         }
         
         // 代码检测
         if trimmed.contains("{") && trimmed.contains("}") ||
            trimmed.contains("function") || trimmed.contains("class") ||
            trimmed.contains("import") || trimmed.contains("from") {
-            return "💻 代码"
+            return "代码"
         }
         
-        return "📝 文本"
+        return "文本"
     }
     
     // MARK: - 预加载缓存机制
@@ -3291,9 +3291,9 @@ class ClipboardManager: ObservableObject {
         
         if let image = image {
             ImageCacheManager.shared.setImage(image, forKey: item.id.uuidString)
-            logger.debug("✅ 预加载完成：\(item.id)")
+            logger.debug("预加载完成：\(item.id)")
         } else {
-            logger.debug("❌ 预加载失败：无法解码图片 - \(item.id)")
+            logger.debug("预加载失败：无法解码图片 - \(item.id)")
         }
     }
     
