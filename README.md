@@ -2,7 +2,7 @@
 
 ---
 
-2026/02/06 终身版固定5¥减免优惠兑换码：**OneClip2026** (最后15个)｜兑换地址：https://oneclip.cloud/purchase/lifetime      
+2026/02/22 终身版固定5¥减免优惠兑换码：**OneClip2026** (最后5个)｜兑换地址：https://oneclip.cloud/purchase/lifetime      
 
 > [!NOTE]
 >欢迎点击链接加入群聊 ： 
