@@ -2,18 +2,15 @@
 
 ---
 
-2026/02/22 终身版固定5¥减免优惠兑换码：**OneClip2026** (最后5个)｜兑换地址：https://oneclip.cloud/purchase/lifetime      
-
 > [!NOTE]
 >欢迎点击链接加入群聊 ： 
 > [OneClip交流群](https://qm.qq.com/q/xiImGHVMcM)  ｜[TG群组](https://t.me/+I7S6R0pw5180YzRl)
 
-> 💡 终身版0元优惠码：已经送出了将近几百个0元购优惠码，后续随机在此处或者QQ群发放｜兑换地址同上
-
-> [!NOTE]
-> 🌟 OneClip早期源码已开源在 [src/](https://github.com/Wcowin/OneClip/tree/main/src) 目录，可自行下载构建。我是正儿八经完整开源了，不是部分开源。   
+> [!TIP]
+> 🌟 OneClip早期源码已开源在 [src/](https://github.com/Wcowin/OneClip/tree/main/src) 目录，可自行下载构建。我是**正儿八经完整开源**了，不是部分开源。   
 > 早期版本基于文件系统，目前 OneClip 已采用 SQLite (WAL 模式) 数据库存储，完成技术迭代。感兴趣的朋友可以自行构建，谢谢大家    
->   
+>
+> 
 > Windows版本正在开发中，敬请期待！仓库地址：https://github.com/Wcowin/OneClip-Windows
 
 
