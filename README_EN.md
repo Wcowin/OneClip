@@ -33,6 +33,11 @@
   <img src="https://img.shields.io/badge/Privacy-Local%20Storage-green?style=for-the-badge" alt="Privacy Local Storage" />
   <a href="https://github.com/Wcowin/OneClip/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License" /></a>
 </p>
+<p align="center">
+  <a href="https://space.bilibili.com/1407028951/lists/5012369?type=series">
+    <img src="https://img.shields.io/badge/%E2%96%B6%20Demos-50s%20Quick%20Start-6366f1?style=for-the-badge" alt="Demo Videos">
+  </a>
+</p>
 
 
 ---
@@ -70,6 +75,7 @@ OneClip is a **professional clipboard manager** built for macOS. It uses **100% 
 - **Modern UI**: macOS design, vibrancy and dark mode
 - **Easy install**: Homebrew one-line install (Sparkle auto-update)
 - **Finder enhancement**: Finder ⌘+X cut, ⌘+V paste to move files (free in OneClip)
+- **More features**: Waiting for you to discover
 
 ![img1.png](https://cdn.nodeimage.com/i/eYSz3X0E6J8JZl3wGXF3KecrbHCFhz2O.webp)  
 ![img2.png](https://s1.imagehub.cc/images/2026/01/12/a26a96c52c6a0629979cffe671bf8d27.png)
@@ -121,7 +127,7 @@ brew uninstall --cask oneclip
 sudo xattr -rd com.apple.quarantine /Applications/OneClip.app
 ```  
 
-![终端执行示例](https://s1.imagehub.cc/images/2025/09/15/25681c4221ff1bf29ee7c511e28e2654.png)
+![Terminal example](https://s1.imagehub.cc/images/2025/09/15/25681c4221ff1bf29ee7c511e28e2654.png)
 
 **Method 2: System Settings**
 
