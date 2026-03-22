@@ -5,7 +5,7 @@
 > [!NOTE]
 >欢迎点击链接加入群聊 ： 
 > [OneClip交流群](https://qm.qq.com/q/xiImGHVMcM)  ｜[TG群组](https://t.me/+I7S6R0pw5180YzRl)  
-> QQ群会不定时发中转站羊毛 请进
+> QQ群会不定时发中转站羊毛 免费蹬 请进
 
 > [!TIP]
 > 🌟 OneClip早期源码已开源在 [src/](https://github.com/Wcowin/OneClip/tree/main/src) 目录，可自行下载构建。我是**正儿八经完整开源**了，不是部分开源。   
