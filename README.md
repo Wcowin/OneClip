@@ -1,17 +1,16 @@
-<!-- [English](README_EN.md) | [简体中文](README.md) -->
-
 <p align="right">
-  <a href="README_EN.md">English</a> · <b>中文</b> 
+  <a href="README_EN.md">English</a> · <b>中文</b>
 </p>
 
 ---
 
 > [!NOTE]
->欢迎点击链接加入群聊 ： 
-> [OneClip交流群](https://qm.qq.com/q/xiImGHVMcM)  ｜[TG群组](https://t.me/+I7S6R0pw5180YzRl)  
+> 欢迎加入我们的社区：
+> [OneClip 交流群](https://qm.qq.com/q/xiImGHVMcM) | [TG 群组](https://t.me/+I7S6R0pw5180YzRl)  
 
 > [!TIP]
-> 🌟 OneClip早期源码已开源在 [src/](https://github.com/Wcowin/OneClip/tree/main/src) 目录，可自行下载构建。我是**正儿八经完整开源**了，不是部分开源。   
+> 🌟 OneClip早期源码已开源在 [src/](https://github.com/Wcowin/OneClip/tree/main/src) 目录，可自行下载构建。我是**完整开源**了，不是部分开源。     
+> 
 > 早期版本基于文件系统，目前 OneClip 已采用 SQLite (WAL 模式) 数据库存储，完成技术迭代。感兴趣的朋友可以自行构建，谢谢大家    
 >
 > 
@@ -33,8 +32,9 @@
   <img src="https://img.shields.io/badge/Swift-5.9%2B-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="Swift 5.9+" />
   <img src="https://img.shields.io/badge/Privacy-Local%20Storage-green?style=for-the-badge" alt="Privacy Local Storage" />
   <a href="https://github.com/Wcowin/OneClip/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License" /></a>
+  <a href="https://qm.qq.com/q/xiImGHVMcM"><img src="https://img.shields.io/badge/QQ%E7%BE%A4-1060157293-0084ff?style=for-the-badge&logo=qq&logoColor=white" alt="QQ 群" /></a>
   <a href="https://space.bilibili.com/1407028951/lists/5012369?type=series">
-    <img src="https://img.shields.io/badge/%E2%96%B6%20%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91-50%E7%A7%92%E5%BF%AB%E9%80%9F%E4%BA%86%E8%A7%A3-6366f1?style=for-the-badge" alt="演示视频">
+    <img src="https://img.shields.io/badge/%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B-6366f1?style=for-the-badge" alt="视频教程">
   </a>
 </p>
 

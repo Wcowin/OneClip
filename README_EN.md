@@ -1,16 +1,14 @@
-[English](README_EN.md) | [简体中文](README.md)
+<p align="right">
+  <a href="README.md">简体中文</a> · <b>English</b>
+</p>
 
 ---
-
-2026/02/06 Lifetime edition fixed ¥5 discount code: **OneClip2026** (last 15) | Redeem: https://oneclip.cloud/purchase/lifetime
 
 > [!NOTE]
 > Join our community:
 > [OneClip QQ Group](https://qm.qq.com/q/xiImGHVMcM) | [Telegram Group](https://t.me/+I7S6R0pw5180YzRl)
 
-> 💡 Free lifetime codes: Hundreds of free codes have been given out; more will be randomly posted here or in the QQ group | Same redeem link above
-
-> [!NOTE]
+> [!TIP]
 > 🌟 Early first-edition source code is open at [src/](https://github.com/Wcowin/OneClip/tree/main/src). You can build it yourself.  
 > The early version used the file system; OneClip now uses SQLite (WAL mode) for storage. You can build from source if you prefer.  
 >   
@@ -32,10 +30,9 @@
   <img src="https://img.shields.io/badge/Swift-5.9%2B-F05138?style=for-the-badge&logo=swift&logoColor=white" alt="Swift 5.9+" />
   <img src="https://img.shields.io/badge/Privacy-Local%20Storage-green?style=for-the-badge" alt="Privacy Local Storage" />
   <a href="https://github.com/Wcowin/OneClip/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License" /></a>
-</p>
-<p align="center">
+  <a href="https://qm.qq.com/q/xiImGHVMcM"><img src="https://img.shields.io/badge/QQ%20Group-1060157293-0084ff?style=for-the-badge&logo=qq&logoColor=white" alt="QQ Group" /></a>
   <a href="https://space.bilibili.com/1407028951/lists/5012369?type=series">
-    <img src="https://img.shields.io/badge/%E2%96%B6%20Demos-50s%20Quick%20Start-6366f1?style=for-the-badge" alt="Demo Videos">
+    <img src="https://img.shields.io/badge/Video%20Tutorials-6366f1?style=for-the-badge" alt="Video Tutorials">
   </a>
 </p>
 
