@@ -16,6 +16,9 @@ class ClipboardStore: ObservableObject {
     private let storageDirectory: URL
     private let maxStorageSize: Int64 = 500 * 1024 * 1024 // 500MB最大存储
     
+    // 线程安全：添加递归锁保护并发操作
+    private let storeLock = NSRecursiveLock()
+    
     // 获取清理天数的闭包
     private var getCleanupDays: () -> Int
     
@@ -71,7 +74,10 @@ class ClipboardStore: ObservableObject {
     // MARK: - 核心存储方法
     
     func saveItem(_ item: ClipboardItem) {
-        var items = loadItems()
+        storeLock.lock()
+        defer { storeLock.unlock() }
+        
+        var items = loadItemsUnsafe()
         
         // 移除重复项
         items.removeAll { $0.id == item.id }
@@ -88,10 +94,16 @@ class ClipboardStore: ObservableObject {
         }
         
         // 保存到存储
-        saveItems(items)
+        saveItemsUnsafe(items)
     }
     
     func loadItems() -> [ClipboardItem] {
+        storeLock.lock()
+        defer { storeLock.unlock() }
+        return loadItemsUnsafe()
+    }
+    
+    private func loadItemsUnsafe() -> [ClipboardItem] {
         var allItems: [ClipboardItem] = []
         
         do {
@@ -126,16 +138,19 @@ class ClipboardStore: ObservableObject {
             }
             
         } catch {
-            print("加载剪贴板项目失败: \(error)")
+            Logger.shared.error("加载剪贴板项目失败: \(error.localizedDescription)")
         }
         
         return allItems
     }
     
     func clearAllItems() {
+        storeLock.lock()
+        defer { storeLock.unlock() }
+        
         do {
             // 1. 先获取所有收藏项目
-            let allItems = loadItems()
+            let allItems = loadItemsUnsafe()
             let favoriteItems = allItems.filter { $0.isFavorite }
             
             // 2. 删除所有日期文件夹
@@ -147,29 +162,38 @@ class ClipboardStore: ObservableObject {
             
             // 3. 重新保存收藏项目
             for favoriteItem in favoriteItems {
-                saveItem(favoriteItem)
+                let processedItem = processPersistentStorage(for: favoriteItem)
+                let items = [processedItem]
+                saveItemsUnsafe(items)
             }
             
-            print("所有剪贴板项目已清空，保留了 \(favoriteItems.count) 个收藏项目")
+            Logger.shared.info("所有剪贴板项目已清空，保留了 \(favoriteItems.count) 个收藏项目")
         } catch {
-            print("清空剪贴板项目失败: \(error)")
+            Logger.shared.error("清空剪贴板项目失败: \(error.localizedDescription)")
         }
     }
     
     func deleteItem(_ item: ClipboardItem) {
-        var allItems = loadItems()
+        storeLock.lock()
+        defer { storeLock.unlock() }
+        
+        var allItems = loadItemsUnsafe()
         allItems.removeAll { $0.id == item.id }
         
-        // 重新保存所有项目
-        clearAllItems()
-        for item in allItems {
-            saveItem(item)
-        }
+        // 直接保存更新后的项目列表，不调用 clearAllItems()
+        saveItemsUnsafe(allItems)
+        Logger.shared.info("项目已删除: \(item.id)")
     }
     
     // MARK: - 私有辅助方法
     
     private func saveItems(_ items: [ClipboardItem]) {
+        storeLock.lock()
+        defer { storeLock.unlock() }
+        saveItemsUnsafe(items)
+    }
+    
+    private func saveItemsUnsafe(_ items: [ClipboardItem]) {
         // 按日期分组保存项目
         let groupedItems = Dictionary(grouping: items) { item in
             dateFormatter.string(from: item.timestamp)
@@ -188,7 +212,7 @@ class ClipboardStore: ObservableObject {
                 try data.write(to: itemsFile)
                 
             } catch {
-                print("保存日期项目失败 \(dateString): \(error)")
+                Logger.shared.error("保存日期项目失败 \(dateString): \(error.localizedDescription)")
             }
         }
     }

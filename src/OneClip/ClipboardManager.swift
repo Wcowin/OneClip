@@ -18,6 +18,9 @@ class ClipboardManager: ObservableObject {
     private let settingsManager = SettingsManager.shared
     private let logger = Logger.shared
     
+    // 🔧 修复：保存所有 NotificationCenter 观察者，用于后续清理
+    private var notificationObservers: [NSObjectProtocol] = []
+    
     // 延迟初始化 store，以便传入 settingsManager
     internal lazy var store = ClipboardStore(getCleanupDays: { [weak self] in
         return self?.settingsManager.autoCleanupDays ?? 30
@@ -152,34 +155,41 @@ class ClipboardManager: ObservableObject {
     
     // 设置应用状态监听器
     private func setupApplicationStateObservers() {
+        // 清理旧的观察者
+        notificationObservers.forEach { NotificationCenter.default.removeObserver($0) }
+        notificationObservers.removeAll()
+        
         // 监听应用激活事件
-        NotificationCenter.default.addObserver(
+        let appActiveObserver = NotificationCenter.default.addObserver(
             forName: NSApplication.didBecomeActiveNotification,
             object: nil,
             queue: .main
         ) { [weak self] _ in
             self?.handleApplicationDidBecomeActive()
         }
+        notificationObservers.append(appActiveObserver)
         
         // 监听应用进入后台事件
-        NotificationCenter.default.addObserver(
+        let appInactiveObserver = NotificationCenter.default.addObserver(
             forName: NSApplication.willResignActiveNotification,
             object: nil,
             queue: .main
         ) { [weak self] _ in
             self?.handleApplicationWillResignActive()
         }
+        notificationObservers.append(appInactiveObserver)
         
         // 监听系统休眠/唤醒事件
-        NotificationCenter.default.addObserver(
+        let willSleepObserver = NotificationCenter.default.addObserver(
             forName: NSWorkspace.willSleepNotification,
             object: nil,
             queue: .main
         ) { [weak self] _ in
             self?.logger.info("系统即将休眠")
         }
+        notificationObservers.append(willSleepObserver)
         
-        NotificationCenter.default.addObserver(
+        let didWakeObserver = NotificationCenter.default.addObserver(
             forName: NSWorkspace.didWakeNotification,
             object: nil,
             queue: .main
@@ -190,8 +200,9 @@ class ClipboardManager: ObservableObject {
                 self?.checkClipboardChange()
             }
         }
+        notificationObservers.append(didWakeObserver)
         
-        logger.debug("应用状态监听器已设置")
+        logger.debug("应用状态监听器已设置，共 \(notificationObservers.count) 个观察者")
     }
     
     // 应用状态处理方法
@@ -317,6 +328,33 @@ class ClipboardManager: ObservableObject {
         }
     }
     
+    // 🔧 修复：添加 deinit 清理所有资源
+    deinit {
+        logger.info("ClipboardManager 正在释放...")
+        
+        // 清理所有 NotificationCenter 观察者
+        notificationObservers.forEach { NotificationCenter.default.removeObserver($0) }
+        notificationObservers.removeAll()
+        
+        // 清理主剪贴板观察者
+        if let observer = clipboardObserver {
+            NotificationCenter.default.removeObserver(observer)
+            DistributedNotificationCenter.default().removeObserver(observer)
+        }
+        
+        // 停止所有定时器
+        monitoringTimer?.invalidate()
+        monitoringTimer = nil
+        
+        cacheCleanupTimer?.invalidate()
+        cacheCleanupTimer = nil
+        
+        // 停止用户活动监控
+        activityMonitor.stopMonitoring()
+        
+        logger.info("ClipboardManager 已完全释放")
+    }
+    
     func stopMonitoring() {
         if let observer = clipboardObserver {
             NotificationCenter.default.removeObserver(observer)
@@ -334,6 +372,10 @@ class ClipboardManager: ObservableObject {
         // 停止用户活动监控
         activityMonitor.stopMonitoring()
         
+        // 清理应用状态观察者
+        notificationObservers.forEach { NotificationCenter.default.removeObserver($0) }
+        notificationObservers.removeAll()
+        
         logger.info("剪贴板监控已停止")
     }
     
@@ -341,21 +383,23 @@ class ClipboardManager: ObservableObject {
     
     private func setupUserActivityMonitoring() {
         // 监听用户活动状态变化
-        NotificationCenter.default.addObserver(
+        let activeObserver = NotificationCenter.default.addObserver(
             forName: .userBecameActive,
             object: nil,
             queue: .main
         ) { [weak self] _ in
             self?.handleUserBecameActive()
         }
+        notificationObservers.append(activeObserver)
         
-        NotificationCenter.default.addObserver(
+        let inactiveObserver = NotificationCenter.default.addObserver(
             forName: .userBecameInactive,
             object: nil,
             queue: .main
         ) { [weak self] _ in
             self?.handleUserBecameInactive()
         }
+        notificationObservers.append(inactiveObserver)
         
         // 初始化当前监控间隔
         currentMonitoringInterval = activeMonitoringInterval

@@ -36,7 +36,7 @@ class Hotkey {
     }
     
     func register() {
-        print("开始注册全局快捷键 (KeyCode: \(keyCode))...")
+        Logger.debug("开始注册全局快捷键 (KeyCode: \(keyCode))...")
         
         // 立即检查权限
         checkAccessibilityPermissions()
@@ -48,7 +48,7 @@ class Hotkey {
             success = registerCarbonHotkey()
             if success {
                 useCarbon = true
-                print("使用Carbon API注册热键成功")
+                Logger.debug("使用Carbon API注册热键成功")
             }
         }
         
@@ -56,24 +56,24 @@ class Hotkey {
         if !success {
             setupNSEventMonitors()
             useCarbon = false
-            print("使用NSEvent备用方案")
+            Logger.debug("使用NSEvent备用方案")
             success = true  // NSEvent setup always "succeeds"
         }
         
         // 立即显示权限引导（如果需要）
         if !hasAccessibilityPermission && !hasRequestedPermission {
-            print("快捷键将仅在当前应用中工作，需要权限才能在所有应用中使用")
+            Logger.debug("快捷键将仅在当前应用中工作，需要权限才能在所有应用中使用")
             hasRequestedPermission = true  // 仅标记已请求，不显示弹窗
             startPermissionMonitoring()
         }
         
-        print("全局快捷键注册完成: \(modifierDescription())")
+        Logger.debug("全局快捷键注册完成: \(modifierDescription())")
         
         // 显示状态信息
         if hasAccessibilityPermission {
-            print("快捷键将在所有应用中工作")
+            Logger.debug("快捷键将在所有应用中工作")
         } else {
-            print("快捷键仅在当前应用中工作")
+            Logger.debug("快捷键仅在当前应用中工作")
         }
     }
     
@@ -102,9 +102,9 @@ class Hotkey {
         )
         
         if result == noErr {
-            print("Carbon事件处理器安装成功")
+            Logger.debug("Carbon事件处理器安装成功")
         } else {
-            print("Carbon事件处理器安装失败: \(result)")
+            Logger.debug("Carbon事件处理器安装失败: \(result)")
         }
     }
     
@@ -132,10 +132,10 @@ class Hotkey {
         
         if result == noErr, let hotkey = hotkeyRef {
             carbonHotkey = hotkey
-            print("Carbon热键注册成功: \(modifierDescription()) (ID: \(hotkeyID))")
+            Logger.debug("Carbon热键注册成功: \(modifierDescription()) (ID: \(hotkeyID))")
             return true
         } else {
-            print("Carbon热键注册失败: \(result) (ID: \(hotkeyID))")
+            Logger.debug("Carbon热键注册失败: \(result) (ID: \(hotkeyID))")
             return false
         }
     }
@@ -158,7 +158,7 @@ class Hotkey {
             // 检查是否是我们注册的热键
             if eventHotKeyID.signature == fourCharCodeFrom("MACP") {
                 if eventHotKeyID.id == hotkeyID {
-                    print("Carbon热键触发: \(modifierDescription()) (ID: \(hotkeyID))")
+                    Logger.debug("Carbon热键触发: \(modifierDescription()) (ID: \(hotkeyID))")
                     triggerHotkey()
                     return noErr
                 }
@@ -172,7 +172,7 @@ class Hotkey {
         if let hotkey = carbonHotkey {
             UnregisterEventHotKey(hotkey)
             carbonHotkey = nil
-            print("Carbon热键已注销")
+            Logger.debug("Carbon热键已注销")
         }
     }
     
@@ -194,14 +194,14 @@ class Hotkey {
         }
         
         if globalEventMonitor != nil || localEventMonitor != nil {
-            print("NSEvent监听器已设置")
+            Logger.debug("NSEvent监听器已设置")
             isRegistered = true
         }
     }
     
     private func handleKeyEvent(_ event: NSEvent) {
         if event.keyCode == self.keyCode && self.modifierFlagsMatch(event.modifierFlags) {
-            print("NSEvent热键触发: \(modifierDescription())")
+            Logger.debug("NSEvent热键触发: \(modifierDescription())")
             triggerHotkey()
         }
     }
@@ -224,7 +224,7 @@ class Hotkey {
         // 防抖动：检查距离上次触发的时间
         let currentTime = Date().timeIntervalSince1970
         if currentTime - lastTriggerTime < debounceInterval {
-            print("快捷键触发过于频繁，已忽略")
+            Logger.debug("快捷键触发过于频繁，已忽略")
             return
         }
         
@@ -243,9 +243,9 @@ class Hotkey {
             hasAccessibilityPermission = permission
             
             if hasAccessibilityPermission {
-                print("已获得辅助功能权限")
+                Logger.debug("已获得辅助功能权限")
             } else {
-                print("需要辅助功能权限以确保热键在所有应用中工作")
+                Logger.debug("需要辅助功能权限以确保热键在所有应用中工作")
             }
         }
     }
@@ -253,7 +253,7 @@ class Hotkey {
     private func startPermissionMonitoring() {
         guard !hasAccessibilityPermission else { return }
         
-        print("[HotkeyCarbon] 开始权限监控")
+        Logger.debug("[HotkeyCarbon] 开始权限监控")
         
         // 每30秒检查一次权限，减少检查频率
         permissionTimer = Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true) { [weak self] timer in
@@ -271,7 +271,7 @@ class Hotkey {
                         self.hasAccessibilityPermission = newStatus
                         
                         if newStatus {
-                            print("[HotkeyCarbon] 获得辅助功能权限，停止监控")
+                            Logger.debug("[HotkeyCarbon] 获得辅助功能权限，停止监控")
                             timer.invalidate()
                             self.permissionTimer = nil
                             
@@ -279,10 +279,10 @@ class Hotkey {
                             if !self.useCarbon && self.registerCarbonHotkey() {
                                 self.unregisterNSEventMonitors()
                                 self.useCarbon = true
-                                print("已切换到Carbon API")
+                                Logger.debug("已切换到Carbon API")
                             }
                         } else {
-                            print("[HotkeyCarbon] 仍缺少辅助功能权限，但不在此处弹窗")
+                            Logger.debug("[HotkeyCarbon] 仍缺少辅助功能权限，但不在此处弹窗")
                             // 权限弹窗统一由OneClipApp管理
                         }
                     }
@@ -366,7 +366,7 @@ class Hotkey {
     }
     
     func unregister() {
-        print("开始注销全局快捷键...")
+        Logger.debug("开始注销全局快捷键...")
         
         // 停止定时器
         permissionTimer?.invalidate()
@@ -382,11 +382,11 @@ class Hotkey {
         isRegistered = false
         hasRequestedPermission = false
         
-        print("全局快捷键已注销")
+        Logger.debug("全局快捷键已注销")
     }
     
     deinit {
         unregister()
-        print("Hotkey 实例已释放")
+        Logger.debug("Hotkey 实例已释放")
     }
 }
