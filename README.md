@@ -1,4 +1,8 @@
-[English](README_EN.md) | [简体中文](README.md)
+<!-- [English](README_EN.md) | [简体中文](README.md) -->
+
+<p align="right">
+  <a href="README_EN.md">English</a> · <b>中文</b> 
+</p>
 
 ---
 
