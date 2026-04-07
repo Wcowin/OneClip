@@ -845,7 +845,7 @@ class WindowManager: ObservableObject {
         lastPermissionCheck = currentTime
         
         // 检查辅助功能权限（仅检查，不弹窗）
-        let hasAccessibilityPermission = AXIsProcessTrusted()
+        let hasAccessibilityPermission = AccessibilityPermissionManager.shared.checkPermissionSync()
         
         if !hasAccessibilityPermission {
             logger.warning("辅助功能权限已丢失，可能影响全局快捷键功能")

@@ -21,11 +21,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     private var cancellables = Set<AnyCancellable>()
     private var windowManager: WindowManager? // 添加windowManager引用
     
-    // 权限检查缓存优化
-    private var lastPermissionCheck: Date = Date(timeIntervalSince1970: 0)
-    private var permissionCache: Bool?
-    private let permissionCacheValidDuration: TimeInterval = 1.0 // 1秒缓存
-    
     var mainWindow: NSWindow?
     
     // 全局权限弹窗控制机制
@@ -2306,10 +2301,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         // 强制激活应用到最前面
         NSApp.activate(ignoringOtherApps: true)
         
-        // 临时清除权限缓存，模拟首次启动或权限丢失的情况
-        permissionCache = false
-        lastPermissionCheck = Date.distantPast
-        forceShowPermissionDialog()
+        // 强制刷新权限检查
+        AccessibilityPermissionManager.shared.checkPermissionAsync { _ in
+            self.forceShowPermissionDialog()
+        }
     }
     
     // MARK: - 应用激活处理
@@ -2465,38 +2460,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     
     /// 优化的权限检查方法，减少延迟
     private func checkPermissionOptimized() -> Bool {
-        // 使用缓存减少重复检查
-        let now = Date()
-        if let cached = permissionCache,
-           now.timeIntervalSince(lastPermissionCheck) < permissionCacheValidDuration {
-            return cached
-        }
-        
-        let permission = AXIsProcessTrusted()
-        permissionCache = permission
-        lastPermissionCheck = now
-        return permission
+        return AccessibilityPermissionManager.shared.checkPermissionSync()
     }
     
     /// 异步权限检查，避免阻塞主线程
     private func checkPermissionAsync(completion: @escaping (Bool) -> Void) {
-        // 先检查缓存
-        let now = Date()
-        if let cached = permissionCache,
-           now.timeIntervalSince(lastPermissionCheck) < permissionCacheValidDuration {
-            completion(cached)
-            return
-        }
-        
-        // 在后台线程检查权限
-        DispatchQueue.global(qos: .utility).async {
-            let permission = AXIsProcessTrusted()
-            
-            DispatchQueue.main.async {
-                self.permissionCache = permission
-                self.lastPermissionCheck = Date()
-                completion(permission)
-            }
+        // 使用单例管理器处理权限检查
+        AccessibilityPermissionManager.shared.checkPermissionAsync { permission in
+            completion(permission)
         }
     }
     
@@ -2678,7 +2649,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
             }
             
             // 基本权限检查：如果已有权限则不显示弹窗
-            let currentPermission = AXIsProcessTrusted()
+            let currentPermission = AccessibilityPermissionManager.shared.checkPermissionSync()
             print("[DEBUG] 当前权限状态: \(currentPermission)")
             guard !currentPermission else {
                 print("[DEBUG] 权限已获得，取消弹窗显示")

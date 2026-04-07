@@ -237,8 +237,8 @@ class Hotkey {
     // MARK: - 权限管理
     
     private func checkAccessibilityPermissions() {
-        // 缓存权限检查结果，避免频繁调用造成延迟
-        let permission = AXIsProcessTrusted()
+        // 使用单例管理器检查权限，避免重复调用
+        let permission = AccessibilityPermissionManager.shared.checkPermissionSync()
         if permission != hasAccessibilityPermission {
             hasAccessibilityPermission = permission
             
@@ -262,29 +262,27 @@ class Hotkey {
                 return
             }
             
-            // 异步检查权限（仅检查，不弹窗）
-            DispatchQueue.global(qos: .background).async {
-                let newStatus = AXIsProcessTrusted()
+            // 使用单例管理器检查权限
+            AccessibilityPermissionManager.shared.checkPermissionAsync { [weak self] newStatus in
+                guard let self = self else { return }
                 
-                DispatchQueue.main.async {
-                    if newStatus != self.hasAccessibilityPermission {
-                        self.hasAccessibilityPermission = newStatus
+                if newStatus != self.hasAccessibilityPermission {
+                    self.hasAccessibilityPermission = newStatus
+                    
+                    if newStatus {
+                        Logger.debug("[HotkeyCarbon] 获得辅助功能权限，停止监控")
+                        timer.invalidate()
+                        self.permissionTimer = nil
                         
-                        if newStatus {
-                            Logger.debug("[HotkeyCarbon] 获得辅助功能权限，停止监控")
-                            timer.invalidate()
-                            self.permissionTimer = nil
-                            
-                            // 尝试切换到更稳定的Carbon API
-                            if !self.useCarbon && self.registerCarbonHotkey() {
-                                self.unregisterNSEventMonitors()
-                                self.useCarbon = true
-                                Logger.debug("已切换到Carbon API")
-                            }
-                        } else {
-                            Logger.debug("[HotkeyCarbon] 仍缺少辅助功能权限，但不在此处弹窗")
-                            // 权限弹窗统一由OneClipApp管理
+                        // 尝试切换到更稳定的Carbon API
+                        if !self.useCarbon && self.registerCarbonHotkey() {
+                            self.unregisterNSEventMonitors()
+                            self.useCarbon = true
+                            Logger.debug("已切换到Carbon API")
                         }
+                    } else {
+                        Logger.debug("[HotkeyCarbon] 仍缺少辅助功能权限，但不在此处弹窗")
+                        // 权限弹窗统一由OneClipApp管理
                     }
                 }
             }

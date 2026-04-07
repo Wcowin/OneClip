@@ -262,9 +262,8 @@ class ClipboardManager: ObservableObject {
             throw ClipboardError.accessDenied
         }
         
-        // 检查辅助功能权限 - 静默检查，不弹出提示
-        let options = [kAXTrustedCheckOptionPrompt.takeRetainedValue() as String: false] as CFDictionary
-        let accessibilityEnabled = AXIsProcessTrustedWithOptions(options)
+        // 检查辅助功能权限 - 使用单例管理器，避免重复调用
+        let accessibilityEnabled = AccessibilityPermissionManager.shared.checkPermissionSync()
         
         if !accessibilityEnabled {
             logger.warning("辅助功能权限未授予，但不阻止基本功能")
